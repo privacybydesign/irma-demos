@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+set -euxo pipefail
 
 DIR=$(dirname "$0")
 
@@ -22,14 +24,14 @@ for lang in 'nl' 'en'; do
     demoname=$(echo "$f" | cut -d'/' -f 2)
     demodir="$DIR/build/$lang/$demoname"
     cp -r "$f" "$demodir"
-    mv "$demodir/index.$lang.html" "$demodir/index.html" 2>/dev/null
+    mv "$demodir/index.$lang.html" "$demodir/index.html"
 
     # Delete files in other language
     find "$demodir" -type f -not -name "*.$lang.*" -a -name '*.*.*' -exec rm {} \;
   done
 
   cp -r "$DIR/assets" "$DIR/build/$lang/assets"
-  #TODO: Where should the vendor directory be placed?
+  cp -r "$DIR/vendor" "$DIR/build/$lang/vendor"
 done
 
 # Delete potential empty directories
