@@ -1,26 +1,17 @@
+image: privacybydesign/node_yarn:latest
+
 stages:
   - build
+  
+before_script:
+  - set -euxo pipefail
+  - php composer.phar install
+  - yarn install
 
-build-en:
+build:
   stage: build
   script:
-    - php composer.phar install
-    - yarn install
     - ./build_artifacts.sh
   artifacts:
-    name: 'en'
     paths:
-      - build/en/
-
-build-nl:
-  stage: build
-  script:
-    - php composer.phar install
-    - yarn install
-    - ./build_artifacts.sh
-  artifacts:
-    name: 'nl'
-    paths:
-      - build/nl/
-
-# Is er een image nodig voor composer of iets?
+      - build/*
