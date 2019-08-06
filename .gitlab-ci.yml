@@ -1,0 +1,26 @@
+stages:
+  - build
+
+build-en:
+  stage: build
+  script:
+    - php composer.phar install
+    - yarn install
+    - ./build_artifacts.sh
+  artifacts:
+    name: 'en'
+    paths:
+      - build/en/
+
+build-nl:
+  stage: build
+  script:
+    - php composer.phar install
+    - yarn install
+    - ./build_artifacts.sh
+  artifacts:
+    name: 'nl'
+    paths:
+      - build/nl/
+
+# Is er een image nodig voor composer of iets?

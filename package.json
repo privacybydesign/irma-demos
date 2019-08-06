@@ -1,0 +1,18 @@
+{
+  "name": "irma-demo-pages",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://gitlab.science.ru.nl/irma/irma-demo-pages",
+  "contributors": [
+    "Ivar Derksen",
+    "Privacy by Design Foundation"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@privacybydesign/irmajs": "^0.1.4",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.14.7"
+  }
+}
