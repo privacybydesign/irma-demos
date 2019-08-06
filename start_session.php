@@ -1,6 +1,5 @@
 <?php
 require_once 'config.php';
-require_once VENDOR.'/autoload.php';
 
 date_default_timezone_set('UTC');
 $protocol = explode(':', IRMA_SERVER_URL, 2)[0];

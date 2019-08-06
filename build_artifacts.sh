@@ -24,15 +24,19 @@ for lang in 'nl' 'en'; do
     demoname=$(echo "$f" | cut -d'/' -f 2)
     demodir="$DIR/build/$lang/$demoname"
     cp -r "$f" "$demodir"
+
+    # Rename to index.html
     mv "$demodir/index.$lang.html" "$demodir/index.html"
 
-    # Delete files in other language
-    find "$demodir" -type f -not -name "*.$lang.*" -a -name '*.*.*' -exec rm {} \;
+    # Delete files in other languages
+    find "$demodir" -type f -not -name "*.$lang.*" -a -name '*.*.*' -delete
   done
 
   cp -r "$DIR/assets" "$DIR/build/$lang/assets"
-  cp -r "$DIR/vendor" "$DIR/build/$lang/vendor"
+  cp "$DIR/config.php" "$DIR/build/$lang/config.php"
+  cp "$DIR/start_session.php" "$DIR/build/$lang/start_session.php"
+  cp "$DIR/start_session.js" "$DIR/build/$lang/start_session.js"
 done
 
 # Delete potential empty directories
-find "$DIR/build" -type d -exec rmdir {} + 2>/dev/null
+find "$DIR/build" -type d -empty -delete
