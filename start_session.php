@@ -39,6 +39,7 @@ $sigrequests = [
         'disclose' => [
             [
                 ['pbdf.pbdf.idin.familyname'],
+                ['pbdf.nijmegen.personalData.familyname'],
                 ['pbdf.pbdf.facebook.familyname'],
                 ['pbdf.pbdf.linkedin.familyname'],
                 ['pbdf.pbdf.twitter.fullname'],
@@ -118,8 +119,7 @@ $sprequests = [
     ],
 ];
 
-function start_session($type, $lang)
-{
+function start_session($type, $lang) {
     global $sprequests, $sigrequests, $protocol;
 
     if (array_key_exists($type, $sprequests))
@@ -142,20 +142,26 @@ function start_session($type, $lang)
     );
 
     $resp = file_get_contents(IRMA_SERVER_URL . '/session', false, stream_context_create($api_call));
+    if (! $resp) {
+        error();
+    }
     return $resp;
 }
 
 function get_signature_request($type, $lang) {
     global $sigrequests;
-    if ( !array_key_exists($type, $sigrequests) || !array_key_exists($lang, $sigrequests[$type]) )
-        stop();
-
     $request = $sigrequests[$type];
 
-    // Signature requests do not support translatable strings
+    // Signature requests do not support translatable strings, use chosen language
     $request['message'] = $sigrequests[$type]['message'][$lang];
 
     return $request;
+}
+
+function error() {
+    http_response_code(500);
+    echo 'Internal server error';
+    exit();
 }
 
 function stop() {

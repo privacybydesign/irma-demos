@@ -8,6 +8,7 @@ DIR=$(dirname "$0")
 mkdir -p "$DIR/assets"
 cp "$DIR/node_modules/jquery/dist/jquery.min.js" "$DIR/assets/jquery.min.js"
 cp "$DIR/node_modules/bootstrap/dist/css/bootstrap.min.css" "$DIR/assets/bootstrap.min.css"
+cp "$DIR/node_modules/bootstrap/dist/js/bootstrap.min.js" "$DIR/assets/bootstrap.min.js"
 cp "$DIR/node_modules/@privacybydesign/irmajs/dist/irma.js" "$DIR/assets/irma.js"
 
 rm -rf "$DIR/build"
