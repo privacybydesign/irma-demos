@@ -15,5 +15,4 @@ build:
     - ./build_artifacts.sh
   artifacts:
     paths:
-      - build/en/*
-      - build/nl/*
+      - build/*
