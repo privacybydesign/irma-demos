@@ -5,8 +5,6 @@ stages:
   
 before_script:
   - set -euxo pipefail
-  - apt-get update
-  - apt-get install -y --no-install-recommends php
   - yarn install
 
 build:
