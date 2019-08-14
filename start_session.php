@@ -177,7 +177,7 @@ function stop() {
     exit();
 }
 
-if (!isset($_GET['type']))
+if (!isset($_GET['type']) || !isset($_GET['lang']))
     stop();
 
 header('Access-Control-Allow-Origin: *');
