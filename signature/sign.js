@@ -1,6 +1,6 @@
 'use strict';
 
-$.getScript("../start_session.js", function() {
+$.getScript('../start_session.js', function() {
     function setupSignButton(button, resultStatus, reqName, successMessageFunc) {
         let onSuccess = function(data) {
             resultStatus.html('<div class="alert alert-success"><div class="prefix"></div><blockquote class="blockquote signedText"></blockquote></div>');

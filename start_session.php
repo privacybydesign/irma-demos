@@ -40,6 +40,7 @@ $sigrequests = [
             [
                 ['pbdf.pbdf.idin.familyname'],
                 ['pbdf.nijmegen.personalData.familyname'],
+                ['pbdf.gemeente.personalData.familyname'],
                 ['pbdf.pbdf.facebook.familyname'],
                 ['pbdf.pbdf.linkedin.familyname'],
                 ['pbdf.pbdf.twitter.fullname'],
@@ -56,6 +57,7 @@ $sprequests = [
             [
                 ['pbdf.pbdf.ageLimits.over18'],
                 ['pbdf.nijmegen.ageLimits.over18'],
+                ['pbdf.gemeente.personalData.over18'],
             ],
         ],
     ],
@@ -68,6 +70,11 @@ $sprequests = [
                     'pbdf.nijmegen.address.houseNumber',
                     'pbdf.nijmegen.address.zipcode',
                     'pbdf.nijmegen.address.city',
+                ], [
+                    'pbdf.gemeente.address.street',
+                    'pbdf.gemeente.address.houseNumber',
+                    'pbdf.gemeente.address.zipcode',
+                    'pbdf.gemeente.address.city',
                 ], [
                     'pbdf.pbdf.idin.address',
                     'pbdf.pbdf.idin.zipcode',
