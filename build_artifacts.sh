@@ -14,7 +14,7 @@ cp "$DIR/node_modules/@privacybydesign/irmajs/dist/irma.js" "$DIR/assets/irma.js
 rm -rf "$DIR/build"
 
 for lang in 'nl' 'en'; do
-  # Copy demos in the right language
+  # Copy demos in the right language directory
   mkdir -p "$DIR/build/$lang"
 
   for f in "$DIR"/*/; do
@@ -23,7 +23,10 @@ for lang in 'nl' 'en'; do
     fi
 
     demoname=$(echo "$f" | cut -d'/' -f 2)
-    demodir="$DIR/build/$lang/$demoname"
+    # Retrieve demo name in the particular language
+    source ./"$demoname"/name.sh
+    eval translateddemoname=\$$lang
+    demodir="$DIR/build/$lang/$translateddemoname"
     cp -r "$f" "$demodir"
 
     # Rename to index.html
@@ -41,3 +44,5 @@ done
 
 # Delete potential empty directories
 find "$DIR/build" -type d -empty -delete
+# Delete shell files
+find "$DIR/build" -name "*.sh" -delete
