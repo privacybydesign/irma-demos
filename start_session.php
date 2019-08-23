@@ -141,9 +141,9 @@ function start_session($type, $lang) {
     $api_call = array(
         $protocol => array(
             'method' => 'POST',
-            'header' => 'Content-type: application/json\r\n'
-                . 'Content-Length: ' . strlen($jsonsr) . '\r\n'
-                . 'Authorization: ' . API_TOKEN . '\r\n',
+            'header' => "Content-type: application/json\r\n"
+                . "Content-Length: " . strlen($jsonsr) . "\r\n"
+                . "Authorization: " . API_TOKEN . "\r\n",
             'content' => $jsonsr
         )
     );
