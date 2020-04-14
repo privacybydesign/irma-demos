@@ -4,10 +4,10 @@ $.getScript('../start_session.js', function() {
         let email_len = email.length;
         let email_tail = email.substr(email_len - 9, email_len);
         if (email_tail === 'gmail.com') {
-            $("#main").html(MESSAGES['succeeded-gmail'](email) + '<b><p><a href=\"#\" onclick=\"window.location.reload(true)\">' +
+            $("#main").html(MESSAGES['succeeded-gmail'] + '<b><p><a href=\"#\" onclick=\"window.location.reload(true)\">' +
             MESSAGES["back"] + '</a></p>');
         } else {
-            $("#main").html(MESSAGES['failed-gmail'](email) +
+            $("#main").html(MESSAGES['failed-gmail'] +
                 '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
         }
     };
@@ -23,7 +23,7 @@ $.getScript('../start_session.js', function() {
             .html(MESSAGES['cancel-message'])
             .addClass("alert alert-warning")
             .css("font-weight", "bold");
-    }
+    };
 
     let error_fun = function () {
         $("#result_status")
