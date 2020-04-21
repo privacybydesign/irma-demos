@@ -7,7 +7,7 @@ $.getScript('../start_session.js', function() {
             $("#main").html(MESSAGES['succeeded-gmail'] + '<b><p><a href=\"#\" onclick=\"window.location.reload(true)\">' +
             MESSAGES["back"] + '</a></p>');
         } else {
-            $("#main").html(MESSAGES['failed-gmail'] +
+            $("#main").html(MESSAGES['failed-gmail'](email) +
                 '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
         }
     };
