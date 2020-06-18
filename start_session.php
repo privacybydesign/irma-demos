@@ -8,7 +8,7 @@ $sigrequests = [
     'email-signature' => [
         '@context' => 'https://irma.app/ld/request/signature/v2',
         'message' => [
-            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande email adres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
+            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande e-mailadres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
             'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
         ],
         'disclose' => [
