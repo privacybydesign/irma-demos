@@ -12,7 +12,10 @@ $sigrequests = [
             'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
         ],
         'disclose' => [
-            [['pbdf.pbdf.email.email']],
+            [
+                ['pbdf.pbdf.email.email'],
+                ['pbdf.sidn-pbdf.email.email'],
+            ],
         ],
     ],
     'exam-signature' => [
@@ -105,7 +108,10 @@ $sprequests = [
     'gmail' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
-            [['pbdf.pbdf.email.email']],
+            [
+                ['pbdf.pbdf.email.email'],
+                ['pbdf.sidn-pbdf.email.email'],
+            ],
         ],
         'labels' => [
             '1' => ['en' => 'Gmail address', 'nl' => 'Gmail adres'],
