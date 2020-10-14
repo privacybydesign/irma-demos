@@ -109,8 +109,8 @@ $sprequests = [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
-                ['pbdf.pbdf.email.email'],
-                ['pbdf.sidn-pbdf.email.email'],
+                ['pbdf.pbdf.email.domain'],
+                ['pbdf.sidn-pbdf.email.domain'],
             ],
         ],
         'labels' => [
