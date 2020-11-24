@@ -197,5 +197,4 @@ function stop() {
 if (!isset($_GET['type']) || !isset($_GET['lang']))
     stop();
 
-header('Access-Control-Allow-Origin: *');
 echo start_session($_GET['type'], $_GET['lang']);
