@@ -1,81 +1,77 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8" />
+        <title>IRMATube Premium demo</title>
 
-<head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta charset="utf-8" />
-    <title>IRMATube Premium demo</title>
+        <link href="../assets/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="../assets/bootstrap.min.css" rel="stylesheet" />
+        <script src="../assets/jquery.min.js" defer></script>
+        <script src="../assets/irma.js" defer></script>
 
-    <script src="../assets/jquery.min.js" defer></script>
-    <script src="../assets/irma.js" defer></script>
+        <script src="messages.nl.js" defer></script>
+        <script src="premiumdemo.js" defer></script>
+    </head>
+    <body>
+        <div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+            <h1>Wordt IRMATube Premium lid</h1>
 
-    <script src="messages.nl.js" defer></script>
-    <script src="premiumdemo.js" defer></script>
-</head>
+            <div id="result_status"></div>
 
-<body>
-    <div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
-        <h1>Wordt IRMATube Premium lid</h1>
+            <p>
+                Deze demo is geen echte video-streaming dienst maar toont wel hoe
+                IRMA voor zo'n dienst gebruikt kan worden. Door “premium lid” te worden
+                van IRMATube met de knop "Wordt IRMATube premium lid" ontvang je een persoonlijk kaartje
+                in je IRMA app voor je premium lidmaatschap die gekoppeld is aan je naam. De gegevens op dat kaartje
+                kun je dan later vrijgeven om <a href="https://privacybydesign.foundation/demo/irmaTube/">
+                    (trailers van) films</a> te bekijken. Door de premium lidmaatschap heb je toegang
+                tot extra premium inhoud.
+            </p>
 
-        <div id="result_status"></div>
+            <p>
+                Om de onderstaande knoppen te kunnen uitproberen moet de
+                bezoeker de IRMA
+                app <a href="https://privacybydesign.foundation/download/">ge&iuml;nstalleerd</a>
+                hebben.
+            </p>
 
-        <p>
-            Deze demo is geen echte video-streaming dienst maar toont wel hoe
-            IRMA voor zo'n dienst gebruikt kan worden. Door “premium lid” te worden
-            van IRMATube met de knop "Wordt IRMATube premium lid" ontvang je een persoonlijk kaartje
-            in je IRMA app voor je premium lidmaatschap die gekoppeld is aan je naam. De gegevens op dat kaartje
-            kun je dan later vrijgeven om <a href="https://privacybydesign.foundation/demo/irmaTube/">
-                (trailers van) films</a> te bekijken. Door de premium lidmaatschap heb je toegang
-            tot extra premium inhoud.
-        </p>
+            <div style="margin-top: 1em; margin-bottom: 1em" align="center">
+                <tr>
+                    <td>
+                        <button style="margin: 1em" class="btn btn-primary" id="irmatube_premium">Wordt premium lid</button>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;
+                    </td>
+                    <td>
+                        <button style="margin: 1em" class="btn btn-primary" id="watch_premium_contents">Toon premium
+                            inhoud</button>
+                    </td>
+                </tr>
+            </div>
 
-        <p>
-            Om de onderstaande knoppen te kunnen uitproberen moet de
-            bezoeker de IRMA
-            app <a href="https://privacybydesign.foundation/download/">ge&iuml;nstalleerd</a>
-            hebben.
-        </p>
+            <p>
+                Een paar opmerkingen:
+            <ul>
+                <li> Geen enkele informatie over je naam wordt hier bewaard of
+                    verzameld. De getoonde gegevens worden alleen gebruikt met
+                    deze demo als doel. Na het sluiten van deze pagina verdwijnen ze
+                    vanzelf.
 
-        <div style="margin-top: 1em; margin-bottom: 1em" align="center">
-            <tr>
-                <td>
-                    <button style="margin: 1em" class="btn btn-primary" id="irmatube_premium">Wordt premium lid</button>
-                </td>
-                <td>
-                    &nbsp;&nbsp;&nbsp;
-                </td>
-                <td>
-                    <button style="margin: 1em" class="btn btn-primary" id="watch_premium_contents">Toon premim
-                        inhoud</button>
-                </td>
-            </tr>
+                <li> Om premium lid te worden is je naam vereist. Onder water wordt hier gebruik gemaakt van meerdere IRMA
+                    sessies.
+                    In de eerste sessie deel je je naam, die dan automatisch zonder extra gebruikersinteractie in een tweede
+                    sessie voor het maken van je premium kaartje gebruikt wordt.
+            </ul>
+            </p>
+
+
+            <p>
+                <a href="https://privacybydesign.foundation/demo/">Terug</a> naar
+                het IRMA demo overzicht.
+            </p>
+
         </div>
-
-        <p>
-            Een paar opmerkingen:
-        <ul>
-            <li> Geen enkele informatie over je naam wordt hier bewaard of
-                verzameld. De getoonde gegevens worden alleen gebruikt met
-                deze demo als doel. Na het sluiten van deze pagina verdwijnen ze
-                vanzelf.
-
-            <li> Om premium lid te worden is je naam vereist. Onder water wordt hier gebruik gemaakt van meerdere IRMA
-                sessies.
-                In de eerste sessie deel je je naam, die dan automatisch zonder extra gebruikersinteractie in een tweede
-                sessie
-                voor het maken van je premium kaartje gebruikt wordt.
-        </ul>
-        </p>
-
-
-        <p>
-            <a href="https://privacybydesign.foundation/demo/">Terug</a> naar
-            het IRMA demo overzicht.
-        </p>
-
-    </div>
-</body>
-
+    </body>
 </html>
