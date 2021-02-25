@@ -42,11 +42,7 @@ $.getScript('../start_session.js', function() {
     $('#irmatube_premium').click(function () {
         start_session('irmatube_premium', MESSAGES['lang'], success_issuance_fun, cancelled_issuance_fun, error_issuance_fun);
     });
-
-    $('#irmatube_premium_step2').click(function () {
-        start_session('irmatube_premium_step2', MESSAGES['lang'], success_issuance_fun, cancelled_issuance_fun, error_issuance_fun);
-    });
-
+    
     $('#watch_premium_contents').click(function () {
         start_session('watch_premium_contents', MESSAGES['lang'], success_disclosure_fun, cancelled_disclosure_fun, error_disclosure_fun);
     });

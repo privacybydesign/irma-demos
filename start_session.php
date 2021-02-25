@@ -133,7 +133,7 @@ $sprequests = [
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [[[
-                'irma-demo.gemeente.personalData.firstnames',
+                'irma-demo.gemeente.personalData.fullname',
                 ]]],
         ]
     ],
@@ -141,7 +141,7 @@ $sprequests = [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
-                ['irma-demo.IRMATube.member.type'],
+                ['irma-demo.IRMATube.member.fullname'],
             ]
         ],
     ],

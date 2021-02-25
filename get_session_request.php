@@ -4,31 +4,25 @@ require_once 'config.php';
 date_default_timezone_set('UTC');
 $protocol = explode(':', IRMA_SERVER_URL, 2)[0];
 
-$randomnum = rand(1,9);
-for($i=0; $i<10; $i++)
-$randomnum .= rand(0,9);
+function get_session_request($contents) {
+    $parsedjson = json_decode($contents, true);
 
-$sprequests = [
-    'irmatube_premium_step2' => [
+    $randomnum = rand(1,9);
+    for($i=0; $i<10; $i++)
+    $randomnum .= rand(0,9);
+
+    $sessionrequest = [
         '@context' => 'https://irma.app/ld/request/issuance/v2',
         'credentials' => [[
             "credential" => 'irma-demo.IRMATube.member',
             "validity" => strtotime("+6 months"),
             "attributes" => [
+                "fullname" => $parsedjson['disclosed'][0][0]['rawvalue'],
                 "type" => "premium",
                 "id" => $randomnum
             ]
         ]]
-    ],
-];
-
-function get_session_request($type, $lang) {
-    global $sprequests, $sigrequests, $protocol;
-
-    if (array_key_exists($type, $sprequests))
-        $sessionrequest = $sprequests[$type];
-    else
-        stop();
+    ];
 
     return json_encode($sessionrequest);
 }
@@ -45,8 +39,5 @@ function stop() {
     exit();
 }
 
-if (!isset($_GET['type']) || !isset($_GET['lang']))
-    stop();
-
 header('Access-Control-Allow-Origin: *');
-echo get_session_request($_GET['type'], $_GET['lang']);
+echo get_session_request(file_get_contents('php://input'));
