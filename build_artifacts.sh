@@ -39,6 +39,7 @@ for lang in 'nl' 'en'; do
   cp -r "$DIR/assets" "$DIR/build/$lang/assets"
   cp "$DIR/config.php" "$DIR/build/$lang/config.php"
   cp "$DIR/start_session.php" "$DIR/build/$lang/start_session.php"
+  cp "$DIR/get_session_request.php" "$DIR/build/$lang/get_session_request.php"
   cp "$DIR/start_session.js" "$DIR/build/$lang/start_session.js"
 done
 

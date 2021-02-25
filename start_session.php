@@ -126,6 +126,25 @@ $sprequests = [
             ]
         ],
     ],
+    'irmatube_premium' => [
+        'nextSession' => [
+            'url' => 'http://localhost/build/nl/get_session_request.php?type=irmatube_premium_step2&lang=nl'
+        ],
+        'request' => [
+            '@context' => 'https://irma.app/ld/request/disclosure/v2',
+            'disclose' => [[[
+                'irma-demo.gemeente.personalData.firstnames',
+                ]]],
+        ]
+    ],
+    'watch_premium_contents' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                ['irma-demo.IRMATube.member.type'],
+            ]
+        ],
+    ],
     'presencecheck' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
