@@ -128,12 +128,12 @@ $sprequests = [
     ],
     'irmatube_premium' => [
         'nextSession' => [
-            'url' => 'http://localhost/build/nl/get_session_request.php?type=irmatube_premium_step2&lang=nl'
+            'url' => 'https://privacybydesign.foundation/demo/get_session_request.php'
         ],
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [[[
-                'irma-demo.gemeente.personalData.fullname',
+                'pbdf.gemeente.personalData.fullname',
                 ]]],
         ]
     ],
@@ -141,7 +141,7 @@ $sprequests = [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
-                ['irma-demo.IRMATube.member.fullname'],
+                ['pbdf.IRMATube.member.fullname'],
             ]
         ],
     ],
