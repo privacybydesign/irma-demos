@@ -134,8 +134,8 @@ $sprequests = [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [
                 [
-                    ['pbdf.pbdf.facebook.fullname'],
-                    ['pbdf.gemeente.personalData.fullname'],
+                    [ISSUER .'.pbdf.facebook.fullname'],
+                    [ISSUER .'.gemeente.personalData.fullname'],
                 ]
             ],
         ]
@@ -143,7 +143,7 @@ $sprequests = [
     'watch_premium_contents' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [[[
-            'pbdf.IRMATube.member.fullname',
+            ISSUER .'.IRMATube.member.fullname',
         ]]],
     ],
     'presencecheck' => [
