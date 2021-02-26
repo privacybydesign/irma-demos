@@ -132,9 +132,12 @@ $sprequests = [
         ],
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
-            'disclose' => [[[
-                'pbdf.gemeente.personalData.fullname',
-                ]]],
+            'disclose' => [
+                [
+                    ['pbdf.pbdf.facebook.fullname'],
+                    ['pbdf.gemeente.personalData.fullname'],
+                ]
+            ],
         ]
     ],
     'watch_premium_contents' => [
