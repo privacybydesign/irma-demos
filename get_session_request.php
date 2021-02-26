@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 
 function get_session_request($contents) {
     $parsedjson = json_decode($contents, true);
@@ -35,5 +36,5 @@ function stop() {
     exit();
 }
 
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: ' . BASE_URL);
 echo get_session_request(file_get_contents('php://input'));

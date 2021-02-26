@@ -128,7 +128,7 @@ $sprequests = [
     ],
     'irmatube_premium' => [
         'nextSession' => [
-            'url' => 'https://privacybydesign.foundation/demo/get_session_request.php'
+            'url' => IRMATUBE_NEXT_SESSION_URL
         ],
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
@@ -139,11 +139,9 @@ $sprequests = [
     ],
     'watch_premium_contents' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
-        'disclose' => [
-            [
-                ['pbdf.IRMATube.member.fullname'],
-            ]
-        ],
+        'disclose' => [[[
+            'pbdf.IRMATube.member.fullname',
+        ]]],
     ],
     'presencecheck' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
@@ -216,5 +214,5 @@ function stop() {
 if (!isset($_GET['type']) || !isset($_GET['lang']))
     stop();
 
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: ' . BASE_URL);
 echo start_session($_GET['type'], $_GET['lang']);
