@@ -11,7 +11,7 @@ function get_session_request($contents) {
     $sessionrequest = [
         '@context' => 'https://irma.app/ld/request/issuance/v2',
         'credentials' => [[
-            'credential' => ISSUER . '.IRMATube.member',
+            'credential' => IRMATUBE_CREDENTIAL,
             'validity' => strtotime('+6 months'),
             'attributes' => [
                 'fullname' => $parsedjson['disclosed'][0][0]['rawvalue'],

@@ -143,7 +143,7 @@ $sprequests = [
     'watch_premium_contents' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [[[
-            ISSUER .'.IRMATube.member.fullname',
+            IRMATUBE_CREDENTIAL .'.fullname',
         ]]],
     ],
     'presencecheck' => [
