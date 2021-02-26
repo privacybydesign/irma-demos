@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8"/>
+        <title>IRMATube Premium demo</title>
+
+        <link href="../assets/bootstrap.min.css" rel="stylesheet"/>
+
+        <script src="../assets/jquery.min.js" defer></script>
+        <script src="../assets/irma.js" defer></script>
+
+        <script src="messages.en.js" defer></script>
+        <script src="premiumdemo.js" defer></script>
+    </head>
+    <body>
+        <div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
+        <h1>Become an IRMATube Premium member</h1>
+
+        <div id="result_status"></div>
+
+        <p>
+            This demo is not a real video-streaming service but it does demonstrate several aspects of IRMA. 
+            When you become IRMATube “premium member” you receive a membership card in your IRMA app with your 
+            name on it. Subsequently, you can use the data on this card to watch 
+            <a href="https://privacybydesign.foundation/demo-en/irmaTube/">(trailers of) movies</a> on the IRMATube main page. 
+            As a premium member you also have access to the premium contents when clicking the "Show premium contents" button.
+        </p>
+
+        <p>
+        In order to be able to try out yourself the buttons below one
+        needs to have the IRMA
+        app <a href="https://privacybydesign.foundation/download-en/">installed</a>.
+        </p>
+
+        <div class="text-center">
+        <tr><td>
+        <button style="margin: 1em" class="btn btn-primary" id="irmatube_premium">Become premium member</button>
+        </td>
+        <td>
+        &nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+        <button style="margin: 1em" class="btn btn-primary" id="watch_premium_contents">Show premium contents</button>
+        </td>
+        </tr>
+        </div>
+
+        <p>
+        A few remarks:
+        <ul>
+        <li> No information about email addresses is retained or collected
+        via this webpage. The revealed email addresses are only used for the
+        purpose of this demo and disappear at the moment that the demo is
+        closed.
+
+        <li> In oder to become a premium member you need to disclose your name. 
+            Under the hood several chained IRMA sesssions are used. In the first sesssion 
+            your name gets disclosed which will be used without further user interaction 
+            in the second session. The second session will issue the premium membership card.
+        </ul>
+        </p>
+
+
+        <p>
+        <a href="https://privacybydesign.foundation/demo-en/">Back</a> to
+        the IRMA demo overview.
+        </p>
+
+        </div>
+    </body>
+</html>
