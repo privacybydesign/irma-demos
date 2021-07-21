@@ -126,6 +126,26 @@ $sprequests = [
             ]
         ],
     ],
+    'irmatube_premium' => [
+        'nextSession' => [
+            'url' => IRMATUBE_NEXT_SESSION_URL
+        ],
+        'request' => [
+            '@context' => 'https://irma.app/ld/request/disclosure/v2',
+            'disclose' => [
+                [
+                    [ISSUER .'.pbdf.facebook.fullname'],
+                    [ISSUER .'.gemeente.personalData.fullname'],
+                ]
+            ],
+        ]
+    ],
+    'watch_premium_contents' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [[[
+            IRMATUBE_CREDENTIAL .'.fullname',
+        ]]],
+    ],
     'presencecheck' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
@@ -197,5 +217,5 @@ function stop() {
 if (!isset($_GET['type']) || !isset($_GET['lang']))
     stop();
 
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: ' . BASE_URL);
 echo start_session($_GET['type'], $_GET['lang']);

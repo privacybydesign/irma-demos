@@ -1,0 +1,28 @@
+<?php
+require_once 'config.php';
+
+function get_session_request($contents) {
+    $parsedjson = json_decode($contents, true);
+
+    $randomnum = rand(1,9);
+    for($i=0; $i<10; $i++)
+        $randomnum .= rand(0,9);
+
+    $sessionrequest = [
+        '@context' => 'https://irma.app/ld/request/issuance/v2',
+        'credentials' => [[
+            'credential' => IRMATUBE_CREDENTIAL,
+            'validity' => strtotime('+6 months'),
+            'attributes' => [
+                'fullname' => $parsedjson['disclosed'][0][0]['rawvalue'],
+                'type' => 'premium',
+                'id' => $randomnum
+            ]
+        ]]
+    ];
+
+    return json_encode($sessionrequest);
+}
+
+header('Access-Control-Allow-Origin: ' . BASE_URL);
+echo get_session_request(file_get_contents('php://input'));

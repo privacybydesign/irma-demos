@@ -1,0 +1,6 @@
+assets/
+build/
+node_modules/
+assets/*
+build/*
+node_modules/*

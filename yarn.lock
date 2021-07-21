@@ -2,6 +2,7 @@
 # yarn lockfile v1
 
 
+
 "@privacybydesign/irma-client@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@privacybydesign/irma-client/-/irma-client-0.3.3.tgz#8b78b8eda517e1d8bcb01ce86cb0698770c9d09e"
@@ -11,6 +12,7 @@
     eventsource "^1.0.7"
     isomorphic-fetch "^3.0.0"
 
+
 "@privacybydesign/irma-console@^0.3.3":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@privacybydesign/irma-console/-/irma-console-0.3.3.tgz#3eabf813474aee3612550fcbc4e31721d306dfa2"
@@ -18,6 +20,7 @@
   dependencies:
     prompt-sync "^4.1.7"
     qrcode-terminal "^0.12.0"
+
 
 "@privacybydesign/irma-core@^0.3.3":
   version "0.3.3"
@@ -30,6 +33,7 @@
   integrity sha512-A2aQI/mVv5frhbfDxKzhM71tqwLEJKab5NuwfOp/EGeWYTlSrujC7YkWT57nbBe20U0JCbE9MmqmcFyYZuyWAA==
   dependencies:
     jsonwebtoken "^8.5.1"
+
 
 "@privacybydesign/irmajs@^0.2.2":
   version "0.2.2"
