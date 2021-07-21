@@ -2,27 +2,30 @@
 # yarn lockfile v1
 
 
-"@privacybydesign/irma-client@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-client/-/irma-client-0.3.2.tgz#0d49e6c74d76f378b556d6e0f3e4e4b0402a994e"
-  integrity sha512-Qqhn4wACgNbwqYf6XM1VqgmxBYv9H/Uv5VL3zI9oltCPl0mFia5weyX4efk4w1R6tQ9BK9tjliB8D82ZTb2Qwg==
+
+"@privacybydesign/irma-client@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-client/-/irma-client-0.3.3.tgz#8b78b8eda517e1d8bcb01ce86cb0698770c9d09e"
+  integrity sha512-wn6N5TDj9M/KS9xfU2SA9GQM7rQaByFy84xj/lW4Ml6dR8oOObi/EdBKOqwb7Y2icUl+G+y0Tl1sx1fHUg9dBQ==
   dependencies:
     deepmerge "^4.2.2"
     eventsource "^1.0.7"
     isomorphic-fetch "^3.0.0"
 
-"@privacybydesign/irma-console@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-console/-/irma-console-0.3.2.tgz#0fcd7a85452b669fc57fcfaf56e6c356a0f3923b"
-  integrity sha512-hlGVepOit/n/qi7SIrLZNjNzg2YtKRY9T/QFI599C0ii7X5SbVWx+Xw+xCNSiz4xrXBzl38gWoG2Z63HpusZjg==
+
+"@privacybydesign/irma-console@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-console/-/irma-console-0.3.3.tgz#3eabf813474aee3612550fcbc4e31721d306dfa2"
+  integrity sha512-BZ13R5Ech77BH1SzYsJPT5L4AWl89WVBpCqcJLra0dSmB5C4wDiVyt4AH88D5nGJlejQ/u3mKUsGGRoN5inl6A==
   dependencies:
     prompt-sync "^4.1.7"
     qrcode-terminal "^0.12.0"
 
-"@privacybydesign/irma-core@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-core/-/irma-core-0.3.2.tgz#1b0a082cf86e25a9b24494c8a02e6d3aeb0a857e"
-  integrity sha512-mgWlfA2WXhqVhHGB5PJnmi34A4vRQdi2KA3GJM9oOcVHfO2y0njA/CRxhxZm0BBmAcP/io08N9v4kPRlcLzWwg==
+
+"@privacybydesign/irma-core@^0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@privacybydesign/irma-core/-/irma-core-0.3.3.tgz#6a010a5702aebdc644fa48da79e1e019917072bc"
+  integrity sha512-qhhOZeeAhC1eME+ZYr8d9lokSLY0Nejhuou7dTvz0y0HIocJyIzzmz/sD6rnXaRAQ7QRYd5C73l7mT88D1X0XQ==
 
 "@privacybydesign/irma-jwt@^0.1.1":
   version "0.1.1"
@@ -31,14 +34,15 @@
   dependencies:
     jsonwebtoken "^8.5.1"
 
-"@privacybydesign/irmajs@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@privacybydesign/irmajs/-/irmajs-0.2.1.tgz#61d3758cf99485cb35e5d4807dae3250b2821e12"
-  integrity sha512-IeHpMSXE86CQGfaCxQdF2MZWDj9Pye/RaVX633ZwXfqhS9IjsRpbmR5LztlOCPHWgSIEmotpITNTPChupej9Iw==
+
+"@privacybydesign/irmajs@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@privacybydesign/irmajs/-/irmajs-0.2.2.tgz#7d2b28ef12817f46bb34707eb2e2c02d2d984417"
+  integrity sha512-EzZ2IBhQwIklVSnnahraojQm/l4Z47NfstYM8Cl2gEbtJamxpWRxGdPQxucR2Loro2snGJ5t73RbQ1rY/mufbQ==
   dependencies:
-    "@privacybydesign/irma-client" "^0.3.2"
-    "@privacybydesign/irma-console" "^0.3.2"
-    "@privacybydesign/irma-core" "^0.3.2"
+    "@privacybydesign/irma-client" "^0.3.3"
+    "@privacybydesign/irma-console" "^0.3.3"
+    "@privacybydesign/irma-core" "^0.3.3"
     "@privacybydesign/irma-jwt" "^0.1.1"
     qrcode "^1.4.4"
 
@@ -412,9 +416,9 @@ url-parse@^1.4.3:
     requires-port "^1.0.0"
 
 whatwg-fetch@^3.4.1:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.1.tgz#93bc4005af6c2cc30ba3e42ec3125947c8f54ed3"
-  integrity sha512-IEmN/ZfmMw6G1hgZpVd0LuZXOQDisrMOZrzYd5x3RAK4bMPlJohKUZWZ9t/QsTvH0dV9TbPDcc2OSuIDcihnHA==
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
+  integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==
 
 which-module@^2.0.0:
   version "2.0.0"
