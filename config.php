@@ -3,6 +3,7 @@
 define('IRMA_SERVER_URL', 'http://localhost:8088');
 define('API_TOKEN', '');
 define('DEMO', false);
+define('JWT_ENABLED', true);
 
 if (DEMO) {
     define('ISSUER', 'irma-demo');
@@ -14,4 +15,9 @@ if (DEMO) {
     define('BASE_URL', 'https://privacybydesign.foundation');
     define('IRMATUBE_NEXT_SESSION_URL', BASE_URL . '/demo/get_session_request.php');
     define('IRMATUBE_CREDENTIAL', 'pbdf.pbdf.irmatube');
+}
+
+if (JWT_ENABLED) {
+    define('ROOT_DIR', __DIR__ . '/../data/');
+    define('IRMA_SERVER_PUBLICKEY', 'requestor1.pem');
 }
