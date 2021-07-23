@@ -134,7 +134,7 @@ $sprequests = [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [
                 [
-                    [ISSUER .'.pbdf.facebook.fullname'],
+                    [ISSUER .'.pbdf.linkedin.familyname'],
                     [ISSUER .'.gemeente.personalData.fullname'],
                 ]
             ],
