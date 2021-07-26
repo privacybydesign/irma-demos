@@ -36,6 +36,7 @@ for lang in 'nl' 'en'; do
     find "$demodir" -type f -not -name "*.$lang.*" -a -name '*.*.*' -delete
   done
 
+  cp -r "$DIR/vendor" "$DIR/build/$lang/vendor"
   cp -r "$DIR/assets" "$DIR/build/$lang/assets"
   cp "$DIR/config.php" "$DIR/build/$lang/config.php"
   cp "$DIR/start_session.php" "$DIR/build/$lang/start_session.php"
