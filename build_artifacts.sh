@@ -18,7 +18,7 @@ for lang in 'nl' 'en'; do
   mkdir -p "$DIR/build/$lang"
 
   for f in "$DIR"/*/; do
-    if echo "$f" | grep -q '/build/\|/vendor/\|/assets/\|node_modules'; then
+    if echo "$f" | grep -q '/build/\|/vendor/\|/assets/\|node_modules/\|/data'; then
       continue
     fi
 
@@ -42,9 +42,11 @@ for lang in 'nl' 'en'; do
   cp "$DIR/start_session.php" "$DIR/build/$lang/start_session.php"
   cp "$DIR/get_session_request.php" "$DIR/build/$lang/get_session_request.php"
   cp "$DIR/start_session.js" "$DIR/build/$lang/start_session.js"
-  cp -r "$DIR/data" "$DIR/build/$lang/data"
-  rm "$DIR/build/data/README.md"
 done
+
+cp -r "$DIR/data" "$DIR/build/data"
+rm "$DIR/build/data/README.md"
+rm "$DIR/build/data/.gitignore"
 
 # Delete potential empty directories
 find "$DIR/build" -type d -empty -delete
