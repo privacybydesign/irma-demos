@@ -7,7 +7,6 @@ use \Firebase\JWT\JWT;
 function get_session_request($contents)
 {
     $parsedjson = json_decode($contents, true);
-    error_log($contents);
 
     if (JWT_ENABLED) {
         $jwt_pk = file_get_contents(ROOT_DIR . IRMA_SERVER_PUBLICKEY);
