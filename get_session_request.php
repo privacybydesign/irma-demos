@@ -7,7 +7,7 @@ use \Firebase\JWT\JWT;
 function get_session_request($contents)
 {
     if (JWT_ENABLED) {
-        $jwt_pk = file_get_contents(ROOT_DIR . IRMA_SERVER_PUBLICKEY);
+        $jwt_pk = file_get_contents(IRMA_SERVER_PUBLICKEY);
         try {
             $decoded = JWT::decode($contents, $jwt_pk, array('RS256'));
             $fullname = $decoded->disclosed[0][0]->rawvalue;

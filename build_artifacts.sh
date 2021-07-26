@@ -42,6 +42,8 @@ for lang in 'nl' 'en'; do
   cp "$DIR/start_session.php" "$DIR/build/$lang/start_session.php"
   cp "$DIR/get_session_request.php" "$DIR/build/$lang/get_session_request.php"
   cp "$DIR/start_session.js" "$DIR/build/$lang/start_session.js"
+  cp -r "$DIR/data" "$DIR/build/$lang/data"
+  rm "$DIR/build/data/README.md"
 done
 
 # Delete potential empty directories

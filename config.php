@@ -18,6 +18,5 @@ if (DEMO) {
 }
 
 if (JWT_ENABLED) {
-    define('ROOT_DIR', __DIR__ . '/../data/');
-    define('IRMA_SERVER_PUBLICKEY', 'requestor1.pem');
+    define('IRMA_SERVER_PUBLICKEY', __DIR__ . '/../data/pk.pem');
 }
