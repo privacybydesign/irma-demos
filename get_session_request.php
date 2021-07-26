@@ -13,20 +13,21 @@ function get_session_request($contents)
         $jwt_pk = file_get_contents(ROOT_DIR . IRMA_SERVER_PUBLICKEY);
         try {
             $decoded = JWT::decode($contents, $jwt_pk, array('RS256'));
-            
-            // do verification for $decoded
 
             $disclosed = (array) $decoded->disclosed;
             foreach ($disclosed as $con) {
                 foreach ($con as $attr) {
-                    if ($attr->id == "irma-demo.gemeente.personalData.fullname") {
+                    if ($attr->id == ISSUER . ".gemeente.personalData.fullname" || $attr->id == ISSUER . '.pbdf.linkedin.familyname') {
                         $fullname = $attr->rawvalue;
                     }
                 }
             }
 
+            if (!$fullname) {
+                $fullname = "John Doe";
+            }
         } catch (Exception $e) {
-            error_log("JWT could not be parsed: ". $e);
+            error_log("JWT could not be parsed: " . $e);
             header("HTTP/1.0 403 Forbidden");
             exit;
         };
