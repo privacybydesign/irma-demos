@@ -3,6 +3,7 @@
 This project is the combination of all demos hosted on https://privacybydesign.foundation/demo/.
 
 ### Install
+* Run `composer install`
 * Run `yarn install`
 * Set IRMA server URL and API token of the IRMA server of your choice in `config.php`.
 * Run ./build_artifacts.sh
