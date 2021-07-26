@@ -6,37 +6,28 @@ use \Firebase\JWT\JWT;
 
 function get_session_request($contents)
 {
-    $parsedjson = json_decode($contents, true);
-
     if (JWT_ENABLED) {
         $jwt_pk = file_get_contents(ROOT_DIR . IRMA_SERVER_PUBLICKEY);
         try {
             $decoded = JWT::decode($contents, $jwt_pk, array('RS256'));
-
-            $disclosed = (array) $decoded->disclosed;
-            foreach ($disclosed as $con) {
-                foreach ($con as $attr) {
-                    if ($attr->id == ISSUER . ".gemeente.personalData.fullname" || $attr->id == ISSUER . '.pbdf.linkedin.familyname') {
-                        $fullname = $attr->rawvalue;
-                    }
-                }
-            }
-
-            if (!$fullname) {
-                $fullname = "John Doe";
-            }
+            $fullname = $decoded->disclosed[0][0]->rawvalue;
         } catch (Exception $e) {
             error_log("JWT could not be parsed: " . $e);
             header("HTTP/1.0 403 Forbidden");
             exit;
         };
     } else {
-        $fullname = $parsedjson['disclosed'][0][0]['rawvalue'];
+        $parsedjson = json_decode($contents, true);
         if (is_null($parsedjson)) {
             error_log("JSON could not be parsed.");
             header("HTTP/1.0 403 Forbidden");
             exit;
         }
+        $fullname = $parsedjson['disclosed'][0][0]['rawvalue'];
+    }
+
+    if (!$fullname) {
+        $fullname = "John Doe";
     }
 
     $randomnum = rand(1, 9);
