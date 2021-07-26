@@ -3,9 +3,7 @@
     "description": "IRMA demos",
     "type": "project",
     "require": {
-        "firebase/php-jwt": "3.0.0",
-        "ext-json": "*",
-        "ext-ctype": "*"
+        "firebase/php-jwt": "3.0.0"
     },
     "license": "Apache",
     "authors": [
