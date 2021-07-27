@@ -10,21 +10,21 @@ function get_session_request($contents)
         $jwt_pk = file_get_contents(IRMA_SERVER_PUBLICKEY);
         try {
             $decoded = JWT::decode($contents, $jwt_pk, array('RS256'));
-            $fullname = $decoded->disclosed[0][0]->rawvalue;
         } catch (Exception $e) {
             error_log("JWT could not be parsed: " . $e);
             header("HTTP/1.0 403 Forbidden");
             exit;
         };
     } else {
-        $parsedjson = json_decode($contents, true);
-        if (is_null($parsedjson)) {
+        $decoded = json_decode($contents, false);
+        if (is_null($decoded)) {
             error_log("JSON could not be parsed.");
             header("HTTP/1.0 403 Forbidden");
             exit;
         }
-        $fullname = $parsedjson['disclosed'][0][0]['rawvalue'];
     }
+
+    $fullname = $decoded->disclosed[0][0]->rawvalue;
 
     if (!$fullname) {
         $fullname = "John Doe";
