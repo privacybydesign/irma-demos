@@ -5,6 +5,9 @@ stages:
   
 before_script:
   - set -euxo pipefail
+  - apt-get update
+  - apt-get install -y --no-install-recommends php php-curl php-xml php-mbstring composer
+  - composer install
   - yarn install
 
 build:
