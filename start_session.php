@@ -48,7 +48,10 @@ $sigrequests = [
                 ['pbdf.pbdf.linkedin.familyname'],
                 ['pbdf.pbdf.twitter.fullname'],
             ],
-            [['pbdf.pbdf.mobilenumber.mobilenumber']],
+            [
+                ['pbdf.pbdf.mobilenumber.mobilenumber'],
+                ['pbdf.sidn-pbdf.mobilenumber.mobilenumber'],
+            ],
         ],
     ]
 ];
