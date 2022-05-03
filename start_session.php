@@ -145,10 +145,10 @@ $sprequests = [
                         [ISSUER .'.pbdf.linkedin.familyname'],
                         [ISSUER .'.gemeente.personalData.fullname'],
                     ],
-                    DEMO ? [] : [ // These credential types have no equivalent in irma-demo
+                    ISSUER === 'pbdf' ? [
                         ['pbdf.pilot-amsterdam.idcard.surname'],
                         ['pbdf.pilot-amsterdam.passport.surname'],
-                    ]
+                    ] : [] // These credential types have no equivalent in irma-demo
                 ),
             ],
         ]
