@@ -44,6 +44,8 @@ $sigrequests = [
                 ['pbdf.pbdf.idin.familyname'],
                 ['pbdf.nijmegen.personalData.familyname'],
                 ['pbdf.gemeente.personalData.familyname'],
+                ['pbdf.pilot-amsterdam.idcard.surname'],
+                ['pbdf.pilot-amsterdam.passport.surname'],
                 ['pbdf.pbdf.facebook.familyname'],
                 ['pbdf.pbdf.linkedin.familyname'],
                 ['pbdf.pbdf.twitter.fullname'],
@@ -64,6 +66,8 @@ $sprequests = [
                 ['pbdf.pbdf.ageLimits.over18'],
                 ['pbdf.nijmegen.ageLimits.over18'],
                 ['pbdf.gemeente.personalData.over18'],
+                ['pbdf.pilot-amsterdam.idcard.over18'],
+                ['pbdf.pilot-amsterdam.passport.over18'],
             ],
         ],
     ],
@@ -136,10 +140,16 @@ $sprequests = [
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [
-                [
-                    [ISSUER .'.pbdf.linkedin.familyname'],
-                    [ISSUER .'.gemeente.personalData.fullname'],
-                ]
+                array_merge(
+                    [
+                        [ISSUER .'.pbdf.linkedin.familyname'],
+                        [ISSUER .'.gemeente.personalData.fullname'],
+                    ],
+                    ISSUER === 'pbdf' ? [
+                        ['pbdf.pilot-amsterdam.idcard.surname'],
+                        ['pbdf.pilot-amsterdam.passport.surname'],
+                    ] : [] // These credential types have no equivalent in irma-demo
+                ),
             ],
         ]
     ],
