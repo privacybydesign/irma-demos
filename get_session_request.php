@@ -3,13 +3,14 @@ require_once 'vendor/autoload.php';
 require_once 'config.php';
 
 use \Firebase\JWT\JWT;
+use \Firebase\JWT\Key;
 
 function get_session_request($contents)
 {
     if (JWT_ENABLED) {
         $jwt_pk = file_get_contents(IRMA_SERVER_PUBLICKEY);
         try {
-            $decoded = JWT::decode($contents, $jwt_pk, array('RS256'));
+            $decoded = JWT::decode($contents, new Key($jwt_pk, 'RS256'));
         } catch (Exception $e) {
             error_log("JWT could not be parsed: " . $e);
             header("HTTP/1.0 403 Forbidden");
