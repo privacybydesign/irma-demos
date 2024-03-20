@@ -2,12 +2,22 @@
 
 This project is the combination of all demos hosted on https://privacybydesign.foundation/demo/.
 
+### Preliminaries
+Make sure you have an [IRMA server](https://irma.app/docs/irma-server/) running. This project needs one to handle its IRMA sessions.
+
 ### Install
-* Run `composer install`
-* Run `yarn install`
-* Set IRMA server URL and API token of the IRMA server of your choice in `config.php`.
-* Follow the instructions in `data`.
-* Run ./build_artifacts.sh
+* Run `composer install` (or `docker run --rm -v ${PWD}:/src --workdir /src composer install` if you haven't installed PHP)
+* Run `yarn install` (or `docker run --rm -v ${PWD}:/src --workdir /src node yarn install` if you haven't installed Node.js)
+* Set the IRMA server URL of the IRMA server of your choice in `config.php`.
+  The default settings are set for an `irma server` running on localhost. If you want to run this demo using Docker Desktop (see below), you should replace localhost with the IP of your computer. The API token can remain empty in local setups.
+* Run `./build_artifacts.sh`
+
+### Running
+Copy the files in the `build` directory to your Apache's `/var/www/html` directory or run using the following Docker command.
+
+    docker run --rm -v ${PWD}/build:/var/www/html -p 8080:80 php:8.0-apache
+
+For example, you can then find the '18 plus' demo on `http://localhost:8080/en/18plus`.
 
 ### Adding a new demo
 Example when adding a demo called new-demo:
