@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Dockerfile build stage
-        run: docker build -t privacybydesign/angrygames:build .
+        run: docker build -t privacybydesign/irma-demos:build .
