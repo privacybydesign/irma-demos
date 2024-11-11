@@ -2,12 +2,24 @@
 
 This project is the combination of all demos hosted on https://privacybydesign.foundation/demo/.
 
+## Preliminaries
+Make sure you have an [IRMA server] (https://github.com/privacybydesign/irmago running.
+
+
 ### Install
 * Run `composer install`
 * Run `yarn install`
 * Set IRMA server URL and API token of the IRMA server of your choice in `config.php`.
 * Follow the instructions in `data`.
 * Run ./build_artifacts.sh
+
+### Install all the demos with Docker (Locally)
+Alternatively, you can run the demos with Docker.
+* Build the image with `docker build -t <irma-demos-image> .`. Docker will run the necessary scripts to build the necessary
+node packages and sets up a php server on port 8080.
+* You need a Yivi server to be running on 8088.
+* You can run the docker image you previously built with `docker run -d --network="host" <irma-demos-image>`. The --network flag will make it possible to communicate with the locally running Yivi server.
+
 
 ### Adding a new demo
 Example when adding a demo called new-demo:
