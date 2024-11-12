@@ -1,0 +1,23 @@
+services:
+  php:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - irma
+    environment:
+      - IRMA_SERVER_URL=http://irma:8088  # This maps the IRMA server URL
+      
+  irma:
+    build: https://github.com/privacybydesign/irmago.git
+    ports:
+      - "8088:8088"
+    command: server --no-auth --no-tls
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
