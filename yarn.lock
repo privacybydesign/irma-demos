@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@privacybydesign/irma-frontend/-/irma-frontend-0.4.1.tgz#b1afafa2efe00da464edb444c9ffbb460c05cbdf"
   integrity sha512-C0wJw6mr6L5ym7s3B+y+wfb1dqtym9rqHJq2ypQdOOdDRfCqKblyXnmzp1/LP8eIIpHKjJ4rE678CGHZFM3B1w==
 
-bootstrap@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
-  integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
+bootstrap@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.0.tgz#97635ac0e0d6cb466700ebf0fd266bfabf352ed2"
+  integrity sha512-tmhPET9B9qCl8dCofvHeiIhi49iBt0EehmIsziZib65k1erBW1rHhj2s/2JsuQh5Pq+xz2E9bEbzp9B7xHG+VA==
 
 jquery@^3.5.0:
   version "3.5.0"
