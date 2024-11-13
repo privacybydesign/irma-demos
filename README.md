@@ -14,11 +14,7 @@ Make sure you have an [IRMA server] (https://github.com/privacybydesign/irmago r
 * Run ./build_artifacts.sh
 
 ### Install all the demos with Docker (Locally)
-Alternatively, you can run the demos with Docker.
-* Build the image with `docker build -t <irma-demos-image> .`. Docker will run the necessary scripts to build the necessary
-node packages and sets up a php server on port 8080.
-* You need a Yivi server to be running on 8088.
-* You can run the docker image you previously built with `docker run -d --network="host" <irma-demos-image>`. The --network flag will make it possible to communicate with the locally running Yivi server.
+Alternatively, you can the demos with `docker compose up`. This will also run an irma server instance in a docker container.
 
 
 ### Adding a new demo
