@@ -16,7 +16,3 @@ if (DEMO) {
     define('IRMATUBE_NEXT_SESSION_URL', BASE_URL . '/demo/get_session_request.php');
     define('IRMATUBE_CREDENTIAL', 'pbdf.pbdf.irmatube');
 }
-
-if (JWT_ENABLED) {
-    define('IRMA_SERVER_PUBLICKEY', __DIR__ . '/../data/pk.pem');
-}
