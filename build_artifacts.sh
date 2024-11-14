@@ -44,10 +44,6 @@ for lang in 'nl' 'en'; do
   cp "$DIR/start_session.js" "$DIR/build/$lang/start_session.js"
 done
 
-cp -r "$DIR/data" "$DIR/build/data"
-rm "$DIR/build/data/README.md"
-rm "$DIR/build/data/.gitignore"
-
 # Delete potential empty directories
 find "$DIR/build" -type d -empty -delete
 # Delete shell files
