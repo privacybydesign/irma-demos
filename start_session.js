@@ -1,6 +1,6 @@
 function start_session(type, lang, success_fun, cancelled_fun, error_fun) {
     console.log("Button clicked");
-    irma.newPopup({
+    yivi.newPopup({
         language: lang,
         session: {
             url: '..',

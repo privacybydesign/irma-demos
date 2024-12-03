@@ -4,13 +4,13 @@
   "main": "index.js",
   "repository": "https://gitlab.science.ru.nl/irma/irma-demo-pages",
   "contributors": [
-    "Ivar Derksen",
+    "Caesar Groep",
     "Privacy by Design Foundation"
   ],
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@privacybydesign/irma-frontend": "^0.4.1",
+    "@privacybydesign/yivi-frontend": "^0.1.3",
     "bootstrap": "^4.3.1",
     "jquery": "^3.5.0",
     "popper.js": "^1.14.7"
