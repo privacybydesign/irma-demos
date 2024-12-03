@@ -194,7 +194,6 @@ function start_session($type, $lang) {
                     . "Content-Length: " . strlen($jsonsr) . "\r\n"
                     . "Authorization: " . API_TOKEN . "\r\n",
         'content' => $jsonsr,
-        'ignore_errors' => true  // Include this option
     )
 );
 
