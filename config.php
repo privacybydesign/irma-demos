@@ -2,7 +2,7 @@
  
 define('IRMA_SERVER_URL', getenv('IRMA_SERVER_URL') ?: 'http://localhost:8088');
 define('API_TOKEN', getenv('API_TOKEN') ?: '');
-define('DEMO', true);
+define('DEMO', false);
 define('JWT_ENABLED', getenv('JWT_ENABLED')?: false);
 
 if (DEMO) {
