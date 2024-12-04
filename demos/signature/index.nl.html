@@ -4,18 +4,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <link rel="stylesheet" href="../assets/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
         <link rel="stylesheet" href="sign.css"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
         <script type="text/javascript" src="messages.nl.js" defer></script>
         <script type="text/javascript" src="sign.js" defer></script>
-        <script src="../assets/bootstrap.min.js" defer></script>
+        <script src="../../assets/bootstrap.min.js" defer></script>
     </head>
     <body>
-        <div style="margin:auto" class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
-            <h2>Digitale handtekeningen met Yivi</h2>
+      <header>
+        <h1>Digitale handtekeningen met Yivi</h1>
+        </header>
+      <div class="container mt-5" id="main">
             <p>
               Op deze pagina kun je enkele voorbeelden uitproberen
               waarbij u zelf een digitale handtekening zet met eigen
@@ -49,7 +52,7 @@
               <div id="email_consent" class="tab-pane panel panel-default active">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_email_consent" class="btn btn-primary">Geef toestemming voor advertenties per email</button>
+                    <button id="btn_email_consent" class="custom-button">Geef toestemming voor advertenties per email</button>
                   </p>
                   <p id="email_consent_result_status"></p>
                   <p>
@@ -86,7 +89,7 @@
               <div id="donation" class="tab-pane panel panel-default">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_donation" class="btn btn-primary">Doneer aan de stichting Privacy by Design</button>
+                    <button id="btn_donation" class="custom-button">Doneer aan de stichting Privacy by Design</button>
                   </p>
                   <div id="donation_result_status"></div>
                   <p>
@@ -102,7 +105,7 @@
               <div id="exam" class="tab-pane panel panel-default">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_exam" class="btn btn-primary">Verklaring tentamen gehaald</button>
+                    <button id="btn_exam" class="custom-button">Verklaring tentamen gehaald</button>
                   </p>
                   <div id="exam_result_status"></div>
                   <p>
@@ -144,7 +147,7 @@
               ondertekening biedt.
             </p>
             <p>
-              <a href="../index.html">Terug</a> naar
+              <a href="../../">Terug</a> naar
               het Yivi demo overzicht.
             </p>
         </div>

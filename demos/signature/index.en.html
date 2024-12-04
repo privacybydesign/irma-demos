@@ -4,18 +4,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <link rel="stylesheet" href="../assets/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
+
         <link rel="stylesheet" href="sign.css"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
         <script type="text/javascript" src="messages.en.js" defer></script>
         <script type="text/javascript" src="sign.js" defer></script>
-        <script src="../assets/bootstrap.min.js" defer></script>
+        <script src="../../assets/bootstrap.min.js" defer></script>
     </head>
     <body>
-        <div style="margin:auto" class="col-xs-12 col-md-8 col-lg-6 col-md-offset-2 col-lg-offset-3">
-            <h2>Digital signatures examples with Yivi</h2>
+      <header>
+        <h1>Digital signatures examples with Yivi</h1>
+        </header>
+        <div class="container mt-5" id="main">
             <p>
 		      On this page you can try out some examples in
 		      which you can produce digital signatures
@@ -51,7 +55,7 @@
               <div id="email_consent" class="tab-pane panel panel-default active">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_email_consent" class="btn btn-primary">Consent to receiving advertisements via email</button>
+                    <button id="btn_email_consent" class="custom-button">Consent to receiving advertisements via email</button>
                   </p>
                   <p id="email_consent_result_status"></p>
                   <p>
@@ -83,7 +87,7 @@
               <div id="donation" class="tab-pane panel panel-default">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_donation" class="btn btn-primary">Donate to the Privacy by Design foundation</button>
+                    <button id="btn_donation" class="custom-button">Donate to the Privacy by Design foundation</button>
                   </p>
                   <div id="donation_result_status"></div>
                   <p>
@@ -98,7 +102,7 @@
               <div id="exam" class="tab-pane panel panel-default">
                 <div class="panel-body">
                   <p>
-                    <button id="btn_exam" class="btn btn-primary">Declaration exam passed</button>
+                    <button id="btn_exam" class="custom-button">Declaration exam passed</button>
                   </p>
                   <div id="exam_result_status"></div>
                   <p>
@@ -131,7 +135,7 @@
 		      both authentication and signing.
             </p>
             <p>
-              <a href="../index.html">Back</a>
+              <a href="../../">Back</a>
               to the Yivi demo page.
             </p>
         </div>

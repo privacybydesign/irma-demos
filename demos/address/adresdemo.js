@@ -1,4 +1,4 @@
-$.getScript('../start_session.js', function() {
+$.getScript('/start_session.js', function() {
     let success_fun = function(data) {
         let i = 0;
         let adres = data.disclosed[0][i++].rawvalue;

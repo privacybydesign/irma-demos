@@ -1,4 +1,4 @@
-$.getScript('../start_session.js', function() {
+$.getScript('/start_session.js', function() {
     let success_fun = function(data) {
         let attr = data.disclosed[0][0].rawvalue.toLowerCase();
         if(attr === 'yes' || attr === 'ja') {

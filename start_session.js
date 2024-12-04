@@ -3,7 +3,6 @@ function start_session(type, lang, success_fun, cancelled_fun, error_fun) {
     yivi.newPopup({
         language: lang,
         session: {
-            url: '..',
             start: {
                 url: o => `${o.url}/start_session.php?type=${type}&lang=${lang}`
             },

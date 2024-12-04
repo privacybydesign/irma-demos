@@ -5,17 +5,20 @@
         <meta charset="utf-8"/>
         <title>YiviTube Premium demo</title>
 
-        <link href="../assets/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../../assets/bootstrap.min.css" rel="stylesheet"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
 
         <script src="messages.en.js" defer></script>
         <script src="premiumdemo.js" defer></script>
     </head>
     <body>
-        <div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
-        <h1>Become an YiviTube Premium member</h1>
+        <header>
+            <h1>Become an YiviTube Premium member</h1>
+        </header>
+        <div class="container mt-5" id="main">
         
         <div id="result_status"></div>
         
@@ -44,13 +47,13 @@
         <div style="margin-top: 1em; margin-bottom: 1em; text-align: center">
             <tr>
                 <td>
-                    <button style="margin: 1em" class="btn btn-primary" id="irmatube_premium">Become premium member</button>
+                    <button class="custom-button" id="irmatube_premium">Become premium member</button>
                 </td>
                 <td>
                     &nbsp;&nbsp;&nbsp;
                 </td>
                 <td>
-                    <button style="margin: 1em" class="btn btn-primary" id="watch_premium_contents">Show premium contents</button>
+                    <button class="custom-button" id="watch_premium_contents">Show premium contents</button>
                 </td>
             </tr>
         </div>
@@ -62,7 +65,7 @@
             
             
             <p>
-                <a href="../index.html">Back</a> to
+                <a href="../../">Back</a> to
                 the Yivi demo overview.
             </p>
             

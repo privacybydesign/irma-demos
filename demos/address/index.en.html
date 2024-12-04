@@ -5,10 +5,12 @@
         <meta charset="utf-8"/>
         <title>Address verification demo</title>
 
-        <link rel="stylesheet" href="../assets/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
         <script src="messages.en.js" defer></script>
         <script src="adresdemo.js" defer></script>
 
@@ -23,10 +25,10 @@ th, td {
 </style>
 
     </head>
-    <body>
+<body>
+  <header> <h1>Address form-filling with Yivi</h1> </header>
 
-<div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
-<h1>Address form-filling with Yivi</h1>
+<div class="container mt-5" id="main">
 
 <div id="result_status"></div>
 
@@ -54,7 +56,7 @@ issuance webpage</a>.
   <tr>
     <td> <b>Zip code</b> </td>
     <td> <input id = "postcode_regel" disabled> </td>
-    <td><button class="btn btn-primary" id="try_irma_adresbtn">Fill in with Yivi</button></td>
+    <td><button class="custom-button" id="try_irma_adresbtn">Fill in with Yivi</button></td>
   </tr>
   <tr>
     <td> <b>City</b> </td>
@@ -82,7 +84,7 @@ registry BRP.
 
 
 <p>
-<a href="../index.html">Back</a> to
+<a href="../../">Back</a> to
 the Yivi demo overview.
 </p>
 
