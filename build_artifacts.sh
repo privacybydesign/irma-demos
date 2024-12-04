@@ -17,14 +17,14 @@ for lang in 'nl' 'en'; do
   # Copy demos in the right language directory
   mkdir -p "$DIR/build/$lang"
 
-  for f in "$DIR"/*/; do
+  for f in "$DIR"/demos/*/; do
     if echo "$f" | grep -q '/build/\|/vendor/\|/assets/\|node_modules/\|/data'; then
       continue
     fi
 
-    demoname=$(echo "$f" | cut -d'/' -f 2)
+    demoname=$(echo "$f" | cut -d'/' -f 3)
     # Retrieve demo name in the particular language
-    source ./"$demoname"/name.sh
+    source ./demos/"$demoname"/name.sh
     eval translateddemoname=\$$lang
     demodir="$DIR/build/$lang/$translateddemoname"
     cp -r "$f" "$demodir"

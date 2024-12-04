@@ -1,4 +1,4 @@
-$.getScript('../start_session.js', function() {
+$.getScript('/start_session.js', function() {
     function doVerificationSession() {
         const e = document.getElementById('result');
         e.classList.forEach((label) => {

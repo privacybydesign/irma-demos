@@ -3,42 +3,46 @@
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta charset="utf-8"/>
-        <title>18+ IRMA demo</title>
+        <title>18+ Yivi demo</title>
 
-        <link rel="stylesheet" href="../assets/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
         <script src="messages.en.js" defer></script>
         <script src="18plusdemo.js" defer></script>
     </head>
     <body>
+        <header>
+            <h1>Age verification with Yivi</h1>
+        </header>
 
-<div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
-<h1>Age verification with IRMA</h1>
+<div class="container mt-5" id="main">
+            
 
 <div id="result_status"></div>
 
 <p>
-This page contains an example of a simple age check with IRMA,
+This page contains an example of a simple age check with Yivi,
 together with an explanation of how this works and can be used, for
 instance by webshops or video sites. With the button below it can be
 checked whether a visitor of such a site is indeed older than
-18. What's special about IRMA is its privacy-friendliness: the visitor
+18. What's special about Yivi is its privacy-friendliness: the visitor
 reveals no other information than the fact that (s)he is 18+.
 </p>
 
 <p>
 In order to be able to try out yourself the button below you need to
-have the IRMA
-app <a href="https://privacybydesign.foundation/download-en/">installed</a>
+have the Yivi
+app <a href="https://yivi.app/#download">installed</a>
 with at least your <b>personal data</b> card loaded.  This can be done via
-the Dutch <a href="https://services.nijmegen.nl/irma/gemeente/start">BRP
+the Dutch <a href="https://yivi.nijmegen.nl/login">BRP
 issuance webpage</a>.
 </p>
 
 <div style="text-align: center">
-    <button class="btn btn-primary" id="try_irma_18btn">Older than 18 check</button>
+    <button class="custom-button" id="try_irma_18btn">Older than 18 check</button>
 </div>
 
 <p>
@@ -49,8 +53,7 @@ than 12", "older than 16", or even "older than 65". These personal
 data can be collected by anyone in the Netherlands.  The software for
 checking these attributes, as used here, is open source, freely
 available, and can be used without costs, see also
-the <a href="https://privacybydesign.foundation/irma-verifier/">webpage</a>
-of the foundation with more information on this.
+the Yivi documentation <a href="https://docs.staging.yivi.app/">webpage</a> with more information on this.
 
 <li> Buttons like the above one are especially relevant for webshops
 that have a legal obligation to perform age verification when offering
@@ -58,22 +61,22 @@ violent or possibly offensive games or films, or by gambling
 sites. The button could also be used to regulate online access to
 catch up TV programs. Currently, many of these sites do not have
 proper age checks because there is no user-friendly (and cheap)
-technology available. With IRMA this excuse can no longer be used.
+technology available. With Yivi this excuse can no longer be used.
 
-<li> With IRMA it is possible to perform not only "older than" but
+<li> With Yivi it is possible to perform not only "older than" but
 also "younger than" checks, such as "younger than 16" or "younger than
 12". Such checks can be used to restrict access to certain webpages or
 chat sites to minors --- and to exclude others, in principle. So far,
-these "younger than" data are not issued in IRMA, on the one side
+these "younger than" data are not issued in Yivi, on the one side
 because no specific application has emerged, and on the other side
 because it is unclear from which age onwards one can reasonably expect
-children to use the IRMA app.
+children to use the Yivi app.
 </ul>
 </p>
 
 <p>
-<a href="https://privacybydesign.foundation/demo-en/">Back</a> to
-the IRMA demo overview.
+<a href="../../">Back</a> to
+the Yivi demo overview.
 </p>
 
 </div>

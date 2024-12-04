@@ -1,4 +1,4 @@
-$.getScript('../start_session.js', function() {
+$.getScript('/start_session.js', function() {
     let successgmail_fun = function (data) {
         let email = data.disclosed[0][0].rawvalue;
         let email_len = email.length;

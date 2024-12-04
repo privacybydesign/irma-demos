@@ -1,4 +1,4 @@
-$.getScript('../start_session.js', function() {
+$.getScript('/start_session.js', function() {
     let success_issuance_fun = function (data) {
         let name = data.disclosed[0][0].rawvalue;
         $("#main").html(MESSAGES['succeeded-issuance'](name) +

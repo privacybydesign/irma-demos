@@ -1,0 +1,43 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size: 16px;
+	line-height: 24px;
+	background-color: #F7F5F3;
+	font-family: 'Open Sans', Verdana, Arial, sans-serif;
+}
+
+header {
+	background: #FFFFFF;
+	color: #484747;
+	border-bottom: 1px solid #CFE4EF
+}
+
+header h1 {
+	text-align: center;
+	padding: 16px;
+}
+
+h1 {
+	display: block;
+	margin: 0;
+	font-size: 18px;
+	line-height: 22px;
+	padding: 16px 0;
+	font-weight: bold;
+	font-family: 'Alexandria', Verdana, Arial, sans-serif;
+}
+
+.custom-button {
+    border: none;
+    color: #FFFFFF;
+    background: #E12747 url('./images/button-primary.svg') no-repeat right top;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 5px;
+}

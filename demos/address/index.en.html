@@ -5,10 +5,12 @@
         <meta charset="utf-8"/>
         <title>Address verification demo</title>
 
-        <link rel="stylesheet" href="../assets/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
+        <link href="../../resources/style.css" rel="stylesheet"/>
 
-        <script src="../assets/jquery.min.js" defer></script>
-        <script src="../assets/yivi.js" defer></script>
+
+        <script src="../../assets/jquery.min.js" defer></script>
+        <script src="../../assets/yivi.js" defer></script>
         <script src="messages.en.js" defer></script>
         <script src="adresdemo.js" defer></script>
 
@@ -23,25 +25,25 @@ th, td {
 </style>
 
     </head>
-    <body>
+<body>
+  <header> <h1>Address form-filling with Yivi</h1> </header>
 
-<div style="margin:auto" class="col-xs-10 col-md-6 col-xs-offset-1 col-md-offset-3" id="main">
-<h1>Address form-filling with IRMA</h1>
+<div class="container mt-5" id="main">
 
 <div id="result_status"></div>
 
 <p>
 This page describes how a visitor can easily disclose his/her address
-with IRMA. In particular, an address form is filled-in automatically
+with Yivi. In particular, an address form is filled-in automatically
 with reliable address data.
 </p>
 
 <p>
 In order to be able to try out the button below you need to have the
-IRMA
-app <a href="https://privacybydesign.foundation/download-en/">installed</a>
+Yivi
+app <a href="https://yivi.app/#download">installed</a>
 with at least your <b>address</b> card loaded.  This can be done via
-the Dutch <a href="https://services.nijmegen.nl/irma/gemeente/start">BRP
+the Dutch <a href="https://yivi.nijmegen.nl/login">BRP
 issuance webpage</a>.
 </p>
 
@@ -54,7 +56,7 @@ issuance webpage</a>.
   <tr>
     <td> <b>Zip code</b> </td>
     <td> <input id = "postcode_regel" disabled> </td>
-    <td><button class="btn btn-primary" id="try_irma_adresbtn">Fill in with IRMA</button></td>
+    <td><button class="custom-button" id="try_irma_adresbtn">Fill in with Yivi</button></td>
   </tr>
   <tr>
     <td> <b>City</b> </td>
@@ -70,7 +72,7 @@ A few remarks:
 does <em>not</em> store or collect any data. As soon as the demo is
 closed, all information disappears.
 
-<li> This automatic form-filling with IRMA also works for other
+<li> This automatic form-filling with Yivi also works for other
 fields, like name, email address, phone number etc. This is much
 easier than typing the information by hand and prevents
 mistakes. Moreover, the website knows the data is reliable: it can
@@ -82,8 +84,8 @@ registry BRP.
 
 
 <p>
-<a href="https://privacybydesign.foundation/demo-en/">Back</a> to
-the IRMA demo overview.
+<a href="../../">Back</a> to
+the Yivi demo overview.
 </p>
 
 </div>

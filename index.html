@@ -2,66 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Ensure proper rendering and touch zooming -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
     <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/style.css" rel="stylesheet">
     <title>Yivi Demos</title>
     <script type="text/javascript"></script>
     <script type="text/javascript"></script>
     <script type="text/javascript"></script>
 </head>
 <body>
-<div class="container mt-5">
-    <div itemprop="articleSection">
-        <p>
-            This page describes different possible applications of Yivi, both for disclosing relevant information about yourself and for digital signing. With each of the buttons below, additional information is provided. Detailed 
-            <a href="https://www.yivi.app/en/for_developers/">explanations</a> are available.
-        </p>        
-        <dl class="row">
-            <dt class="col-sm-4">Log in with e-mail address</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/mail/index.en.html">E-mail log in</a>
-            </dd>
-
-            <dt class="col-sm-4">Yivi signatures for permissions and statements</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/signature/index.en.html">Yivi signatures</a>
-            </dd>
-
-            <dt class="col-sm-4">Submitting address information by automatic form-filling</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/address/index.en.html">Filling in address</a>
-            </dd>
-
-            <dt class="col-sm-4">Verification whether someone is a student</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/student/index.en.html">Student check</a>
-            </dd>
-
-            <dt class="col-sm-4">Age verification</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/18plus/index.en.html">18+ check</a>
-                <a class="btn btn-primary" href="https://angrygames.demo.caesarproducts.nl/">Angry Games demo</a>
-            </dd>
-
-            <dt class="col-sm-4">Registration and verification for watching movies online</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="https://privacybydesign.foundation/demo-en/irmaTube/">YiviTube</a>
-            </dd>
-
-            <dt class="col-sm-4">Chained Yivi sessions</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/irmaTubePremium/index.en.html">YiviTube Premium</a>
-            </dd>
-
-            <dt class="col-sm-4">Verification whether someone is being alive</dt>
-            <dd class="col-sm-8 mb-3">
-                <a class="btn btn-primary" href="/beingalive/index.en.html">Attestatio de vita demo</a>
-            </dd>
-        </dl>
+    <header>
+        <h1>Try out Yivi Demos</h1>
+    </header>
+    <div class="container mt-5">
+        <div itemprop="articleSection">
+            <p>
+                This page describes different possible applications of Yivi, both for disclosing relevant information about yourself and for digital signing. With each of the buttons below, additional information is provided. Detailed
+                <a href="https://www.yivi.app/en/for_developers/">explanations</a> are available.
+            </p>
+            <dl class="row">
+                <dt class="col-sm-4">Log in with e-mail address</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/mail/index.en.html'">E-mail log in</button>
+                </dd>
+                <dt class="col-sm-4">Yivi signatures for permissions and statements</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/signature/index.en.html'">Yivi signatures</button>
+                </dd>
+                <dt class="col-sm-4">Submitting address information by automatic form-filling</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/address/index.en.html'">Filling in address</button>
+                </dd>
+                <dt class="col-sm-4">Verification whether someone is a student</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/student/index.en.html'">Student check</button>
+                </dd>
+                <dt class="col-sm-4">Age verification</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/18plus/index.en.html'">18+ check</button>
+                    <button class="custom-button" onclick="window.location.href='https://angrygames.staging.yivi.app/'">Angry Games demo</button>
+                </dd>
+                <dt class="col-sm-4">Registration and verification for watching movies online</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='https://yivitube.staging.yivi.app'">YiviTube</button>
+                </dd>
+                <dt class="col-sm-4">Chained Yivi sessions</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/irmaTubePremium/index.en.html'">YiviTube Premium</button>
+                </dd>
+                <dt class="col-sm-4">Verification whether someone is being alive</dt>
+                <dd class="col-sm-8 mb-3">
+                    <button class="custom-button" onclick="window.location.href='/demos/beingalive/index.en.html'">Attestatio de vita demo</button>
+                </dd>
+            </dl>
+        </div>
     </div>
-</div>
-
 </body>
 </html>
