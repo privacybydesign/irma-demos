@@ -141,10 +141,11 @@ $sprequests = [
             'disclose' => [
                 array_merge(
                     [
-                        [ISSUER .'.pbdf.linkedin.familyname'],
-                        [ISSUER .'.gemeente.personalData.fullname'],
+                        [SCHEME .'.pbdf.linkedin.familyname'],
+                        [SCHEME .'.gemeente.personalData.fullname'],
+                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME . DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
                     ],
-                    ISSUER === 'pbdf' ? [
+                    SCHEME === 'pbdf' ? [
                         ['pbdf.pilot-amsterdam.idcard.surname'],
                         ['pbdf.pilot-amsterdam.passport.surname'],
                     ] : [] // These credential types have no equivalent in irma-demo
