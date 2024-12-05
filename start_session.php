@@ -142,13 +142,17 @@ $sprequests = [
                 array_merge(
                     [
                         [SCHEME .'.pbdf.linkedin.familyname'],
-                        [SCHEME .'.gemeente.personalData.fullname'],
                         DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME .".".DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
                     ],
                     SCHEME === 'pbdf' ? [
+                        [SCHEME .'.gemeente.personalData.fullname'],
                         ['pbdf.pilot-amsterdam.idcard.surname'],
                         ['pbdf.pilot-amsterdam.passport.surname'],
-                    ] : [] // These credential types have no equivalent in irma-demo
+                    ] : [], // These credential types have no equivalent in irma-demo
+                    
+                    SCHEME == 'irma-demo' ? [
+                        [SCHEME .'.gemeente.personalData.fullname'],
+                    ] : [] 
                 ),
             ],
         ]
