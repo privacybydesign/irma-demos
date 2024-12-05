@@ -143,7 +143,7 @@ $sprequests = [
                     [
                         [SCHEME .'.pbdf.linkedin.familyname'],
                         [SCHEME .'.gemeente.personalData.fullname'],
-                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME . DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
+                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME .".".DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
                     ],
                     SCHEME === 'pbdf' ? [
                         ['pbdf.pilot-amsterdam.idcard.surname'],
