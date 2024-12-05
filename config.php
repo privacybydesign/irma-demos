@@ -4,6 +4,8 @@ define('IRMA_SERVER_URL', getenv('IRMA_SERVER_URL') ?: 'http://localhost:8088');
 define('API_TOKEN', getenv('API_TOKEN') ?: '');
 define('DEMO', false);
 define('JWT_ENABLED', getenv('JWT_ENABLED')?: false);
+define('DESIRED_ATTRIBUTE_TO_DISCLOSE', getenv('DESIRED_ATTRIBUTE_TO_DISCLOSE') ?: '');
+
 
 if (DEMO) {
     define('ISSUER', 'irma-demo');

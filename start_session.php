@@ -143,6 +143,7 @@ $sprequests = [
                     [
                         [ISSUER .'.pbdf.linkedin.familyname'],
                         [ISSUER .'.gemeente.personalData.fullname'],
+                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [ISSUER . DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
                     ],
                     ISSUER === 'pbdf' ? [
                         ['pbdf.pilot-amsterdam.idcard.surname'],
