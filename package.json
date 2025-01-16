@@ -1,8 +1,8 @@
 {
-  "name": "irma-demo-pages",
+  "name": "yivi-demo-pages",
   "version": "0.1.0",
   "main": "index.js",
-  "repository": "https://gitlab.science.ru.nl/irma/irma-demo-pages",
+  "repository": "https://github.com/privacybydesign/irma-demos",
   "contributors": [
     "Caesar Groep",
     "Privacy by Design Foundation"

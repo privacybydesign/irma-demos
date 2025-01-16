@@ -1,6 +1,6 @@
 {
-    "name": "privacybydesign/irma-demo-pages",
-    "description": "IRMA demos",
+    "name": "privacybydesign/yivi-demo-pages",
+    "description": "Yivi demos",
     "type": "project",
     "require": {
         "firebase/php-jwt": "6.0.0"
@@ -8,8 +8,8 @@
     "license": "Apache",
     "authors": [
         {
-            "name": "Privacy by Design Foundation",
-            "email": "irma@privacybydesign.foundation"
+            "name": "Privacy by Design Foundation and Caesar Groep",
+            "email": "support@yivi.app"
         }
     ]
 }
