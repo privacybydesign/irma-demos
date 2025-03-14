@@ -1,4 +1,4 @@
-FROM node:18 AS builder
+FROM node:20 AS builder
 
 RUN apt-get update && apt-get install -y \
     php \
@@ -18,7 +18,7 @@ RUN yarn install
 RUN chmod +x build_artifacts.sh
 RUN ./build_artifacts.sh
 
-FROM php:8.0-apache
+FROM php:8.4-apache
 
 COPY --from=builder /app/ /var/www/html/
 
