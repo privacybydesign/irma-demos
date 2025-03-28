@@ -58,5 +58,8 @@ function get_session_request($contents)
     return json_encode($sessionrequest);
 }
 
-header('Access-Control-Allow-Origin: ' . BASE_URL);
+//header('Access-Control-Allow-Origin: ' . BASE_URL);
+// TEMP ALLOW ALL REQUESTORS
+header('Access-Control-Allow-Origin: *');
+
 echo get_session_request(file_get_contents('php://input'));
