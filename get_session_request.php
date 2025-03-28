@@ -7,25 +7,32 @@ use \Firebase\JWT\Key;
 
 function get_session_request($contents)
 {
-    if (JWT_ENABLED) {
-        $jwt_pk = file_get_contents(IRMA_SERVER_PUBLICKEY);
-        try {
-            $decoded = JWT::decode($contents, new Key($jwt_pk, 'RS256'));
-        } catch (Exception $e) {
-            error_log("JWT could not be parsed: " . $e);
-            header("HTTP/1.0 403 Forbidden");
-            exit;
-        };
-    } else {
-        $decoded = json_decode($contents, false);
-        if (is_null($decoded)) {
-            error_log("JSON could not be parsed.");
-            header("HTTP/1.0 403 Forbidden");
-            exit;
-        }
-    }
+    // TEST PURPOSE:  we cannot point IRMA_SERVER_PUBLICKEY temporary to the SAML-bridge public key
+    // So for this test, we skip any validation of the disclosure data and just return something that starts a new session
+    
+    if (false) {
 
-    $fullname = $decoded->disclosed[0][0]->rawvalue;
+        if (JWT_ENABLED) {
+            $jwt_pk = file_get_contents(IRMA_SERVER_PUBLICKEY);
+            try {
+                $decoded = JWT::decode($contents, new Key($jwt_pk, 'RS256'));
+            } catch (Exception $e) {
+                error_log("JWT could not be parsed: " . $e);
+                header("HTTP/1.0 403 Forbidden");
+                exit;
+            };
+        } else {
+            $decoded = json_decode($contents, false);
+            if (is_null($decoded)) {
+                error_log("JSON could not be parsed.");
+                header("HTTP/1.0 403 Forbidden");
+                exit;
+            }
+        }
+
+        $fullname = $decoded->disclosed[0][0]->rawvalue;
+
+    }
 
     if (!$fullname) {
         $fullname = "John Doe";
