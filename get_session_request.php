@@ -9,7 +9,7 @@ function get_session_request($contents)
 {
     // TEST PURPOSE:  we cannot point IRMA_SERVER_PUBLICKEY temporary to the SAML-bridge public key
     // So for this test, we skip any validation of the disclosure data and just return something that starts a new session
-    
+    $fullname = "John Doe";
     if (false) {
 
         if (JWT_ENABLED) {
