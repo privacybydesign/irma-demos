@@ -20,7 +20,7 @@ function get_session_request()
             'credential' => 'irma-demo.interpolis.login',
             'validity' => strtotime('+6 months'),
             'attributes' => [
-                'id' => $randomnum
+                'identifier' => $randomnum
             ]
         ]]
     ];
