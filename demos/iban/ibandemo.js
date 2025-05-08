@@ -3,7 +3,7 @@ $.getScript('/start_session.js', function() {
         let i = 0;
         let fullname = data.disclosed[0][0].rawvalue;
         let iban = data.disclosed[0][1].rawvalue;
-        let bic = data.disclosed[0][1].rawvalue;
+        let bic = data.disclosed[0][2].rawvalue;
 
         document.getElementById('iban').value = iban;
         document.getElementById('bic').value = bic;
