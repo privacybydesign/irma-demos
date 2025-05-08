@@ -132,6 +132,18 @@ $sprequests = [
             ]
         ],
     ],
+    'iban' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.iban.fullname',
+                    'pbdf.pbdf.iban.iban',
+                    'pbdf.pbdf.iban.bic'
+                ]
+            ]
+        ],
+    ],
     'irmatube_premium' => [
         'nextSession' => [
             'url' => IRMATUBE_NEXT_SESSION_URL
