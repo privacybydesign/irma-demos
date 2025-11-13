@@ -3,7 +3,7 @@ $.getScript('/start_session.js', function() {
         let attr = data.disclosed[0][0].rawvalue.toLowerCase();
         if(attr === 'yes' || attr === 'ja') {
             $('#main').html(MESSAGES['age-check-succeeded'] +
-                '<div style="text-align: center"><img src=\"gtavi.png\" alt="GTA VI image"></div> <br> <p><a href=\"#\" ' +
+                '<div style="text-align: center"><img src=\"GTAVI.png\" alt="GTA VI image"></div> <br> <p><a href=\"#\" ' +
                 'onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
         }
         else {
