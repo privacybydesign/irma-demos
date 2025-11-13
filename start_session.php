@@ -62,11 +62,8 @@ $sprequests = [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
-                ['pbdf.pbdf.ageLimits.over18'],
-                ['pbdf.nijmegen.ageLimits.over18'],
                 ['pbdf.gemeente.personalData.over18'],
-                ['pbdf.pilot-amsterdam.idcard.over18'],
-                ['pbdf.pilot-amsterdam.passport.over18'],
+                ['pbdf.pbdf.passport.over18']
             ],
         ],
     ],
