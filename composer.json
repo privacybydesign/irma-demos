@@ -3,7 +3,7 @@
     "description": "Yivi demos",
     "type": "project",
     "require": {
-        "firebase/php-jwt": "6.0.0"
+        "firebase/php-jwt": "7.0.0"
     },
     "license": "Apache",
     "authors": [
