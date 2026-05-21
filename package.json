@@ -10,9 +10,9 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@privacybydesign/yivi-frontend": "^0.2.0",
+    "@privacybydesign/yivi-frontend": "^1.0.3",
     "bootstrap": "^5.0.0",
-    "jquery": "^3.5.0",
+    "jquery": "^4.0.0",
     "popper.js": "^1.14.7"
   }
 }
