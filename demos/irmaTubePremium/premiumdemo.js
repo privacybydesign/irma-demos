@@ -6,7 +6,14 @@ $.getScript('/start_session.js', function() {
     };
 
     let success_disclosure_fun = function (data) {
+        // The disclosure request requires a premium membership, so a fullname is
+        // always present. Guard anyway so we never greet "Hey Null" if the
+        // attribute is missing or empty (see issue #32).
         let name = data.disclosed[0][0].rawvalue;
+        if (!name) {
+            error_disclosure_fun();
+            return;
+        }
         $("#main").html(MESSAGES['succeeded-disclosure'](name) +
             '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
     };

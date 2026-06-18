@@ -169,7 +169,12 @@ $sprequests = [
     'watch_premium_contents' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [[[
-            IRMATUBE_CREDENTIAL .'.fullname',
+            // Only premium members may proceed: require type == 'premium'.
+            // Without this constraint a regular IRMATube membership (which has
+            // no fullname) satisfies the request and the name is disclosed as
+            // null, producing a "Hey Null" greeting. See issue #32.
+            ['type' => IRMATUBE_CREDENTIAL .'.fullname', 'value' => null],
+            ['type' => IRMATUBE_CREDENTIAL .'.type', 'value' => 'premium'],
         ]]],
     ],
     'presencecheck' => [
