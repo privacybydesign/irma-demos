@@ -6,7 +6,31 @@ const MESSAGES = {
     'error-issuance-message':      'IRMATube registratie mislukt!',
     'cancel-disclosure-message':     'IRMATube premium check geannuleerd.',
     'error-disclosure-message':      'IRMATube premium check mislukt!',
-    'succeeded-issuance':    (name) => '<h3>Hey ' + name + ' :) Je bent nu een echte VIP!</h3><p>Je hebt nu toegang tot het premium materiaal.</p>',
-    'succeeded-disclosure':    (name) => '<h3>Hey ' + name + '!</h3><p>We werken nog aan onze premium content. Maar het wordt sowieso legendary! In de tussentijd geniet je in ieder geval van reclame-vrije standaard contents.</p>',
+    'succeeded-issuance':    (name) => {
+        const fragment = document.createDocumentFragment();
+        const h3 = document.createElement('h3');
+        h3.append('Hey ');
+        const nameEl = document.createElement('span');
+        nameEl.textContent = name;
+        h3.append(nameEl, ' :) Je bent nu een echte VIP!');
+        fragment.append(h3);
+        const p = document.createElement('p');
+        p.textContent = 'Je hebt nu toegang tot het premium materiaal.';
+        fragment.append(p);
+        return fragment;
+    },
+    'succeeded-disclosure':    (name) => {
+        const fragment = document.createDocumentFragment();
+        const h3 = document.createElement('h3');
+        h3.append('Hey ');
+        const nameEl = document.createElement('span');
+        nameEl.textContent = name;
+        h3.append(nameEl, '!');
+        fragment.append(h3);
+        const p = document.createElement('p');
+        p.textContent = 'We werken nog aan onze premium content. Maar het wordt sowieso legendary! In de tussentijd geniet je in ieder geval van reclame-vrije standaard contents.';
+        fragment.append(p);
+        return fragment;
+    },
     'back':               'Terug',
 };

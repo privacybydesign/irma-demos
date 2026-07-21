@@ -7,15 +7,19 @@ $.getScript('/start_session.js', function() {
             $("#main").html(MESSAGES['succeeded-gmail'] + '<b><p><a href=\"#\" onclick=\"window.location.reload(true)\">' +
             MESSAGES["back"] + '</a></p>');
         } else {
-            $("#main").html(MESSAGES['failed-gmail'](email) +
-                '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
+            $("#main")
+                .empty()
+                .append(MESSAGES['failed-gmail'](email))
+                .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
         }
     };
 
     let successemail_fun = function (data) {
         let email = data.disclosed[0][0].rawvalue;
-        $("#main").html(MESSAGES['succeeded-email'](email) +
-            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
+        $("#main")
+            .empty()
+            .append(MESSAGES['succeeded-email'](email))
+            .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
     };
 
     let cancelled_fun = function() {
