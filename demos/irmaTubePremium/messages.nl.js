@@ -6,6 +6,8 @@ const MESSAGES = {
     'error-issuance-message':      'IRMATube registratie mislukt!',
     'cancel-disclosure-message':     'IRMATube premium check geannuleerd.',
     'error-disclosure-message':      'IRMATube premium check mislukt!',
+    'no-membership-message':         'Het lijkt erop dat je nog geen YiviTube premium lidmaatschap hebt. Word eerst premium lid en probeer daarna opnieuw op “Toon premium inhoud” te klikken.',
+    'become-member-button':          'Word YiviTube premium lid',
     'succeeded-issuance':    (name) => {
         const fragment = document.createDocumentFragment();
         const h3 = document.createElement('h3');
