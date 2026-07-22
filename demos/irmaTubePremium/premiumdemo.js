@@ -1,8 +1,10 @@
 $.getScript('/start_session.js', function() {
     let success_issuance_fun = function (data) {
         let name = data.disclosed[0][0].rawvalue;
-        $("#main").html(MESSAGES['succeeded-issuance'](name) +
-            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
+        $("#main")
+            .empty()
+            .append(MESSAGES['succeeded-issuance'](name))
+            .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
     };
 
     let success_disclosure_fun = function (data) {
@@ -14,8 +16,10 @@ $.getScript('/start_session.js', function() {
             error_disclosure_fun();
             return;
         }
-        $("#main").html(MESSAGES['succeeded-disclosure'](name) +
-            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
+        $("#main")
+            .empty()
+            .append(MESSAGES['succeeded-disclosure'](name))
+            .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
     };
 
     let cancelled_issuance_fun = function() {

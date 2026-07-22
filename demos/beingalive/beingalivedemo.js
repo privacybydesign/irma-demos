@@ -43,9 +43,9 @@ $.getScript('/start_session.js', function() {
         throw err;
     }
 
-    function showSuccess(text) {
+    function showSuccess(node) {
         const e = document.getElementById('result');
-        e.innerHTML = text;
+        e.replaceChildren(node);
         e.removeAttribute('hidden');
         e.classList.add('alert-success');
     }
