@@ -22,6 +22,32 @@ $.getScript('/start_session.js', function() {
             .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
     };
 
+    let start_premium_issuance = function () {
+        start_session('irmatube_premium', MESSAGES['lang'], success_issuance_fun, cancelled_issuance_fun, error_issuance_fun);
+    };
+
+    // The "Show premium contents" disclosure requires a YiviTube premium
+    // membership. When the user does not have that credential the Yivi app has
+    // nothing to disclose and the session ends as Cancelled/Aborted, leaving
+    // the user with only a bare "check cancelled" message and no way forward
+    // (see issue #23). Instead of leaving them stranded, guide them into this
+    // demo's own issuance flow so they can obtain the membership right here.
+    let show_membership_guidance = function (intro, alertClass) {
+        let button = $('<button>')
+            .addClass('custom-button')
+            .text(MESSAGES['become-member-button'])
+            .click(start_premium_issuance);
+        $("#result_status")
+            .empty()
+            .append(document.createTextNode(intro))
+            .append('<br>')
+            .append(document.createTextNode(MESSAGES['no-membership-message']))
+            .append($('<p>').css('margin-top', '0.5em').append(button))
+            .removeClass()
+            .addClass('alert ' + (alertClass || 'alert-warning'))
+            .css('font-weight', 'bold');
+    };
+
     let cancelled_issuance_fun = function() {
         $("#result_status")
             .html(MESSAGES['cancel-issuance-message'])
@@ -37,23 +63,15 @@ $.getScript('/start_session.js', function() {
     };
 
     let cancelled_disclosure_fun = function() {
-        $("#result_status")
-            .html(MESSAGES['cancel-disclosure-message'])
-            .addClass("alert alert-warning")
-            .css("font-weight", "bold");
+        show_membership_guidance(MESSAGES['cancel-disclosure-message'], 'alert-warning');
     };
 
     let error_disclosure_fun = function () {
-        $("#result_status")
-            .html(MESSAGES['error-disclosure-message'])
-            .addClass('alert alert-danger')
-            .css('font-weight', 'bold');
+        show_membership_guidance(MESSAGES['error-disclosure-message'], 'alert-danger');
     };
 
-    $('#irmatube_premium').click(function () {
-        start_session('irmatube_premium', MESSAGES['lang'], success_issuance_fun, cancelled_issuance_fun, error_issuance_fun);
-    });
-    
+    $('#irmatube_premium').click(start_premium_issuance);
+
     $('#watch_premium_contents').click(function () {
         start_session('watch_premium_contents', MESSAGES['lang'], success_disclosure_fun, cancelled_disclosure_fun, error_disclosure_fun);
     });

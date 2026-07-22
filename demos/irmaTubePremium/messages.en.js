@@ -6,6 +6,8 @@ const MESSAGES = {
     'error-issuance-message':      'IRMATube registration failed!',
     'cancel-disclosure-message':     'IRMATube premium check cancelled.',
     'error-disclosure-message':      'IRMATube premium check failed!',
+    'no-membership-message':         'It looks like you may not have a YiviTube premium membership yet. Become a premium member first, then try “Show premium contents” again.',
+    'become-member-button':          'Become premium member',
     'succeeded-issuance':    (name) => {
         const fragment = document.createDocumentFragment();
         const h3 = document.createElement('h3');
