@@ -1,32 +1,31 @@
-let result_status = $('#result_status');
+let result_status = document.getElementById('result_status');
 
 let success_fun = function(data) {
     let attr = data.disclosed[0][0].rawvalue.toLowerCase();
     if(attr === 'yes' || attr === 'ja') {
-        $('#main').html(MESSAGES['age-check-succeeded'] +
+        document.getElementById('main').innerHTML = MESSAGES['age-check-succeeded'] +
             '<div style="text-align: center"><img src=\"GTAVI.png\" alt="GTA VI image"></div> <br> <p><a href=\"#\" ' +
-            'onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
+            'onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
     }
     else {
-        $('#main').html(MESSAGES['age-check-not-succeeded'] +
-            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
+        document.getElementById('main').innerHTML = MESSAGES['age-check-not-succeeded'] +
+            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
     }
 };
 
 let cancel_fun = function() {
-    result_status
-        .html(MESSAGES['cancel-message'])
-        .addClass('alert alert-warning');
+    result_status.innerHTML = MESSAGES['cancel-message'];
+    result_status.classList.add('alert', 'alert-warning');
 };
 
 let error_fun = function() {
-    result_status
-        .html(MESSAGES['error-message'])
-        .addClass('alert alert-danger');
+    result_status.innerHTML = MESSAGES['error-message'];
+    result_status.classList.add('alert', 'alert-danger');
 };
 
-$('#try_irma_18btn').click(function() {
-    result_status.removeClass().html();
+document.getElementById('try_irma_18btn').addEventListener('click', function() {
+    result_status.className = "";
+    result_status.innerHTML = "";
     start_session('18plus', MESSAGES['lang'], success_fun, cancel_fun, error_fun);
 });
 

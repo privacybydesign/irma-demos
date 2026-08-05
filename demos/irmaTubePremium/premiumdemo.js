@@ -1,11 +1,9 @@
-let result_status = $('#result_status');
+let result_status = document.getElementById('result_status');
 
 let success_issuance_fun = function (data) {
     let name = data.disclosed[0][0].rawvalue;
-    $("#main")
-        .empty()
-        .append(MESSAGES['succeeded-issuance'](name))
-        .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>');
+    document.getElementById("main").innerHTML = MESSAGES['succeeded-issuance'](name) +
+        '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
 };
 
 let success_disclosure_fun = function (data) {
@@ -17,10 +15,8 @@ let success_disclosure_fun = function (data) {
         error_disclosure_fun();
         return;
     }
-    $("#main")
-        .empty()
-        .append(MESSAGES['succeeded-disclosure'](name))
-        .append('<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>');
+    document.getElementById("main").innerHTML = MESSAGES['succeeded-disclosure'](name) +
+        '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>';
 };
 
 let start_premium_issuance = function () {
@@ -34,30 +30,20 @@ let start_premium_issuance = function () {
 // (see issue #23). Instead of leaving them stranded, guide them into this
 // demo's own issuance flow so they can obtain the membership right here.
 let show_membership_guidance = function (intro, alertClass) {
-    let button = $('<button>')
-        .addClass('custom-button')
-        .text(MESSAGES['become-member-button'])
-        .click(start_premium_issuance);
-    result_status
-        .empty()
-        .append(document.createTextNode(intro))
-        .append('<br>')
-        .append(document.createTextNode(MESSAGES['no-membership-message']))
-        .append($('<p>').append(button))
-        .removeClass()
-        .addClass('alert ' + (alertClass || 'alert-warning'));
+    let button = "<button class='custom-button'>" + MESSAGES['become-member-button'] + "</button>";
+    result_status.innerHTML = intro + "<br>" + MESSAGES['no-membership-message'] + "<p>" + button + "</p>";
+    result_status.className = 'alert ' + (alertClass || 'alert-warning');
+    result_status.find('button').addEventListener('click', start_premium_issuance)
 };
 
 let cancelled_issuance_fun = function() {
-    result_status
-        .html(MESSAGES['cancel-issuance-message'])
-        .addClass("alert alert-warning");
+    result_status.innerHTML = MESSAGES['cancel-message'];
+    result_status.classList.add('alert', 'alert-warning');
 };
 
-let error_issuance_fun = function () {
-    result_status
-        .html(MESSAGES['error-issuance-message'])
-        .addClass('alert alert-danger');
+let error_issuance_fun = function() {
+    result_status.innerHTML = MESSAGES['error-message'];
+    result_status.classList.add('alert', 'alert-danger');
 };
 
 let cancelled_disclosure_fun = function() {
@@ -68,8 +54,8 @@ let error_disclosure_fun = function () {
     show_membership_guidance(MESSAGES['error-disclosure-message'], 'alert-danger');
 };
 
-$('#irmatube_premium').click(start_premium_issuance);
+document.getElementById('irmatube_premium').addEventListener('click', start_premium_issuance);
 
-$('#watch_premium_contents').click(function () {
+document.getElementById('watch_premium_contents').addEventListener('click', function () {
     start_session('watch_premium_contents', MESSAGES['lang'], success_disclosure_fun, cancelled_disclosure_fun, error_disclosure_fun);
 });

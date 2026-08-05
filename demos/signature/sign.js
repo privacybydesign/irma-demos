@@ -2,49 +2,50 @@
 
 function setupSignButton(button, resultStatus, reqName, successMessageFunc) {
     let onSuccess = function(data) {
-        resultStatus.html('<div class="alert alert-success"><div class="prefix"></div><blockquote class="blockquote signedText"></blockquote></div>');
-        $('.prefix', resultStatus).html(successMessageFunc(data.disclosed).html());
-        $('.signedText', resultStatus).html(data.signature.message);
+        resultStatus.innerHTML = '<div class="alert alert-success"><div class="prefix">' +
+            successMessageFunc(data.disclosed) +
+            '</div><blockquote class="blockquote signedText">' +
+            data.signature.message +
+            '</blockquote></div>';
     };
     let onCancel = function() {
-        resultStatus.html('<div class="alert alert-warning"></div>');
-        $('div', resultStatus).text(MESSAGES['cancel-message']);
+        resultStatus.innerHTML = '<div class="alert alert-warning">' +
+            MESSAGES['cancel-message'] +
+            '</div>';
     };
     let onError = function(data) {
-        resultStatus.html('<div class="alert alert-danger"><p><strong class="header"></strong></p><p><small><span class="errormsg"></span>: <span class="data"></span></small></div>');
-        $('.error', resultStatus).text(MESSAGES['error']);
-        $('.errormsg', resultStatus).text(MESSAGES['errormsg']);
-        $('.data', resultStatus).text(data);
+        resultStatus.innerHTML = '<div class="alert alert-danger"><p><strong class="header">' +
+            MESSAGES['error'] +
+            '</strong></p><p><small><span class="errormsg">' +
+            MESSAGES['errormsg'] +
+            '</span>: <span class="data">' +
+            data +
+            '</span></small></div>';
     };
 
-    button.click(function() {
+    button.addEventListener('click', function() {
         start_session(reqName, MESSAGES['lang'], onSuccess, onCancel, onError);
     });
 }
 
 // Email
-setupSignButton($('#btn_email_consent'), $('#email_consent_result_status'), 'email-signature', function (attributes) {
-    let message = $(MESSAGES['email-success']);
-    $('.attribute.email', message).text(attributes[0][0].rawvalue);
-    return message;
+setupSignButton(document.getElementById('btn_email_consent'), document.getElementById('email_consent_result_status'), 'email-signature', function (attributes) {
+    return MESSAGES['email-success'](attributes[0][0].rawvalue);
 });
 
 // Donation
-setupSignButton($('#btn_donation'), $('#donation_result_status'), 'donation-signature', function(attributes) {
-    let name = attributes[0][0].rawvalue;
-    let number = attributes[1][0].rawvalue;
-    let el = $(MESSAGES['donation-success']);
-    $('.attribute.name', el).text(name);
-    $('.attribute.number', el).text(number);
-    return el;
+setupSignButton(document.getElementById('btn_donation'), document.getElementById('donation_result_status'), 'donation-signature', function(attributes) {
+    return MESSAGES['donation-success'](
+        attributes[0][0].rawvalue,
+        attributes[1][0].rawvalue
+    )
 });
 
 // Exam
-setupSignButton($('#btn_exam'), $('#exam_result_status'), 'exam-signature', function(attributes) {
-    let el = $(MESSAGES['exam-success']);
-    $('.attribute.name', el).text(attributes[0][0].rawvalue);
-    $('.attribute.institute', el).text(attributes[0][1].rawvalue);
-    $('.attribute.email', el).text(attributes[0][2].rawvalue);
-    $('.attribute.employee', el).text(attributes[0][3].rawvalue);
-    return el;
+setupSignButton(document.getElementById('btn_exam'), document.getElementById('exam_result_status'), 'exam-signature', function(attributes) {
+    return MESSAGES['exam-success'](
+        attributes[0][0].rawvalue,
+        attributes[0][3].rawvalue,
+        attributes[0][1].rawvalue,
+        attributes[0][2].rawvalue);
 });

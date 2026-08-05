@@ -1,4 +1,4 @@
-let result_status = $('#result_status');
+let result_status = document.getElementById('result_status');
 
 let success_fun = function(data) {
     let i = 0;
@@ -12,18 +12,17 @@ let success_fun = function(data) {
 };
 
 let cancel_fun = function() {
-    result_status
-        .html(MESSAGES['cancel-message'])
-        .addClass('alert alert-warning');
+    result_status.innerHTML = MESSAGES['cancel-message'];
+    result_status.classList.add('alert', 'alert-warning');
 };
 
 let error_fun = function() {
-    result_status
-        .html(MESSAGES['error-message'])
-        .addClass('alert alert-danger');
+    result_status.innerHTML = MESSAGES['error-message'];
+    result_status.classList.add('alert', 'alert-danger');
 };
 
-$('#try_irma_ibanbtn').click(function() {
-    result_status.removeClass().html();
+document.getElementById('try_irma_ibanbtn').addEventListener('click', function() {
+    result_status.innerHTML = "";
+    result_status.className = "";
     start_session('iban', MESSAGES['lang'], success_fun, cancel_fun, error_fun);
 });
