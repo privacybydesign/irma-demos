@@ -11,7 +11,6 @@
   "private": true,
   "dependencies": {
     "@privacybydesign/yivi-frontend": "^1.0.3",
-    "bootstrap": "^5.0.0",
-    "jquery": "^4.0.0"
+    "bootstrap": "^5.0.0"
   }
 }
