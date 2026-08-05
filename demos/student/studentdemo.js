@@ -22,15 +22,13 @@ let successschool_fun = function (data) {
 let cancel_fun = function () {
     $('#result_status')
         .html(MESSAGES['cancel-message'])
-        .addClass('alert alert-warning')
-        .css('font-weight', 'bold');
+        .addClass('alert alert-warning');
 };
 
 let error_fun = function () {
     $('#result_status')
         .html(MESSAGES['error-message'])
-        .addClass('alert alert-danger')
-        .css('font-weight', 'bold');
+        .addClass('alert alert-danger');
 };
 
 $('#try_irma_studentbtn').click(function () {

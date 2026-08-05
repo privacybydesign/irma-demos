@@ -41,24 +41,21 @@ let show_membership_guidance = function (intro, alertClass) {
         .append(document.createTextNode(intro))
         .append('<br>')
         .append(document.createTextNode(MESSAGES['no-membership-message']))
-        .append($('<p>').css('margin-top', '0.5em').append(button))
+        .append($('<p>').append(button))
         .removeClass()
-        .addClass('alert ' + (alertClass || 'alert-warning'))
-        .css('font-weight', 'bold');
+        .addClass('alert ' + (alertClass || 'alert-warning'));
 };
 
 let cancelled_issuance_fun = function() {
     $("#result_status")
         .html(MESSAGES['cancel-issuance-message'])
-        .addClass("alert alert-warning")
-        .css("font-weight", "bold");
+        .addClass("alert alert-warning");
 };
 
 let error_issuance_fun = function () {
     $("#result_status")
         .html(MESSAGES['error-issuance-message'])
-        .addClass('alert alert-danger')
-        .css('font-weight', 'bold');
+        .addClass('alert alert-danger');
 };
 
 let cancelled_disclosure_fun = function() {
