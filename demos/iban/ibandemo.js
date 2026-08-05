@@ -1,3 +1,5 @@
+let result_status = $('#result_status');
+
 let success_fun = function(data) {
     let i = 0;
     let fullname = data.disclosed[0][0].rawvalue;
@@ -10,18 +12,18 @@ let success_fun = function(data) {
 };
 
 let cancel_fun = function() {
-    $("#result_status")
+    result_status
         .html(MESSAGES['cancel-message'])
         .addClass('alert alert-warning');
 };
 
 let error_fun = function() {
-    $("#result_status")
+    result_status
         .html(MESSAGES['error-message'])
         .addClass('alert alert-danger');
 };
 
 $('#try_irma_ibanbtn').click(function() {
-    $("#result_status").removeClass().html();
+    result_status.removeClass().html();
     start_session('iban', MESSAGES['lang'], success_fun, cancel_fun, error_fun);
 });

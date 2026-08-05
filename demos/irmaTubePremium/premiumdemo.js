@@ -1,3 +1,5 @@
+let result_status = $('#result_status');
+
 let success_issuance_fun = function (data) {
     let name = data.disclosed[0][0].rawvalue;
     $("#main")
@@ -36,7 +38,7 @@ let show_membership_guidance = function (intro, alertClass) {
         .addClass('custom-button')
         .text(MESSAGES['become-member-button'])
         .click(start_premium_issuance);
-    $("#result_status")
+    result_status
         .empty()
         .append(document.createTextNode(intro))
         .append('<br>')
@@ -47,13 +49,13 @@ let show_membership_guidance = function (intro, alertClass) {
 };
 
 let cancelled_issuance_fun = function() {
-    $("#result_status")
+    result_status
         .html(MESSAGES['cancel-issuance-message'])
         .addClass("alert alert-warning");
 };
 
 let error_issuance_fun = function () {
-    $("#result_status")
+    result_status
         .html(MESSAGES['error-issuance-message'])
         .addClass('alert alert-danger');
 };

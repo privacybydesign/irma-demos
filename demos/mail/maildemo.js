@@ -1,3 +1,5 @@
+let result_status = $('#result_status');
+
 let successgmail_fun = function (data) {
     let email = data.disclosed[0][0].rawvalue;
     let email_len = email.length;
@@ -22,13 +24,13 @@ let successemail_fun = function (data) {
 };
 
 let cancelled_fun = function() {
-    $("#result_status")
+    result_status
         .html(MESSAGES['cancel-message'])
         .addClass("alert alert-warning");
 };
 
 let error_fun = function () {
-    $("#result_status")
+    result_status
         .html(MESSAGES['error-message'])
         .addClass('alert alert-danger');
 };

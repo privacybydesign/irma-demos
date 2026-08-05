@@ -1,3 +1,5 @@
+let result_status = $('#result_status');
+
 let successstudent_fun = function (data) {
     let result = data.disclosed[0][0].rawvalue;
     if (result === 'student') {
@@ -20,13 +22,13 @@ let successschool_fun = function (data) {
 };
 
 let cancel_fun = function () {
-    $('#result_status')
+    result_status
         .html(MESSAGES['cancel-message'])
         .addClass('alert alert-warning');
 };
 
 let error_fun = function () {
-    $('#result_status')
+    result_status
         .html(MESSAGES['error-message'])
         .addClass('alert alert-danger');
 };
