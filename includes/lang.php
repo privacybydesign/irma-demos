@@ -8,4 +8,4 @@ if (isset($_GET['lang']) && $_GET['lang'] === "nl") {
 $slugs = array_filter(explode("/", $_SERVER["REQUEST_URI"]));
 $slug = end($slugs);
 if (empty($slug)) $slug = "home";
-$title = $demos[$slug];
+$title = $demos[$slug][$lang];

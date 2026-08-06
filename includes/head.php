@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta charset="utf-8">
 
-		<title><?php echo $title[$lang]; ?></title>
+		<title><?php echo $title; ?></title>
 
         <link rel="stylesheet" href="/assets/bootstrap.min.css">
         <link href="/resources/style.css" rel="stylesheet">
