@@ -28,9 +28,6 @@ for lang in 'nl' 'en'; do
     demodir="$DIR/build/$lang/$translateddemoname"
     cp -r "$f" "$demodir"
 
-    # Rename to index.html
-    mv "$demodir/index.$lang.html" "$demodir/index.html"
-
     # Delete files in other languages
     find "$demodir" -type f -not -name "*.$lang.*" -a -name '*.*.*' -delete
   done
