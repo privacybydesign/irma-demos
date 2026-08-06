@@ -15,8 +15,8 @@ let successstudent_fun = function (data) {
 let successschool_fun = function (data) {
     let role = data.disclosed[0][0].rawvalue;
     let school = data.disclosed[0][1].rawvalue;
-    document.getElementById('main').innerHTML = MESSAGES['succeeded-school'](role, school) +
-        '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+    document.getElementById('main').innerHTML = '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+    document.getElementById('main').prepend(MESSAGES['succeeded-school'](role, school));
 };
 
 let cancel_fun = function() {
