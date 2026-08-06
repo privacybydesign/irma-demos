@@ -1,54 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8"/>
-        <title>Adres verificatie demo</title>
+<p>
+  Deze pagina beschrijft hoe een webbezoeker eenvoudig
+  zijn/haar adres door kan geven met Yivi. Hierbij wordt een
+  adres formulier automatisch ingevuld, met betrouwbare
+  informatie.
+</p>
 
-        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
-        <link href="../../resources/style.css" rel="stylesheet"/>
-
-
-        <script src="../../assets/yivi.js" defer></script>
-        <script src="/start_session.js" defer></script>
-        <script src="messages.nl.js" defer></script>
-        <script src="adresdemo.js" defer></script>
-
-<style>
-table, th, td {
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-</style>
-
-    </head>
-    <body>
-      <header>
-        <h1>Adres formulier invullen met Yivi</h1>
-      </header>
-
-      <div class="container mt-5" id="main">
-
-	<div id="result_status"></div>
-
-	<p>
-	  Deze pagina beschrijft hoe een webbezoeker eenvoudig
-	  zijn/haar adres door kan geven met Yivi. Hierbij wordt een
-	  adres formulier automatisch ingevuld, met betrouwbare
-	  informatie.
-	</p>
-
-	<p>
-	  Om de onderstaande knoppen te kunnen uitproberen moet de
-	  bezoeker de Yivi
-	  app <a href="https://yivi.app/#download">ge&iuml;nstalleerd</a>
-	  hebben en daarin het <b>adres</b> kaartje geladen
-	  hebben. Dat kan via
-	  de <a href="https://yivi.nijmegen.nl/login">BRP
-	  uitgifte webpagina</a>.
+<p>
+  Om de onderstaande knoppen te kunnen uitproberen moet de
+  bezoeker de Yivi
+  app <a href="https://yivi.app/#download">ge&iuml;nstalleerd</a>
+  hebben en daarin het <b>adres</b> kaartje geladen
+  hebben. Dat kan via
+  de <a href="https://yivi.nijmegen.nl/login">BRP
+  uitgifte webpagina</a>.
 </p>
 
 <table style="margin:auto">
@@ -96,14 +60,3 @@ leiden tot hoge boetes onder de Algemene Verordening
 Gegevensbescherming (AVG).
 </ul>
 </p>
-
-
-<p>
-<a href="../../">Terug</a> naar
-het Yivi demo overzicht.
-</p>
-
-</div>
-
-</body>
-</html>

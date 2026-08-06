@@ -1,0 +1,46 @@
+<p>
+    This page shows <em>chained Yivi sessions</em>: multiple sequential Yivi sessions
+    where the contents of later Yivi sessions may depend on the earlier sessions.
+    In this demo you disclose your name in the first sesssion, which is then used without
+    further user interaction in the second session. This second session issues the premium membership
+    card which includes your name from the first session.
+</p>
+
+<p>
+    This demo is not a real video-streaming service but it does demonstrate several aspects of Yivi.
+    When you become YiviTube “premium member” using the “Become premium member” button, you receive a
+    membership card in your Yivi app with your name on it. Subsequently, you can use the data on this
+    card to watch  <a href="https://yivitube.yivi.app">(trailers of) movies</a>
+    on the YiviTube main page. As a premium member you also have access to the premium contents when clicking the "Show premium contents" button.
+</p>
+
+<p>
+    In order to be able to try out yourself the buttons below one
+    needs to have the Yivi
+    app <a href="https://yivi.app/#download">installed</a>.
+</p>
+
+<div style="margin-top: 1em; margin-bottom: 1em; text-align: center">
+    <tr>
+        <td>
+            <button class="custom-button" id="irmatube_premium">Become premium member</button>
+        </td>
+        <td>
+            &nbsp;&nbsp;&nbsp;
+        </td>
+        <td>
+            <button class="custom-button" id="watch_premium_contents">Show premium contents</button>
+        </td>
+    </tr>
+</div>
+
+<p>
+    No personal data is retained via this webpage. The revealed data are only used for the
+    purpose of this demo and disappear at the moment that the demo is closed.
+</p>
+
+
+<p>
+    <a href="../../">Back</a> to
+    the Yivi demo overview.
+</p>

@@ -1,37 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8"/>
-        <title>Address verification demo</title>
-
-        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
-        <link href="../../resources/style.css" rel="stylesheet"/>
-
-
-        <script src="../../assets/yivi.js" defer></script>
-        <script src="/start_session.js" defer></script>
-        <script src="messages.en.js" defer></script>
-        <script src="adresdemo.js" defer></script>
-
-<style>
-table, th, td {
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-    text-align: left;
-}
-</style>
-
-    </head>
-<body>
-  <header> <h1>Address form-filling with Yivi</h1> </header>
-
-<div class="container mt-5" id="main">
-
-<div id="result_status"></div>
-
 <p>
 This page describes how a visitor can easily disclose his/her address
 with Yivi. In particular, an address form is filled-in automatically
@@ -87,8 +53,3 @@ registry BRP.
 <a href="../../">Back</a> to
 the Yivi demo overview.
 </p>
-
-</div>
-
-</body>
-</html>

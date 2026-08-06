@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8"/>
-        <title>Student Yivi demo</title>
-
-        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
-        <link href="../../resources/style.css" rel="stylesheet"/>
-
-        <script src="../../assets/yivi.js" defer></script>
-        <script src="/start_session.js" defer></script>
-        <script src="messages.en.js" defer></script>
-        <script src="studentdemo.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <h1>Access for students with Yivi</h1>
-            </header>
-
-<div class="container mt-5" id="main">
-
-
-
-<div id="result_status"></div>
-
 <p>
 This page contains an example of using Yivi for verifying whether
 someone is a student or not. Additionally, the page explains how this
@@ -104,11 +78,6 @@ Design voor onze instelling toelaten als Service Provider</em>).
 the Yivi demo overview.
 </p>
 
-</div>
-
 <div id="attribute_list"></div>
 
 <div id="attribute_list_data"></div>
-
-</body>
-</html>
