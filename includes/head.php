@@ -1,11 +1,3 @@
-<?php
-	if (isset($_GET['lang']) && $_GET['lang'] === "nl") {
-		$lang = "nl";
-	} else {
-		$lang = "en";
-	}
-?>
-
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
     <head>
