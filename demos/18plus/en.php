@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="utf-8"/>
-        <title>18+ Yivi demo</title>
-
-        <link rel="stylesheet" href="../../assets/bootstrap.min.css"/>
-        <link href="../../resources/style.css" rel="stylesheet"/>
-
-        <script src="../../assets/yivi.js" defer></script>
-        <script src="/start_session.js" defer></script>
-        <script src="messages.en.js" defer></script>
-        <script src="18plusdemo.js" defer></script>
-    </head>
-    <body>
-        <header>
-            <h1>Age verification with Yivi</h1>
-        </header>
-
-<div class="container mt-5" id="main">
-            
-
-<div id="result_status"></div>
-
 <p>
 This page contains an example of a simple age check with Yivi,
 together with an explanation of how this works and can be used, for
-instance by webshops or video sites. With the button below it can be
+    instance by webshops or video sites. With the button below it can be
 checked whether a visitor of such a site is indeed older than
 18. What's special about Yivi is its privacy-friendliness: the visitor
 reveals no other information than the fact that (s)he is 18+.
@@ -82,8 +57,3 @@ children to use the Yivi app.
 <a href="../../">Back</a> to
 the Yivi demo overview.
 </p>
-
-</div>
-
-</body>
-</html>
