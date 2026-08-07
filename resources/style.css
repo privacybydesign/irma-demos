@@ -39,7 +39,7 @@ body {
 	--border-color: #e5e7eb;
 }
 
-header {
+.site-header {
 	background: rgba(255,255,255,0.92);
 	border: 1px solid var(--border-color);
 	border-top-width: 0;
@@ -162,7 +162,7 @@ main {
 	max-width: 40ch;
 }
 
-aside {
+.summary {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

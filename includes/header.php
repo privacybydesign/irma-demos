@@ -1,5 +1,5 @@
 <body>
-	<header>
+	<header class="site-header">
 		<div>
 			<a href="/" class="logo">
 				<img height="28" src="/resources/images/yivi-logo.svg" alt="Yivi">
