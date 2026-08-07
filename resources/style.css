@@ -83,19 +83,23 @@ header {
 			text-decoration: none;
 			color: currentColor;
 			border-radius: .625rem;
-			display: flex;
-			flex-direction: row;
-			gap: .3em;
-
-			&[href^=http]::after {
-				content: "\2197";
-				line-height: 1.1;
-			}
 
 			&:hover {
 				background: oklch(0.97 0 0);
 			}
 		}
+	}
+}
+
+a[href^=http]:not(:has(img)) {
+	display: inline-flex;
+	flex-direction: row;
+	gap: .3em;
+
+	&::after {
+		content: "\2197";
+		line-height: 1.1;
+		text-decoration: none;
 	}
 }
 
