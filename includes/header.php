@@ -17,5 +17,6 @@
 			</nav>
 		</div>
 	</header>
-	<div class="container mt-5" id="main">
+	<main>
+		<section>
 		<div id="result_status"></div>

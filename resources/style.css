@@ -126,3 +126,43 @@ th, td {
 	padding: 5px;
 	text-align: left;
 }
+
+.demo-nav {
+	border-style: solid;
+	border-color: var(--border-color);
+	border-width: 1px 0 0 0;
+}
+
+@media (min-width: 1000px) {
+	main {
+		display: flex;
+		gap: 50px;
+	}
+	section {
+		flex-grow: 1;
+	}
+	.demo-nav {
+		border-width: 0 1px 0 0;
+		padding-right: 50px;
+		order: -1;
+		width: max-content;
+
+		ul, li {
+			width: max-content;
+		}
+	}
+}
+
+.demo-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		margin-block: 1em;
+	}
+
+	.active {
+		font-weight: bold;
+	}
+}
