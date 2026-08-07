@@ -440,6 +440,12 @@ p:has(+ pre) {
 	}
 }
 
+p:has(button) {
+	display: flex;
+	gap: .5em;
+	flex-wrap: wrap;
+}
+
 .demo-nav {
 	border-style: solid;
 	border-color: var(--border-color);
