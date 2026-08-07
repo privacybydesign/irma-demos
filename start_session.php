@@ -9,7 +9,9 @@ $sprequests = [
         'disclose' => [
             [
                 ['pbdf.gemeente.personalData.over18'],
-                ['pbdf.pbdf.passport.over18']
+                ['pbdf.pbdf.passport.over18'],
+                ['pbdf.pbdf.drivinglicence.over18'],
+                ['pbdf.pbdf.idcard.over18'],
             ],
         ],
     ],
