@@ -14,7 +14,7 @@
 						<a href="https://yivi.app" target="_blank">Main</a>
 					</li>
 					<li>
-						<?php include("includes/lang-switcher.php"); ?>
+						<?php include($_SERVER['DOCUMENT_ROOT'] . "/includes/lang-switcher.php"); ?>
 					</li>
 				</ul>
 			</nav>
