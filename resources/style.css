@@ -103,6 +103,38 @@ a[href^=http]:not(:has(img)) {
 	}
 }
 
+button,
+.button {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--margin-small);
+	padding: var(--padding-small) var(--padding-medium);
+	border-radius: var(--radius-small);
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 1.1em;
+	box-sizing: border-box;
+	line-height: 1;
+	border: 2px solid var(--link);
+}
+
+button {
+	background: var(--link);
+	color: white;
+
+	&:hover {
+		background: var(--link-hover);
+	}
+}
+
+.button {
+	color: var(--link);
+
+	&:hover {
+		color: var(--link-hover);
+	}
+}
+
 main {
 	background: linear-gradient(180deg, #FDF2F4 0%, #FFFFFF 280px);
 	padding: 72px min(calc((1536px - 1200px) / 2), 7.5vw);
