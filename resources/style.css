@@ -195,6 +195,7 @@ main {
 
 	li {
 		margin-block: 1em;
+		display: flex;
 
 		&:before {
 			content: '✓';
