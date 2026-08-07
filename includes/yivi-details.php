@@ -1,5 +1,5 @@
 <?php
-$yivi_details = [
+$yivi_details_strings = [
     'what' => [
         'en' => 'What is Yivi?',
         'nl' => 'Wat is Yivi?',
@@ -52,34 +52,34 @@ $yivi_details = [
 	}
 </script>
 <details>
-    <summary><?php echo $yivi_details['what'][$lang]; ?></summary>
-    <?php foreach ($yivi_details['explanation'][$lang] as $paragraph) echo "<p>" . $paragraph . "</p>"; ?>
+    <summary><?php echo $yivi_details_strings['what'][$lang]; ?></summary>
+    <?php foreach ($yivi_details_strings['explanation'][$lang] as $paragraph) echo "<p>" . $paragraph . "</p>"; ?>
     <p>
         <a href="https://yivi.app" class="button">
-            <?php echo $yivi_details['read_more'][$lang]; ?></a>
+            <?php echo $yivi_details_strings['read_more'][$lang]; ?></a>
         <button onclick="openGetYivi()">
-            <?php echo $yivi_details['get_yivi'][$lang]; ?></button>
+            <?php echo $yivi_details_strings['get_yivi'][$lang]; ?></button>
     </p>
 </details>
 <details id="get-yivi">
-    <summary><?php echo $yivi_details['getting_yivi'][$lang]; ?></summary>
+    <summary><?php echo $yivi_details_strings['getting_yivi'][$lang]; ?></summary>
     <p>
-        <?php echo $yivi_details['app_stores'][$lang]; ?>
+        <?php echo $yivi_details_strings['app_stores'][$lang]; ?>
     </p>
     <ul class="stores">
         <li>
             <a href="https://apps.apple.com/nl/app/yivi/id1294092994">
-                <img src="/resources/images/appstore-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details['appstore'][$lang]; ?>>">
+                <img src="/resources/images/appstore-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['appstore'][$lang]; ?>>">
             </a>
         </li>
         <li>
             <a href="https://play.google.com/store/apps/details?id=org.irmacard.cardemu">
-                <img src="/resources/images/googleplay-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details['googleplay'][$lang]; ?>>">
+                <img src="/resources/images/googleplay-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['googleplay'][$lang]; ?>>">
             </a>
         </li>
         <li>
             <a href="https://f-droid.org/en/packages/org.irmacard.cardemu/">
-                <img src="/resources/images/fdroid-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details['fdroid'][$lang]; ?>>">
+                <img src="/resources/images/fdroid-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['fdroid'][$lang]; ?>>">
             </a>
         </li>
     </ul>
