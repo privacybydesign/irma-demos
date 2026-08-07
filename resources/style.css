@@ -223,18 +223,34 @@ th, td {
 }
 
 .demo-container {
-	width: min-content;
 	margin-block: var(--margin-medium);
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius-medium);
 
 	.info {
-		margin-block-end: 0;
+		margin-block: 0;
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
+	}
+}
 
-		& + div.yivi-web-form {
-			border-top-right-radius: 0;
-			border-top-left-radius: 0;
-		}
+.yivi-result,
+.alert {
+	padding: 1px var(--padding-medium);
+	margin: var(--margin-small);
+	border: 1px solid var(--border-color);
+
+	&.error,
+	&.alert-danger {
+		background: lightpink;
+	}
+	&.ok,
+	&.alert-warning {
+		background: beige;
+	}
+	&.result,
+	&.alert-success {
+		background: aliceblue;
 	}
 }
 
@@ -295,10 +311,11 @@ div.yivi-web-form {
 	min-height: unset;
 	min-width: unset;
 	height: auto;
-	width: 100%;
+	width: calc(100% - var(--margin-small) * 2);
 	max-width: 22em;
 	border: 2px solid var(--link);
 	border-radius: var(--radius-small);
+	margin: var(--margin-small);
 
 	.yivi-web-header {
 		padding: var(--padding-medium);
