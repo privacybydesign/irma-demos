@@ -157,6 +157,51 @@ main {
 	margin-block-start: .25rem;
 }
 
+.intro {
+	font-size: 1.2em;
+	max-width: 40ch;
+}
+
+aside {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--margin-medium);
+	margin-block-end: var(--margin-medium);
+}
+
+.block {
+	padding: var(--padding-medium);
+	border: 1px solid var(--border-color);
+	border-radius: var(--radius-medium);
+	flex-grow: 1;
+	width: 30ch;
+	background: white;
+
+	h2 {
+		margin-block-start: 0;
+	}
+
+	& :last-child {
+		margin-block-end: 0;
+	}
+}
+
+.benefits ul {
+	padding-inline-start: .5em;
+	list-style: none;
+
+	li {
+		margin-block: 1em;
+
+		&:before {
+			content: '✓';
+			margin-right: .5em;
+			color: darkgreen;
+		}
+	}
+}
+
 table, th, td {
 	border-collapse: collapse;
 }
@@ -169,8 +214,26 @@ th, td {
 	padding: var(--padding-small) var(--padding-medium);
 	background: oklch(93.4% 0.021 232deg);
 	border-radius: var(--radius-small);
-	color: oklch(40.4% 0.021 232deg);
+	color: oklch(40.4% 0.051 232deg);
+	font-size: .9em;
 	text-align: center;
+	font-weight: bold;
+}
+
+.demo-container {
+	width: min-content;
+	margin-block: var(--margin-medium);
+
+	.info {
+		margin-block-end: 0;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+
+		& + div.yivi-web-form {
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+		}
+	}
 }
 
 details {
@@ -229,7 +292,6 @@ div.yivi-web-form {
 	background: none;
 	min-height: unset;
 	min-width: unset;
-	margin-block: 1em;
 	height: auto;
 	width: 100%;
 	max-width: 22em;
@@ -237,7 +299,8 @@ div.yivi-web-form {
 	border-radius: var(--radius-small);
 
 	.yivi-web-header {
-		padding: 1em;
+		padding: var(--padding-medium);
+		font-size: 1.2em;
 		margin: 0;
 		border-bottom: 2px solid var(--link);
 
@@ -348,6 +411,12 @@ p:has(+ pre) {
 	margin-block-end: 0;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+
+	button {
+		font-size: .9em;
+		padding: 8px 12px;
+	}
 }
 
 .demo-nav {
