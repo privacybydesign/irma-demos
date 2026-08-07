@@ -6,7 +6,8 @@
 	<?php
 	include($_SERVER['DOCUMENT_ROOT'] . '/includes/demos.php');
 	foreach ($demos as $key => $labels) {
-		$url = ($key === 'home') ? '/' : '/demos/' . $key . '/'; ?>
+		$url = ($key === 'home') ? '/' : '/demos/' . $key . '/';
+		$url .= '?lang=' . $lang; ?>
 		<li <?php if ($key === $slug) echo 'class="active"'; ?>>
 			<a href="<?php echo $url; ?>">
 				<?php echo $labels[$lang]; ?>
