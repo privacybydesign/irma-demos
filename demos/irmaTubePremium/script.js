@@ -33,7 +33,7 @@ let show_membership_guidance = function (intro, alertClass) {
     let button = "<button class='custom-button'>" + MESSAGES['become-member-button'] + "</button>";
     result_status.innerHTML = intro + "<br>" + MESSAGES['no-membership-message'] + "<p>" + button + "</p>";
     result_status.className = 'alert ' + (alertClass || 'alert-warning');
-    result_status.find('button').addEventListener('click', start_premium_issuance)
+    result_status.querySelector('button').addEventListener('click', start_premium_issuance);
 };
 
 let cancelled_issuance_fun = function() {
