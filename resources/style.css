@@ -76,7 +76,7 @@ header {
 		padding: 0;
 
 		a {
-			padding: .5em 1em;
+			padding: .5em min(2vw, 1em);
 			font-weight: bold;
 			text-decoration: none;
 			color: currentColor;
@@ -85,7 +85,7 @@ header {
 			flex-direction: row;
 			gap: .3em;
 
-			&::after {
+			&[href^=http]::after {
 				content: "\2197";
 				line-height: 1.1;
 			}
