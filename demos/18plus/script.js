@@ -1,26 +1,22 @@
-let result_status = document.getElementById('result_status');
+let messages = {
+    'age-check-succeeded': {
+        'en': '<h3>18+ Age check succeeded!</h3><p>You are over 18.</p>',
+        'nl': '<h3>18+ leeftijdscontrole geslaagd!</h3><p>Je bent ouder dan 18.</p>',
+    },
+    'age-check-failed': {
+        'en': '<h3>18+ Age check not succeeded!</h3><p>Unfortunately, we identified you as being a minor. Therefore we cannot show you the content.</p>',
+        'nl': '<h3>18+ leeftijdscontrole is niet geslaagd</h3><p>Helaas, u bent nog geen 18 jaar. Daarom kunnen we u de inhoud niet laten zien.</p>',
+    }
+}
 
-let success_fun = function(data) {
+let verifier = (data) => {
     let attr = data.disclosed[0][0].rawvalue.toLowerCase();
     if(attr === 'yes' || attr === 'ja') {
-        document.querySelector('main').innerHTML = MESSAGES['age-check-succeeded'] +
-            '<div style="text-align: center"><img src=\"GTAVI.png\" alt="GTA VI image"></div> <br> <p><a href=\"#\" ' +
-            'onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+        return messages['age-check-succeeded'][lang];
     }
     else {
-        document.querySelector('main').innerHTML = MESSAGES['age-check-not-succeeded'] +
-            '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+        return messages['age-check-failed'][lang];
     }
 };
 
-let cancel_fun = function() {
-    result_status.innerHTML = MESSAGES['cancel-message'];
-    result_status.classList.add('alert', 'alert-warning');
-};
-
-let error_fun = function() {
-    result_status.innerHTML = MESSAGES['error-message'];
-    result_status.classList.add('alert', 'alert-danger');
-};
-
-start_session('18plus', MESSAGES['lang'], success_fun, cancel_fun, error_fun);
+start_session_inline(slug, lang, verifier);
