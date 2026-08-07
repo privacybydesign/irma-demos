@@ -26,12 +26,14 @@ body {
 	--link-hover: oklch(from var(--link) calc(l - .1) c h);
 
 	--radius-small: 4px;
+	--radius-medium: 8px;
 
 	--padding-small: 12px;
 	--padding-medium: 20px;
 	--padding-large: 32px;
 
 	--margin-small: 1em;
+	--margin-medium: min(2vw, 2em);
 	--margin-large: 5vw;
 
 	--border-color: #e5e7eb;
