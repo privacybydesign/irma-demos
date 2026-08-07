@@ -47,7 +47,7 @@ body {
 	margin: auto;
 
 	.logo {
-		font-size: 20px;
+		font-size: min(4vw, 20px);
 		font-weight: bold;
 		text-decoration: none;
 		color: currentColor;
@@ -76,6 +76,7 @@ body {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		font-size: .9em;
 
 		a {
 			padding: .5em min(2vw, 1em);
@@ -83,6 +84,7 @@ body {
 			text-decoration: none;
 			color: currentColor;
 			border-radius: .625rem;
+			display: inline-flex;
 
 			&:hover {
 				background: oklch(0.97 0 0);
@@ -92,14 +94,14 @@ body {
 }
 
 a[href^=http]:not(:has(img)) {
-	display: inline-flex;
-	flex-direction: row;
-	gap: .3em;
 
 	&::after {
 		content: "\2197";
 		line-height: 1.1;
 		text-decoration: none;
+		margin-inline-start: .3em;
+		transform: translateY(-.1em);
+		display: inline-block;
 	}
 }
 
