@@ -3,7 +3,8 @@ $content = [
 	"intro" => "Handig voor webshops of videoplatforms die zeker moeten weten dat een bezoeker ouder is dan 18.",
 	"benefits" => [
 		"Deel alleen dat je 18+ bent",
-		"Geen persoonlijke data die zou kunnen lekken"
+		"Geen persoonlijke data die zou kunnen lekken",
+        "Werkt ook voor 12+, 16+, 21+ en 65+"
 	],
 	"data" => [
 		"description" => "Het persoonsgegevenskaartje",
