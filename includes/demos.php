@@ -1,39 +1,39 @@
 <?php
 $demos = [
     "home" => [
-        "en" => "Yivi demos",
-        "nl" => "Yivi demos"
+        "en" => "Home",
+        "nl" => "Home"
     ],
     "18plus" => [
-        "en" => "Prove 18+ with Yivi",
-        "nl" => "18+ bewijzen met Yivi"
+        "en" => "Prove 18+",
+        "nl" => "18+ bewijzen"
     ],
     "address" => [
-        "en" => "Address form-filling with Yivi",
-        "nl" => "Adresformulier invullen met Yivi"
+        "en" => "Address form-filling",
+        "nl" => "Adresformulier invullen"
     ],
     "beingalive" => [
-        "en" => "Prove that you are alive with Yivi",
-        "nl" => "Bewijs dat je leeft met Yivi"
+        "en" => "Prove that you are alive",
+        "nl" => "Bewijs dat je leeft"
     ],
     "iban" => [
-        "en" => "IBAN form-filling with Yivi",
-        "nl" => "IBAN-formulier invullen met Yivi"
+        "en" => "IBAN form-filling",
+        "nl" => "IBAN-formulier invullen"
     ],
     "irmaTubePremium" => [
-        "en" => "Chained sessions with Yivi",
-        "nl" => "Chained sessions met Yivi"
+        "en" => "Chained sessions",
+        "nl" => "Chained sessions"
     ],
     "mail" => [
-        "en" => "Verification of email address with Yivi",
-        "nl" => "Controle van e-mailadres met Yivi"
+        "en" => "Verification of email address",
+        "nl" => "Controle van e-mailadres"
     ],
     "signature" => [
-        "en" => "Digital signatures with Yivi",
-        "nl" => "Digitale handtekeningen met Yivi"
+        "en" => "Digital signatures",
+        "nl" => "Digitale handtekeningen"
     ],
     "student" => [
-        "en" => "Access for students with Yivi",
-        "nl" => "Toegang voor studenten met Yivi"
+        "en" => "Access for students",
+        "nl" => "Toegang voor studenten"
     ]
 ];
