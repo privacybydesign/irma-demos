@@ -6,7 +6,6 @@
 
 		<title><?php echo $title; ?> | Yivi Demos</title>
 
-        <link rel="stylesheet" href="/assets/bootstrap.min.css">
         <link href="/resources/style.css" rel="stylesheet">
 
         <script src="/assets/yivi.js" defer></script>

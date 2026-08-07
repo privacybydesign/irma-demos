@@ -6,8 +6,6 @@ DIR=$(dirname "$0")
 
 # Copy library files to assets
 mkdir -p "$DIR/assets"
-cp "$DIR/node_modules/bootstrap/dist/css/bootstrap.min.css" "$DIR/assets/bootstrap.min.css"
-cp "$DIR/node_modules/bootstrap/dist/js/bootstrap.min.js" "$DIR/assets/bootstrap.min.js"
 cp "$DIR/node_modules/@privacybydesign/yivi-frontend/dist/yivi.js" "$DIR/assets/yivi.js"
 
 rm -rf "$DIR/build"
