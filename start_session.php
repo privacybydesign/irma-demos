@@ -15,7 +15,7 @@ $sprequests = [
             ],
         ],
     ],
-    'adres' => [
+    'address' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
