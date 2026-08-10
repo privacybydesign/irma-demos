@@ -7,11 +7,13 @@ let verifier = (data) => {
     let postcode = data.disclosed[0][i++].rawvalue;
     let plaats = data.disclosed[0][i].rawvalue;
 
-    return `<ul>
-        <li>${adres}</li>
-        <li>${postcode}</li>
-        <li>${plaats}</li>
-    </ul>`;
+    document.querySelector('.yivi-web-form').remove();
+    document.querySelector('.address-usage').removeAttribute('hidden');
+    let address_block = document.createElement('p');
+    address_block.innerHTML = `${adres}<br>${postcode} ${plaats}`;
+    document.querySelector('.address-usage').append(address_block);
+
+    return false;
 };
 
 start_session_inline(slug, lang, verifier);

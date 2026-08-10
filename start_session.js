@@ -26,10 +26,12 @@ function start_session(type, lang, success_fun, cancelled_fun, error_fun) {
 function start_session_inline(type, lang, verifier) {
 
     let showResult = (state, message) => {
-        let div = document.createElement('div');
-        div.innerHTML = message;
-        div.classList.add(state, 'yivi-result');
-        document.querySelector('.demo-container').append(div)
+        if (message) {
+            let div = document.createElement('div');
+            div.innerHTML = message;
+            div.classList.add(state, 'yivi-result');
+            document.querySelector('.demo-container').append(div)
+        }
     }
 
     yivi.newWeb({
