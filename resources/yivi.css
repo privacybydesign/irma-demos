@@ -1,0 +1,103 @@
+div.yivi-web-form {
+    box-shadow: none;
+    background: none;
+    min-height: unset;
+    min-width: unset;
+    height: auto;
+    width: calc(100% - var(--margin-small) * 2);
+    max-width: 22em;
+    border: 2px solid var(--link);
+    border-radius: var(--radius-small);
+    margin: var(--margin-small);
+
+    .yivi-web-header {
+        padding: var(--padding-medium);
+        font-size: 1.2em;
+        margin: 0;
+        border-bottom: 2px solid var(--link);
+
+        p {
+            font-family: inherit;
+            font-size: inherit;
+            color: CanvasText;
+
+            i.yivi-web-logo {
+                font-size: inherit;
+                height: 1.2em;
+                width: unset;
+                aspect-ratio: 1.796875 / 1;
+            }
+        }
+
+        .yivi-web-helper {
+            display: none;
+        }
+    }
+
+    .yivi-web-content {
+        padding: 1em;
+        margin: 0;
+        line-height: 0;
+        background: none;
+
+        p {
+            font-family: inherit;
+            font-size: inherit;
+            color: CanvasText;
+        }
+
+        .yivi-web-loading-animation {
+            margin-block-start: 1em;
+
+            i {
+                background: oklch(from CanvasText l c h / calc(alpha - 0.5));
+            }
+        }
+
+        .yivi-web-centered {
+            max-width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        a:not(.yivi-web-button) {
+            color: var(--link);
+            font-family: inherit;
+            font-size: inherit;
+
+            &:hover {
+                color: var(--link-hover);
+            }
+        }
+
+        .yivi-web-button {
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+        }
+
+        .yivi-web-button-link {
+            display: block;
+            margin-block-start: 1em;
+            font-weight: bold;
+            color: white;
+        }
+
+        &:has(svg) {
+            aspect-ratio: 1 / 1;
+        }
+
+        svg {
+            border-radius: var(--radius-small);
+            border: 1em solid white;
+            box-sizing: border-box;
+        }
+
+        &:has(p) {
+            line-height: 1;
+        }
+    }
+}
