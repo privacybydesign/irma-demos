@@ -55,7 +55,7 @@ $yivi_details_strings = [
     <summary><?php echo $yivi_details_strings['what'][$lang]; ?></summary>
     <?php foreach ($yivi_details_strings['explanation'][$lang] as $paragraph) echo "<p>" . $paragraph . "</p>"; ?>
     <p>
-        <a href="https://yivi.app" class="button">
+        <a href="https://yivi.app" class="button" target="_blank">
             <?php echo $yivi_details_strings['read_more'][$lang]; ?></a>
         <button onclick="openGetYivi()">
             <?php echo $yivi_details_strings['get_yivi'][$lang]; ?></button>
@@ -68,17 +68,17 @@ $yivi_details_strings = [
     </p>
     <ul class="stores">
         <li>
-            <a href="https://apps.apple.com/nl/app/yivi/id1294092994">
+            <a href="https://apps.apple.com/nl/app/yivi/id1294092994" target="_blank">
                 <img src="/resources/images/appstore-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['appstore'][$lang]; ?>>">
             </a>
         </li>
         <li>
-            <a href="https://play.google.com/store/apps/details?id=org.irmacard.cardemu">
+            <a href="https://play.google.com/store/apps/details?id=org.irmacard.cardemu" target="_blank">
                 <img src="/resources/images/googleplay-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['googleplay'][$lang]; ?>>">
             </a>
         </li>
         <li>
-            <a href="https://f-droid.org/en/packages/org.irmacard.cardemu/">
+            <a href="https://f-droid.org/en/packages/org.irmacard.cardemu/" target="_blank">
                 <img src="/resources/images/fdroid-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['fdroid'][$lang]; ?>>">
             </a>
         </li>

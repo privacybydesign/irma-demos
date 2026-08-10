@@ -67,7 +67,7 @@ $demo_page_strings = [
 					echo $demo_page_strings['or'][$lang];
 				}
 				if(!empty($source['url'])) {
-					echo '<a href="' . $source['url'] . '">';
+					echo '<a href="' . $source['url'] . '" target="_blank">';
 				}
 				echo $source['label'];
 				if(!empty($source['url'])) echo "</a>";
