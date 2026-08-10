@@ -88,7 +88,14 @@ $demo_page_strings = [
 		<?php echo $demo_page_strings['no_info'][$lang]; ?>
 	</p>
 
-	<div id="yivi-web-form"></div>
+	<?php
+	if (file_exists('demo.php')) {
+		include 'demo.php';
+	}
+	else {
+		echo '<div id="yivi-web-form"></div>';
+	}
+	?>
 </div>
 
 <aside>

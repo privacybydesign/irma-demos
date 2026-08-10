@@ -20,6 +20,6 @@
 			</nav>
 		</div>
 	</header>
-	<main>
+	<main class="main">
 		<section>
 		<div id="result_status"></div>
