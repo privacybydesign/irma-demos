@@ -28,6 +28,10 @@ $demo_page_strings = [
 		'en' => 'This is a demo, no information is stored',
 		'nl' => 'Dit is een demo, we slaan geen informatie op'
 	],
+	'reload' => [
+		'en' => 'Reload',
+		'nl' => 'Herlaad'
+	],
 	'sidenotes' => [
 		'en' => 'Sidenotes',
 		'nl' => 'Opmerkingen'
@@ -86,6 +90,9 @@ $demo_page_strings = [
 
 	<p class="info">
 		<?php echo $demo_page_strings['no_info'][$lang]; ?>
+		<button id="reload" class="small">
+			<?php echo $demo_page_strings['reload'][$lang]; ?>
+		</button>
 	</p>
 
 	<?php
@@ -96,6 +103,16 @@ $demo_page_strings = [
 		echo '<div id="yivi-web-form"></div>';
 	}
 	?>
+
+	<script>
+		(() => {
+			document.getElementById('reload').addEventListener('click', reloadPage);
+
+			async function reloadPage() {
+				window.location.reload();
+			}
+		})();
+	</script>
 </div>
 
 <aside>

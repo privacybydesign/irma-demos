@@ -21,7 +21,7 @@ $developer_details_strings = [
     </summary>
     <p>
         <?php echo $developer_details_strings['request'][$lang]; ?>
-        <button id="copy-request">
+        <button id="copy-request" class="small">
             <?php echo $developer_details_strings['copy'][$lang]; ?>
         </button>
     </p>
