@@ -13,7 +13,7 @@ if (strpos($url, "/?") === false) {
     if(strpos($url, "?") > 0) {
         header('Location: ' . str_replace("?", "/?", $url));
         die();
-    } elseif(substr($url, -1) !== "/") {
+    } elseif(substr($url, -1) !== "/" && strpos($url, ".php") === false) {
         header('Location: '. $url .= "/");
         die();
     }
