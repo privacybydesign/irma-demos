@@ -7,6 +7,19 @@ if (isset($_GET['lang']) && $_GET['lang'] === "nl") {
 }
 $slugs = explode("/", $_SERVER["REQUEST_URI"]);
 $end = end($slugs);
+
+$url = $_SERVER['REQUEST_URI'];
+
+// Add trailing slash to url
+if (strpos($url, "/?") === false) {
+    if(strpos($url, "?") > 0) {
+        header('Location: ' . str_replace("?", "/?", $url));
+        die();
+    } elseif(substr($url, -1) !== "/") {
+        header('Location: '. $url .= "/");
+        die();
+    }
+}
 $slug = prev($slugs);
 $slug = preg_replace("/[^A-Za-z0-9 ]/", '', $slug);
 
