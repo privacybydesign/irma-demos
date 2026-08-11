@@ -21,8 +21,7 @@ let cancel_fun = function() {
     result_status.classList.add('alert', 'alert-warning');
 };
 
-let error_fun = function(msg) {
-    console.log('error?', msg);
+let error_fun = function() {
     result_status.innerHTML = MESSAGES['error-message'];
     result_status.classList.add('alert', 'alert-danger');
 };
