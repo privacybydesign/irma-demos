@@ -5,8 +5,6 @@ if (isset($_GET['lang']) && $_GET['lang'] === "nl") {
 } else {
     $lang = "en";
 }
-$slugs = explode("/", $_SERVER["REQUEST_URI"]);
-$end = end($slugs);
 
 $url = $_SERVER['REQUEST_URI'];
 
@@ -20,15 +18,20 @@ if (strpos($url, "/?") === false) {
         die();
     }
 }
+
+$slugs = explode("/", parse_url($url, PHP_URL_PATH));
+$slug = end($slugs);
 $slug = prev($slugs);
 $slug = preg_replace("/[^A-Za-z0-9 ]/", '', $slug);
 
 if (!array_key_exists($slug, $demos)) {
-    http_response_code(404);
-    include($_SERVER['DOCUMENT_ROOT'] . '/404.php');
-    die();
-} elseif (empty($slug)) {
-    $slug = "home";
+    if (empty($slug)) {
+        $slug = "home";
+    } else {
+        http_response_code(404);
+        include($_SERVER['DOCUMENT_ROOT'] . '/404.php');
+        die();
+    }
 }
 
 $title = $demos[$slug][$lang];
