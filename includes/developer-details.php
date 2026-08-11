@@ -29,8 +29,8 @@ $developer_details_strings = [
     include($_SERVER['DOCUMENT_ROOT'].'/start_session.php');
     $request = var_export($sprequests[$slug], true);
     $request = str_replace('array (', '[', $request);
-    $request = str_replace(')', ']', $request);
-    $request = preg_replace("([0-9] =>)", "", $request);
+    $request = preg_replace("(\),\n)", "],\n", $request);
+    $request = preg_replace("([0-9]+ =>)", "", $request);
     $request = preg_replace("(\n\s+\n)", "\n", $request);
     ?>
     <pre><code id="request"><?php echo $request; ?></code></pre>
