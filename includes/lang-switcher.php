@@ -17,6 +17,6 @@ if ($query) {
     $lang_url .= "?lang=nl";
 }
 ?>
-<a href="<?php echo $lang_url; ?>">
+<a href="<?php echo htmlspecialchars($lang_url, ENT_QUOTES); ?>">
     <?php echo $lang_label; ?>
 </a>
