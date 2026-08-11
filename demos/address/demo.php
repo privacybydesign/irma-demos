@@ -148,6 +148,10 @@ if ($render_full_page):
             font-weight: 600;
 		}
     }
+	figure + p {
+		padding: 1em;
+		background: orange;
+	}
 </style>
 
 <figure class="address-figure demo">
