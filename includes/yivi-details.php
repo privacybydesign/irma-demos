@@ -69,17 +69,17 @@ $yivi_details_strings = [
     <ul class="stores">
         <li>
             <a href="https://apps.apple.com/nl/app/yivi/id1294092994" target="_blank">
-                <img src="/resources/images/appstore-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['appstore'][$lang]; ?>>">
+                <img src="/resources/images/appstore-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['appstore'][$lang]; ?>">
             </a>
         </li>
         <li>
             <a href="https://play.google.com/store/apps/details?id=org.irmacard.cardemu" target="_blank">
-                <img src="/resources/images/googleplay-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['googleplay'][$lang]; ?>>">
+                <img src="/resources/images/googleplay-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['googleplay'][$lang]; ?>">
             </a>
         </li>
         <li>
             <a href="https://f-droid.org/en/packages/org.irmacard.cardemu/" target="_blank">
-                <img src="/resources/images/fdroid-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['fdroid'][$lang]; ?>>">
+                <img src="/resources/images/fdroid-<?php echo $lang; ?>.svg" alt="<?php echo $yivi_details_strings['fdroid'][$lang]; ?>">
             </a>
         </li>
     </ul>
