@@ -162,7 +162,7 @@ if ($render_full_page):
     </div>
 </header>
 
-<main class="address-main">
+<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="address-main">
     <h<?php echo ($render_full_page) ? '1' : '2'; ?>>
         <?php echo $demo_strings['title'][$lang]; ?>
     </h<?php echo ($render_full_page) ? '1' : '2'; ?>>
@@ -176,7 +176,7 @@ if ($render_full_page):
 			<?php echo $demo_strings['year'][$lang]; ?>
 		</p>
 	</div>
-</main>
+</<?php echo ($render_full_page) ? 'main' : 'section'; ?>>
 
 </figure>
 
