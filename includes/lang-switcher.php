@@ -1,6 +1,4 @@
 <?php
-$lang_url = $_SERVER['REQUEST_URI'];
-$query = parse_url($lang_url, PHP_URL_QUERY);
 if ($lang === 'en') {
     $lang_label = 'NL';
     $lang_slug = 'nl';
@@ -8,14 +6,11 @@ if ($lang === 'en') {
     $lang_label = 'EN';
     $lang_slug = 'en';
 }
-if ($query) {
-    if (isset($_GET['lang']))
-        $lang_url = str_replace('lang=' . $lang, 'lang=' . $lang_slug, $lang_url);
-    else
-        $lang_url .= "&lang=nl";
-} else {
-    $lang_url .= "?lang=nl";
-}
+
+$query = [];
+parse_str((string) parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY), $query);
+$query['lang'] = $lang_slug;
+$lang_url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) . '?' . http_build_query($query);
 ?>
 <a href="<?php echo htmlspecialchars($lang_url, ENT_QUOTES); ?>">
     <?php echo $lang_label; ?>

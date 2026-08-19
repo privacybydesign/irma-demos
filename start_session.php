@@ -241,7 +241,11 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     if (!isset($_GET['type']) || !isset($_GET['lang']))
         stop();
 
+    // Signature requests index their message by language; keep that lookup on a
+    // known key instead of whatever arrives in the query string.
+    $lang = strtolower($_GET['lang']) === 'nl' ? 'nl' : 'en';
+
     header('Access-Control-Allow-Origin: ' . BASE_URL);
-    echo start_session($_GET['type'], $_GET['lang']);
+    echo start_session($_GET['type'], $lang);
 
 }

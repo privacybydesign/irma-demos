@@ -27,13 +27,12 @@ $developer_details_strings = [
     </p>
     <?php
     include($_SERVER['DOCUMENT_ROOT'].'/start_session.php');
-    $request = var_export($sprequests[$slug], true);
-    $request = str_replace('array (', '[', $request);
-    $request = preg_replace("(\),\n)", "],\n", $request);
-    $request = preg_replace("([0-9]+ =>)", "", $request);
-    $request = preg_replace("(\n\s+\n)", "\n", $request);
+    $request = json_encode(
+        $sprequests[$slug],
+        JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+    );
     ?>
-    <pre><code id="request"><?php echo $request; ?></code></pre>
+    <pre><code id="request"><?php echo htmlspecialchars($request, ENT_QUOTES); ?></code></pre>
     <script>
 		(() => {
 			document.getElementById('copy-request').addEventListener('click', requestToClipboard);
