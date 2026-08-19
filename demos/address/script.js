@@ -19,5 +19,5 @@ let verifier = (data) => {
 start_session_inline(slug, lang, verifier, (message) => {
     let error = document.createElement('p');
     error.innerText = message;
-    document.querySelector('body').append(error);
+    document.querySelector('.address-figure').after(error);
 });
