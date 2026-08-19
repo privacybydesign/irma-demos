@@ -10,7 +10,7 @@ let verifier = (data) => {
     document.querySelector('.yivi-web-form').remove();
     document.querySelector('.address-usage').removeAttribute('hidden');
     let address_block = document.createElement('p');
-    address_block.innerHTML = `${adres}<br>${postcode} ${plaats}`;
+    address_block.append(adres, document.createElement('br'), `${postcode} ${plaats}`);
     document.querySelector('.address-usage').append(address_block);
 
     return false;
