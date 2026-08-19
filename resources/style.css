@@ -18,7 +18,11 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	height: 100%;
+	min-height: 100vh;
+	/* Lets .main grow to the bottom of the viewport, so a short page does not leave
+	   a band of the body background below the content. */
+	display: flex;
+	flex-direction: column;
 	background-color: rgb(234 229 226 / 1);
 	font-family: 'Open Sans', Inter, Arial, sans-serif;
 }
@@ -28,7 +32,9 @@ body {
 	border: 1px solid var(--border-color);
 	border-top-width: 0;
 	max-width: 1536px;
-	margin: auto;
+	width: 100%;
+	box-sizing: border-box;
+	margin-inline: auto;
 
 	.logo {
 		font-size: min(4vw, 20px);
@@ -77,20 +83,33 @@ body {
 	}
 }
 
+/* Marks a link that leaves the site. Drawn as a masked icon instead of the
+   "\2197" glyph, which rendered at full text size (and differently per platform).
+   Sized in em so it stays proportional to the text it follows. */
 a[href^=http]:not(:has(img)) {
 
 	&::after {
-		content: "\2197";
-		line-height: 1.1;
-		text-decoration: none;
-		margin-inline-start: .3em;
-		transform: translateY(-.1em);
+		content: "";
 		display: inline-block;
+		width: .7em;
+		height: .7em;
+		margin-inline-start: var(--external-icon-gap, .3em);
+		margin-block-start: -1px;
+		text-decoration: none;
+		background: currentcolor;
+		opacity: .7;
+		flex-shrink: 0;
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 5v2h6.59L4 18.59 5.41 20 17 8.41V15h2V5H9z'/%3E%3C/svg%3E");
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
 	}
 }
 
 button,
-.button {
+.button,
+.custom-button {
+	--external-icon-gap: 0;
 	display: inline-flex;
 	align-items: center;
 	gap: var(--margin-small);
@@ -102,14 +121,23 @@ button,
 	box-sizing: border-box;
 	line-height: 1;
 	border: 2px solid var(--link);
+	text-decoration: none;
 }
 
-button {
-	background: var(--link);
+/* Excludes the Yivi widget's own buttons: its stylesheet sets background-color but
+   no background-image, so the artwork would otherwise bleed onto them. */
+button:not([class*="yivi-web"]),
+a.custom-button {
+	/* The corner artwork is anchored right and scaled to the button height, so it
+	   keeps its proportions on buttons of any width. Hover changes background-color
+	   only: the shorthand would drop the image. */
+	background: var(--link) url('images/button-primary.svg') no-repeat right center / auto 100%;
 	color: white;
+	text-decoration: none;
 
 	&:hover {
-		background: var(--link-hover);
+		background-color: var(--link-hover);
+		color: white;
 	}
 }
 
@@ -127,7 +155,11 @@ button {
 	border: 1px solid var(--border-color);
 	border-top-width: 0;
 	max-width: 1536px;
-	margin: auto;
+	width: 100%;
+	/* Inline only: auto block margins would absorb the free space instead of the
+	   flex-grow below. */
+	margin-inline: auto;
+	flex-grow: 1;
 	box-sizing: border-box;
 }
 
