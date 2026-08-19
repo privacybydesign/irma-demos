@@ -1,26 +1,48 @@
 'use strict';
 
 function setupSignButton(button, resultStatus, reqName, successMessageFunc) {
+    let showResult = function (className, ...content) {
+        let alert = document.createElement('div');
+        alert.className = 'alert ' + className;
+        alert.append(...content);
+        resultStatus.replaceChildren(alert);
+    };
+
     let onSuccess = function(data) {
-        resultStatus.innerHTML = '<div class="alert alert-success"><div class="prefix">' +
-            successMessageFunc(data.disclosed) +
-            '</div><blockquote class="blockquote signedText">' +
-            data.signature.message +
-            '</blockquote></div>';
+        let prefix = document.createElement('div');
+        prefix.className = 'prefix';
+        prefix.append(successMessageFunc(data.disclosed));
+
+        let signedText = document.createElement('blockquote');
+        signedText.className = 'blockquote signedText';
+        signedText.textContent = data.signature.message;
+
+        showResult('alert-success', prefix, signedText);
     };
+
     let onCancel = function() {
-        resultStatus.innerHTML = '<div class="alert alert-warning">' +
-            MESSAGES['cancel-message'] +
-            '</div>';
+        showResult('alert-warning', MESSAGES['cancel-message']);
     };
+
     let onError = function(data) {
-        resultStatus.innerHTML = '<div class="alert alert-danger"><p><strong class="header">' +
-            MESSAGES['error'] +
-            '</strong></p><p><small><span class="errormsg">' +
-            MESSAGES['errormsg'] +
-            '</span>: <span class="data">' +
-            data +
-            '</span></small></div>';
+        let heading = document.createElement('p');
+        let strong = document.createElement('strong');
+        strong.className = 'header';
+        strong.textContent = MESSAGES['error'];
+        heading.append(strong);
+
+        let detail = document.createElement('p');
+        let small = document.createElement('small');
+        let label = document.createElement('span');
+        label.className = 'errormsg';
+        label.textContent = MESSAGES['errormsg'];
+        let value = document.createElement('span');
+        value.className = 'data';
+        value.textContent = data;
+        small.append(label, ': ', value);
+        detail.append(small);
+
+        showResult('alert-danger', heading, detail);
     };
 
     button.addEventListener('click', function() {
