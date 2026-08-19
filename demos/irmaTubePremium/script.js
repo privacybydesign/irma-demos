@@ -1,9 +1,23 @@
 let result_status = document.getElementById('result_status');
 
+// The message builders return DOM nodes so that disclosed values are never
+// parsed as HTML; compose the result with the DOM instead of innerHTML.
+let show_final_result = function (contentNode) {
+    let back = document.createElement('p');
+    let link = document.createElement('a');
+    link.href = '#';
+    link.textContent = MESSAGES['back'];
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.location.reload();
+    });
+    back.append(link);
+    document.querySelector('main section').replaceChildren(contentNode, back);
+};
+
 let success_issuance_fun = function (data) {
     let name = data.disclosed[0][0].rawvalue;
-    document.getElementById("main").innerHTML = MESSAGES['succeeded-issuance'](name) +
-        '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+    show_final_result(MESSAGES['succeeded-issuance'](name));
 };
 
 let success_disclosure_fun = function (data) {
@@ -15,8 +29,7 @@ let success_disclosure_fun = function (data) {
         error_disclosure_fun();
         return;
     }
-    document.getElementById("main").innerHTML = MESSAGES['succeeded-disclosure'](name) +
-        '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">Back</a></p>';
+    show_final_result(MESSAGES['succeeded-disclosure'](name));
 };
 
 let start_premium_issuance = function () {
