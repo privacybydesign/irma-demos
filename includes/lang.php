@@ -8,13 +8,15 @@ if (isset($_GET['lang']) && $_GET['lang'] === "nl") {
 
 $url = $_SERVER['REQUEST_URI'];
 
-// Add trailing slash to url
-if (strpos($url, "/?") === false) {
-    if(strpos($url, "?") > 0) {
+// Add trailing slash to url, so relative asset paths keep resolving against the
+// demo directory. Requests for a .php file are already a full path: leave those
+// alone, adding a slash there would turn the script name into a directory.
+if (strpos($url, "/?") === false && strpos($url, ".php") === false) {
+    if (strpos($url, "?") > 0) {
         header('Location: ' . str_replace("?", "/?", $url));
         die();
-    } elseif(substr($url, -1) !== "/" && strpos($url, ".php") === false) {
-        header('Location: '. $url .= "/");
+    } elseif (substr($url, -1) !== "/") {
+        header('Location: ' . $url . "/");
         die();
     }
 }

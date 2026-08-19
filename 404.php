@@ -11,7 +11,16 @@ $not_found_page_strings = [
     ]
 ];
 
-if(!isset($lang)) include($_SERVER['DOCUMENT_ROOT'] . '/includes/lang.php');
+http_response_code(404);
+
+// Reached either as Apache's ErrorDocument (no lang.php has run yet, and its
+// URL rewriting must not run for an error document) or included by lang.php for
+// an unknown demo slug (which already set $lang and $slug).
+if (!isset($lang)) {
+    include($_SERVER['DOCUMENT_ROOT'] . '/includes/demos.php');
+    $lang = (isset($_GET['lang']) && strtolower($_GET['lang']) === 'nl') ? 'nl' : 'en';
+    $slug = '';
+}
 
 $title = $not_found_page_strings['title'][$lang];
 

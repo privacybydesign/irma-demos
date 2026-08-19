@@ -27,4 +27,6 @@ RUN chown -R www-data:www-data /var/www/html \
 
 RUN echo "Listen 8080" >> /etc/apache2/ports.conf
 
+RUN printf 'ErrorDocument 404 /404.php\n' > /etc/apache2/conf-enabled/error-documents.conf
+
 EXPOSE 8080
