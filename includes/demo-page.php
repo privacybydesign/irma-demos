@@ -57,7 +57,7 @@ $demo_page_strings = [
 <aside class="summary">
 	<div class="benefits block">
 		<h2><?php echo $demo_page_strings['benefits'][$lang]; ?></h2>
-		<ul>
+		<ul role="list">
 			<?php foreach($content['benefits'] as $benefit): ?>
 				<li><?php echo $benefit; ?></li>
 			<?php endforeach; ?>
