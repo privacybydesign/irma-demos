@@ -6,7 +6,7 @@ $demo_page_strings = [
 	],
 	'with_yivi' => [
 		'en' => 'with Yivi',
-		'nl' => 'Met Yivi'
+		'nl' => 'met Yivi'
 	],
 	'benefits' => [
 		'en' => 'Benefits',
@@ -35,6 +35,10 @@ $demo_page_strings = [
 	'sidenotes' => [
 		'en' => 'Sidenotes',
 		'nl' => 'Opmerkingen'
+	],
+	'more' => [
+		'en' => 'See it in use',
+		'nl' => 'In de praktijk'
 	],
 ];
 ?>
@@ -66,8 +70,10 @@ $demo_page_strings = [
 			<?php
 			echo $content['data']['description'];
 			echo $demo_page_strings['source'][$lang];
+			$last_source = sizeof($content['data']['sources']) - 1;
 			foreach($content['data']['sources'] as $key => $source) {
-				if($key === sizeof($content['data']['sources']) - 1) {
+				// Only join with "or" when there is something to join.
+				if($key === $last_source && $last_source > 0) {
 					echo $demo_page_strings['or'][$lang];
 				}
 				if(!empty($source['url'])) {
@@ -75,7 +81,7 @@ $demo_page_strings = [
 				}
 				echo $source['label'];
 				if(!empty($source['url'])) echo "</a>";
-				if($key === sizeof($content['data']['sources']) - 1) echo '.'; else echo ', ';
+				if($key === $last_source) echo '.'; else echo ', ';
 			} ?>
 		</p>
 	</div>
@@ -83,9 +89,9 @@ $demo_page_strings = [
 
 <div class="demo-container">
 	<script type="text/javascript">
-		let header_text = '<?php echo $content['action']; ?>';
-		let lang = '<?php echo $lang; ?>';
-		let slug = '<?php echo $slug; ?>';
+		let header_text = <?php echo json_encode($content['action']); ?>;
+		let lang = <?php echo json_encode($lang); ?>;
+		let slug = <?php echo json_encode($slug); ?>;
 	</script>
 
 	<p class="info">
@@ -114,6 +120,18 @@ $demo_page_strings = [
 		})();
 	</script>
 </div>
+
+<?php if (!empty($content['more'])): ?>
+<section class="more-demos">
+	<h2><?php echo $demo_page_strings['more'][$lang]; ?></h2>
+	<p><?php echo $content['more']['description']; ?></p>
+	<p>
+		<?php foreach ($content['more']['links'] as $link): ?>
+			<a class="button" href="<?php echo $link['url']; ?>" target="_blank"><?php echo $link['label']; ?></a>
+		<?php endforeach; ?>
+	</p>
+</section>
+<?php endif; ?>
 
 <aside>
 	<details>

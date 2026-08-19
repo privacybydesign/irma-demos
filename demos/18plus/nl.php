@@ -25,5 +25,18 @@ $content = [
 		]
 	],
 	"action" => "Bewijs dat ik ouder ben dan 18",
+	"more" => [
+		"description" => "In twee demo’s wordt deze leeftijdscontrole gebruikt in een omgeving die op een echte site lijkt:",
+		"links" => [
+			[
+				"label" => "Angry Games",
+				"url" => "https://angrygames.yivi.app"
+			],
+			[
+				"label" => "YiviTube",
+				"url" => "https://yivitube.yivi.app"
+			]
+		]
+	],
 	"sidenotes" => "Webshops, filmplatforms, of gokwebsites hebben een wettelijke verplichting om leeftijd te controleren bij het aanbieden van geweldadige of mogelijk aanstootgevende producten. Tot nu toe ziet de overheid meestal door de vingers dat webwinkels geen echte leeftijdscontrole uitvoeren, omdat er geen gebruiksvriendelijke (en goedkope) technologie beschikbaar zou zijn. Yivi kan dit oplossen."
 ];

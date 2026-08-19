@@ -25,5 +25,18 @@ $content = [
 		]
 	],
 	"action" => "Prove I’m older than 18",
+	"more" => [
+		"description" => "Two demos put this age check to work in a setting that looks like a real site:",
+		"links" => [
+			[
+				"label" => "Angry Games",
+				"url" => "https://angrygames.yivi.app"
+			],
+			[
+				"label" => "YiviTube",
+				"url" => "https://yivitube.yivi.app"
+			]
+		]
+	],
 	"sidenotes" => "Webshops, movie platforms, or gambling sites have a legal obligation to perform age verification when offering violent or possibly offensive products. Currently, many of these sites do not have proper age checks because there is no user-friendly (and cheap) technology available. Yivi fills this gap."
 ];
