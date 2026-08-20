@@ -1,129 +1,34 @@
-<p>
-  Op deze pagina kun je enkele voorbeelden uitproberen
-  waarbij u zelf een digitale handtekening zet met eigen
-  persoonlijke gegevens in de Yivi app. Na het drukken op
-  een van de onderstaande knoppen verschijnt een
-  ondertekeningsverzoek in je Yivi app. Wanneer je deze
-  pagina op uw telefoon bekijkt, wordt automatisch
-  overgeschakeld naar de Yivi app. Wanneer je deze pagina
-  op een andere apparaat bekijkt moet je eerst de QR code
-  die verschijnt met de Yivi app op uw telefoon scannen.
-</p>
-<p>
-  Geen enkele van deze voorbeelden leidt tot
-  daadwerkelijke verplichtingen. Je kunt dus gerust de
-  ondertekening geheel uitvoeren. De tekst die je
-  ondertekent verplicht nergens toe en wordt niet bewaard.
-</p>
-<p>
-  Voor het succesvol uitproberen van deze voorbeelden is
-  het vereist dat je de benodigde gegevens al in uw Yivi
-  app verzameld hebt. Dat kan via de
-  Yivi <a href="https://yivi.app/storing_and_sharing/">uitgifte
-  pagina</a>.
-</p>
-<div class="signature-examples">
-  <div id="email_consent" class="signature-example">
-    <div>
-      <h3>Advertenties</h3>
-      <p>
-        <button id="btn_email_consent" class="custom-button">Geef toestemming voor advertenties per email</button>
-      </p>
-      <p id="email_consent_result_status"></p>
-      <p>
-        Hierbij word je gevraagd om AVG-achtige
-        toestemming te geven om je advertenties toe te
-        sturen. Het persoonlijke kenmerk waarmee je
-        ondertekent is het e-mailadres waarop je deze
-        advertenties wil ontvangen. Verder worden met deze
-        ondertekening geen van jouw gegevens onthuld. In
-        principe zouden er nog meer van je persoonlijke
-        gegevevens toegevoegd kunnen worden in de
-        handtekening (zoals geslacht, geboortedatum etc.)
-        zodat de advertenties beter afgestemd kunnen
-        worden.
-      </p>
-      <p>
-        Deze verlening van toestemming via een
-        digitale handtekening geeft een perfecte
-        manier om toestemming onder de Algemene
-        Verordening Gegevensbescherming (AVG) vast
-        te leggen. Deze toestemming in de vorm van
-        een digitale handtekening kan aan andere
-        (partner)bedrijven doorgegeven worden en
-        geeft hen zekerheid, omdat ze de
-        handtekening zelf kunnen controleren. Ook
-        kan hiermee aan de AVG-toezichthouder,
-        desgevraagd, aangetoond worden dat er
-        daadwerkelijk toestemming gegeven is door
-        de eigenaar van het e-mailadres.
-      </p>
-    </div>
-  </div>
-
-  <div id="donation" class="signature-example">
-    <div>
-      <h3>Donatie</h3>
-      <p>
-        <button id="btn_donation" class="custom-button">Doneer aan de stichting Privacy by Design</button>
-      </p>
-      <div id="donation_result_status"></div>
-      <p>
-        Hierbij word je gevraagd te ondertekenen
-        dat je een financi&euml;le bijdrage zult leveren
-        aan de stichting (niet echt). Je
-        ondertekent hierbij met je achternaam en
-        met je mobiele telefoonnummer.
-      </p>
-    </div>
-  </div>
-
-  <div id="exam" class="signature-example">
-    <div>
-      <h3>Tentamenresultaat</h3>
-      <p>
-        <button id="btn_exam" class="custom-button">Verklaring tentamen gehaald</button>
-      </p>
-      <div id="exam_result_status"></div>
-      <p>
-        Hierbij word je gevraagd om als docent te
-        ondertekenen dat een bepaalde student geslaagd is
-        voor een tentamen bij jou. Je ondertekent als
-        docent hierbij met een drietal gegevens uit
-        SURFconext, namelijk je naam, de (educatieve)
-        instelling waar je werkzaam bent, en met je e-mailadres
-        bij die instelling. Een mogelijkheid is om
-        deze handtekeningen te combineren met het veel
-        gebruikte administratie
-        systeem <a href="https://caci.nl/nl/osiris">Osiris</a>,
-        zodat docenten geen natte handtekeningen meer
-        hoeven te zetten op lijsten met tentamencijfers.
-      </p>
-    </div>
-  </div>
-</div>
-
-<p>
-  Attribuut-gebaseerde digitale handtekeningen bieden veel
-  nieuwe mogelijkheden: een politiebeambte kan bijv. een
-  proces verbaal ondertekenen met zijn/haar naam en
-  politie-registratienummer, als persoonlijke gegevens uit
-  Yivi; daarmee wordt de integreteit en authenticiteit van
-  dit proces verbaal in de hele verdere justiti&euml;le
-  keten gegarandeerd. Ook kan een arts een medische
-  verklaring met de
-  eigen <a href="https://irma-agb.nuts.nl/">AGB-registratie</a>
-  gegevens als Yivi gegevens ondertekenen, zodat iedereen
-  kan controleren dat deze verklaring daadwerkelijk door
-  een arts (en ook welke) getekend is. Binnen organisaties
-  kunnen allerlei beslissingen met digitale handtekeningen
-  betrouwbaar en controleerbaar vastgelegd worden. Yivi is
-  het enige
-  <em>identity platform</em> dat dergelijke
-  ge&iuml;ntegreerde authenticatie en
-  ondertekening biedt.
-</p>
-<p>
-  <a href="../../">Terug</a> naar
-  het Yivi demo overzicht.
-</p>
+<?php
+$content = [
+	"intro" => "Handig overal waar een verklaring ondertekend moet worden door een bepaalde, gecontroleerde persoon.",
+	"benefits" => [
+		"Onderteken met de gegevens die al in je wallet zitten",
+		"De ontvanger kan nagaan wie tekende, en waarmee",
+		"Geen certificaat of kaartlezer nodig"
+	],
+	"data" => [
+		"description" => "De kaartjes waarmee je ondertekent",
+		"sources" => [
+			[
+				"url" => "https://yivi.app/storing_and_sharing/",
+				"label" => "de Yivi-uitgiftepagina"
+			],
+			[
+				"url" => "https://privacybydesign.foundation/uitgifte/surfconext/surfconext/?action=login",
+				"label" => "SURFconext"
+			]
+		]
+	],
+	"actions" => [
+		"email-signature" => "Geef toestemming voor advertenties per e-mail",
+		"donation-signature" => "Zeg een donatie toe",
+		"exam-signature" => "Verklaar een tentamenresultaat"
+	],
+	"sidenotes" => [
+		"Geen van deze voorbeelden leidt tot een daadwerkelijke verplichting. Je kunt de ondertekening dus gerust helemaal uitvoeren: de tekst die je ondertekent verplicht nergens toe en wordt niet bewaard. Na het drukken op een knop verschijnt een ondertekeningsverzoek in je Yivi-app; op een telefoon wordt automatisch overgeschakeld naar de app, op een ander apparaat scan je eerst de QR-code die verschijnt.",
+		"<strong>Advertenties.</strong> Hierbij word je gevraagd om AVG-achtige toestemming te geven om je advertenties toe te sturen. Het persoonlijke kenmerk waarmee je ondertekent is het e-mailadres waarop je die advertenties wilt ontvangen, en verder wordt er niets onthuld — in principe zouden er meer gegevens toegevoegd kunnen worden, zoals geslacht of geboortedatum, zodat de advertenties beter afgestemd worden. Een digitale handtekening is de perfecte manier om toestemming onder de Algemene Verordening Gegevensbescherming vast te leggen: hij kan aan (partner)bedrijven doorgegeven worden, die hem zelf kunnen controleren, en hij kan desgevraagd aan de toezichthouder getoond worden als bewijs dat de eigenaar van het e-mailadres daadwerkelijk toestemming gaf.",
+		"<strong>Donatie.</strong> Hierbij word je gevraagd te ondertekenen dat je een financi&euml;le bijdrage zult leveren aan de stichting (niet echt). Je ondertekent met je achternaam en je mobiele telefoonnummer.",
+		"<strong>Tentamenresultaat.</strong> Hierbij word je gevraagd om als docent te ondertekenen dat een bepaalde student geslaagd is voor een tentamen bij jou. Je ondertekent met een drietal gegevens uit SURFconext: je naam, de instelling waar je werkzaam bent, en je e-mailadres bij die instelling. Een mogelijkheid is om deze handtekeningen te combineren met een veelgebruikt administratiesysteem als <a href=\"https://caci.nl/nl/osiris\" target=\"_blank\">Osiris</a>, zodat docenten geen natte handtekeningen meer hoeven te zetten op lijsten met tentamencijfers.",
+		"Attribuut-gebaseerde digitale handtekeningen bieden veel nieuwe mogelijkheden. Een politiebeambte kan een proces-verbaal ondertekenen met naam en politieregistratienummer, waarmee de integriteit en authenticiteit ervan in de hele justiti&euml;le keten gegarandeerd is. Een arts kan een medische verklaring ondertekenen met de eigen <a href=\"https://irma-agb.nuts.nl/\" target=\"_blank\">AGB-registratie</a>, zodat iedereen kan controleren dat de verklaring daadwerkelijk door een arts getekend is, en door welke. Binnen organisaties kunnen allerlei beslissingen betrouwbaar en controleerbaar vastgelegd worden. Yivi is het enige <em>identity platform</em> dat authenticatie en ondertekening zo ge&iuml;ntegreerd biedt."
+	]
+];

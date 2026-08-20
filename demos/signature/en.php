@@ -1,116 +1,34 @@
-<p>
-  On this page you can try out some examples in
-  which you can produce digital signatures
-  yourself, with the personal data in your Yivi
-  app. After pressing the buttons below, a signing
-  request appears in your Yivi app. When you read
-  this page on your phone, the switch to the Yivi
-  app is made automatically. When you read this
-  page on another device, you should first scan
-  the the QR code that appears, using the Yivi app
-  on your phone.
-</p>
-<p>
-  None of these example leads to actual
-  obligations. You can safely perform these
-  signing acts. The example text that you sign
-  does not commit you and the resulting signature
-  is not stored.
-</p>
-<p>
-  In order to be able to try out these examples
-  you must have collected the relevant personal
-  data in your Yivi app. This can be done via the
-  Yivi <a href="https://yivi.app/en/storing_and_sharing/">issuance
-  page</a>.
-</p>
-<div class="signature-examples">
-  <div id="email_consent" class="signature-example">
-	<div>
-	  <h3>Advertisement</h3>
-	  <p>
-		<button id="btn_email_consent" class="custom-button">Consent to receiving advertisements via email</button>
-	  </p>
-	  <p id="email_consent_result_status"></p>
-	  <p>
-		Here you are asked to give GDPR-style consent so
-		that advertisements can be sent to you. The
-		personal data with which you sign this consent
-		message is the email address at which you agree to
-		receive the advertisements. No further data of
-		yours are disclosed via this signature. In
-		principle, more of your personal data could be
-		included (like your gender, date of birth, etc) so
-		that advertisements are more targeted.
-	  </p>
-	  <p>
-		Giving permission via a digital signature is the
-		perfect way to register consent under the General
-		Data Protection Regulation (GDPR). This consent in
-		the form of a digital signature can be transferred
-		to other (partner)companies, giving them
-		certainty, because they can check the signature
-		themselves. Also, these signatures can be shown to
-		the GDPR-regulator, upon request, in order to
-		demonstrate that consent has actually been given
-		by the owner of the email address.
-	  </p>
-	</div>
-  </div>
-
-  <div id="donation" class="signature-example">
-	<div>
-	  <h3>Donation</h3>
-	  <p>
-		<button id="btn_donation" class="custom-button">Donate to the Privacy by Design foundation</button>
-	  </p>
-	  <div id="donation_result_status"></div>
-	  <p>
-		Now you are asked to sign that you will contribute
-		financially to the foundation (not really). You
-		sign with your family name and with your mobile
-		phone number.
-	  </p>
-	</div>
-  </div>
-
-  <div id="exam" class="signature-example">
-	<div>
-	  <h3>Exam result</h3>
-	  <p>
-		<button id="btn_exam" class="custom-button">Declaration exam passed</button>
-	  </p>
-	  <div id="exam_result_status"></div>
-	  <p>
-		Here you are asked to sign as teacher that a
-		certain student has passed your exam. You sign
-		with three personal data items from SURFconext,
-		viz. your name, the (educational) institution
-		where you work, and your email address at that
-		institution.
-	  </p>
-	</div>
-  </div>
-</div>
-
-<p>
-  Attribute-based digital signatures offer many
-  new possibilities: a police officer, for
-  instance, can sign a report with his/her name
-  and police-registration number; in this way the
-  integrity and authenticity of this report is
-  guaranteed in the whole criminal justice
-  chain. Also, a medical doctor can sign a medical
-  statement with his/her own medical credentials,
-  so that everyone can verify that this statement
-  is actually signed by a medical doctor (and also
-  by whom). Within organisations all kinds of
-  decisions can be registered reliably and
-  verifiably with digital signatures. Yivi is the
-  only identity platform that seamlessly combines
-  both authentication and signing.
-</p>
-<p>
-  <a href="../../">Back</a>
-  to the Yivi demo page.
-</p>
+<?php
+$content = [
+	"intro" => "Useful wherever a statement has to be signed by a particular, verified person.",
+	"benefits" => [
+		"Sign with the personal data already in your wallet",
+		"The receiver can check who signed, and with what",
+		"No certificate or card reader needed"
+	],
+	"data" => [
+		"description" => "The cards you sign with",
+		"sources" => [
+			[
+				"url" => "https://yivi.app/en/storing_and_sharing/",
+				"label" => "the Yivi issuance page"
+			],
+			[
+				"url" => "https://privacybydesign.foundation/issuance/surfconext/surfconext/?action=login",
+				"label" => "SURFconext"
+			]
+		]
+	],
+	"actions" => [
+		"email-signature" => "Consent to advertisements by email",
+		"donation-signature" => "Promise a donation",
+		"exam-signature" => "Declare an exam result"
+	],
+	"sidenotes" => [
+		"None of these examples leads to an actual obligation. You can safely go through with the signing: the text you sign does not commit you to anything, and the resulting signature is not stored. After pressing a button a signing request appears in your Yivi app; on a phone the switch to the app happens automatically, on another device you first scan the QR code that appears.",
+		"<strong>Advertisement.</strong> Here you are asked to give GDPR-style consent so that advertisements can be sent to you. The personal data you sign with is the email address at which you agree to receive them, and nothing further is disclosed — though in principle more could be included, such as your gender or date of birth, so that the advertisements are better targeted. A digital signature is the perfect way to record consent under the General Data Protection Regulation: it can be passed on to partner companies, who can check it themselves, and it can be shown to the regulator on request to demonstrate that the owner of the address actually agreed.",
+		"<strong>Donation.</strong> Here you are asked to sign that you will contribute financially to the foundation (not really). You sign with your family name and your mobile phone number.",
+		"<strong>Exam result.</strong> Here you are asked to sign, as a teacher, that a certain student has passed your exam. You sign with three items from SURFconext: your name, the educational institution where you work, and your email address at that institution.",
+		"Attribute-based digital signatures open up many new possibilities. A police officer can sign a report with their name and police registration number, guaranteeing its integrity and authenticity throughout the criminal justice chain. A doctor can sign a medical statement with their own medical credentials, so that anyone can verify the statement really was signed by a doctor, and by which one. Within organisations all kinds of decisions can be recorded reliably and verifiably. Yivi is the only identity platform that seamlessly combines both authentication and signing."
+	]
+];
