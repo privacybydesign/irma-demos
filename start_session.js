@@ -133,6 +133,7 @@ function start_session_inline(type, lang, verifier, errorHandler = null, options
     inline_session_handler
         .start()
         .then((data) => {
+            if (generation !== inline_session_generation) return;
             showResult('result', verifier(data));
         })
         .catch((data) => {
