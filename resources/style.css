@@ -263,7 +263,10 @@ th, td {
    The chooser sits above the square: the buttons behave as a group, and the one
    that started the running session stays pressed. */
 .demo-actions {
-	margin-block-start: var(--margin-medium);
+	/* Both margins, not just the top one: when the square is still hidden its own
+	   margins are gone, and the chooser would otherwise butt against what follows.
+	   With the square on the page the two collapse to the same gap as before. */
+	margin-block: var(--margin-medium);
 
 	h2 {
 		font-size: 1.1em;
