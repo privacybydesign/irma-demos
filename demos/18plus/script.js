@@ -13,7 +13,7 @@ let verifier = (data) => {
     let value = data.disclosed[0][0].rawvalue.toLowerCase();
     let over18 = value === 'yes' || value === 'ja';
 
-    let panel = document.querySelector('.site-panel');
+    let panel = document.querySelector('.mock-panel');
     panel.querySelector('.age-result').textContent = messages[over18 ? 'over18' : 'under18'][lang];
     panel.hidden = false;
     if (over18) panel.querySelector('p:has(button)').hidden = false;

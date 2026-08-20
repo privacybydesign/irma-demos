@@ -57,16 +57,16 @@ $demo_strings = [
 
 <style>
 	.consent-site {
-		--site-accent: #B3402F;
-		--site-on-accent: #FDEEEB;
+		--mock-accent: #B3402F;
+		--mock-on-accent: #FDEEEB;
 	}
 	.donation-site {
-		--site-accent: #1F6F5C;
-		--site-on-accent: #E9F7F3;
+		--mock-accent: #1F6F5C;
+		--mock-on-accent: #E9F7F3;
 	}
 	.exam-site {
-		--site-accent: #4B3B8F;
-		--site-on-accent: #EFECFB;
+		--mock-accent: #4B3B8F;
+		--mock-on-accent: #EFECFB;
 	}
 	.exam-sheet {
 		display: flex;
@@ -75,52 +75,52 @@ $demo_strings = [
 		flex-wrap: wrap;
 		margin-block-end: calc(1em + 1vw);
 		padding-block-end: .75em;
-		border-block-end: 1px solid oklch(from var(--site-on-surface) l c h / calc(alpha - .85));
+		border-block-end: 1px solid oklch(from var(--mock-on-surface) l c h / calc(alpha - .85));
 
 		p { margin: 0; }
 		.exam-course { font-weight: 700; }
-		.exam-grade { color: var(--site-accent); font-weight: 600; }
+		.exam-grade { color: var(--mock-accent); font-weight: 600; }
 	}
 </style>
 
 <figure class="demo consent-site" data-demo="email-signature" hidden>
-	<header class="site-header">
-		<div class="site-logo"><?php echo $demo_strings['consent']['organisation'][$lang]; ?></div>
-		<ul class="site-nav">
+	<header class="mock-header">
+		<div class="mock-logo"><?php echo $demo_strings['consent']['organisation'][$lang]; ?></div>
+		<ul class="mock-nav">
 			<?php foreach ($demo_strings['consent']['nav'][$lang] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
 		</ul>
 	</header>
-	<section class="site-main">
+	<section class="mock-main">
 		<h2><?php echo $demo_strings['consent']['title'][$lang]; ?></h2>
-		<p class="site-lead"><?php echo $demo_strings['consent']['lead'][$lang]; ?></p>
+		<p class="mock-lead"><?php echo $demo_strings['consent']['lead'][$lang]; ?></p>
 		<div class="yivi-form"></div>
-		<div class="site-panel" data-demo-result hidden></div>
+		<div class="mock-panel" data-demo-result hidden></div>
 	</section>
 </figure>
 
 <figure class="demo donation-site" data-demo="donation-signature" hidden>
-	<header class="site-header">
-		<div class="site-logo"><?php echo $demo_strings['donation']['organisation'][$lang]; ?></div>
-		<ul class="site-nav">
+	<header class="mock-header">
+		<div class="mock-logo"><?php echo $demo_strings['donation']['organisation'][$lang]; ?></div>
+		<ul class="mock-nav">
 			<?php foreach ($demo_strings['donation']['nav'][$lang] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
 		</ul>
 	</header>
-	<section class="site-main">
+	<section class="mock-main">
 		<h2><?php echo $demo_strings['donation']['title'][$lang]; ?></h2>
-		<p class="site-lead"><?php echo $demo_strings['donation']['lead'][$lang]; ?></p>
+		<p class="mock-lead"><?php echo $demo_strings['donation']['lead'][$lang]; ?></p>
 		<div class="yivi-form"></div>
-		<div class="site-panel" data-demo-result hidden></div>
+		<div class="mock-panel" data-demo-result hidden></div>
 	</section>
 </figure>
 
 <figure class="demo exam-site" data-demo="exam-signature" hidden>
-	<header class="site-header">
-		<div class="site-logo"><?php echo $demo_strings['exam']['organisation'][$lang]; ?></div>
-		<ul class="site-nav">
+	<header class="mock-header">
+		<div class="mock-logo"><?php echo $demo_strings['exam']['organisation'][$lang]; ?></div>
+		<ul class="mock-nav">
 			<?php foreach ($demo_strings['exam']['nav'][$lang] as $item): ?><li><?php echo $item; ?></li><?php endforeach; ?>
 		</ul>
 	</header>
-	<section class="site-main">
+	<section class="mock-main">
 		<div class="exam-sheet">
 			<div>
 				<p class="exam-course"><?php echo $demo_strings['exam']['course'][$lang]; ?></p>
@@ -129,8 +129,8 @@ $demo_strings = [
 			<p class="exam-grade"><?php echo $demo_strings['exam']['grade'][$lang]; ?></p>
 		</div>
 		<h2><?php echo $demo_strings['exam']['title'][$lang]; ?></h2>
-		<p class="site-lead"><?php echo $demo_strings['exam']['lead'][$lang]; ?></p>
+		<p class="mock-lead"><?php echo $demo_strings['exam']['lead'][$lang]; ?></p>
 		<div class="yivi-form"></div>
-		<div class="site-panel" data-demo-result hidden></div>
+		<div class="mock-panel" data-demo-result hidden></div>
 	</section>
 </figure>

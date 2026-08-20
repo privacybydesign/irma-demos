@@ -38,12 +38,12 @@ $demo_strings = [
 
 <style>
 	.shop-site {
-		--site-accent: #0B6E4F;
-		--site-on-accent: #E9F8F2;
+		--mock-accent: #0B6E4F;
+		--mock-on-accent: #E9F8F2;
 	}
 	.campus-site {
-		--site-accent: #8A2E4D;
-		--site-on-accent: #FBECF1;
+		--mock-accent: #8A2E4D;
+		--mock-on-accent: #FBECF1;
 	}
 	.shop-product {
 		display: flex;
@@ -71,52 +71,52 @@ $demo_strings = [
 
 <figure class="demo shop-site" data-demo="student" hidden>
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['shop']['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['shop']['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['shop']['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<div class="shop-product">
 		<div class="shop-art" role="presentation"></div>
 		<div>
 			<p class="shop-name"><?php echo $demo_strings['shop']['product'][$lang]; ?></p>
-			<p class="site-price shop-price" data-demo-initial><?php echo $demo_strings['shop']['full'][$lang]; ?></p>
-			<p class="site-price shop-discounted" data-demo-result hidden>
-				<span class="site-strike"><?php echo $demo_strings['shop']['full'][$lang]; ?></span><?php echo $demo_strings['shop']['discounted'][$lang]; ?>
+			<p class="mock-price shop-price" data-demo-initial><?php echo $demo_strings['shop']['full'][$lang]; ?></p>
+			<p class="mock-price shop-discounted" data-demo-result hidden>
+				<span class="mock-strike"><?php echo $demo_strings['shop']['full'][$lang]; ?></span><?php echo $demo_strings['shop']['discounted'][$lang]; ?>
 			</p>
 		</div>
 	</div>
 
 	<h2><?php echo $demo_strings['shop']['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['shop']['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['shop']['lead'][$lang]; ?></p>
 
 	<div class="yivi-form"></div>
-	<div class="site-panel shop-result" data-demo-result hidden></div>
+	<div class="mock-panel shop-result" data-demo-result hidden></div>
 </section>
 
 </figure>
 
 <figure class="demo campus-site" data-demo="school" hidden>
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['campus']['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['campus']['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['campus']['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<h2><?php echo $demo_strings['campus']['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['campus']['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['campus']['lead'][$lang]; ?></p>
 
-	<div class="site-fields">
+	<div class="mock-fields">
 		<label for="campus-role"><?php echo $demo_strings['campus']['role'][$lang]; ?></label>
 		<input id="campus-role" readonly>
 		<label for="campus-institute"><?php echo $demo_strings['campus']['institute'][$lang]; ?></label>
@@ -124,7 +124,7 @@ $demo_strings = [
 	</div>
 
 	<div class="yivi-form"></div>
-	<div class="site-panel campus-result" data-demo-result hidden></div>
+	<div class="mock-panel campus-result" data-demo-result hidden></div>
 </section>
 
 </figure>

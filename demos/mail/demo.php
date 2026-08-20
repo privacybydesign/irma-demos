@@ -20,36 +20,36 @@ $demo_strings = [
 
 <style>
 	.mail-site {
-		--site-accent: #3B3B8F;
-		--site-on-accent: #EEEEFB;
+		--mock-accent: #3B3B8F;
+		--mock-on-accent: #EEEEFB;
 	}
-	.mail-site .site-fields {
+	.mail-site .mock-fields {
 		margin-block-end: calc(1em + 1vw);
 	}
 </style>
 
 <figure class="demo mail-site">
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<h2><?php echo $demo_strings['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
 
-	<div class="site-fields">
+	<div class="mock-fields">
 		<label for="mail-address"><?php echo $demo_strings['address'][$lang]; ?></label>
 		<input id="mail-address" readonly>
 	</div>
 
 	<div class="yivi-form"></div>
-	<div class="site-panel mail-result" data-demo-result hidden></div>
+	<div class="mock-panel mail-result" data-demo-result hidden></div>
 </section>
 
 </figure>

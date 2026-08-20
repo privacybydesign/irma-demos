@@ -31,7 +31,7 @@ function site_result(demo, [heading, ...content]) {
     let body = document.createElement('p');
     body.append(...content);
 
-    let panel = site.querySelector('.site-panel');
+    let panel = site.querySelector('.mock-panel');
     panel.replaceChildren(title, body);
     panel.hidden = false;
     site.querySelector('.yivi-form').hidden = true;

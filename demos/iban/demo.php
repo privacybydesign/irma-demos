@@ -26,30 +26,30 @@ $demo_strings = [
 
 <style>
 	.iban-site {
-		--site-accent: #0F5F6E;
-		--site-on-accent: #EAFAFC;
+		--mock-accent: #0F5F6E;
+		--mock-on-accent: #EAFAFC;
 	}
-	.iban-site .site-fields {
+	.iban-site .mock-fields {
 		margin-block-end: calc(1em + 1vw);
 	}
 </style>
 
 <figure class="demo iban-site">
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<h2><?php echo $demo_strings['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
 
-	<div class="site-fields">
+	<div class="mock-fields">
 		<label for="iban-fullname"><?php echo $demo_strings['fullname'][$lang]; ?></label>
 		<input id="iban-fullname" readonly>
 		<label for="iban-number"><?php echo $demo_strings['iban'][$lang]; ?></label>
@@ -59,7 +59,7 @@ $demo_strings = [
 	</div>
 
 	<div class="yivi-form"></div>
-	<p class="site-note" data-demo-result hidden>
+	<p class="mock-note" data-demo-result hidden>
 		<?php echo $demo_strings['confirmation'][$lang]; ?>
 	</p>
 </section>

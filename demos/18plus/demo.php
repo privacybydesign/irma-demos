@@ -23,10 +23,10 @@ $demo_strings = [
 
 <style>
 	.age-site {
-		--site-accent: #2A1B4A;
-		--site-on-accent: #FFC145;
-		--site-surface: #191029;
-		--site-on-surface: #F4F1FA;
+		--mock-accent: #2A1B4A;
+		--mock-on-accent: #FFC145;
+		--mock-surface: #191029;
+		--mock-on-surface: #F4F1FA;
 	}
 	.age-cover {
 		display: flex;
@@ -48,9 +48,9 @@ $demo_strings = [
 	.age-badge {
 		display: inline-block;
 		padding: .2em .6em;
-		border: 2px solid var(--site-on-accent);
+		border: 2px solid var(--mock-on-accent);
 		border-radius: 4px;
-		color: var(--site-on-accent);
+		color: var(--mock-on-accent);
 		font-weight: 700;
 		font-size: .85em;
 	}
@@ -63,30 +63,30 @@ $demo_strings = [
 
 <figure class="demo dark age-site">
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<div class="age-cover">
 		<div class="age-art" role="presentation"></div>
 		<div>
 			<span class="age-badge"><?php echo $demo_strings['rating'][$lang]; ?></span>
 			<p class="age-title"><?php echo $demo_strings['game'][$lang]; ?></p>
-			<p class="site-price"><?php echo $demo_strings['price'][$lang]; ?></p>
+			<p class="mock-price"><?php echo $demo_strings['price'][$lang]; ?></p>
 		</div>
 	</div>
 
 	<h2><?php echo $demo_strings['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
 
 	<div class="yivi-form"></div>
-	<div class="site-panel" data-demo-result hidden>
+	<div class="mock-panel" data-demo-result hidden>
 		<p class="age-result"></p>
 		<p data-demo-result hidden>
 			<button type="button"><?php echo $demo_strings['buy'][$lang]; ?></button>

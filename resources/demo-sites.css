@@ -6,16 +6,16 @@
 	margin: 0;
 	font-family: system-ui, sans-serif;
 
-	--site-accent: #712F87;
-	--site-on-accent: white;
-	--site-surface: white;
-	--site-on-surface: #14181A;
-	--site-muted: oklch(from var(--site-on-surface) l c h / calc(alpha - .35));
-	--site-panel: oklch(from var(--site-on-surface) l c h / calc(alpha - .94));
+	--mock-accent: #712F87;
+	--mock-on-accent: white;
+	--mock-surface: white;
+	--mock-on-surface: #14181A;
+	--mock-muted: oklch(from var(--mock-on-surface) l c h / calc(alpha - .35));
+	--mock-panel: oklch(from var(--mock-on-surface) l c h / calc(alpha - .94));
 
 	/* The widget follows the pretend site's own colour, not the demo site's. */
-	--link: var(--site-accent);
-	--link-hover: oklch(from var(--site-accent) calc(l - .1) c h);
+	--link: var(--mock-accent);
+	--link-hover: oklch(from var(--mock-accent) calc(l - .1) c h);
 
 	div.yivi-web-form {
 		margin: 0;
@@ -33,24 +33,24 @@
    text and outline buttons need to be turned around. */
 .demo.dark {
 	color-scheme: dark;
-	--site-panel: oklch(from white l c h / calc(alpha - .88));
-	--site-muted: oklch(from white l c h / calc(alpha - .3));
+	--mock-panel: oklch(from white l c h / calc(alpha - .88));
+	--mock-muted: oklch(from white l c h / calc(alpha - .3));
 
 	.yivi-web-header p {
-		color: var(--site-on-surface) !important;
+		color: var(--mock-on-surface) !important;
 	}
 
 	.yivi-web-button-secondary {
-		border-color: oklch(from var(--site-on-surface) l c h / calc(alpha - .2));
+		border-color: oklch(from var(--mock-on-surface) l c h / calc(alpha - .2));
 
 		&:hover {
-			color: var(--site-on-surface);
-			background: oklch(from var(--site-on-surface) l c h / calc(alpha - .9));
+			color: var(--mock-on-surface);
+			background: oklch(from var(--mock-on-surface) l c h / calc(alpha - .9));
 		}
 	}
 
 	.yivi-web-button-tertiary {
-		color: var(--site-on-surface);
+		color: var(--mock-on-surface);
 	}
 
 	/* Sits on white so the artwork stays readable on a dark panel. */
@@ -63,9 +63,9 @@
 	}
 }
 
-.site-header {
-	background: var(--site-accent);
-	color: var(--site-on-accent);
+.mock-header {
+	background: var(--mock-accent);
+	color: var(--mock-on-accent);
 	padding: 1em 5vw;
 	display: flex;
 	align-items: baseline;
@@ -74,13 +74,13 @@
 	flex-wrap: wrap;
 }
 
-.site-logo {
+.mock-logo {
 	font-weight: bold;
 	font-size: 1.4em;
 	letter-spacing: -.01em;
 }
 
-.site-nav {
+.mock-nav {
 	display: flex;
 	gap: 1.5em;
 	list-style: none;
@@ -90,10 +90,10 @@
 	opacity: .8;
 }
 
-.site-main {
+.mock-main {
 	padding: calc(1em + 1vw) 5vw calc(2em + 2vw);
-	background: var(--site-surface);
-	color: var(--site-on-surface);
+	background: var(--mock-surface);
+	color: var(--mock-on-surface);
 
 	h1,
 	h2 {
@@ -111,14 +111,14 @@
 	}
 }
 
-.site-lead {
+.mock-lead {
 	max-width: 46ch;
-	color: var(--site-muted);
+	color: var(--mock-muted);
 }
 
-.site-panel {
+.mock-panel {
 	padding: calc(1em + .5vw) calc(1.5em + 1vw);
-	background: var(--site-panel);
+	background: var(--mock-panel);
 	border-radius: 12px;
 	max-width: 42em;
 
@@ -142,12 +142,12 @@
 	margin-inline: 0;
 	margin-block-end: 0;
 	padding-inline-start: var(--padding-medium);
-	border-inline-start: 4px solid var(--site-accent);
+	border-inline-start: 4px solid var(--mock-accent);
 	font-style: italic;
 }
 
 /* A form the disclosure fills in, rather than the visitor. */
-.site-fields {
+.mock-fields {
 	display: grid;
 	grid-template-columns: minmax(7em, max-content) 1fr;
 	gap: .75em 1.5em;
@@ -161,33 +161,33 @@
 	input {
 		font: inherit;
 		padding: .5em .75em;
-		border: 1px solid oklch(from var(--site-on-surface) l c h / calc(alpha - .8));
+		border: 1px solid oklch(from var(--mock-on-surface) l c h / calc(alpha - .8));
 		border-radius: 4px;
-		background: var(--site-panel);
+		background: var(--mock-panel);
 		color: inherit;
 		width: 100%;
 		box-sizing: border-box;
 	}
 }
 
-.site-note {
+.mock-note {
 	max-width: 42em;
 	padding: calc(.75em + .25vw) calc(1em + .5vw);
-	background: var(--site-panel);
-	border-inline-start: 4px solid var(--site-accent);
+	background: var(--mock-panel);
+	border-inline-start: 4px solid var(--mock-accent);
 
 	> :first-child { margin-block-start: 0; }
 	> :last-child { margin-block-end: 0; }
 }
 
-.site-price {
+.mock-price {
 	font-weight: 900;
 	font-size: 1.4em;
 }
 
-.site-strike {
+.mock-strike {
 	text-decoration: line-through;
-	color: var(--site-muted);
+	color: var(--mock-muted);
 	font-weight: normal;
 	font-size: .8em;
 	margin-inline-end: .4em;

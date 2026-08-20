@@ -45,7 +45,7 @@ function site_result(demo, [heading, ...content], signed) {
     quote.className = 'signed-text';
     quote.textContent = signed;
 
-    let panel = site.querySelector('.site-panel');
+    let panel = site.querySelector('.mock-panel');
     panel.replaceChildren(title, body, quote);
     panel.hidden = false;
     site.querySelector('.yivi-form').hidden = true;

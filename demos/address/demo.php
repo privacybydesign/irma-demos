@@ -66,10 +66,10 @@ if ($render_full_page):
 
 <style>
 	.address-site {
-		--site-accent: #712F87;
-		--site-on-accent: #F7E30F;
-		--site-surface: oklch(from #712F87 calc(l - .25) c h);
-		--site-on-surface: white;
+		--mock-accent: #712F87;
+		--mock-on-accent: #F7E30F;
+		--mock-surface: oklch(from #712F87 calc(l - .25) c h);
+		--mock-on-surface: white;
 	}
 	.address-usage p {
 		margin-block: 12px;
@@ -88,24 +88,24 @@ if ($render_full_page):
 
 <figure class="demo dark address-site">
 
-<header class="site-header">
-    <div class="site-logo">
+<header class="mock-header">
+    <div class="mock-logo">
         <?php echo $demo_strings['organisation'][$lang]; ?>
     </div>
-    <ul class="site-nav">
+    <ul class="mock-nav">
         <?php foreach ($demo_strings['nav'][$lang] as $item): ?>
             <li><?php echo $item; ?></li>
         <?php endforeach; ?>
     </ul>
 </header>
 
-<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="site-main">
+<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="mock-main">
     <h<?php echo ($render_full_page) ? '1' : '2'; ?>>
         <?php echo $demo_strings['title'][$lang]; ?>
     </h<?php echo ($render_full_page) ? '1' : '2'; ?>>
-    <p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+    <p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
     <div class="yivi-form"></div>
-	<div class="site-panel address-usage" data-demo-result hidden>
+	<div class="mock-panel address-usage" data-demo-result hidden>
 		<p>
 			<span class="number">942</span>
 			<span class="unit">kWh</span>

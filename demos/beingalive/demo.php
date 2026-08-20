@@ -25,8 +25,8 @@ $demo_strings = [
 
 <style>
 	.alive-site {
-		--site-accent: #1F5673;
-		--site-on-accent: #E8F4FA;
+		--mock-accent: #1F5673;
+		--mock-on-accent: #E8F4FA;
 	}
 	.alive-policy {
 		display: flex;
@@ -38,7 +38,7 @@ $demo_strings = [
 		font-size: .85em;
 		text-transform: uppercase;
 		letter-spacing: .08em;
-		color: var(--site-muted);
+		color: var(--mock-muted);
 	}
 	.alive-policy dd {
 		margin: .2em 0 0;
@@ -52,16 +52,16 @@ $demo_strings = [
 
 <figure class="demo alive-site">
 
-<header class="site-header">
-	<div class="site-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
-	<ul class="site-nav">
+<header class="mock-header">
+	<div class="mock-logo"><?php echo $demo_strings['organisation'][$lang]; ?></div>
+	<ul class="mock-nav">
 		<?php foreach ($demo_strings['nav'][$lang] as $item): ?>
 			<li><?php echo $item; ?></li>
 		<?php endforeach; ?>
 	</ul>
 </header>
 
-<section class="site-main">
+<section class="mock-main">
 	<dl class="alive-policy">
 		<div>
 			<dt><?php echo $demo_strings['policy'][$lang]; ?></dt>
@@ -74,10 +74,10 @@ $demo_strings = [
 	</dl>
 
 	<h2><?php echo $demo_strings['title'][$lang]; ?></h2>
-	<p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+	<p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
 
 	<div class="yivi-form"></div>
-	<div class="site-panel alive-result" data-demo-result hidden></div>
+	<div class="mock-panel alive-result" data-demo-result hidden></div>
 </section>
 
 </figure>
