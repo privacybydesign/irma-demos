@@ -49,7 +49,7 @@ $demo_strings = [
 			'en' => 'A teacher signs the result sheet with their own credentials, so no wet signature has to travel through the building.',
 			'nl' => 'Een docent ondertekent de cijferlijst met de eigen gegevens, zodat er geen natte handtekening meer door het gebouw hoeft.',
 		],
-		'student' => ['en' => 'John Smith', 'nl' => 'Pietje Puk'],
+		'student' => ['en' => 'Jane Doe', 'nl' => 'Pietje Puk'],
 		'grade' => ['en' => 'Passed with distinction', 'nl' => 'Met lof geslaagd'],
 	],
 ];
