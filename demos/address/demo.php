@@ -7,9 +7,17 @@ $demo_strings = [
         'en' => 'YourEnergy',
         'nl' => 'JouwEnergie',
     ],
+    'nav' => [
+        'en' => ['Tariffs', 'Usage', 'Contact'],
+        'nl' => ['Tarieven', 'Verbruik', 'Contact'],
+    ],
     'title' => [
         'en' => 'View your electricity use',
         'nl' => 'Bekijk je stroomverbruik',
+    ],
+    'lead' => [
+        'en' => 'Share the address of your connection and we will show what it used this year.',
+        'nl' => 'Deel het adres van je aansluiting, dan laten we zien wat er dit jaar verbruikt is.',
     ],
 	'year' => [
         'en' => 'This year at',
@@ -31,6 +39,7 @@ if ($render_full_page):
 
 	<link href="/resources/vars.css" rel="stylesheet">
 	<link href="/resources/yivi.css" rel="stylesheet">
+	<link href="/resources/demo-sites.css" rel="stylesheet">
 
 	<script src="/assets/yivi.js" defer></script>
 	<script src="/start_session.js" defer></script>
@@ -40,14 +49,7 @@ if ($render_full_page):
 	<style>
 		body {
 			margin: 0;
-            background: oklch(from var(--accent) calc(l - .25) c h);
-            --accent: #712F87;
-			color-scheme: dark;
-		}
-
-		.address-main {
-			margin: 2vw auto;
-			max-width: 60em;
+			background: #2B1233;
 		}
 	</style>
 
@@ -55,6 +57,7 @@ if ($render_full_page):
 		let header_text = '<?php echo $demo_strings['action'][$lang]; ?>';
 		let lang = '<?php echo $lang; ?>';
 		let slug = '<?php echo 'address'; ?>';
+		let session_type = slug;
 	</script>
 </head>
 <body>
@@ -62,112 +65,47 @@ if ($render_full_page):
 <?php endif; ?>
 
 <style>
-    .address-figure {
-        font-family: system-ui, sans-serif;
-		margin: 0;
-		color-scheme: dark;
-        --accent: #712F87;
-        --secondary: #F7E30F;
-        --link: var(--accent);
-        --link-hover: oklch(from var(--accent) calc(l + .1) c h);
-
-        div.yivi-web-form {
-            margin: 0;
-			width: 100%;
-			/*--yivi-text: white;*/
-        }
-
-        .yivi-web-header p {
-            color: white !important;
-        }
-
-        .yivi-web-button-secondary {
-			border-color: oklch(from white l c h / calc(alpha - .2));
-
-			&:hover {
-				color: white;
-				background: oklch(from white l c h / calc(alpha - .9));
-			}
-		}
-
-		.yivi-web-forbidden-animation {
-			background: white;
-			box-shadow: 0 0 0 8px white;
-			border-radius: 50%;
-			padding: 1em;
-			margin-block-end: 1em;
-		}
-
-		.yivi-web-button-tertiary {
-			color: white;
-		}
-    }
-    .address-header {
-        background: var(--accent);
-        color: var(--secondary);
-        padding: 1em 5vw;
-    }
-    .address-logo {
-        font-weight: bold;
-        font-size: 1.4em;
-    }
-    .address-main {
-        padding: 2vw 5vw 5vw;
-        background: oklch(from var(--accent) calc(l - .25) c h);
-        color: white;
-
-        h1,
-		h2 {
-            font-size: max(2.5vw, 1.5em);
-			text-wrap: balance;
-        }
-    }
-	.address-usage {
-        padding: calc(1em + .5vw) calc(1.5em + 1vw);
-        background: oklch(from white l c h / calc(alpha - .8));
-        border-radius: 12px;
-
-		p {
-			margin-block: 12px;
-			font-size: 1.2em;
-		}
-
-		:first-child {
-            font-size: max(3.5vw, 2em);
-        }
-
-        .number {
-            font-size: 1.2em;
-            font-weight: 900;
-        }
-
-		.year-at {
-            text-transform: uppercase;
-            font-size: 1em;
-            letter-spacing: .1em;
-            font-weight: 600;
-		}
-    }
-	figure + p {
-		padding: 1em;
-		background: orange;
+	.address-site {
+		--site-accent: #712F87;
+		--site-on-accent: #F7E30F;
+		--site-surface: oklch(from #712F87 calc(l - .25) c h);
+		--site-on-surface: white;
+	}
+	.address-usage p {
+		margin-block: 12px;
+		font-size: 1.2em;
+	}
+	.address-usage :first-child {
+		font-size: max(3.5vw, 2em);
+	}
+	.address-usage .year-at {
+		text-transform: uppercase;
+		font-size: 1em;
+		letter-spacing: .1em;
+		font-weight: 600;
 	}
 </style>
 
-<figure class="address-figure demo">
+<figure class="demo dark address-site">
 
-<header class="address-header">
-    <div class="address-logo">
+<header class="site-header">
+    <div class="site-logo">
         <?php echo $demo_strings['organisation'][$lang]; ?>
     </div>
+    <ul class="site-nav">
+        <?php foreach ($demo_strings['nav'][$lang] as $item): ?>
+            <li><?php echo $item; ?></li>
+        <?php endforeach; ?>
+    </ul>
 </header>
 
-<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="address-main">
+<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="site-main">
     <h<?php echo ($render_full_page) ? '1' : '2'; ?>>
         <?php echo $demo_strings['title'][$lang]; ?>
     </h<?php echo ($render_full_page) ? '1' : '2'; ?>>
-    <div id="yivi-web-form"></div>
-	<div class="address-usage" hidden>
+    <p class="site-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
+    <div class="yivi-form"></div>
+	<div class="site-panel address-usage" data-demo-result hidden>
 		<p>
 			<span class="number">942</span>
 			<span class="unit">kWh</span>

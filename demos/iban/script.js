@@ -5,11 +5,11 @@ let verifier = (data) => {
     document.getElementById('iban-number').value = iban;
     document.getElementById('iban-bic').value = bic;
 
-    document.querySelector('.yivi-web-form').remove();
-    document.querySelector('.iban-confirmation').removeAttribute('hidden');
+    document.querySelector('.yivi-form').hidden = true;
+    document.querySelector('.site-note').hidden = false;
 
     // The filled-in form is the result; there is nothing to add below the demo.
     return false;
 };
 
-start_session_inline(slug, lang, verifier);
+start_session_inline(session_type, lang, verifier);
