@@ -97,7 +97,22 @@ $session_types = empty($content['actions']) ? [$session_type] : array_keys($cont
 	</div>
 </aside>
 
-<div class="demo-container">
+<?php if (!empty($content['actions'])): ?>
+<div class="demo-actions">
+	<h2><?php echo $demo_page_strings['pick'][$lang]; ?></h2>
+	<p>
+		<?php foreach ($content['actions'] as $type => $label): ?>
+			<button type="button" aria-pressed="false" data-session="<?php echo htmlspecialchars($type, ENT_QUOTES); ?>">
+				<?php echo $label; ?>
+			</button>
+		<?php endforeach; ?>
+	</p>
+</div>
+<?php endif; ?>
+
+<?php // A demo whose actions each have their own pretend website keeps the square
+      // out of the way until the visitor has picked one. ?>
+<div class="demo-container"<?php if (!empty($content['choose_first'])) echo ' hidden'; ?>>
 	<script type="text/javascript">
 		let header_text = <?php echo json_encode($content['action'] ?? ''); ?>;
 		let demo_actions = <?php echo json_encode($content['actions'] ?? [], JSON_FORCE_OBJECT); ?>;
@@ -112,19 +127,6 @@ $session_types = empty($content['actions']) ? [$session_type] : array_keys($cont
 			<?php echo $demo_page_strings['reload'][$lang]; ?>
 		</button>
 	</p>
-
-	<?php if (!empty($content['actions'])): ?>
-	<div class="demo-actions">
-		<h2><?php echo $demo_page_strings['pick'][$lang]; ?></h2>
-		<p>
-			<?php foreach ($content['actions'] as $type => $label): ?>
-				<button type="button" aria-pressed="false" data-session="<?php echo htmlspecialchars($type, ENT_QUOTES); ?>">
-					<?php echo $label; ?>
-				</button>
-			<?php endforeach; ?>
-		</p>
-	</div>
-	<?php endif; ?>
 
 	<?php
 	if (file_exists('demo.php')) {

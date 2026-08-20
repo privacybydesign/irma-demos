@@ -240,9 +240,8 @@ th, td {
 	align-items: center;
 }
 
-/* The demo square: an info bar, optionally a chooser, and the pretend website
-   underneath. The shadow and the clipping live here so the parts read as one
-   card whichever of them is on the page. */
+/* The demo square: an info bar with the pretend website underneath. The shadow
+   and the clipping live here so the two read as one card. */
 .demo-container {
 	margin-block: var(--margin-medium);
 	border: 1px solid var(--border-color);
@@ -260,11 +259,11 @@ th, td {
 	}
 }
 
-/* Demos that can start more than one kind of session let the visitor pick first:
-   the buttons behave as a group, and the one that started the running session
-   stays pressed. */
+/* Demos that can start more than one kind of session let the visitor pick first.
+   The chooser sits above the square: the buttons behave as a group, and the one
+   that started the running session stays pressed. */
 .demo-actions {
-	padding: var(--padding-medium) var(--padding-medium) 0;
+	margin-block-start: var(--margin-medium);
 
 	h2 {
 		font-size: 1.1em;

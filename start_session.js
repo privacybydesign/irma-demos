@@ -180,6 +180,8 @@ function start_session_choice(handlers) {
         if (sites.length) {
             sites.forEach(candidate => { candidate.hidden = candidate !== site; });
         }
+        // The square is rendered hidden when each action has its own site.
+        document.querySelector('.demo-container').hidden = false;
         reset_demo_site(site || document.querySelector('.demo'));
 
         start_session_inline(type, lang, handler.verifier, handler.onError || null, {

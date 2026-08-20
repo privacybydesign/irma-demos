@@ -19,6 +19,7 @@ $content = [
 			]
 		]
 	],
+	"choose_first" => true,
 	"actions" => [
 		"email-signature" => "Consent to advertisements by email",
 		"donation-signature" => "Promise a donation",

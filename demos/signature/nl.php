@@ -19,6 +19,7 @@ $content = [
 			]
 		]
 	],
+	"choose_first" => true,
 	"actions" => [
 		"email-signature" => "Geef toestemming voor advertenties per e-mail",
 		"donation-signature" => "Zeg een donatie toe",

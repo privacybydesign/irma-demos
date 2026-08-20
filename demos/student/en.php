@@ -15,6 +15,7 @@ $content = [
 			]
 		]
 	],
+	"choose_first" => true,
 	"actions" => [
 		"student" => "Prove that I am a student",
 		"school" => "Reveal my role and institution"
