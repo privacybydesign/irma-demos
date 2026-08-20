@@ -107,8 +107,7 @@ a[href^=http]:not(:has(img)) {
 }
 
 button,
-.button,
-.custom-button {
+.button {
 	--external-icon-gap: 0;
 	display: inline-flex;
 	align-items: center;
@@ -126,8 +125,7 @@ button,
 
 /* Excludes the Yivi widget's own buttons: its stylesheet sets background-color but
    no background-image, so the artwork would otherwise bleed onto them. */
-button:not([class*="yivi-web"]),
-a.custom-button {
+button:not([class*="yivi-web"]) {
 	/* The corner artwork is anchored right and scaled to the button height, so it
 	   keeps its proportions on buttons of any width. Hover changes background-color
 	   only: the shorthand would drop the image. */
@@ -270,6 +268,35 @@ th, td {
 	overflow: hidden;
 }
 
+/* Demos that can start more than one kind of session let the visitor pick first:
+   the buttons behave as a group, and the one that started the running session
+   stays pressed. */
+.demo-actions {
+	padding: var(--padding-medium) var(--padding-medium) 0;
+
+	h2 {
+		font-size: 1.1em;
+		margin-block: 0 var(--margin-small);
+	}
+
+	p {
+		margin-block: 0;
+	}
+
+	/* The corner artwork belongs to the pressed, filled button only: on a
+	   transparent one its dark shapes would sit on bare white. */
+	button[aria-pressed="false"] {
+		background-color: transparent;
+		background-image: none;
+		color: var(--link);
+
+		&:hover {
+			background-color: oklch(from var(--link) l c h / calc(alpha - .9));
+			color: var(--link);
+		}
+	}
+}
+
 .yivi-result,
 .alert {
 	padding: 1px var(--padding-medium);
@@ -287,6 +314,20 @@ th, td {
 	&.result,
 	&.alert-success {
 		background: aliceblue;
+	}
+
+	/* A value that came out of a credential, shown inside a result. */
+	.attribute {
+		font-style: normal;
+		font-weight: bold;
+	}
+
+	/* The text the visitor signed, quoted back to them. */
+	.signed-text {
+		margin-inline: 0;
+		padding-inline-start: var(--padding-medium);
+		border-inline-start: 4px solid var(--link);
+		font-style: italic;
 	}
 }
 

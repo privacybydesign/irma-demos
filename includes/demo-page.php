@@ -40,7 +40,15 @@ $demo_page_strings = [
 		'en' => 'See it in use',
 		'nl' => 'In de praktijk'
 	],
+	'pick' => [
+		'en' => 'Pick an example',
+		'nl' => 'Kies een voorbeeld'
+	],
 ];
+
+// A demo either has one action (its session type is the slug) or several, keyed
+// by session type. The developer details render a request per type.
+$session_types = empty($content['actions']) ? [$slug] : array_keys($content['actions']);
 ?>
 
 <header>
@@ -89,7 +97,8 @@ $demo_page_strings = [
 
 <div class="demo-container">
 	<script type="text/javascript">
-		let header_text = <?php echo json_encode($content['action']); ?>;
+		let header_text = <?php echo json_encode($content['action'] ?? ''); ?>;
+		let demo_actions = <?php echo json_encode($content['actions'] ?? [], JSON_FORCE_OBJECT); ?>;
 		let lang = <?php echo json_encode($lang); ?>;
 		let slug = <?php echo json_encode($slug); ?>;
 	</script>
@@ -100,6 +109,19 @@ $demo_page_strings = [
 			<?php echo $demo_page_strings['reload'][$lang]; ?>
 		</button>
 	</p>
+
+	<?php if (!empty($content['actions'])): ?>
+	<div class="demo-actions">
+		<h2><?php echo $demo_page_strings['pick'][$lang]; ?></h2>
+		<p>
+			<?php foreach ($content['actions'] as $type => $label): ?>
+				<button type="button" aria-pressed="false" data-session="<?php echo htmlspecialchars($type, ENT_QUOTES); ?>">
+					<?php echo $label; ?>
+				</button>
+			<?php endforeach; ?>
+		</p>
+	</div>
+	<?php endif; ?>
 
 	<?php
 	if (file_exists('demo.php')) {
@@ -138,9 +160,9 @@ $demo_page_strings = [
 		<summary>
 			<?php echo $demo_page_strings['sidenotes'][$lang]; ?>
 		</summary>
-		<p>
-			<?php echo $content['sidenotes']; ?>
-		</p>
+		<?php foreach ((array) $content['sidenotes'] as $note): ?>
+			<p><?php echo $note; ?></p>
+		<?php endforeach; ?>
 	</details>
 	<?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/developer-details.php'); ?>
 	<?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/yivi-details.php'); ?>
