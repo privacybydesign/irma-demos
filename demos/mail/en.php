@@ -1,64 +1,27 @@
-<p>
-    This page contains an example of a simple email check with Yivi.  At
-    the same time some explanation is given about how this works and how
-    this can be used, especially by organisations with their own email
-    addresses: they can let users log in with these addresses. In this
-    manner a separate password to log in is no longer needed.
-</p>
-
-<p>
-    The left button below checks if the disclosed email address is
-    a <tt>gmail.com</tt> address. Only in that case the verification
-    succeeds. The same mechanism can be used to provide exclusive access
-    for visitors with email addresses from other organisations.
-</p>
-
-<p>
-    The button on the right asks for any email address and displays
-    it on the subsequent page. This can be used for visitors who
-    are asked to register with an email address.
-</p>
-
-<p>
-    In order to be able to try out yourself the buttons below one
-    needs to have the Yivi
-    app <a href="https://yivi.app/#download">installed</a>.
-    Multiple email addresses can be added in the app via
-    the <a href="https://email-issuer.yivi.app">email
-    issuance webpage</a> of the Privacy by Design foundation.
-</p>
-
-<div class="text-center">
-    <tr><td>
-    <button class="custom-button" id="try_irma_gmailbtn">Check gmail address</button>
-    </td>
-    <td>
-    &nbsp;&nbsp;&nbsp;
-    </td>
-    <td>
-        <button class="custom-button" id="try_irma_emailbtn">Reveal email address</button>
-    </td>
-    </tr>
-</div>
-
-<p>
-A few remarks:
-    <ul>
-        <li> No information about email addresses is retained or collected
-        via this webpage. The revealed email addresses are only used for the
-        purpose of this demo and disappear at the moment that the demo is
-        closed.
-
-        <li> The verification whether the disclosed address is actually
-        a gmail address is performed in javascript in the browser (client)
-        of the user. This is not the way this should be done properly,
-        but this is harmless in the current demo. The appropriate way
-        is to perform this check at the server's side.
-    </ul>
-</p>
-
-
-<p>
-    <a href="../../">Back</a> to
-    the Yivi demo overview.
-</p>
+<?php
+$content = [
+	"intro" => "Useful for letting people in with an email address from your own organisation, instead of yet another password.",
+	"benefits" => [
+		"Log in with an email address instead of a password",
+		"Check only the domain, without learning the address",
+		"The address is already verified, so no confirmation mail"
+	],
+	"data" => [
+		"description" => "The email card",
+		"sources" => [
+			[
+				"url" => "https://email-issuer.yivi.app",
+				"label" => "the Yivi email issuer"
+			]
+		]
+	],
+	"actions" => [
+		"gmail" => "Check for a gmail.com address",
+		"email" => "Reveal my email address"
+	],
+	"sidenotes" => [
+		"The domain check asks only for the domain of your address, not for the address itself: the site learns that you are at gmail.com without learning who you are. The same mechanism gives exclusive access to everyone with an address at one particular organisation, which is what makes it a replacement for a password.",
+		"Whether the domain matches is decided in JavaScript in your own browser here. That is harmless in a demo, but it is not how this should be built: the check belongs on the server, where a visitor cannot reach it.",
+		"No email addresses are kept. The addresses revealed here are used for this demo only and disappear the moment you close the page."
+	]
+];
