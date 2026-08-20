@@ -286,7 +286,7 @@ th, td {
 
 		&:hover {
 			background-color: oklch(from var(--link) l c h / calc(alpha - .9));
-			color: var(--link);
+			color: var(--link-hover);
 		}
 	}
 }
