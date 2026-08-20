@@ -164,7 +164,7 @@
 	input {
 		font: inherit;
 		padding: .5em .75em;
-		border: 1px solid oklch(from var(--mock-on-surface) l c h / calc(alpha - .8));
+		border: 1px solid oklch(from var(--mock-on-surface) l c h / calc(alpha - .5));
 		border-radius: 4px;
 		background: var(--mock-panel);
 		color: inherit;
