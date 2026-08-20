@@ -1,0 +1,194 @@
+/* The pretend websites that sit inside a demo square. Each mock picks its own
+   tokens and adds only what is special to it; the layout, the form fields and
+   the Yivi widget's fit live here so eight mocks do not carry eight copies. */
+
+.demo {
+	margin: 0;
+	font-family: system-ui, sans-serif;
+
+	--site-accent: #712F87;
+	--site-on-accent: white;
+	--site-surface: white;
+	--site-on-surface: #14181A;
+	--site-muted: oklch(from var(--site-on-surface) l c h / calc(alpha - .35));
+	--site-panel: oklch(from var(--site-on-surface) l c h / calc(alpha - .94));
+
+	/* The widget follows the pretend site's own colour, not the demo site's. */
+	--link: var(--site-accent);
+	--link-hover: oklch(from var(--site-accent) calc(l - .1) c h);
+
+	div.yivi-web-form {
+		margin: 0;
+		width: 100%;
+	}
+
+	/* The demo site's own corner artwork is a fixed maroon; on a pretend site's
+	   accent colour it clashes, so a mock's buttons are plain. */
+	button:not([class*="yivi-web"]) {
+		background-image: none;
+	}
+}
+
+/* A mock whose main area is dark. The widget assumes a light background, so its
+   text and outline buttons need to be turned around. */
+.demo.dark {
+	color-scheme: dark;
+	--site-panel: oklch(from white l c h / calc(alpha - .88));
+	--site-muted: oklch(from white l c h / calc(alpha - .3));
+
+	.yivi-web-header p {
+		color: var(--site-on-surface) !important;
+	}
+
+	.yivi-web-button-secondary {
+		border-color: oklch(from var(--site-on-surface) l c h / calc(alpha - .2));
+
+		&:hover {
+			color: var(--site-on-surface);
+			background: oklch(from var(--site-on-surface) l c h / calc(alpha - .9));
+		}
+	}
+
+	.yivi-web-button-tertiary {
+		color: var(--site-on-surface);
+	}
+
+	/* Sits on white so the artwork stays readable on a dark panel. */
+	.yivi-web-forbidden-animation {
+		background: white;
+		box-shadow: 0 0 0 8px white;
+		border-radius: 50%;
+		padding: 1em;
+		margin-block-end: 1em;
+	}
+}
+
+.site-header {
+	background: var(--site-accent);
+	color: var(--site-on-accent);
+	padding: 1em 5vw;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1.5em;
+	flex-wrap: wrap;
+}
+
+.site-logo {
+	font-weight: bold;
+	font-size: 1.4em;
+	letter-spacing: -.01em;
+}
+
+.site-nav {
+	display: flex;
+	gap: 1.5em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: .95em;
+	opacity: .8;
+}
+
+.site-main {
+	padding: calc(1em + 1vw) 5vw calc(2em + 2vw);
+	background: var(--site-surface);
+	color: var(--site-on-surface);
+
+	h1,
+	h2 {
+		font-size: max(2.5vw, 1.5em);
+		text-wrap: balance;
+		margin-block-start: 0;
+	}
+
+	h3 {
+		font-size: 1.1em;
+	}
+
+	> :last-child {
+		margin-block-end: 0;
+	}
+}
+
+.site-lead {
+	max-width: 46ch;
+	color: var(--site-muted);
+}
+
+.site-panel {
+	padding: calc(1em + .5vw) calc(1.5em + 1vw);
+	background: var(--site-panel);
+	border-radius: 12px;
+	max-width: 42em;
+
+	> :first-child {
+		margin-block-start: 0;
+	}
+
+	> :last-child {
+		margin-block-end: 0;
+	}
+}
+
+/* A value that came out of a credential, shown inside a pretend site. */
+.demo .attribute {
+	font-style: normal;
+	font-weight: bold;
+}
+
+/* The text the visitor signed, quoted back to them inside the pretend site. */
+.demo .signed-text {
+	margin-inline: 0;
+	margin-block-end: 0;
+	padding-inline-start: var(--padding-medium);
+	border-inline-start: 4px solid var(--site-accent);
+	font-style: italic;
+}
+
+/* A form the disclosure fills in, rather than the visitor. */
+.site-fields {
+	display: grid;
+	grid-template-columns: minmax(7em, max-content) 1fr;
+	gap: .75em 1.5em;
+	align-items: center;
+	max-width: 32em;
+
+	label {
+		font-weight: 600;
+	}
+
+	input {
+		font: inherit;
+		padding: .5em .75em;
+		border: 1px solid oklch(from var(--site-on-surface) l c h / calc(alpha - .8));
+		border-radius: 4px;
+		background: var(--site-panel);
+		color: inherit;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
+.site-note {
+	max-width: 42em;
+	padding: calc(.75em + .25vw) calc(1em + .5vw);
+	background: var(--site-panel);
+	border-inline-start: 4px solid var(--site-accent);
+
+	> :first-child { margin-block-start: 0; }
+	> :last-child { margin-block-end: 0; }
+}
+
+.site-price {
+	font-weight: 900;
+	font-size: 1.4em;
+}
+
+.site-strike {
+	text-decoration: line-through;
+	color: var(--site-muted);
+	font-weight: normal;
+	font-size: .8em;
+	margin-inline-end: .4em;
+}

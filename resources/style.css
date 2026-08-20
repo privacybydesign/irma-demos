@@ -238,34 +238,26 @@ th, td {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	&:has(+ style) {
-		box-shadow: 0 .25em .75em rgba(0, 0, 0, 0.15);
-	}
 }
 
+/* The demo square: an info bar, optionally a chooser, and the pretend website
+   underneath. The shadow and the clipping live here so the parts read as one
+   card whichever of them is on the page. */
 .demo-container {
 	margin-block: var(--margin-medium);
 	border: 1px solid var(--border-color);
 	border-radius: var(--radius-medium);
+	overflow: hidden;
 
 	&:has(.demo) {
 		border-width: 0;
+		box-shadow: 0 .25em .75em rgba(0, 0, 0, 0.2);
 	}
 
 	.info {
 		margin-block: 0;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
+		border-radius: 0;
 	}
-}
-
-.demo {
-	margin: 0;
-	box-shadow: 0 .25em .75em rgba(0, 0, 0, 0.25);
-	border-bottom-left-radius: var(--radius-medium);
-	border-bottom-right-radius: var(--radius-medium);
-	overflow: hidden;
 }
 
 /* Demos that can start more than one kind of session let the visitor pick first:

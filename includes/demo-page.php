@@ -46,9 +46,11 @@ $demo_page_strings = [
 	],
 ];
 
-// A demo either has one action (its session type is the slug) or several, keyed
-// by session type. The developer details render a request per type.
-$session_types = empty($content['actions']) ? [$slug] : array_keys($content['actions']);
+// A demo either has one action or several, keyed by session type. A single
+// action takes its type from the slug unless $content['session'] says otherwise.
+// The developer details render a request per type.
+$session_type = $content['session'] ?? $slug;
+$session_types = empty($content['actions']) ? [$session_type] : array_keys($content['actions']);
 ?>
 
 <header>
@@ -101,6 +103,7 @@ $session_types = empty($content['actions']) ? [$slug] : array_keys($content['act
 		let demo_actions = <?php echo json_encode($content['actions'] ?? [], JSON_FORCE_OBJECT); ?>;
 		let lang = <?php echo json_encode($lang); ?>;
 		let slug = <?php echo json_encode($slug); ?>;
+		let session_type = <?php echo json_encode($session_type); ?>;
 	</script>
 
 	<p class="info">
@@ -128,7 +131,7 @@ $session_types = empty($content['actions']) ? [$slug] : array_keys($content['act
 		include 'demo.php';
 	}
 	else {
-		echo '<div id="yivi-web-form"></div>';
+		echo '<div class="yivi-form"></div>';
 	}
 	?>
 

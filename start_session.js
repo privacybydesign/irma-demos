@@ -116,7 +116,7 @@ function start_session_inline(type, lang, verifier, errorHandler = null, options
 
     inline_session_handler = yivi.newWeb({
         language: lang,
-        element: options.element || '#yivi-web-form',
+        element: options.element || '.yivi-form',
         translations: {
             header: options.header || header_text,
         },
@@ -144,11 +144,28 @@ function start_session_inline(type, lang, verifier, errorHandler = null, options
         });
 }
 
+// Puts a pretend website back the way it was rendered: what the demo script
+// revealed is hidden again, what it hid comes back, and so does the form.
+function reset_demo_site(site) {
+    if (!site) return;
+    site.querySelectorAll('[data-demo-result]').forEach(node => { node.hidden = true; });
+    site.querySelectorAll('[data-demo-initial]').forEach(node => { node.hidden = false; });
+    // Fields a disclosure fills in are readonly; the visitor never typed them.
+    site.querySelectorAll('input[readonly]').forEach(field => { field.value = ''; });
+    let form = site.querySelector('.yivi-form');
+    if (form) form.hidden = false;
+}
+
 // Wires the buttons that `demo-page.php` renders for a demo with several
 // actions. `handlers` maps a session type to its verifier, or to an object
 // with a `verifier` and an `onError` that overrides how a result is rendered.
+//
+// A demo whose actions each have their own pretend website marks them up as
+// `[data-demo="<session type>"]`, hidden until the visitor picks one. A demo
+// where one website serves every action just leaves it on the page.
 function start_session_choice(handlers) {
     let buttons = Array.from(document.querySelectorAll('.demo-actions [data-session]'));
+    let sites = Array.from(document.querySelectorAll('[data-demo]'));
 
     let start = (button) => {
         let type = button.dataset.session;
@@ -159,8 +176,15 @@ function start_session_choice(handlers) {
         buttons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
         clear_inline_results();
 
+        let site = sites.find(candidate => candidate.dataset.demo === type);
+        if (sites.length) {
+            sites.forEach(candidate => { candidate.hidden = candidate !== site; });
+        }
+        reset_demo_site(site || document.querySelector('.demo'));
+
         start_session_inline(type, lang, handler.verifier, handler.onError || null, {
             header: demo_actions[type],
+            element: site ? `[data-demo="${type}"] .yivi-form` : undefined,
         });
     };
 
