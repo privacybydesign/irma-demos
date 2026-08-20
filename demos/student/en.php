@@ -1,83 +1,27 @@
-<p>
-This page contains an example of using Yivi for verifying whether
-someone is a student or not. Additionally, the page explains how this
-works and how this can be used for instance by webshops that wish to
-give special offers to students. The first button below can be used to
-check if a visitor actually is a student. The special point of Yivi is
-its privacy-friendliness: the visitor discloses no other information
-than the mere fact that (s)he is a student. 
-</p>
-
-<p>
-Via the second button it is possible to request additional
-information, namely the role of the visitor (student or employee) and
-the name of the university (or educational institute) with which the
-student/employee is associated. In this way exclusive access can be
-organised for students and/or employees of a particular institute.
-</p>
-
-
-<p>
-In order to be able to try out yourself the buttons below you need to
-have the Yivi
-app <a href="https://yivi.app/#download">installed</a>
-with at least the card with educational data loaded into the app.
-This can be done
-via <a href="https://privacybydesign.foundation/issuance/surfconext/surfconext/?action=login">SURFconext
-issuance webpage</a> of the Privacy by Design foundation. A succesful
-check that the visitor is a student gives access to special offers.
-</p>
-
-<div class="text-center">
-<tr><td>
-<button class="custom-button" id="try_irma_studentbtn">student check</button>
-</td>
-<td>
-&nbsp;&nbsp;&nbsp;
-</td>
-<td>
-<button class="custom-button" id="try_irma_studentschoolbtn">disclose role en institute</button>
-</td>
-</tr>
-</div>
-
-
-<p>
-A few remarks:
-<ul>
-<li> There are several websites
-(like <a href="https://www.amazon.com/joinstudent">Amazon</a>) that
-offer discounts to students. How they actually check that someone is a
-student is not always clear. With Yivi this can now be done in an
-easy, reliable and privacy-friendly manner.
-
-<li> Via SURFconext email addresses are available too as personal data
-in your Yivi app. They are not used in this demo in order to avoid
-identifying data.
-
-<li> At this stage this issuance of academic data is available only
-for students and staff members of a limited number of institutions in
-higher eduction in the Netherlands. Are you studying or working at
-such an institution but does your institution not occur in the list at
-the <a href="https://privacybydesign.foundation/issuance/surfconext/surfconext/">SURFconext
-issuance page</a>? This means that your institution has not "switched
-on" the connection to the foundation Privacy by Design. In that case
-you cannot receive your personal data in your Yivi app via
-SURFconext. The best thing that you can do is to contact locally at
-your institution the people responsible for computer support (in
-particular: identity management) and ask them to send an email to the
-address <tt>support'at'surfconext.nl</tt>, with the simple request:
-Please give the Privacy by Design foundation access as Service
-Provider to our institution (in Dutch: <em>AUB de stichting Privacy by
-Design voor onze instelling toelaten als Service Provider</em>).
-</ul>
-</p>
-
-<p>
-<a href="../../">Back</a> to
-the Yivi demo overview.
-</p>
-
-<div id="attribute_list"></div>
-
-<div id="attribute_list_data"></div>
+<?php
+$content = [
+	"intro" => "Useful for webshops and services that offer a student discount and need to know the visitor really is one.",
+	"benefits" => [
+		"Prove you are a student without giving a name",
+		"Or add your role and institution when that is needed",
+		"Works for staff members just as well"
+	],
+	"data" => [
+		"description" => "The education card",
+		"sources" => [
+			[
+				"url" => "https://privacybydesign.foundation/issuance/surfconext/surfconext/?action=login",
+				"label" => "SURFconext"
+			]
+		]
+	],
+	"actions" => [
+		"student" => "Prove that I am a student",
+		"school" => "Reveal my role and institution"
+	],
+	"sidenotes" => [
+		"Several websites, such as <a href=\"https://www.amazon.com/joinstudent\" target=\"_blank\">Amazon</a>, offer discounts to students. How they actually establish that someone is a student is not always clear. The first check here reveals nothing beyond the fact itself, which is the privacy-friendly way to do it. The second one adds role and institution, so exclusive access can be arranged for the students or staff of one particular institution.",
+		"SURFconext makes an email address available as well. It is deliberately left out of this demo, to avoid identifying data.",
+		"Issuance of academic data is available only for students and staff of the institutions listed on the <a href=\"https://privacybydesign.foundation/issuance/surfconext/surfconext/\" target=\"_blank\">SURFconext issuance page</a>. Is yours missing? Then it has not switched on its connection to the Privacy by Design foundation, and you cannot load these data into your Yivi app. The best you can do is ask the people responsible for identity management at your institution to email <code>support'at'surfconext.nl</code> with the request: please give the Privacy by Design foundation access as Service Provider to our institution (in Dutch: <em>AUB de stichting Privacy by Design voor onze instelling toelaten als Service Provider</em>)."
+	]
+];

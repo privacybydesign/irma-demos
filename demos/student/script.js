@@ -1,38 +1,37 @@
-let result_status = document.getElementById('result_status');
-
-let successstudent_fun = function (data) {
-    let result = data.disclosed[0][0].rawvalue;
-    if (result === 'student') {
-        document.querySelector('main section').innerHTML = MESSAGES['succeeded-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
-            MESSAGES['back'] + '</a></p>';
-    } else {
-        document.querySelector('main section').innerHTML = MESSAGES['failed-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
-            MESSAGES['back'] + '</a></p>';
-    }
+let messages = {
+    'is-student': {
+        'en': () => inline_result('Student check succeeded',
+            'For special offers, in Dutch, go to ',
+            inline_link('https://www.studentenwegwijzer.nl/studentenkorting/', '(web)winkels'), '.'),
+        'nl': () => inline_result('Studentcontrole geslaagd',
+            'Voor aanbiedingen, ga naar ',
+            inline_link('https://www.studentenwegwijzer.nl/studentenkorting/', '(web)winkels'), '.'),
+    },
+    'not-a-student': {
+        'en': (role) => inline_result('Student check not succeeded',
+            'You revealed the role ', inline_attribute(role), ', which is not a student.'),
+        'nl': (role) => inline_result('Studentcontrole niet geslaagd',
+            'Je toonde de rol ', inline_attribute(role), ', en dat is geen student.'),
+    },
+    'role-and-institution': {
+        'en': (role, institute) => inline_result('Attribute check succeeded',
+            'You are ', inline_attribute(role), ' at the institution with abbreviation ',
+            inline_attribute(institute), '.'),
+        'nl': (role, institute) => inline_result('Attribuutcontrole geslaagd',
+            'Je bent ', inline_attribute(role), ' aan de instelling met afkorting ',
+            inline_attribute(institute), '.'),
+    },
 };
 
-
-let successschool_fun = function (data) {
-    let role = data.disclosed[0][0].rawvalue;
-    let school = data.disclosed[0][1].rawvalue;
-    document.querySelector('main section').innerHTML = '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
-    document.querySelector('main section').prepend(MESSAGES['succeeded-school'](role, school));
-};
-
-let cancel_fun = function() {
-    result_status.innerHTML = MESSAGES['cancel-message'];
-    result_status.classList.add('alert', 'alert-warning');
-};
-
-let error_fun = function() {
-    result_status.innerHTML = MESSAGES['error-message'];
-    result_status.classList.add('alert', 'alert-danger');
-};
-
-document.getElementById('try_irma_studentbtn').addEventListener('click', function () {
-    start_session('student', MESSAGES['lang'], successstudent_fun, cancel_fun, error_fun);
-});
-
-document.getElementById('try_irma_studentschoolbtn').addEventListener('click', function () {
-    start_session('school', MESSAGES['lang'], successschool_fun, cancel_fun, error_fun);
+start_session_choice({
+    'student': (data) => {
+        let role = data.disclosed[0][0].rawvalue;
+        return role === 'student'
+            ? messages['is-student'][lang]()
+            : messages['not-a-student'][lang](role);
+    },
+    'school': (data) => {
+        let [role, institute] = data.disclosed[0].map(attribute => attribute.rawvalue);
+        return messages['role-and-institution'][lang](role, institute);
+    },
 });
