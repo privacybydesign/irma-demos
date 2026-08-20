@@ -29,9 +29,6 @@ $demo_strings = [
 		--mock-accent: #0F5F6E;
 		--mock-on-accent: #EAFAFC;
 	}
-	.iban-site .mock-fields {
-		margin-block-end: calc(1em + 1vw);
-	}
 </style>
 
 <figure class="demo iban-site">

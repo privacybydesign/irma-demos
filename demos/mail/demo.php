@@ -23,9 +23,6 @@ $demo_strings = [
 		--mock-accent: #3B3B8F;
 		--mock-on-accent: #EEEEFB;
 	}
-	.mail-site .mock-fields {
-		margin-block-end: calc(1em + 1vw);
-	}
 </style>
 
 <figure class="demo mail-site">

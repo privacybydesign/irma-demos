@@ -146,13 +146,16 @@
 	font-style: italic;
 }
 
-/* A form the disclosure fills in, rather than the visitor. */
+/* A form the disclosure fills in, rather than the visitor. The bottom margin is
+   part of the rule: a mock puts these straight above the Yivi widget, which
+   carries no margin of its own. */
 .mock-fields {
 	display: grid;
 	grid-template-columns: minmax(7em, max-content) 1fr;
 	gap: .75em 1.5em;
 	align-items: center;
 	max-width: 32em;
+	margin-block-end: calc(1em + 1vw);
 
 	label {
 		font-weight: 600;
