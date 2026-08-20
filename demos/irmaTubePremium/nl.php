@@ -24,12 +24,10 @@ $content = [
 			]
 		]
 	],
-	"actions" => [
-		"irmatube_premium" => "Word premium lid",
-		"watch_premium_contents" => "Toon premium inhoud"
-	],
+	"session" => "irmatube_premium",
+	"action" => "Word premium lid",
 	"more" => [
-		"description" => "Het lidmaatschapskaartje dat je hier krijgt opent ook deuren op de demosite waarvoor het gemaakt is:",
+		"description" => "Het kaartje dat je hier krijgt is waarmee je de premium inhoud opent op de demosite waarvoor het gemaakt is:",
 		"links" => [
 			[
 				"label" => "YiviTube",
@@ -39,7 +37,7 @@ $content = [
 	],
 	"sidenotes" => [
 		"Deze pagina demonstreert <em>chained Yivi sessions</em>: meerdere sessies achter elkaar, waarbij een latere sessie af mag hangen van een eerdere. Premium lid worden start een sessie die om je naam vraagt, en dat antwoord gaat rechtstreeks een tweede, uitgevende sessie in — zonder dat je het nog een keer bevestigt. Daar komt een YiviTube-lidmaatschapskaartje uit met je eigen naam erop.",
-		"YiviTube is geen echte video-streamingdienst, maar het kaartje gedraagt zich als een echt kaartje. Zodra je het hebt kun je er (trailers van) films mee bekijken op de YiviTube-pagina, en hier de premium inhoud mee openen.",
+		"YiviTube is geen echte video-streamingdienst, maar het kaartje gedraagt zich als een echt kaartje. Zodra je het hebt, neem het mee naar de YiviTube-pagina om (trailers van) films te bekijken en de premium inhoud te openen.",
 		"Er worden via deze pagina geen persoonsgegevens bewaard. Wat je toont wordt alleen voor deze demo gebruikt en verdwijnt zodra je de pagina sluit."
 	]
 ];

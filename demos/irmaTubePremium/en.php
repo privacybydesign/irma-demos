@@ -24,12 +24,10 @@ $content = [
 			]
 		]
 	],
-	"actions" => [
-		"irmatube_premium" => "Become premium member",
-		"watch_premium_contents" => "Show premium contents"
-	],
+	"session" => "irmatube_premium",
+	"action" => "Become a premium member",
 	"more" => [
-		"description" => "The membership card you receive here also opens doors on the demo site it was made for:",
+		"description" => "The card you receive here is what unlocks the premium contents on the demo site it was made for:",
 		"links" => [
 			[
 				"label" => "YiviTube",
@@ -39,7 +37,7 @@ $content = [
 	],
 	"sidenotes" => [
 		"This page shows <em>chained Yivi sessions</em>: several sessions in a row, where a later one may depend on an earlier one. Becoming a premium member starts a disclosure session that asks for your name, and the answer is fed straight into a second, issuing session — without asking you again. What comes out is a YiviTube membership card with your own name on it.",
-		"YiviTube is not a real video-streaming service, but the card behaves like a real one. Once you have it you can use it to watch (trailers of) movies on the YiviTube page, and to unlock the premium contents here.",
+		"YiviTube is not a real video-streaming service, but the card behaves like a real one. Once you have it, take it to the YiviTube page to watch (trailers of) movies and to open the premium contents.",
 		"No personal data is retained via this page. What you reveal is used for this demo only and disappears the moment you close it."
 	]
 ];
