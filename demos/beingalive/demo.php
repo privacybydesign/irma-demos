@@ -77,7 +77,7 @@ $demo_strings = [
 	<p class="mock-lead"><?php echo $demo_strings['lead'][$lang]; ?></p>
 
 	<div class="yivi-form"></div>
-	<div class="mock-panel alive-result" data-demo-result hidden></div>
+	<div class="mock-panel alive-result" role="status" data-demo-result hidden></div>
 </section>
 
 </figure>
