@@ -3,71 +3,19 @@ require_once 'config.php';
 
 date_default_timezone_set('UTC');
 
-$sigrequests = [
-    'email-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande e-mailadres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
-            'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
-        ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.email.email'],
-                ['pbdf.sidn-pbdf.email.email'],
-            ],
-        ],
-    ],
-    'exam-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij verklaar ik dat student Pietje Puk, vandaag ' . date('d / m / Y') . ', met lof geslaagd is voor het vak Grondbeginselen van de Alchemie.',
-            'en' => 'Hereby I declare that today, ' . date('d / m / Y') . ', the student John Smith passed with distinction the exam of the course Foundations of Alchemy.',
-        ],
-        'disclose' => [
-            [[
-                ['type' => 'pbdf.pbdf.surfnet-2.fullname', 'value' => null],
-                ['type' => 'pbdf.pbdf.surfnet-2.institute', 'value' => null],
-                ['type' => 'pbdf.pbdf.surfnet-2.email', 'value' => null],
-                ['type' => 'pbdf.pbdf.surfnet-2.type', 'value' => 'employee'],
-            ]],
-        ],
-    ],
-    'donation-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij zeg ik toe om vandaag nog een bedrag van 10 Euro over te maken op rekening nummer NL54 INGB 0007522950 van de stichting Privacy by Design, als ondersteuning van hun nobele werkzaamheden. (Niet echt hoor)',
-            'en' => 'Hereby I agree to transfer today the amount of 10 Euro to the bank account number NL54 INGB 0007522950 of the Privacy by Design foundation, in order to support their noble activities (not really).',
-        ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.idin.familyname'],
-                ['pbdf.nijmegen.personalData.familyname'],
-                ['pbdf.gemeente.personalData.familyname'],
-                ['pbdf.pilot-amsterdam.idcard.surname'],
-                ['pbdf.pilot-amsterdam.passport.surname'],
-                ['pbdf.pbdf.facebook.familyname'],
-                ['pbdf.pbdf.linkedin.familyname'],
-                ['pbdf.pbdf.twitter.fullname'],
-            ],
-            [
-                ['pbdf.pbdf.mobilenumber.mobilenumber'],
-                ['pbdf.sidn-pbdf.mobilenumber.mobilenumber'],
-            ],
-        ],
-    ]
-];
-
 $sprequests = [
     '18plus' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
                 ['pbdf.gemeente.personalData.over18'],
-                ['pbdf.pbdf.passport.over18']
+                ['pbdf.pbdf.passport.over18'],
+                ['pbdf.pbdf.drivinglicence.over18'],
+                ['pbdf.pbdf.idcard.over18'],
             ],
         ],
     ],
-    'adres' => [
+    'address' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
@@ -192,17 +140,69 @@ $sprequests = [
             'pbdf.gemeente.personalData.dateofbirth',
         ]]],
     ],
+    'email-signature' => [
+        '@context' => 'https://irma.app/ld/request/signature/v2',
+        'message' => [
+            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande e-mailadres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
+            'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
+        ],
+        'disclose' => [
+            [
+                ['pbdf.pbdf.email.email'],
+                ['pbdf.sidn-pbdf.email.email'],
+            ],
+        ],
+    ],
+    'exam-signature' => [
+        '@context' => 'https://irma.app/ld/request/signature/v2',
+        'message' => [
+            'nl' => 'Hierbij verklaar ik dat student Pietje Puk, vandaag ' . date('d / m / Y') . ', met lof geslaagd is voor het vak Grondbeginselen van de Alchemie.',
+            'en' => 'Hereby I declare that today, ' . date('d / m / Y') . ', the student John Smith passed with distinction the exam of the course Foundations of Alchemy.',
+        ],
+        'disclose' => [
+            [[
+                ['type' => 'pbdf.pbdf.surfnet-2.fullname', 'value' => null],
+                ['type' => 'pbdf.pbdf.surfnet-2.institute', 'value' => null],
+                ['type' => 'pbdf.pbdf.surfnet-2.email', 'value' => null],
+                ['type' => 'pbdf.pbdf.surfnet-2.type', 'value' => 'employee'],
+            ]],
+        ],
+    ],
+    'donation-signature' => [
+        '@context' => 'https://irma.app/ld/request/signature/v2',
+        'message' => [
+            'nl' => 'Hierbij zeg ik toe om vandaag nog een bedrag van 10 Euro over te maken op rekening nummer NL54 INGB 0007522950 van de stichting Privacy by Design, als ondersteuning van hun nobele werkzaamheden. (Niet echt hoor)',
+            'en' => 'Hereby I agree to transfer today the amount of 10 Euro to the bank account number NL54 INGB 0007522950 of the Privacy by Design foundation, in order to support their noble activities (not really).',
+        ],
+        'disclose' => [
+            [
+                ['pbdf.pbdf.idin.familyname'],
+                ['pbdf.nijmegen.personalData.familyname'],
+                ['pbdf.gemeente.personalData.familyname'],
+                ['pbdf.pilot-amsterdam.idcard.surname'],
+                ['pbdf.pilot-amsterdam.passport.surname'],
+                ['pbdf.pbdf.facebook.familyname'],
+                ['pbdf.pbdf.linkedin.familyname'],
+                ['pbdf.pbdf.twitter.fullname'],
+            ],
+            [
+                ['pbdf.pbdf.mobilenumber.mobilenumber'],
+                ['pbdf.sidn-pbdf.mobilenumber.mobilenumber'],
+            ],
+        ],
+    ]
 ];
 
 function start_session($type, $lang) {
-    global $sprequests, $sigrequests;
+    global $sprequests;
 
     if (array_key_exists($type, $sprequests))
         $sessionrequest = $sprequests[$type];
-    elseif (array_key_exists($type, $sigrequests))
-        $sessionrequest = get_signature_request($type, $lang);
     else
         stop();
+
+    if (str_contains($type, 'signature'))
+        $sessionrequest['message'] = $sessionrequest['message'][$lang];
 
     $jsonsr = json_encode($sessionrequest);
 
@@ -224,16 +224,6 @@ function start_session($type, $lang) {
     return $resp;
 }
 
-function get_signature_request($type, $lang) {
-    global $sigrequests;
-    $request = $sigrequests[$type];
-
-    // Signature requests do not support translatable strings, use chosen language
-    $request['message'] = $sigrequests[$type]['message'][$lang];
-
-    return $request;
-}
-
 function error() {
     http_response_code(500);
     echo 'Internal server error';
@@ -246,8 +236,16 @@ function stop() {
     exit();
 }
 
-if (!isset($_GET['type']) || !isset($_GET['lang']))
-    stop();
+if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 
-header('Access-Control-Allow-Origin: ' . BASE_URL);
-echo start_session($_GET['type'], $_GET['lang']);
+    if (!isset($_GET['type']) || !isset($_GET['lang']))
+        stop();
+
+    // Signature requests index their message by language; keep that lookup on a
+    // known key instead of whatever arrives in the query string.
+    $lang = strtolower($_GET['lang']) === 'nl' ? 'nl' : 'en';
+
+    header('Access-Control-Allow-Origin: ' . BASE_URL);
+    echo start_session($_GET['type'], $lang);
+
+}

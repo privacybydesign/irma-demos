@@ -1,17 +1,40 @@
 'use strict';
 
+// The success builders return DOM nodes and set disclosed values with
+// textContent, so a value from a credential can never be parsed as HTML.
 var MESSAGES = {
     'lang':               'en',
     'cancel-message':     'Cancelled',
     'error':              'Error',
     'errormsg':           'Error message',
     'email-success':      (email) => {
-        return `<div>Consent signing succeeded! You have signed the following message with email address <em class="attribute email">${email}</em>:</div>`
+        const div = document.createElement('div');
+        div.append('Consent signing succeeded! You have signed the following message with email address ');
+        div.append(signatureAttribute('email', email), ':');
+        return div;
     },
     'donation-success':   (name, number) => {
-        return `<div>Signing of the donation succeeded! You have signed the following message with name <em class="attribute name">${name}</em> and phone number <em class="attribute number">${number}</em></div>`
+        const div = document.createElement('div');
+        div.append('Signing of the donation succeeded! You have signed the following message with name ');
+        div.append(signatureAttribute('name', name), ' and phone number ', signatureAttribute('number', number));
+        return div;
     },
     'exam-success':       (name, employee, institute, email) => {
-        return `<div>Signing of the exam outcome succeeded! You have signed the following message as <em class="attribute employee">${employee}</em> with name <em class="attribute name">${name}</em> from the institute <em class="attribute institute">${institute}</em> with email address <em class="attribute email">${email}</em></div>`
+        const div = document.createElement('div');
+        div.append('Signing of the exam outcome succeeded! You have signed the following message as ');
+        div.append(
+            signatureAttribute('employee', employee), ' with name ',
+            signatureAttribute('name', name), ' from the institute ',
+            signatureAttribute('institute', institute), ' with email address ',
+            signatureAttribute('email', email),
+        );
+        return div;
     },
 };
+
+function signatureAttribute(name, value) {
+    const em = document.createElement('em');
+    em.className = 'attribute ' + name;
+    em.textContent = value;
+    return em;
+}

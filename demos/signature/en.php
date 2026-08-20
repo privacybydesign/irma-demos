@@ -24,14 +24,10 @@
   Yivi <a href="https://yivi.app/en/storing_and_sharing/">issuance
   page</a>.
 </p>
-<ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link active" href="#email_consent" data-bs-toggle="tab">Advertisement</a></li>
-  <li class="nav-item"><a class="nav-link" href="#donation" data-bs-toggle="tab">Donation</a></li>
-  <li class="nav-item"><a class="nav-link" href="#exam" data-bs-toggle="tab">Exam result</a></li>
-</ul>
-<div class="tab-content">
-  <div id="email_consent" class="tab-pane panel panel-default active">
-	<div class="panel-body">
+<div class="signature-examples">
+  <div id="email_consent" class="signature-example">
+	<div>
+	  <h3>Advertisement</h3>
 	  <p>
 		<button id="btn_email_consent" class="custom-button">Consent to receiving advertisements via email</button>
 	  </p>
@@ -62,8 +58,9 @@
 	</div>
   </div>
 
-  <div id="donation" class="tab-pane panel panel-default">
-	<div class="panel-body">
+  <div id="donation" class="signature-example">
+	<div>
+	  <h3>Donation</h3>
 	  <p>
 		<button id="btn_donation" class="custom-button">Donate to the Privacy by Design foundation</button>
 	  </p>
@@ -77,8 +74,9 @@
 	</div>
   </div>
 
-  <div id="exam" class="tab-pane panel panel-default">
-	<div class="panel-body">
+  <div id="exam" class="signature-example">
+	<div>
+	  <h3>Exam result</h3>
 	  <p>
 		<button id="btn_exam" class="custom-button">Declaration exam passed</button>
 	  </p>

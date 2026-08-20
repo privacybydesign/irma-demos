@@ -3,10 +3,10 @@ let result_status = document.getElementById('result_status');
 let successstudent_fun = function (data) {
     let result = data.disclosed[0][0].rawvalue;
     if (result === 'student') {
-        document.getElementById('main').innerHTML = MESSAGES['succeeded-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
+        document.querySelector('main section').innerHTML = MESSAGES['succeeded-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
             MESSAGES['back'] + '</a></p>';
     } else {
-        document.getElementById('main').innerHTML = MESSAGES['failed-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
+        document.querySelector('main section').innerHTML = MESSAGES['failed-student'] + '<br> <p><a href="#" onclick="window.location.reload(true)">' +
             MESSAGES['back'] + '</a></p>';
     }
 };
@@ -15,8 +15,8 @@ let successstudent_fun = function (data) {
 let successschool_fun = function (data) {
     let role = data.disclosed[0][0].rawvalue;
     let school = data.disclosed[0][1].rawvalue;
-    document.getElementById('main').innerHTML = '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
-    document.getElementById('main').prepend(MESSAGES['succeeded-school'](role, school));
+    document.querySelector('main section').innerHTML = '<br><p><a href=\"#\" onclick=\"window.location.reload(true)\">' + MESSAGES['back'] + '</a></p>';
+    document.querySelector('main section').prepend(MESSAGES['succeeded-school'](role, school));
 };
 
 let cancel_fun = function() {

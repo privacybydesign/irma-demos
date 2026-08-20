@@ -1,59 +1,42 @@
-<p>
-This page contains an example of a simple age check with Yivi,
-together with an explanation of how this works and can be used, for
-    instance by webshops or video sites. With the button below it can be
-checked whether a visitor of such a site is indeed older than
-18. What's special about Yivi is its privacy-friendliness: the visitor
-reveals no other information than the fact that (s)he is 18+.
-</p>
-
-<p>
-In order to be able to try out yourself the button below you need to
-have the Yivi
-app <a href="https://yivi.app/#download">installed</a>
-with at least your <b>personal data</b> card loaded. You can prove you are 18+ in two ways:
-<ul>
-<li>Using Dutch BRP (Basisregistratie Personen) data via the <a href="https://yivi.nijmegen.nl/login">BRP issuance webpage</a>, or</li>
-<li>Using an international passport card</li>
-</ul>
-</p>
-
-<div style="text-align: center">
-    <button class="custom-button" id="try_irma_18btn">Older than 18 check</button>
-</div>
-
-<p>
-A few remarks:
-<ul>
-<li> A similar button can be used for other age checks, like "older
-than 12", "older than 16", or even "older than 65". These personal
-data can be collected by anyone in the Netherlands.  The software for
-checking these attributes, as used here, is open source, freely
-available, and can be used without costs, see also
-the Yivi documentation <a href="https://docs.yivi.app/">webpage</a> with more information on this.
-
-<li> Buttons like the above one are especially relevant for webshops
-that have a legal obligation to perform age verification when offering
-violent or possibly offensive games or films, or by gambling
-sites. This is illustrated in a dedicated
-<a href="https://angrygames.yivi.app">angry games</a> demo. The button
-could also be used to regulate online access to catch up TV
-programs. Currently, many of these sites do not have proper age checks
-because there is no user-friendly (and cheap) technology
-available. With Yivi this excuse can no longer be used.
-
-<li> With Yivi it is possible to perform not only "older than" but
-also "younger than" checks, such as "younger than 16" or "younger than
-12". Such checks can be used to restrict access to certain webpages or
-chat sites to minors --- and to exclude others, in principle. So far,
-these "younger than" data are not issued in Yivi, on the one side
-because no specific application has emerged, and on the other side
-because it is unclear from which age onwards one can reasonably expect
-children to use the Yivi app.
-</ul>
-</p>
-
-<p>
-<a href="../../">Back</a> to
-the Yivi demo overview.
-</p>
+<?php
+$content = [
+	"intro" => "Useful for webshops or video sites that need to make sure the visitor is older than 18.",
+	"benefits" => [
+		"Only share the fact that you are 18+",
+        "No personal data which could be leaked",
+        "Also works for 12+, 16+, 21+ and 65+"
+	],
+	"data" => [
+		"description" => "The personal data card",
+		"sources" => [
+			[
+				"url" => "https://yivi.nijmegen.nl/login",
+				"label" => "the Dutch resident registration (BRP)"
+			],
+			[
+				"label" => "passport"
+			],
+			[
+				"label" => "driver’s license"
+			],
+			[
+				"label" => "identity card"
+			]
+		]
+	],
+	"action" => "Prove I’m older than 18",
+	"more" => [
+		"description" => "Two demos put this age check to work in a setting that looks like a real site:",
+		"links" => [
+			[
+				"label" => "Angry Games",
+				"url" => "https://angrygames.yivi.app"
+			],
+			[
+				"label" => "YiviTube",
+				"url" => "https://yivitube.yivi.app"
+			]
+		]
+	],
+	"sidenotes" => "Webshops, movie platforms, or gambling sites have a legal obligation to perform age verification when offering violent or possibly offensive products. Currently, many of these sites do not have proper age checks because there is no user-friendly (and cheap) technology available. Yivi fills this gap."
+];

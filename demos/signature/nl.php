@@ -22,14 +22,10 @@
   Yivi <a href="https://yivi.app/storing_and_sharing/">uitgifte
   pagina</a>.
 </p>
-<ul class="nav nav-tabs">
-  <li class="nav-item"><a class="nav-link active" href="#email_consent" data-bs-toggle="tab">Advertenties</a></li>
-  <li class="nav-item"><a class="nav-link" href="#donation" data-bs-toggle="tab">Donatie</a></li>
-  <li class="nav-item"><a class="nav-link" href="#exam" data-bs-toggle="tab">Tentamenresultaat</a></li>
-</ul>
-<div class="tab-content">
-  <div id="email_consent" class="tab-pane panel panel-default active">
-    <div class="panel-body">
+<div class="signature-examples">
+  <div id="email_consent" class="signature-example">
+    <div>
+      <h3>Advertenties</h3>
       <p>
         <button id="btn_email_consent" class="custom-button">Geef toestemming voor advertenties per email</button>
       </p>
@@ -65,8 +61,9 @@
     </div>
   </div>
 
-  <div id="donation" class="tab-pane panel panel-default">
-    <div class="panel-body">
+  <div id="donation" class="signature-example">
+    <div>
+      <h3>Donatie</h3>
       <p>
         <button id="btn_donation" class="custom-button">Doneer aan de stichting Privacy by Design</button>
       </p>
@@ -81,8 +78,9 @@
     </div>
   </div>
 
-  <div id="exam" class="tab-pane panel panel-default">
-    <div class="panel-body">
+  <div id="exam" class="signature-example">
+    <div>
+      <h3>Tentamenresultaat</h3>
       <p>
         <button id="btn_exam" class="custom-button">Verklaring tentamen gehaald</button>
       </p>

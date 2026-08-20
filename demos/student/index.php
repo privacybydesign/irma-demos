@@ -1,8 +1,5 @@
 <?php
-$title = array(
-    "en" => "Access for students with Yivi",
-    "nl" => "Toegang voor studenten met Yivi"
-);
+include($_SERVER['DOCUMENT_ROOT'] . '/includes/lang.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/includes/head.php');
 include($_SERVER['DOCUMENT_ROOT'] . '/includes/header.php');
 include("./$lang.php");
