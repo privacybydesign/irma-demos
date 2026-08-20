@@ -22,4 +22,3 @@
 	</header>
 	<main class="main">
 		<section>
-		<div id="result_status"></div>
