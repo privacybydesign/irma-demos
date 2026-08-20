@@ -1,28 +1,15 @@
-let result_status = document.getElementById('result_status');
+let verifier = (data) => {
+    let [fullname, iban, bic] = data.disclosed[0].map(attribute => attribute.rawvalue);
 
-let success_fun = function(data) {
-    let i = 0;
-    let fullname = data.disclosed[0][0].rawvalue;
-    let iban = data.disclosed[0][1].rawvalue;
-    let bic = data.disclosed[0][2].rawvalue;
+    document.getElementById('iban-fullname').value = fullname;
+    document.getElementById('iban-number').value = iban;
+    document.getElementById('iban-bic').value = bic;
 
-    document.getElementById('iban').value = iban;
-    document.getElementById('bic').value = bic;
-    document.getElementById('fullname').value = fullname;
+    document.querySelector('.yivi-web-form').remove();
+    document.querySelector('.iban-confirmation').removeAttribute('hidden');
+
+    // The filled-in form is the result; there is nothing to add below the demo.
+    return false;
 };
 
-let cancel_fun = function() {
-    result_status.innerHTML = MESSAGES['cancel-message'];
-    result_status.classList.add('alert', 'alert-warning');
-};
-
-let error_fun = function() {
-    result_status.innerHTML = MESSAGES['error-message'];
-    result_status.classList.add('alert', 'alert-danger');
-};
-
-document.getElementById('try_irma_ibanbtn').addEventListener('click', function() {
-    result_status.innerHTML = "";
-    result_status.className = "";
-    start_session('iban', MESSAGES['lang'], success_fun, cancel_fun, error_fun);
-});
+start_session_inline(slug, lang, verifier);

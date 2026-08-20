@@ -1,51 +1,19 @@
-<p>
-    This page describes how a visitor can easily disclose his/her IBAN bank account
-    with Yivi. In particular, a form is filled-in automatically
-    with reliable IBAN data.
-</p>
-
-<p>
-    In order to be able to try out the button below you need to have the
-    Yivi
-    app <a href="https://yivi.app/en/#download">installed</a>.
-</p>
-
-<table style="margin:auto">
-    <tr>
-        <td> <b>IBAN</b> </td>
-        <td> <input id="iban" disabled> </td>
-    </tr>
-    <tr>
-        <td> <b>BIC</b> </td>
-        <td> <input id="bic" disabled> </td>
-    </tr>
-    <tr>
-        <td> <b>Fullname</b> </td>
-        <td> <input id="fullname" disabled> </td>
-    </tr>
-</table>
-<div style="text-align: center; margin-top: 20px;">
-    <button class="custom-button" id="try_irma_ibanbtn">Fill in with Yivi</button>
-</div>
-
-<p>
-    A few remarks:
-<ul>
-    <li> This demo fills in the above bank account fields, but
-        does <em>not</em> store or collect any data. As soon as the demo is
-        closed, all information disappears.
-
-    <li> This automatic form-filling with Yivi also works for other
-        fields, like name, email address, phone number etc. This is much
-        easier than typing the information by hand and prevents
-        mistakes. Moreover, the website knows the data is reliable: it can
-        see the source of the data, and on that basis decide its level of
-        confidence.
-</ul>
-</p>
-
-
-<p>
-    <a href="../../">Back</a> to
-    the Yivi demo overview.
-</p>
+<?php
+$content = [
+	"intro" => "Useful for any form that asks for bank details: filled in without typing, and without typos.",
+	"benefits" => [
+		"The account number comes from the bank, not from memory",
+		"No typos in an 18-character IBAN",
+		"Account holder and BIC come along automatically"
+	],
+	"data" => [
+		"description" => "The IBAN card",
+		"sources" => [
+			[
+				"label" => "your own bank, via iDIN"
+			]
+		]
+	],
+	"action" => "Fill in my bank details",
+	"sidenotes" => "This demo fills in the fields above but stores nothing: close the page and the information is gone. The same form-filling works for other fields as well, such as name, email address or phone number. That is easier than typing them and it prevents mistakes. On top of that, the site can see where the data came from, and decide for itself how much confidence that warrants."
+];
