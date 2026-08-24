@@ -9,6 +9,7 @@
         <link href="/resources/vars.css" rel="stylesheet">
         <link href="/resources/style.css" rel="stylesheet">
         <link href="/resources/yivi.css" rel="stylesheet">
+		<link href="/resources/demo.css" rel="stylesheet">
 
         <script src="/assets/yivi.js" defer></script>
 		<script src="/start_session.js" defer></script>

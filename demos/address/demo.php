@@ -31,6 +31,7 @@ if ($render_full_page):
 
 	<link href="/resources/vars.css" rel="stylesheet">
 	<link href="/resources/yivi.css" rel="stylesheet">
+	<link href="/resources/demo.css" rel="stylesheet">
 
 	<script src="/assets/yivi.js" defer></script>
 	<script src="/start_session.js" defer></script>
@@ -45,7 +46,7 @@ if ($render_full_page):
 			color-scheme: dark;
 		}
 
-		.address-main {
+		.demo-main {
 			margin: 2vw auto;
 			max-width: 60em;
 		}
@@ -63,65 +64,9 @@ if ($render_full_page):
 
 <style>
     .address-figure {
-        font-family: system-ui, sans-serif;
-		margin: 0;
-		color-scheme: dark;
         --accent: #712F87;
         --secondary: #F7E30F;
-        --link: var(--accent);
-        --link-hover: oklch(from var(--accent) calc(l + .1) c h);
-
-        div.yivi-web-form {
-            margin: 0;
-			width: 100%;
-			/*--yivi-text: white;*/
-        }
-
-        .yivi-web-header p {
-            color: white !important;
-        }
-
-        .yivi-web-button-secondary {
-			border-color: oklch(from white l c h / calc(alpha - .2));
-
-			&:hover {
-				color: white;
-				background: oklch(from white l c h / calc(alpha - .9));
-			}
-		}
-
-		.yivi-web-forbidden-animation {
-			background: white;
-			box-shadow: 0 0 0 8px white;
-			border-radius: 50%;
-			padding: 1em;
-			margin-block-end: 1em;
-		}
-
-		.yivi-web-button-tertiary {
-			color: white;
-		}
-    }
-    .address-header {
-        background: var(--accent);
-        color: var(--secondary);
-        padding: 1em 5vw;
-    }
-    .address-logo {
-        font-weight: bold;
-        font-size: 1.4em;
-    }
-    .address-main {
-        padding: 2vw 5vw 5vw;
-        background: oklch(from var(--accent) calc(l - .25) c h);
-        color: white;
-
-        h1,
-		h2 {
-            font-size: max(2.5vw, 1.5em);
-			text-wrap: balance;
-        }
-    }
+	}
 	.address-usage {
         padding: calc(1em + .5vw) calc(1.5em + 1vw);
         background: oklch(from white l c h / calc(alpha - .8));
@@ -148,21 +93,17 @@ if ($render_full_page):
             font-weight: 600;
 		}
     }
-	figure + p {
-		padding: 1em;
-		background: orange;
-	}
 </style>
 
 <figure class="address-figure demo">
 
-<header class="address-header">
-    <div class="address-logo">
+<header class="demo-header">
+    <div class="demo-logo">
         <?php echo $demo_strings['organisation'][$lang]; ?>
     </div>
 </header>
 
-<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="address-main">
+<<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="demo-main">
     <h<?php echo ($render_full_page) ? '1' : '2'; ?>>
         <?php echo $demo_strings['title'][$lang]; ?>
     </h<?php echo ($render_full_page) ? '1' : '2'; ?>>
