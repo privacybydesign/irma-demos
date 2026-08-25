@@ -103,13 +103,6 @@ $sprequests = [
             ],
         ]
     ],
-    'presencecheck' => [
-        '@context' => 'https://irma.app/ld/request/disclosure/v2',
-        'disclose' => [
-            [['pbdf.pbdf.idin.familyname'], ['pbdf.pbdf.facebook.familyname']],
-            [['pbdf.pbdf.surfnet-2.email', 'pbdf.pbdf.surfnet-2.id']],
-        ],
-    ],
     'beingalive' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [[[
