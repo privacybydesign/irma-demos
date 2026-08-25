@@ -96,21 +96,13 @@ $sprequests = [
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [
-                array_merge(
-                    [
-                        [SCHEME .'.pbdf.linkedin.familyname'],
-                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME .".".DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
-                    ],
-                    SCHEME === 'pbdf' ? [
-                        [SCHEME .'.gemeente.personalData.fullname'],
-                        ['pbdf.pilot-amsterdam.idcard.surname'],
-                        ['pbdf.pilot-amsterdam.passport.surname'],
-                    ] : [], // These credential types have no equivalent in irma-demo
-                    
-                    SCHEME == 'irma-demo' ? [
-                        [SCHEME .'.gemeente.personalData.fullname'],
-                    ] : [] 
-                ),
+                [
+                    ['pbdf.gemeente.personalData.fullname'],
+                    ['pbdf.pbdf.passport.lastName'],
+                    ['pbdf.pbdf.drivinglicence.lastName'],
+                    ['pbdf.pbdf.idcard.lastName'],
+                    ['pbdf.pbdf.linkedin.familyname']
+                ]
             ],
         ]
     ],
