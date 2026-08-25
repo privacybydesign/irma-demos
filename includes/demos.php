@@ -20,7 +20,7 @@ $demos = [
         "en" => "IBAN form-filling",
         "nl" => "IBAN-formulier invullen"
     ],
-    "irmaTubePremium" => [
+    "chained" => [
         "en" => "Chained sessions",
         "nl" => "Chained sessions"
     ],
