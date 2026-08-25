@@ -1,67 +1,18 @@
-<p>
-    Deze pagina bevat een voorbeeld van een eenvoudige controle
-    van een e-mailadres met Yivi. Daarbij wordt enige uitleg
-    gegeven over hoe dit werkt en hoe dit gebruikt kan worden, met
-    name door organisaties met eigen e-mailadressen: zij kunnen
-    de gebruikers van die adressen daarmee laten inloggen. Op die
-    manier is geen apart wachtwoord nodig om in te loggen.
-</p>
-
-<p>
-    De linker knop hieronder controleert of het getoonde e-mailadres
-    een <tt>gmail.com</tt> adres is. Alleen wanneer dat het geval is de
-    controle geslaagd. Eenzelfde mechanisme kan gebruikt worden om
-    uitsluitend bezoekers met een e-mailadres van een andere organsiatie
-    toe te laten.
-</p>
-
-<p>
-    De rechter knop vraagt enkel een e-mailadres en toont dat op een
-    volgende pagina. Dit kan bijvoorbeeld gevraagd worden aan bezoekers
-    van een webpagina om zich met een e-mailadres te registreren.
-</p>
-
-<p>
-    Om de onderstaande knoppen te kunnen uitproberen moet de
-    bezoeker de Yivi
-    app <a href="https://yivi.app/#download">ge&iuml;nstalleerd</a>
-    hebben. Verschillende e-mailadressen kunnen in de Yivi app
-    toegevoegd worden via
-    de <a href="https://email-issuer.yivi.app">e-mail
-    uitgifte webpagina</a> van de stichting Privacy by Design.
-</p>
-
-<div style="margin-top: 1em; margin-bottom: 1em" align="center">
-    <tr><td>
-    <button style="margin: 1em" class="custom-button"  id="try_irma_gmailbtn">Check gmail adres</button>
-    </td>
-    <td>
-    &nbsp;&nbsp;&nbsp;
-    </td>
-    <td>
-    <button style="margin: 1em" class="custom-button"  id="try_irma_emailbtn">Toon e-mail adres</button>
-    </td>
-    </tr>
-</div>
-
-<p>
-    Een paar opmerkingen:
-    <ul>
-        <li> Geen enkele informatie over e-mailadressen wordt hier bewaard of
-        verzameld. De getoonde e-mailaddressen worden alleen gebruikt met
-        deze demo als doel. Na het sluiten van deze pagina verdwijnen ze
-        vanzelf.
-
-        <li> De controle of het opgegeven adres daadwerkelijk een gmail adres
-        is wordt hier uitgevoerd in javascript in de browser (client) van de
-        gebruiker. Dat is niet de manier waarop het moet, maar kan in deze
-        demo geen kwaad. De juiste wijze is om deze controle bij de server uit
-        te voeren.
-    </ul>
-</p>
-
-
-<p>
-    <a href="../../">Terug</a> naar
-    het Yivi demo overzicht.
-</p>
+<?php
+$content = [
+    "intro" => "Handig om inloggen mogelijk te maken.",
+    "benefits" => [
+        "Registreer met een emailadres",
+        "Geen wachtwoord nodig",
+    ],
+    "data" => [
+        "description" => "De emailadreskaart",
+        "sources" => [
+            [
+                "url" => "https://email-issuer.yivi.app/nl/",
+                "label" => "Yivi emailadres",
+            ]
+        ]
+    ],
+    "sidenotes" => "Door een emailadres te delen, bewijst een gebruiker dat ze dat emailadres hebben. Dat geeft dezelfde veiligheid als een ‘magic login link’ of wachtwoord-herstel-link die wordt verstuurd via email, maar hierbij hoeft de gebruiker niet op een email te wachten. Hierdoor kan iemand inloggen door alleen hun emailadres vanuit Yivi te delen."
+];

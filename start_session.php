@@ -56,7 +56,7 @@ $sprequests = [
             '1' => ['en' => 'Student', 'nl' => 'Student'],
         ],
     ],
-    'gmail' => [
+    'domain' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
@@ -64,11 +64,8 @@ $sprequests = [
                 ['pbdf.sidn-pbdf.email.domain'],
             ],
         ],
-        'labels' => [
-            '1' => ['en' => 'Gmail address', 'nl' => 'Gmail adres'],
-        ],
     ],
-    'email' => [
+    'mail' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [

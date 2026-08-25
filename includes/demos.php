@@ -25,8 +25,12 @@ $demos = [
         "nl" => "Chained sessions"
     ],
     "mail" => [
-        "en" => "Verification of email address",
-        "nl" => "Controle van e-mailadres"
+        "en" => "Login with email address",
+        "nl" => "Inloggen met e-mailadres"
+    ],
+    "domain" => [
+        "en" => "Access with email address domain",
+        "nl" => "Toegang met e-mailadres-domein"
     ],
     "signature" => [
         "en" => "Digital signatures",
