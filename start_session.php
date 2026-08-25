@@ -89,7 +89,7 @@ $sprequests = [
             ]
         ],
     ],
-    'irmatube_premium' => [
+    'chained' => [
         'nextSession' => [
             'url' => IRMATUBE_NEXT_SESSION_URL
         ],
@@ -105,17 +105,6 @@ $sprequests = [
                 ]
             ],
         ]
-    ],
-    'watch_premium_contents' => [
-        '@context' => 'https://irma.app/ld/request/disclosure/v2',
-        'disclose' => [[[
-            // Only premium members may proceed: require type == 'premium'.
-            // Without this constraint a regular IRMATube membership (which has
-            // no fullname) satisfies the request and the name is disclosed as
-            // null, producing a "Hey Null" greeting. See issue #32.
-            ['type' => IRMATUBE_CREDENTIAL .'.fullname', 'value' => null],
-            ['type' => IRMATUBE_CREDENTIAL .'.type', 'value' => 'premium'],
-        ]]],
     ],
     'presencecheck' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',

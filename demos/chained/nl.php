@@ -1,51 +1,40 @@
-<p>
-    Deze pagina demonstreert <em>chained Yivi sessions</em>: meerdere Yivi sessies achter elkaar
-    waarbij de inhoud van latere sessies af mag hangen van de eerdere sessies.
-    In deze demo deel je in de eerste sessie je naam, die dan automatisch zonder extra
-    gebruikersinteractie in een tweede sessie gebruikt wordt. In deze tweede sessie wordt
-    een premium lidmaatschap-kaartje uitgegeven met daarin je naam uit de eerste sessie.
-</p>
-
-<p>
-    Deze demo is geen echte video-streaming dienst maar toont wel hoe
-    Yivi voor zo'n dienst gebruikt kan worden. Door “premium lid” te worden
-    van YiviTube met de knop “Word YiviTube premium lid” ontvang je een persoonlijk kaartje
-    in je Yivi app voor je premium lidmaatschap die gekoppeld is aan je naam. De gegevens op dat kaartje
-    kun je dan later vrijgeven om <a href="https://yivitube.yivi.app">
-        (trailers van) films</a> te bekijken. Door de premium lidmaatschap heb je toegang
-    tot extra premium inhoud.
-</p>
-
-<p>
-    Om de onderstaande knoppen te kunnen uitproberen moet je de Yivi
-    app <a href="https://yivi.app/#download">ge&iuml;nstalleerd</a>
-    hebben.
-</p>
-
-<div style="margin-top: 1em; margin-bottom: 1em; text-align: center">
-    <tr>
-        <td>
-            <button class="custom-button" id="irmatube_premium">Word YiviTube premium lid</button>
-        </td>
-        <td>
-            &nbsp;&nbsp;&nbsp;
-        </td>
-        <td>
-            <button class="custom-button" id="watch_premium_contents">Toon premium
-                inhoud</button>
-        </td>
-    </tr>
-</div>
-
-<p>
-    Geen enkele informatie over je naam wordt hier bewaard.
-    De getoonde gegevens worden alleen gebruikt met
-    deze demo als doel. Na het sluiten van deze pagina verdwijnen ze
-    vanzelf.
-</p>
-
-
-<p>
-    <a href="../../">Terug</a> naar
-    het Yivi demo overzicht.
-</p>
+<?php
+$content = [
+	"intro" => "Handig om persoonlijke, voorwaardelijke kaarten uit te geven",
+	"benefits" => [
+		"Geef een kaart uit op basis van ontvangen data",
+		"De gebruiker hoeft Yivi maar één keer te openen"
+	],
+	"data" => [
+		"description" => "Works with any card, but this demo uses a name for the member card;",
+		"sources" => [
+			[
+				"url" => "https://yivi.nijmegen.nl/login",
+				"label" => "de basisregistratie (BRP)"
+			],
+			[
+				"label" => "paspoort"
+			],
+			[
+				"label" => "rijbewijs"
+			],
+			[
+				"label" => "ID-kaart"
+			],
+			[
+				"url" => "https://saml-issuer.yivi.app/nl/linkedin/",
+				"label" => "LinkedIn"
+			]
+		]
+	],
+	"more" => [
+		"description" => "De YiviTube Premium lidmaatschapskaart kan worden gebruikt in deze YiviTube demo:",
+		"links" => [
+			[
+				"label" => "YiviTube",
+				"url" => "https://yivitube.yivi.app/"
+			]
+		]
+	],
+	"sidenotes" => "Deze demo laat ‘chained sessions’ zien: meerdere sessies (dus het ontvangen van data of uitgeven van een nieuwe kaart) gebeuren nadat de gebruiker maar één keer de Yivi QR-code scant (of op de knop drukt). De data van eerdere sessies (hier is dat de naam) kan gebruikt worden in latere sessies (hier is dat het lidmaatschap)."
+];
