@@ -33,6 +33,7 @@
         <div class="demo-logo">
             <?php echo $demo_strings['organisation'][$lang]; ?>
         </div>
+		<?php if ($render_full_page) include($_SERVER['DOCUMENT_ROOT'] . "/includes/lang-switcher.php"); ?>
     </header>
 
     <<?php echo ($render_full_page) ? 'main' : 'section'; ?> class="demo-main">
