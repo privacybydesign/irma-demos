@@ -1,51 +1,19 @@
-<p>
-    This page describes how a visitor can easily disclose his/her IBAN bank account
-    with Yivi. In particular, a form is filled-in automatically
-    with reliable IBAN data.
-</p>
-
-<p>
-    In order to be able to try out the button below you need to have the
-    Yivi
-    app <a href="https://yivi.app/en/#download">installed</a>.
-</p>
-
-<table style="margin:auto">
-    <tr>
-        <td> <b>IBAN</b> </td>
-        <td> <input id="iban" disabled> </td>
-    </tr>
-    <tr>
-        <td> <b>BIC</b> </td>
-        <td> <input id="bic" disabled> </td>
-    </tr>
-    <tr>
-        <td> <b>Fullname</b> </td>
-        <td> <input id="fullname" disabled> </td>
-    </tr>
-</table>
-<div style="text-align: center; margin-top: 20px;">
-    <button class="custom-button" id="try_irma_ibanbtn">Fill in with Yivi</button>
-</div>
-
-<p>
-    A few remarks:
-<ul>
-    <li> This demo fills in the above bank account fields, but
-        does <em>not</em> store or collect any data. As soon as the demo is
-        closed, all information disappears.
-
-    <li> This automatic form-filling with Yivi also works for other
-        fields, like name, email address, phone number etc. This is much
-        easier than typing the information by hand and prevents
-        mistakes. Moreover, the website knows the data is reliable: it can
-        see the source of the data, and on that basis decide its level of
-        confidence.
-</ul>
-</p>
-
-
-<p>
-    <a href="../../">Back</a> to
-    the Yivi demo overview.
-</p>
+<?php
+$content = [
+	"intro" => "Useful to start direct debits.",
+	"benefits" => [
+		"Trustworthy bank details, no typos",
+		"No bank transfer needed to start a direct debit"
+	],
+	"data" => [
+		"description" => "The bank account card",
+		"sources" => [
+			[
+				"url" => "https://iban-issuer.yivi.app/en",
+				"label" => "the IBAN issuer"
+			]
+		]
+	],
+	"action" => "Share your bank details",
+	"sidenotes" => ""
+];
