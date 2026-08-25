@@ -8,7 +8,6 @@ let verifier = (data) => {
     let plaats = data.disclosed[0][i].rawvalue;
 
     document.querySelector('.yivi-web-form').remove();
-    document.querySelector('.address-usage').removeAttribute('hidden');
     let address_block = document.createElement('p');
     address_block.append(adres, document.createElement('br'), `${postcode} ${plaats}`);
     document.querySelector('.address-usage').append(address_block);
@@ -19,5 +18,5 @@ let verifier = (data) => {
 start_session_inline(slug, lang, verifier, (message) => {
     let error = document.createElement('p');
     error.innerText = message;
-    document.querySelector('.address-figure').after(error);
+    document.querySelector('.demo-figure').after(error);
 });

@@ -29,17 +29,8 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
 		--accent: #712F87;
 		--secondary: #F7E30F;
 	}
-	.address-usage {
-		padding: calc(1em + .5vw) calc(1.5em + 1vw);
-		background: oklch(from white l c h / calc(alpha - .8));
-		border-radius: 12px;
-
-		p {
-			margin-block: 12px;
-			font-size: 1.2em;
-		}
-
-		:first-child {
+	.result {
+		> :first-child {
 			font-size: max(3.5vw, 2em);
 		}
 
@@ -57,7 +48,7 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
 	}
 </style>
 
-<div class="address-usage" hidden>
+<div class="result" hidden>
 	<p>
 		<span class="number">942</span>
 		<span class="unit">kWh</span>

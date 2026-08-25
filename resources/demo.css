@@ -74,3 +74,14 @@
         text-wrap: balance;
     }
 }
+
+.result {
+    padding: calc(1em + .5vw) calc(1.5em + 1vw);
+    background: oklch(from white l c h / calc(alpha - .8));
+    border-radius: 12px;
+
+    p {
+        margin-block: 12px;
+        font-size: 1.2em;
+    }
+}

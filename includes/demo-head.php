@@ -27,7 +27,7 @@
 
 <?php endif; ?>
 
-<figure class="address-figure demo">
+<figure class="demo-figure demo">
 
     <header class="demo-header">
         <div class="demo-logo">
