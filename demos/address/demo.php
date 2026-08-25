@@ -56,6 +56,12 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
 	<p class="year-at">
 		<?php echo $demo_strings['year'][$lang]; ?>
 	</p>
+	<p class="address">
+		<span id="adres"></span>
+		<br>
+		<span id="postcode"></span>
+		<span id="plaats"></span>
+	</p>
 </div>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-foot.php"); ?>

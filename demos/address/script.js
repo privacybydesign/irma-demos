@@ -1,16 +1,25 @@
 let verifier = (data) => {
-    let i = 0;
-    let adres = data.disclosed[0][i++].rawvalue;
-    if (data.disclosed[0][i].id.match('.*\.houseNumber')) {
-        adres += " " + data.disclosed[0][i++].rawvalue;
+
+    const values = {
+        'adres': data.disclosed[0][0].rawvalue,
+        'postcode': data.disclosed[0][2].rawvalue,
+        'plaats': data.disclosed[0][3].rawvalue,
     }
-    let postcode = data.disclosed[0][i++].rawvalue;
-    let plaats = data.disclosed[0][i].rawvalue;
+    if (data.disclosed[0][1].id.match('.*\.houseNumber')) {
+        values['adres'] += " " + data.disclosed[0][1].rawvalue;
+        values['postcode'] = data.disclosed[0][2].rawvalue;
+        values['plaats'] = data.disclosed[0][3].rawvalue;
+    } else {
+        values['postcode'] = data.disclosed[0][1].rawvalue;
+        values['plaats'] = data.disclosed[0][2].rawvalue;
+    }
+
+    for (let item in values) {
+        document.getElementById(item).innerText = values[item];
+    }
 
     document.querySelector('.yivi-web-form').remove();
-    let address_block = document.createElement('p');
-    address_block.append(adres, document.createElement('br'), `${postcode} ${plaats}`);
-    document.querySelector('.address-usage').append(address_block);
+    document.querySelector('.result').removeAttribute('hidden');
 
     return false;
 };
