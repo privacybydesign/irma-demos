@@ -14,6 +14,5 @@ $content = [
             ]
         ]
     ],
-    "action" => "Prove you are alive",
     "sidenotes" => "Pension funds or governments giving out annuities sometimes require a certificate of life. Traditionally, this requires getting a signed form at a counter. By sharing identifying details which were recently loaded into Yivi, the receiving party can be sure the person is alive. After all, the resident registration will not allow the card to be issued if the person has passed."
 ];

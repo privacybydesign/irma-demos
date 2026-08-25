@@ -88,11 +88,6 @@ $demo_page_strings = [
 </aside>
 
 <div class="demo-container">
-	<script type="text/javascript">
-		let header_text = <?php echo json_encode($content['action']); ?>;
-		let lang = <?php echo json_encode($lang); ?>;
-		let slug = <?php echo json_encode($slug); ?>;
-	</script>
 
 	<p class="info">
 		<?php echo $demo_page_strings['no_info'][$lang]; ?>
@@ -105,10 +100,14 @@ $demo_page_strings = [
 	if (file_exists('demo.php')) {
 		include 'demo.php';
 	}
-	else {
-		echo '<div id="yivi-web-form"></div>';
-	}
-	?>
+	else { ?>
+		<script type="text/javascript">
+			let header_text = <?php echo json_encode($content['action']); ?>;
+			let lang = <?php echo json_encode($lang); ?>;
+			let slug = <?php echo json_encode($slug); ?>;
+		</script>
+		<div id="yivi-web-form"></div>
+	<?php } ?>
 
 	<script>
 		(() => {

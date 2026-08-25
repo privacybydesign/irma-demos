@@ -14,6 +14,5 @@ $content = [
 			]
 		]
 	],
-	"action" => "Share your address",
 	"sidenotes" => "Addresses shared this way are reliable. You can’t make a mistake, and the receiver can be sure you are registered there. This could replace the need for some organisations to send a postal card with a verification code, for example. It also works for other information, like name, email address, phone number etc."
 ];

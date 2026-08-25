@@ -16,16 +16,16 @@
     <script src="./script.js" defer></script>
 
     <title><?php echo $title; ?> | Yivi Demos</title>
-
-    <script type="text/javascript">
-		let header_text = '<?php echo $demo_strings['action'][$lang]; ?>';
-		let lang = '<?php echo $lang; ?>';
-		let slug = '<?php echo $demo_strings['slug']; ?>';
-    </script>
 </head>
 <body class="stand-alone">
 
 <?php endif; ?>
+
+<script type="text/javascript">
+	let header_text = <?php echo json_encode($demo_strings['action'][$lang]); ?>;
+	let lang = <?php echo json_encode($lang); ?>;
+	let slug = <?php echo json_encode($demo_strings['slug']); ?>;
+</script>
 
 <figure class="demo-figure demo">
 

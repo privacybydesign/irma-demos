@@ -14,6 +14,5 @@ $content = [
             ]
         ]
     ],
-    "action" => "Bewijs dat je leeft",
     "sidenotes" => "Pensioenfondsen of overheden die ouderdomspensioen betalen vereisen soms een bewijs van leven (attestatie de vita). In het verleden betekende dit dat je een getekend formulier bij een balie moest halen. Door het delen van identificerende gegevens die recent in Yivi zijn geladen, kan een ontvangende partij er zeker van zijn dat de persoon leeft. De BRP geeft namelijk geen persoonsgegevens-kaart meer uit wanneer de persoon is overleden."
 ];
