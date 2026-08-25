@@ -39,19 +39,6 @@ if ($render_full_page):
 	<script src="./script.js" defer></script>
 
     <title><?php echo $title; ?> | Yivi Demos</title>
-	<style>
-		body {
-			margin: 0;
-            background: oklch(from var(--accent) calc(l - .25) c h);
-            --accent: #712F87;
-			color-scheme: dark;
-		}
-
-		.demo-main {
-			margin: 2vw auto;
-			max-width: 60em;
-		}
-	</style>
 
 	<script type="text/javascript">
 		let header_text = '<?php echo $demo_strings['action'][$lang]; ?>';
@@ -59,11 +46,14 @@ if ($render_full_page):
 		let slug = '<?php echo $demo_strings['slug']; ?>';
 	</script>
 </head>
-<body>
+<body class="stand-alone">
 
 <?php endif; ?>
 
 <style>
+	 body {
+         --accent: #712F87;
+	 }
     .address-figure {
         --accent: #712F87;
         --secondary: #F7E30F;

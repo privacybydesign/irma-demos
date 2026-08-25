@@ -1,3 +1,14 @@
+.stand-alone {
+    margin: 0;
+    background: oklch(from var(--accent) calc(l - .25) c h);
+    color-scheme: dark;
+
+    .demo-main {
+        margin: 2vw auto;
+        max-width: 60em;
+    }
+}
+
 .demo {
     font-family: system-ui, sans-serif;
     margin: 0;
