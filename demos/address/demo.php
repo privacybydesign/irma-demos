@@ -3,7 +3,8 @@
 $render_full_page = basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]);
 
 $demo_strings = [
-    'organisation' => [
+	'slug' => 'address',
+	'organisation' => [
         'en' => 'YourEnergy',
         'nl' => 'JouwEnergie',
     ],
@@ -55,7 +56,7 @@ if ($render_full_page):
 	<script type="text/javascript">
 		let header_text = '<?php echo $demo_strings['action'][$lang]; ?>';
 		let lang = '<?php echo $lang; ?>';
-		let slug = '<?php echo 'address'; ?>';
+		let slug = '<?php echo $demo_strings['slug']; ?>';
 	</script>
 </head>
 <body>
