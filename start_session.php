@@ -111,19 +111,6 @@ $sprequests = [
             'pbdf.gemeente.personalData.dateofbirth',
         ]]],
     ],
-    'email-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande e-mailadres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
-            'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
-        ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.email.email'],
-                ['pbdf.sidn-pbdf.email.email'],
-            ],
-        ],
-    ],
     'exam-signature' => [
         '@context' => 'https://irma.app/ld/request/signature/v2',
         'message' => [
@@ -137,29 +124,6 @@ $sprequests = [
                 ['type' => 'pbdf.pbdf.surfnet-2.email', 'value' => null],
                 ['type' => 'pbdf.pbdf.surfnet-2.type', 'value' => 'employee'],
             ]],
-        ],
-    ],
-    'donation-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij zeg ik toe om vandaag nog een bedrag van 10 Euro over te maken op rekening nummer NL54 INGB 0007522950 van de stichting Privacy by Design, als ondersteuning van hun nobele werkzaamheden. (Niet echt hoor)',
-            'en' => 'Hereby I agree to transfer today the amount of 10 Euro to the bank account number NL54 INGB 0007522950 of the Privacy by Design foundation, in order to support their noble activities (not really).',
-        ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.idin.familyname'],
-                ['pbdf.nijmegen.personalData.familyname'],
-                ['pbdf.gemeente.personalData.familyname'],
-                ['pbdf.pilot-amsterdam.idcard.surname'],
-                ['pbdf.pilot-amsterdam.passport.surname'],
-                ['pbdf.pbdf.facebook.familyname'],
-                ['pbdf.pbdf.linkedin.familyname'],
-                ['pbdf.pbdf.twitter.fullname'],
-            ],
-            [
-                ['pbdf.pbdf.mobilenumber.mobilenumber'],
-                ['pbdf.sidn-pbdf.mobilenumber.mobilenumber'],
-            ],
         ],
     ]
 ];
