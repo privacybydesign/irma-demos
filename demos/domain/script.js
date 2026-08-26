@@ -3,6 +3,7 @@ let verifier = (data) => {
 	document.querySelector('.result').removeAttribute('hidden');
 
 	document.getElementById('domain').innerText = data.disclosed[0][0].rawvalue;
+	document.getElementById('domain-2').innerText = data.disclosed[0][0].rawvalue;
 
 	return false;
 };

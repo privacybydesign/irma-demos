@@ -13,8 +13,8 @@ $demo_strings = [
         'nl' => 'Krijg toegang tot ons intranet',
     ],
     'success' => [
-        'en' => 'Since <strong id="domain"></strong> is our domain name, and only our people have email addresses ending in <strong id="domain"></strong>, you can now access our intranet.',
-        'nl' => 'Aangezien <strong id="domain"></strong> onze domeinnaam is en alleen onze mensen een emailadres hebben dat eindigt op <strong id="domain"></strong>, kun je nu ons intranet gebruiken.'
+        'en' => 'Since <strong id="domain"></strong> is our domain name, and only our people have email addresses ending in <strong id="domain-2"></strong>, you can now access our intranet.',
+        'nl' => 'Aangezien <strong id="domain"></strong> onze domeinnaam is en alleen onze mensen een emailadres hebben dat eindigt op <strong id="domain-2"></strong>, kun je nu ons intranet gebruiken.'
     ],
     'action' => [
         'en' => 'Prove you’re part of ACME with your email address',
