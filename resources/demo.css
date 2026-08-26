@@ -42,8 +42,21 @@
         margin-block-end: 1em;
     }
 
+    .yivi-web-waiting-for-user-animation {
+        background: var(--secondary);
+    }
+
+    .yivi-web-waiting-for-user-animation::before,
+    .yivi-web-waiting-for-user-animation::after {
+        background: var(--accent);
+    }
+
     .yivi-web-button-tertiary {
         color: white;
+    }
+
+    .yivi-web-pairing-form input {
+        border-color: white;
     }
 
     + p {
