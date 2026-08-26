@@ -19,7 +19,11 @@ $demo_strings = [
     'action' => [
         'en' => 'Prove you’re part of ACME with your email address',
         'nl' => 'Bewijs dat je deel bent van ACME met je emailadres',
-    ]
+    ],
+	'event' => [
+		'en' => 'Upcoming: Go-karting with the employee association',
+		'nl' => 'Binnenkort: Go-karten met de werknemersvereniging',
+	]
 ];
 
 include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
@@ -36,5 +40,12 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
             <?php echo $demo_strings['success'][$lang]; ?>
         </p>
     </div>
+
+	<div class="content" hidden>
+		<h2>
+			<?php echo $demo_strings['event'][$lang]; ?>
+		</h2>
+		<p>...</p>
+	</div>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-foot.php"); ?>

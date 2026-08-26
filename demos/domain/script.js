@@ -1,6 +1,8 @@
 let verifier = (data) => {
 	document.querySelector('.yivi-web-form').remove();
 	document.querySelector('.result').removeAttribute('hidden');
+	document.querySelector('.content').removeAttribute('hidden');
+	document.querySelector('.demo-main > h2:first-child').remove();
 
 	document.getElementById('domain').innerText = data.disclosed[0][0].rawvalue;
 	document.getElementById('domain-2').innerText = data.disclosed[0][0].rawvalue;
