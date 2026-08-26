@@ -3,7 +3,7 @@
 $render_full_page = basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]);
 
 $demo_strings = [
-    'slug' => 'domain',
+    'slug' => 'mail',
     'organisation' => [
         'en' => 'Chatter',
         'nl' => 'Chatter',
@@ -14,7 +14,7 @@ $demo_strings = [
     ],
     'success' => [
         'en' => 'You’re now logged in as <strong id="email"></strong>.',
-        'nl' => 'Je bent nu ingelogd als <strong id="domain"></strong>.'
+        'nl' => 'Je bent nu ingelogd als <strong id="email"></strong>.'
     ],
     'action' => [
         'en' => 'Share your email address',
