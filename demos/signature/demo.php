@@ -3,7 +3,7 @@
 $render_full_page = basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]);
 
 $demo_strings = [
-    'slug' => 'exam-signature',
+    'slug' => 'signature',
     'organisation' => [
         'en' => 'Gradez',
         'nl' => 'Cijferz',

@@ -111,7 +111,7 @@ $sprequests = [
             'pbdf.gemeente.personalData.dateofbirth',
         ]]],
     ],
-    'exam-signature' => [
+    'signature' => [
         '@context' => 'https://irma.app/ld/request/signature/v2',
         'message' => [
             'nl' => 'Hierbij verklaar ik dat student Pietje Puk, vandaag ' . date('d / m / Y') . ', met lof geslaagd is voor het vak Grondbeginselen van de Alchemie.',
