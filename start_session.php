@@ -125,6 +125,21 @@ $sprequests = [
                 ['type' => 'pbdf.pbdf.surfnet-2.type', 'value' => 'employee'],
             ]],
         ],
+    ],
+    'petition' => [
+        'nextSession' => [
+            'url' => BASE_URL . '/get_session_request.php?type=petition-signature&lang=',
+        ],
+        'request' => [
+            '@context' => 'https://irma.app/ld/request/disclosure/v2',
+            'disclose' => [
+                [
+                    ['pbdf.nijmegen.address.city'],
+                    ['pbdf.gemeente.address.city'],
+                    ['pbdf.pbdf.idin.city'],
+                ]
+            ],
+        ]
     ]
 ];
 
@@ -138,6 +153,9 @@ function start_session($type, $lang) {
 
     if (str_contains($type, 'signature'))
         $sessionrequest['message'] = $sessionrequest['message'][$lang];
+
+    if (str_contains($type, 'petition'))
+        $sessionrequest['nextSession']['url'] .= $lang;
 
     $jsonsr = json_encode($sessionrequest);
 

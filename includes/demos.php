@@ -36,6 +36,10 @@ $demos = [
         "en" => "Digital signatures",
         "nl" => "Digitale handtekeningen"
     ],
+    "petition" => [
+        "en" => "Petitions",
+        "nl" => "Petities"
+    ],
     "student" => [
         "en" => "Access for students",
         "nl" => "Toegang voor studenten"
