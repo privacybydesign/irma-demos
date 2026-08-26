@@ -105,3 +105,17 @@
         font-size: 1.2em;
     }
 }
+
+button[disabled] {
+    font: inherit;
+    font-weight: bold;
+    padding: 12px 16px;
+    background: dimgrey;
+    color: white;
+    border: none;
+    border-radius: .5em;
+
+    &:hover {
+        background: dimgrey;
+    }
+}

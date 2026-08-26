@@ -1,83 +1,19 @@
-<p>
-Deze pagina bevat een voorbeeld om met Yivi na te gaan of iemand een
-student is. Verder wordt uitgelegd hoe dit werkt en hoe dit gebruikt
-kan worden bijvoorbeeld door webwinkels die speciale aanbiedingen
-willen geven aan studenten. Met de onderstaande eerste knop kan
-gecontroleerd worden of een bezoeker van zo'n webpagina daadwerkelijk
-student is. Het bijzondere aan Yivi is de privacy-vriendelijkheid: de
-bezoeker onthult geen enkele andere informatie dan het feit dat
-hij/zij student is.
-</p>
-
-<p>
-Het is mogelijk om via de tweede knop aanvullende informatie te
-vragen, namelijk de rol van de bezoeker (student of medewerker) en de
-naam van de instelling (universiteit of hogeschool) waar de student of
-medewerker aan verbonden is. Hiermee kan bijvoorbeeld speciale toegang
-georganiseerd worden alleen voor studenten en/of medewerkers van een
-bepaalde instelling.
-</p>
-
-
-<p>
-Om de onderstaande knoppen te kunnen uitproberen moet de bezoeker de
-Yivi
-app <a href="https://yivi.app/#download">ge&iuml;nstalleerd</a>
-hebben en daarin tenminste het onderwijs kaartje geladen hebben. Dat
-kan via
-de <a href="https://privacybydesign.foundation/uitgifte/surfconext/surfconext/?action=login">SURFconext
-uitgifte webpagina</a> van de stichting Privacy by Design. Succesvolle
-controle dat de bezoeker student is geeft vervolgens toegang tot
-aanbiedingen.
-</p>
-
-<div class="text-center">
-<tr><td>
-<button class="custom-button" id="try_irma_studentbtn">student check</button>
-</td>
-<td>
-&nbsp;&nbsp;&nbsp;
-</td>
-<td>
-<button class="custom-button" id="try_irma_studentschoolbtn">toon rol en instelling</button>
-</td>
-</tr>
-</div>
-
-
-<p>
-Een paar opmerkingen:
-<ul>
-<li> Nu al zijn er
-verschillende <a href="https://www.studentenwegwijzer.nl/studentenkorting/">(web)winkels</a>
-die kortingen geven aan studenten. Hoe je daar (online) moet bewijzen
-dat je daadwerkelijk student bent is niet duidelijk. Met Yivi kan dat
-nu op eenvoudige, betrouwbare en privacy-vriendelijke wijze.
-
-<li> Via SURFconext is ook een e-mailadres beschikbaar. Dat wordt
-hier in deze demo niet gebruikt om identificerende gegevens te
-vermijden.
-
-<li> Studeer of werk je aan een hogere onderwijs instelling, maar komt
-deze instelling niet voor in de lijst op
-de <a href="https://privacybydesign.foundation/uitgifte/surfconext/surfconext/">SURFconext
-uitgifte pagina</a>, dan heeft je instelling de aansluiting met de
-stichting <a href="https://privacybydesign.foundation/">Privacy by
-Design</a> niet "aangezet". In dat geval kun je de hier benodigde
-persoonlijke gegevens niet ontvangen in je Yivi app. Het beste kun je
-dan met het centrale systeembeheer van je eigen instelling contact
-opnemen en de verantwoordelijke voor identity management vragen een
-e-mail te sturen naar het adres <tt>support'at'surfconext.nl</tt>, met
-het simpele verzoek: <em>AUB de stichting Privacy by Design voor onze
-instelling toelaten als Service Provider.</em>
-</ul>
-</p>
-
-<p>
-<a href="../../">Terug</a> naar
-het Yivi demo overzicht.
-</p>
-
-<div id="attribute_list"></div>
-
-<div id="attribute_list_data"></div>
+<?php
+$content = [
+	"intro" => "Handig voor webwinkels en diensten die studentenkorting geven.",
+	"benefits" => [
+		"Deel alleen dat je student bent, geen persoonlijke data",
+		"Geen handmatige controles van studentenpassen",
+		"Directe zekerheid",
+	],
+	"data" => [
+		"description" => "De ‘onderwijs en onderzoek’-kaart",
+		"sources" => [
+			[
+				"url" => "https://saml-issuer.yivi.app/en/surfconext/",
+				"label" => "SURFconext"
+			],
+		]
+	],
+	"sidenotes" => "Sommige webshops of online diensten bieden studentenkorting aan. Vaak vereist dit het uploaden van een foto van de studenten pas (met pasfoto en naam) of het verifiëren van een emailadres van een onderwijsinstelling. Met Yivi, daarentegen, hoeven er geen persoonlijke gegevens gedeeld te worden en is er geen handmatige controle nodig. Dit zou natuurlijk ook voor andere kortingen kunnen werken."
+];

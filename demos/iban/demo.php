@@ -48,16 +48,6 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
         [type=checkbox] {
             width: 1.2em;
         }
-        button[disabled] {
-            font: inherit;
-            font-weight: bold;
-            padding: 12px 16px;
-			background: dimgrey;
-
-			&:hover {
-				background: dimgrey;
-			}
-        }
     </style>
 
     <div class="result" hidden>
