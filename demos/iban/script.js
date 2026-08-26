@@ -5,7 +5,6 @@ let verifier = (data) => {
         'bic': data.disclosed[0][2].rawvalue,
     }
 
-
     for (let item in values) {
         document.getElementById(item).innerText = values[item];
     }

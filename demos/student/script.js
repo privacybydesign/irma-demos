@@ -10,7 +10,6 @@ let verifier = (data) => {
 
     }
 
-
     return false;
 };
 

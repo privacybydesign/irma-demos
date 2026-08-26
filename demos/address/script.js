@@ -18,7 +18,6 @@ let verifier = (data) => {
         document.getElementById(item).innerText = values[item];
     }
 
-
     return false;
 };
 
