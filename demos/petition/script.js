@@ -1,7 +1,4 @@
 let verifier = (data) => {
-	document.querySelector('.yivi-web-form').remove();
-	document.querySelector('.result').removeAttribute('hidden');
-
 	document.getElementById('city').innerText = data.disclosed[0][0].rawvalue;
 
 	return false;

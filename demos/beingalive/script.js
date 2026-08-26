@@ -10,8 +10,6 @@ let verifier = (data) => {
     const now = new Date();
     const dataAge = Math.floor((now.getTime() - 1000 * issuanceTime) / (1000 * 60 * 60 * 24));
 
-    document.querySelector('.yivi-web-form').remove();
-    document.querySelector('.result').removeAttribute('hidden');
 
     document.getElementById('dataAge').innerText = dataAge;
 

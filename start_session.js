@@ -24,6 +24,9 @@ function start_session_inline(type, lang, verifier, errorHandler = null) {
                 error.innerText = message;
                 document.querySelector('.demo-figure').after(error);
             }
+        } else {
+            document.querySelector('.yivi-web-form').remove();
+            document.querySelector('.result').removeAttribute('hidden');
         }
     }
 

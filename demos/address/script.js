@@ -18,8 +18,6 @@ let verifier = (data) => {
         document.getElementById(item).innerText = values[item];
     }
 
-    document.querySelector('.yivi-web-form').remove();
-    document.querySelector('.result').removeAttribute('hidden');
 
     return false;
 };

@@ -1,6 +1,4 @@
 let verifier = (data) => {
-    document.querySelector('.yivi-web-form').remove();
-    document.querySelector('.result').removeAttribute('hidden');
 
     let proof = data.disclosed[0][0].rawvalue.toLowerCase();
     if(proof === 'yes' || proof === 'ja') {

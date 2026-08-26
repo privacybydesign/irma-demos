@@ -1,6 +1,4 @@
 let verifier = (data) => {
-	document.querySelector('.yivi-web-form').remove();
-	document.querySelector('.result').removeAttribute('hidden');
 	document.querySelector('.content').removeAttribute('hidden');
 	document.querySelector('.demo-main > h2:first-child').remove();
 
