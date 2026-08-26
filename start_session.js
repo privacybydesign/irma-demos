@@ -20,10 +20,9 @@ function start_session_inline(type, lang, verifier, errorHandler = null) {
             if (errorHandler !== null) {
                 errorHandler(message);
             } else {
-                let div = document.createElement('div');
-                div.innerHTML = message;
-                div.classList.add(state, 'yivi-result');
-                document.querySelector('.demo-container').append(div)
+                let error = document.createElement('p');
+                error.innerText = message;
+                document.querySelector('.demo-figure').after(error);
             }
         }
     }

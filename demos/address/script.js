@@ -24,8 +24,4 @@ let verifier = (data) => {
     return false;
 };
 
-start_session_inline(slug, lang, verifier, (message) => {
-    let error = document.createElement('p');
-    error.innerText = message;
-    document.querySelector('.demo-figure').after(error);
-});
+start_session_inline(slug, lang, verifier);
