@@ -41,28 +41,6 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
             --accent: #8f0000;
             --secondary: #ffffff;
         }
-        .result:not[hidden] {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-        }
-        p.price {
-            font-weight: bold;
-            font-size: 2em;
-        }
-        .prev {
-            font-size: .75em;
-            font-weight: normal;
-            display: block;
-            text-decoration-line: line-through;
-        }
-        .art {
-            width: min(16em, 60vw);
-            aspect-ratio: 1 / 1;
-            box-shadow: 0 .5em 1em rgba(0,0,0,0.3);
-            background-image: radial-gradient(ellipse at left, oklch(from var(--secondary) l c h / calc(alpha - .5)), transparent);
-            margin: 1em auto;
-        }
     </style>
 
     <div class="result" hidden>
