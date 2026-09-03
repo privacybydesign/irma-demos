@@ -13,8 +13,3 @@
     try it out yourself. You only need the
     <a href="https://yivi.app/#download">Yivi app</a> on your phone.
 </p>
-
-<p>
-    Detailed <a href="https://www.yivi.app/en/for_developers/">explanations</a> of
-    how these demos work are available for developers.
-</p>

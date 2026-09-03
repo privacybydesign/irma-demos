@@ -56,7 +56,7 @@ $sprequests = [
             '1' => ['en' => 'Student', 'nl' => 'Student'],
         ],
     ],
-    'gmail' => [
+    'domain' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
@@ -64,11 +64,8 @@ $sprequests = [
                 ['pbdf.sidn-pbdf.email.domain'],
             ],
         ],
-        'labels' => [
-            '1' => ['en' => 'Gmail address', 'nl' => 'Gmail adres'],
-        ],
     ],
-    'email' => [
+    'mail' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
         'disclose' => [
             [
@@ -89,48 +86,22 @@ $sprequests = [
             ]
         ],
     ],
-    'irmatube_premium' => [
+    'chained' => [
         'nextSession' => [
             'url' => IRMATUBE_NEXT_SESSION_URL
         ],
         'request' => [
             '@context' => 'https://irma.app/ld/request/disclosure/v2',
             'disclose' => [
-                array_merge(
-                    [
-                        [SCHEME .'.pbdf.linkedin.familyname'],
-                        DESIRED_ATTRIBUTE_TO_DISCLOSE ? [SCHEME .".".DESIRED_ATTRIBUTE_TO_DISCLOSE] : [],
-                    ],
-                    SCHEME === 'pbdf' ? [
-                        [SCHEME .'.gemeente.personalData.fullname'],
-                        ['pbdf.pilot-amsterdam.idcard.surname'],
-                        ['pbdf.pilot-amsterdam.passport.surname'],
-                    ] : [], // These credential types have no equivalent in irma-demo
-                    
-                    SCHEME == 'irma-demo' ? [
-                        [SCHEME .'.gemeente.personalData.fullname'],
-                    ] : [] 
-                ),
+                [
+                    ['pbdf.gemeente.personalData.fullname'],
+                    ['pbdf.pbdf.passport.lastName'],
+                    ['pbdf.pbdf.drivinglicence.lastName'],
+                    ['pbdf.pbdf.idcard.lastName'],
+                    ['pbdf.pbdf.linkedin.familyname']
+                ]
             ],
         ]
-    ],
-    'watch_premium_contents' => [
-        '@context' => 'https://irma.app/ld/request/disclosure/v2',
-        'disclose' => [[[
-            // Only premium members may proceed: require type == 'premium'.
-            // Without this constraint a regular IRMATube membership (which has
-            // no fullname) satisfies the request and the name is disclosed as
-            // null, producing a "Hey Null" greeting. See issue #32.
-            ['type' => IRMATUBE_CREDENTIAL .'.fullname', 'value' => null],
-            ['type' => IRMATUBE_CREDENTIAL .'.type', 'value' => 'premium'],
-        ]]],
-    ],
-    'presencecheck' => [
-        '@context' => 'https://irma.app/ld/request/disclosure/v2',
-        'disclose' => [
-            [['pbdf.pbdf.idin.familyname'], ['pbdf.pbdf.facebook.familyname']],
-            [['pbdf.pbdf.surfnet-2.email', 'pbdf.pbdf.surfnet-2.id']],
-        ],
     ],
     'beingalive' => [
         '@context' => 'https://irma.app/ld/request/disclosure/v2',
@@ -140,20 +111,7 @@ $sprequests = [
             'pbdf.gemeente.personalData.dateofbirth',
         ]]],
     ],
-    'email-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij geef ik expliciete toestemming aan het bedrijf X om het onderstaande e-mailadres te gebruiken om mij wekelijks een lijst met advertenties te mailen over dingen waarvan X denkt dat die voor mij interessant zijn. Deze toestemming geldt voor een jaar, tot ' . date('d/m/') . (date('Y')+1) . ', en geldt ook voor alle partnerbedrijven van X.',
-            'en' =>  'I explicitly grant consent to company X to use the email address below for mailing me a weekly list of advertisements about topics that X thinks are interesting for me. This consent is valid for one year, until ' . date('d/m/') . (date('Y')+1) . ', and holds also for all partner companies of X.',
-        ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.email.email'],
-                ['pbdf.sidn-pbdf.email.email'],
-            ],
-        ],
-    ],
-    'exam-signature' => [
+    'signature' => [
         '@context' => 'https://irma.app/ld/request/signature/v2',
         'message' => [
             'nl' => 'Hierbij verklaar ik dat student Pietje Puk, vandaag ' . date('d / m / Y') . ', met lof geslaagd is voor het vak Grondbeginselen van de Alchemie.',
@@ -168,28 +126,20 @@ $sprequests = [
             ]],
         ],
     ],
-    'donation-signature' => [
-        '@context' => 'https://irma.app/ld/request/signature/v2',
-        'message' => [
-            'nl' => 'Hierbij zeg ik toe om vandaag nog een bedrag van 10 Euro over te maken op rekening nummer NL54 INGB 0007522950 van de stichting Privacy by Design, als ondersteuning van hun nobele werkzaamheden. (Niet echt hoor)',
-            'en' => 'Hereby I agree to transfer today the amount of 10 Euro to the bank account number NL54 INGB 0007522950 of the Privacy by Design foundation, in order to support their noble activities (not really).',
+    'petition' => [
+        'nextSession' => [
+            'url' => BASE_URL . '/get_session_request.php?type=petition-signature&lang=',
         ],
-        'disclose' => [
-            [
-                ['pbdf.pbdf.idin.familyname'],
-                ['pbdf.nijmegen.personalData.familyname'],
-                ['pbdf.gemeente.personalData.familyname'],
-                ['pbdf.pilot-amsterdam.idcard.surname'],
-                ['pbdf.pilot-amsterdam.passport.surname'],
-                ['pbdf.pbdf.facebook.familyname'],
-                ['pbdf.pbdf.linkedin.familyname'],
-                ['pbdf.pbdf.twitter.fullname'],
+        'request' => [
+            '@context' => 'https://irma.app/ld/request/disclosure/v2',
+            'disclose' => [
+                [
+                    ['pbdf.nijmegen.address.city'],
+                    ['pbdf.gemeente.address.city'],
+                    ['pbdf.pbdf.idin.city'],
+                ]
             ],
-            [
-                ['pbdf.pbdf.mobilenumber.mobilenumber'],
-                ['pbdf.sidn-pbdf.mobilenumber.mobilenumber'],
-            ],
-        ],
+        ]
     ]
 ];
 
@@ -203,6 +153,9 @@ function start_session($type, $lang) {
 
     if (str_contains($type, 'signature'))
         $sessionrequest['message'] = $sessionrequest['message'][$lang];
+
+    if (str_contains($type, 'petition'))
+        $sessionrequest['nextSession']['url'] .= $lang;
 
     $jsonsr = json_encode($sessionrequest);
 

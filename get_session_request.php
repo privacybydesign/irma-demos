@@ -25,28 +25,47 @@ function get_session_request($contents)
         }
     }
 
-    $fullname = $decoded->disclosed[0][0]->rawvalue;
+    if (isset($_GET['type']) && $_GET['type'] == 'petition-signature') {
+        $city = $decoded->disclosed[0][0]->rawvalue;
 
-    if (!$fullname) {
-        $fullname = "John Doe";
-    }
-
-    $randomnum = rand(1, 9);
-    for ($i = 0; $i < 10; $i++)
-        $randomnum .= rand(0, 9);
-
-    $sessionrequest = [
-        '@context' => 'https://irma.app/ld/request/issuance/v2',
-        'credentials' => [[
-            'credential' => IRMATUBE_CREDENTIAL,
-            'validity' => strtotime('+6 months'),
-            'attributes' => [
-                'fullname' => $fullname,
-                'type' => 'premium',
-                'id' => $randomnum
+        $message = [
+            'en' => "I sign this petition to turn the Main Square in $city into a park",
+            'nl' => "Ik onderteken deze petitie om het Hoofdplein in $city in een park te veranderen",
+        ];
+        $sessionrequest = [
+            '@context' => 'https://irma.app/ld/request/signature/v2',
+            'message' => $message[$_GET['lang']],
+            'disclose' => [
+                [[
+                    'pbdf.gemeente.personalData.initials',
+                    'pbdf.gemeente.personalData.familyname',
+                ]]
             ]
-        ]]
-    ];
+        ];
+    } else {
+        $fullname = $decoded->disclosed[0][0]->rawvalue;
+
+        if (!$fullname) {
+            $fullname = "John Doe";
+        }
+
+        $randomnum = rand(1, 9);
+        for ($i = 0; $i < 10; $i++)
+            $randomnum .= rand(0, 9);
+
+        $sessionrequest = [
+            '@context' => 'https://irma.app/ld/request/issuance/v2',
+            'credentials' => [[
+                'credential' => IRMATUBE_CREDENTIAL,
+                'validity' => strtotime('+6 months'),
+                'attributes' => [
+                    'fullname' => $fullname,
+                    'type' => 'premium',
+                    'id' => $randomnum
+                ]
+            ]]
+        ];
+    }
 
     return json_encode($sessionrequest);
 }

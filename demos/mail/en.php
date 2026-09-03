@@ -1,64 +1,18 @@
-<p>
-    This page contains an example of a simple email check with Yivi.  At
-    the same time some explanation is given about how this works and how
-    this can be used, especially by organisations with their own email
-    addresses: they can let users log in with these addresses. In this
-    manner a separate password to log in is no longer needed.
-</p>
-
-<p>
-    The left button below checks if the disclosed email address is
-    a <tt>gmail.com</tt> address. Only in that case the verification
-    succeeds. The same mechanism can be used to provide exclusive access
-    for visitors with email addresses from other organisations.
-</p>
-
-<p>
-    The button on the right asks for any email address and displays
-    it on the subsequent page. This can be used for visitors who
-    are asked to register with an email address.
-</p>
-
-<p>
-    In order to be able to try out yourself the buttons below one
-    needs to have the Yivi
-    app <a href="https://yivi.app/#download">installed</a>.
-    Multiple email addresses can be added in the app via
-    the <a href="https://email-issuer.yivi.app">email
-    issuance webpage</a> of the Privacy by Design foundation.
-</p>
-
-<div class="text-center">
-    <tr><td>
-    <button class="custom-button" id="try_irma_gmailbtn">Check gmail address</button>
-    </td>
-    <td>
-    &nbsp;&nbsp;&nbsp;
-    </td>
-    <td>
-        <button class="custom-button" id="try_irma_emailbtn">Reveal email address</button>
-    </td>
-    </tr>
-</div>
-
-<p>
-A few remarks:
-    <ul>
-        <li> No information about email addresses is retained or collected
-        via this webpage. The revealed email addresses are only used for the
-        purpose of this demo and disappear at the moment that the demo is
-        closed.
-
-        <li> The verification whether the disclosed address is actually
-        a gmail address is performed in javascript in the browser (client)
-        of the user. This is not the way this should be done properly,
-        but this is harmless in the current demo. The appropriate way
-        is to perform this check at the server's side.
-    </ul>
-</p>
-
-
-<p>
-    <a href="../../">Back</a> to
-    the Yivi demo overview.
-</p>
+<?php
+$content = [
+    "intro" => "Useful to allow logging in.",
+    "benefits" => [
+        "Register with an email address",
+        "No password required",
+    ],
+    "data" => [
+        "description" => "The email address card",
+        "sources" => [
+            [
+                "url" => "https://email-issuer.yivi.app/en/",
+                "label" => "Yivi email address",
+            ]
+        ]
+    ],
+    "sidenotes" => "By sharing an email address, a user proves that they own that email address. This provides the same level of security as a ‘magic login link’ or password reset link sent over email, but now the user doesn’t have to wait for the email to arrive. This means ‘logging in’ can happen by only sharing an email address from Yivi."
+];

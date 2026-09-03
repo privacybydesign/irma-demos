@@ -1,6 +1,4 @@
 let verifier = (data) => {
-    document.getElementById('email').innerText = data.disclosed[0][0].rawvalue;
-
     return false;
 };
 

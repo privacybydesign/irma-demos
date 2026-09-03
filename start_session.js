@@ -1,28 +1,3 @@
-function start_session(type, lang, success_fun, cancelled_fun, error_fun) {
-    console.log("Button clicked");
-    yivi.newPopup({
-        language: lang,
-        session: {
-            start: {
-                url: o => `${o.url}/start_session.php?type=${type}&lang=${lang}`
-            },
-            result: {
-                url: (o, {sessionPtr, sessionToken}) => `${sessionPtr.u.split('/irma')[0]}/session/${sessionToken}/result`
-            }
-        }
-    })
-        .start()
-        .then(success_fun)
-        .catch(function (msg) {
-            if (msg === 'Cancelled' || msg === 'Aborted') {
-                cancelled_fun(msg);
-            } else {
-                error_fun(msg);
-            }
-        });
-}
-
-
 const INLINE_SESSION_MESSAGES = {
     cancelled: {
         en: 'You cancelled the action. You can try again!',
@@ -45,11 +20,13 @@ function start_session_inline(type, lang, verifier, errorHandler = null) {
             if (errorHandler !== null) {
                 errorHandler(message);
             } else {
-                let div = document.createElement('div');
-                div.innerHTML = message;
-                div.classList.add(state, 'yivi-result');
-                document.querySelector('.demo-container').append(div)
+                let error = document.createElement('p');
+                error.innerText = message;
+                document.querySelector('.demo-figure').after(error);
             }
+        } else {
+            document.querySelector('.yivi-web-form').remove();
+            document.querySelector('.result').removeAttribute('hidden');
         }
     }
 

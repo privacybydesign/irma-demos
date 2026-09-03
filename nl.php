@@ -13,8 +13,3 @@
     probeer het zelf. Je hebt alleen de
     <a href="https://yivi.app/#download">Yivi-app</a> op je telefoon nodig.
 </p>
-
-<p>
-    Uitgebreide <a href="https://www.yivi.app/nl/for_developers/">uitleg</a> over hoe
-    deze demo’s werken is beschikbaar voor ontwikkelaars.
-</p>
