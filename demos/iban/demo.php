@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'Fitz',
         'nl' => 'Fitz',
     ],
+    'url' => [
+        'en' => 'fitz.example/checkout',
+        'nl' => 'fitz.example/afrekenen',
+    ],
     'title' => [
         'en' => 'Switch to direct debit',
         'nl' => 'Wissel naar automatische incasso',

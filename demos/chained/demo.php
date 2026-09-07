@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'YiviTube',
         'nl' => 'YiviTube',
     ],
+    'url' => [
+        'en' => 'yivitube.example/upload',
+        'nl' => 'yivitube.example/upload',
+    ],
     'title' => [
         'en' => 'Become YiviTube Premium member',
         'nl' => 'Word YiviTube Premiumlid',

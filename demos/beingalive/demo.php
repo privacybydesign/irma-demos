@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'OnePensioen',
         'nl' => 'EenPensioen',
     ],
+    'url' => [
+        'en' => 'onepensioen.example/my-pension',
+        'nl' => 'eenpensioen.example/mijn-pensioen',
+    ],
     'title' => [
         'en' => 'Prove you’re alive to continue your payout',
         'nl' => 'Bewijs dat je leeft om je uitbetaling voor te zetten',

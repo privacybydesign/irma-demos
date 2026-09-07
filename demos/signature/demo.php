@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'Gradez',
         'nl' => 'Cijferz',
     ],
+    'url' => [
+        'en' => 'gradez.example/sign',
+        'nl' => 'cijferz.example/ondertekenen',
+    ],
     'title' => [
         'en' => 'Submit the grades',
         'nl' => 'Lever de cijfers in',
