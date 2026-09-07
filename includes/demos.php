@@ -43,5 +43,9 @@ $demos = [
     "student" => [
         "en" => "Access for students",
         "nl" => "Toegang voor studenten"
+    ],
+    "vog" => [
+        "en" => "Volunteer onboarding (identity + VOG)",
+        "nl" => "Vrijwilliger aanmelden (identiteit + VOG)"
     ]
 ];
