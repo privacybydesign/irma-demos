@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'Chatter',
         'nl' => 'Chatter',
     ],
+    'url' => [
+        'en' => 'chatter.example/login',
+        'nl' => 'chatter.example/inloggen',
+    ],
     'title' => [
         'en' => 'Register or log in',
         'nl' => 'Registreer of log in',

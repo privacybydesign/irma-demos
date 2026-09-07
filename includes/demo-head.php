@@ -29,6 +29,18 @@
 
 <figure class="demo-figure demo">
 
+    <?php if (!$render_full_page):
+        // Fake browser chrome, mirroring the screenshot frame on yivi.app.
+        // Falls back to a domain derived from the organisation name when a demo doesn't set one.
+        $demo_url = $demo_strings['url'][$lang]
+            ?? strtolower(preg_replace('/[^a-z0-9]+/i', '', $demo_strings['organisation'][$lang])) . '.example';
+    ?>
+    <div class="demo-browser-bar" aria-hidden="true">
+        <span class="demo-browser-dots"><i></i><i></i><i></i></span>
+        <span class="demo-browser-url"><?php echo htmlspecialchars($demo_url, ENT_QUOTES); ?></span>
+    </div>
+    <?php endif; ?>
+
     <header class="demo-header">
         <div class="demo-logo">
             <?php echo $demo_strings['organisation'][$lang]; ?>

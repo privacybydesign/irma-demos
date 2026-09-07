@@ -16,6 +16,10 @@ $demo_strings = [
         'en' => 'This year at',
 		'nl' => 'Dit jaar op',
 	],
+	'url' => [
+	    'en' => 'yourenergy.example/sign-up',
+	    'nl' => 'jouwenergie.example/aanmelden',
+	],
     'action' => [
 		'en' => 'Share your address',
 		'nl' => 'Deel je adres',

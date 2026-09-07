@@ -140,7 +140,45 @@ $sprequests = [
                 ]
             ],
         ]
-    ]
+    ],
+    'vog' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.gemeente.personalData.fullname',
+                    'pbdf.gemeente.personalData.dateofbirth',
+                ], [
+                    'pbdf.pbdf.passport.firstName',
+                    'pbdf.pbdf.passport.lastName',
+                    'pbdf.pbdf.passport.dateOfBirth',
+                ], [
+                    'pbdf.pbdf.idcard.firstName',
+                    'pbdf.pbdf.idcard.lastName',
+                    'pbdf.pbdf.idcard.dateOfBirth',
+                ], [
+                    'pbdf.pbdf.drivinglicence.firstName',
+                    'pbdf.pbdf.drivinglicence.lastName',
+                    'pbdf.pbdf.drivinglicence.dateOfBirth',
+                ],
+            ],
+            [
+                [
+                    'pbdf.pbdf.vog.givenNames',
+                    'pbdf.pbdf.vog.surname',
+                    'pbdf.pbdf.vog.dateOfBirth',
+                    'pbdf.pbdf.vog.issueDate',
+                    'pbdf.pbdf.vog.aspect84',
+                ],
+            ],
+        ],
+        // Cast to object: sequential numeric keys would otherwise encode as a JSON array,
+        // while the IRMA server expects a map keyed by conjunction index.
+        'labels' => (object) [
+            '0' => ['en' => 'Identity', 'nl' => 'Identiteit'],
+            '1' => ['en' => 'Certificate of conduct (VOG)', 'nl' => 'Verklaring Omtrent het Gedrag (VOG)'],
+        ],
+    ],
 ];
 
 function start_session($type, $lang) {

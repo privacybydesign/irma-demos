@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'ChangeIt',
         'nl' => 'VeranderT',
     ],
+    'url' => [
+        'en' => 'changeit.example/petitions',
+        'nl' => 'verandert.example/petities',
+    ],
     'title' => [
         'en' => 'Sign the petition',
         'nl' => 'Onderteken de petitie',

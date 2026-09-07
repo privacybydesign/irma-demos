@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'Gamiverse',
         'nl' => 'Gamiverse',
     ],
+    'url' => [
+        'en' => 'gamiverse.example/games/crimson-harbour-vi',
+        'nl' => 'gamiverse.example/games/crimson-harbour-vi',
+    ],
     'title' => [
         'en' => 'Buy Crimson Harbour VI (18+)',
         'nl' => 'Koop Crimson Harbour VI (18+)',

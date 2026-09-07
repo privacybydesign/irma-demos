@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'ACME Intranet',
         'nl' => 'ACME Intranet',
     ],
+    'url' => [
+        'en' => 'intranet.acme.example',
+        'nl' => 'intranet.acme.example',
+    ],
     'title' => [
         'en' => 'Access our intranet',
         'nl' => 'Krijg toegang tot ons intranet',

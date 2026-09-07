@@ -260,14 +260,78 @@ th, td {
 		border-bottom-left-radius: 0;
 		border-bottom-right-radius: 0;
 	}
+
+	/* When the demo sits in a browser frame, the info strip becomes a separate note above it. */
+	&:has(.demo) .info {
+		margin-block-end: var(--margin-small);
+		border-radius: var(--radius-small);
+	}
 }
 
+/* Fake browser window around the demo (same frame as the product screenshots on yivi.app). */
 .demo {
 	margin: 0;
-	box-shadow: 0 .25em .75em rgba(0, 0, 0, 0.25);
-	border-bottom-left-radius: var(--radius-medium);
-	border-bottom-right-radius: var(--radius-medium);
+	border: 1px solid #e6e1dd;
+	border-radius: 12px;
 	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(72, 71, 71, 0.05), 0 18px 44px rgba(72, 71, 71, 0.13);
+}
+
+.demo-browser-bar {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	height: 40px;
+	padding: 0 16px;
+	background: linear-gradient(#f8f6f4, #f1eeeb);
+	border-bottom: 1px solid #ece7e3;
+	color-scheme: light;
+}
+
+.demo-browser-dots {
+	display: flex;
+	gap: 7px;
+	flex-shrink: 0;
+
+	i {
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		display: block;
+	}
+	i:nth-child(1) { background: #ff5f57; }
+	i:nth-child(2) { background: #febc2e; }
+	i:nth-child(3) { background: #28c840; }
+}
+
+.demo-browser-url {
+	flex: 1;
+	max-width: 360px;
+	position: relative;
+	font-size: 12px;
+	line-height: 1.4;
+	color: #9a9698;
+	background: #fff;
+	border: 1px solid #e6e1dd;
+	border-radius: 7px;
+	padding: 5px 14px 5px 32px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 11px;
+		height: 11px;
+		opacity: .5;
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23757375' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E") center / contain no-repeat;
+	}
 }
 
 .yivi-result,

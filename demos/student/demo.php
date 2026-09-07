@@ -8,6 +8,10 @@ $demo_strings = [
         'en' => 'WebDot',
         'nl' => 'WebDot',
     ],
+    'url' => [
+        'en' => 'webdot.example/students',
+        'nl' => 'webdot.example/studenten',
+    ],
     'title' => [
         'en' => 'Buy with student discount',
         'nl' => 'Kopen met studentenkorting',
