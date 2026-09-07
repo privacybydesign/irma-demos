@@ -52,7 +52,7 @@ let verifier = (data) => {
     const checks = {
         'check-identity': sameDate(dateOfBirth, vog.dateOfBirth)
             && normaliseName(name).includes(normaliseName(vog.surname)),
-        'check-minors': vog.aspect84 === 'yes',
+        'check-minors': ['yes', 'ja'].includes(String(vog.aspect84).toLowerCase()),
         'check-recent': isRecent(vog.issueDate),
     };
 
