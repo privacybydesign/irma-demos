@@ -47,5 +47,29 @@ $demos = [
     "vog" => [
         "en" => "Volunteer onboarding (identity + VOG)",
         "nl" => "Vrijwilliger aanmelden (identiteit + VOG)"
+    ],
+    "exam" => [
+        "en" => "Exam check-in",
+        "nl" => "Toegang tot het tentamen"
+    ],
+    "course" => [
+        "en" => "Course enrolment with passport data",
+        "nl" => "Cursusinschrijving met paspoortgegevens"
+    ],
+    "international" => [
+        "en" => "International student intake",
+        "nl" => "Intake internationale student"
+    ],
+    "employee" => [
+        "en" => "New employee onboarding",
+        "nl" => "Nieuwe medewerker registreren"
+    ],
+    "campus" => [
+        "en" => "Campus card in your wallet",
+        "nl" => "Campuskaart in je wallet"
+    ],
+    "admission" => [
+        "en" => "Master’s admission with a diploma",
+        "nl" => "Toelating master met een diploma"
     ]
 ];
