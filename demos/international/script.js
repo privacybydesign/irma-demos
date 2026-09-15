@@ -16,6 +16,14 @@ let parseDate = (value) => {
 
 let isYes = (value) => ['yes', 'ja', 'true'].includes(String(value ?? '').toLowerCase());
 
+// Expiry dates are parsed as midnight, so compare against the start of today: a
+// document that expires today is still valid today.
+let startOfToday = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today;
+};
+
 let verifier = (data) => {
     const travelDocument = attributes(data.disclosed[0]);
     const address = attributes(data.disclosed[1]);
@@ -25,7 +33,7 @@ let verifier = (data) => {
     const euCitizen = isYes(travelDocument.isEuCitizen);
 
     const checks = {
-        'check-document': expiry !== null && expiry >= new Date(),
+        'check-document': expiry !== null && expiry >= startOfToday(),
         'check-municipality': Boolean(address.city),
     };
 

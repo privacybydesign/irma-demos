@@ -21,6 +21,14 @@ let normaliseName = (value) => String(value ?? '')
     .replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z]/g, '');
 
+// Expiry dates are parsed as midnight, so compare against the start of today: a
+// document that expires today is still valid today.
+let startOfToday = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return today;
+};
+
 let verifier = (data) => {
     const identity = attributes(data.disclosed[0]);
     const address = attributes(data.disclosed[1]);
@@ -30,7 +38,7 @@ let verifier = (data) => {
     const expiry = parseDate(identity.dateOfExpiry);
 
     const checks = {
-        'check-document': expiry !== null && expiry >= new Date(),
+        'check-document': expiry !== null && expiry >= startOfToday(),
         // The bank's account holder name is usually "Initials Surname"; require the surname.
         'check-iban': normaliseName(bank.fullname).includes(normaliseName(identity.lastName)),
     };
