@@ -20,33 +20,41 @@ $demo_strings = [
         'en' => 'Prior education',
         'nl' => 'Vooropleiding',
     ],
-    'education' => [
-        'en' => 'Education',
+    'qualification' => [
+        'en' => 'Qualification',
         'nl' => 'Opleiding',
     ],
-    'degree' => [
-        'en' => 'Degree',
-        'nl' => 'Graad',
+    'level' => [
+        'en' => 'NLQF level',
+        'nl' => 'NLQF-niveau',
     ],
-    'institute' => [
+    'institution' => [
         'en' => 'Awarded by',
         'nl' => 'Behaald bij',
     ],
-    'achieved' => [
-        'en' => 'Achieved in',
-        'nl' => 'Behaald in',
+    'awarded' => [
+        'en' => 'Date awarded',
+        'nl' => 'Datum behaald',
     ],
     'holder' => [
         'en' => 'Diploma holder',
         'nl' => 'Op naam van',
     ],
     'check_diploma' => [
-        'en' => 'The diploma is issued by DUO and has not been tampered with',
-        'nl' => 'Het diploma is uitgegeven door DUO en is niet gewijzigd',
+        'en' => 'The <strong id="documenttype"></strong> comes from the DUO diploma register and is bound to the holder’s identity',
+        'nl' => 'Het <strong id="documenttype"></strong> komt uit het diplomaregister van DUO en is gekoppeld aan de identiteit van de houder',
     ],
     'check_level' => [
-        'en' => 'The diploma gives access to a master’s programme',
-        'nl' => 'Het diploma geeft toegang tot een masteropleiding',
+        'en' => '<span id="level-text"></span> gives access to a master’s programme (NLQF 6 or higher)',
+        'nl' => '<span id="level-text"></span> geeft toegang tot een masteropleiding (NLQF 6 of hoger)',
+    ],
+    'level_known' => [
+        'en' => 'NLQF level <strong>%s</strong>',
+        'nl' => 'NLQF-niveau <strong>%s</strong>',
+    ],
+    'level_unknown' => [
+        'en' => 'The qualification',
+        'nl' => 'De opleiding',
     ],
     'success' => [
         'en' => '✅ Your prior education is verified, <strong id="name"></strong>. Your application is complete; the admissions committee will let you know within four weeks.',
@@ -75,20 +83,20 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
         <h2 class="checks-title"><?php echo $demo_strings['checks_title'][$lang]; ?></h2>
         <dl class="prefilled">
             <div>
-                <dt><?php echo $demo_strings['education'][$lang]; ?></dt>
-                <dd id="education"></dd>
+                <dt><?php echo $demo_strings['qualification'][$lang]; ?></dt>
+                <dd id="qualification"></dd>
             </div>
             <div>
-                <dt><?php echo $demo_strings['degree'][$lang]; ?></dt>
-                <dd id="degree"></dd>
+                <dt><?php echo $demo_strings['level'][$lang]; ?></dt>
+                <dd id="level"></dd>
             </div>
             <div>
-                <dt><?php echo $demo_strings['institute'][$lang]; ?></dt>
-                <dd id="institute"></dd>
+                <dt><?php echo $demo_strings['institution'][$lang]; ?></dt>
+                <dd id="institution"></dd>
             </div>
             <div>
-                <dt><?php echo $demo_strings['achieved'][$lang]; ?></dt>
-                <dd id="achieved"></dd>
+                <dt><?php echo $demo_strings['awarded'][$lang]; ?></dt>
+                <dd id="awarded"></dd>
             </div>
             <div>
                 <dt><?php echo $demo_strings['holder'][$lang]; ?></dt>
@@ -106,5 +114,12 @@ include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-head.php"); ?>
             <?php echo $demo_strings['error'][$lang]; ?>
         </p>
     </div>
+
+    <script type="text/javascript">
+        let level_text = <?php echo json_encode([
+            'known' => $demo_strings['level_known'][$lang],
+            'unknown' => $demo_strings['level_unknown'][$lang],
+        ]); ?>;
+    </script>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . "/includes/demo-foot.php"); ?>

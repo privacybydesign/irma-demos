@@ -345,14 +345,12 @@ $sprequests = [
         'disclose' => [
             [
                 [
-                    'pbdf.pbdf.diploma.firstname',
-                    'pbdf.pbdf.diploma.prefix',
-                    'pbdf.pbdf.diploma.familyname',
-                    'pbdf.pbdf.diploma.dateofbirth',
-                    'pbdf.pbdf.diploma.education',
-                    'pbdf.pbdf.diploma.degree',
-                    'pbdf.pbdf.diploma.achieved',
-                    'pbdf.pbdf.diploma.institute',
+                    'pbdf-staging.pbdf.diploma.documentType',
+                    'pbdf-staging.pbdf.diploma.qualification',
+                    'pbdf-staging.pbdf.diploma.nlqfLevel',
+                    'pbdf-staging.pbdf.diploma.institution',
+                    'pbdf-staging.pbdf.diploma.dateAwarded',
+                    'pbdf-staging.pbdf.diploma.fullName',
                 ],
             ],
         ],
