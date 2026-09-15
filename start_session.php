@@ -179,6 +179,185 @@ $sprequests = [
             '1' => ['en' => 'Certificate of conduct (VOG)', 'nl' => 'Verklaring Omtrent het Gedrag (VOG)'],
         ],
     ],
+
+    // University demos. A fictional university (Waalstad) plays the verifier in all of them.
+    'exam' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.surfnet-2.fullname',
+                    'pbdf.pbdf.surfnet-2.institute',
+                    'pbdf.pbdf.surfnet-2.type',
+                    'pbdf.pbdf.surfnet-2.id',
+                ],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Student registration', 'nl' => 'Studentregistratie'],
+        ],
+    ],
+    'course' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.passport.firstName',
+                    'pbdf.pbdf.passport.lastName',
+                    'pbdf.pbdf.passport.dateOfBirth',
+                    'pbdf.pbdf.passport.nationality',
+                ], [
+                    'pbdf.pbdf.idcard.firstName',
+                    'pbdf.pbdf.idcard.lastName',
+                    'pbdf.pbdf.idcard.dateOfBirth',
+                    'pbdf.pbdf.idcard.nationality',
+                ], [
+                    'pbdf.gemeente.personalData.firstnames',
+                    'pbdf.gemeente.personalData.prefix',
+                    'pbdf.gemeente.personalData.familyname',
+                    'pbdf.gemeente.personalData.dateofbirth',
+                    'pbdf.gemeente.personalData.nationality',
+                ], [
+                    'pbdf.nijmegen.personalData.firstnames',
+                    'pbdf.nijmegen.personalData.prefix',
+                    'pbdf.nijmegen.personalData.familyname',
+                    'pbdf.nijmegen.personalData.dateofbirth',
+                    'pbdf.nijmegen.personalData.nationality',
+                ],
+            ],
+            [
+                ['pbdf.pbdf.email.email'],
+                ['pbdf.sidn-pbdf.email.email'],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Identity', 'nl' => 'Identiteit'],
+            '1' => ['en' => 'Contact', 'nl' => 'Contact'],
+        ],
+    ],
+    'international' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.passport.firstName',
+                    'pbdf.pbdf.passport.lastName',
+                    'pbdf.pbdf.passport.dateOfBirth',
+                    'pbdf.pbdf.passport.nationality',
+                    'pbdf.pbdf.passport.isEuCitizen',
+                    'pbdf.pbdf.passport.dateOfExpiry',
+                ], [
+                    'pbdf.pbdf.idcard.firstName',
+                    'pbdf.pbdf.idcard.lastName',
+                    'pbdf.pbdf.idcard.dateOfBirth',
+                    'pbdf.pbdf.idcard.nationality',
+                    'pbdf.pbdf.idcard.isEuCitizen',
+                    'pbdf.pbdf.idcard.dateOfExpiry',
+                ],
+            ],
+            [
+                [
+                    'pbdf.nijmegen.address.street',
+                    'pbdf.nijmegen.address.houseNumber',
+                    'pbdf.nijmegen.address.zipcode',
+                    'pbdf.nijmegen.address.city',
+                ], [
+                    'pbdf.gemeente.address.street',
+                    'pbdf.gemeente.address.houseNumber',
+                    'pbdf.gemeente.address.zipcode',
+                    'pbdf.gemeente.address.city',
+                ],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Travel document', 'nl' => 'Reisdocument'],
+            '1' => ['en' => 'Municipal registration', 'nl' => 'Gemeentelijke inschrijving'],
+        ],
+    ],
+    'employee' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.passport.firstName',
+                    'pbdf.pbdf.passport.lastName',
+                    'pbdf.pbdf.passport.dateOfBirth',
+                    'pbdf.pbdf.passport.nationality',
+                    'pbdf.pbdf.passport.documentType',
+                    'pbdf.pbdf.passport.documentNumber',
+                    'pbdf.pbdf.passport.dateOfExpiry',
+                ], [
+                    'pbdf.pbdf.idcard.firstName',
+                    'pbdf.pbdf.idcard.lastName',
+                    'pbdf.pbdf.idcard.dateOfBirth',
+                    'pbdf.pbdf.idcard.nationality',
+                    'pbdf.pbdf.idcard.documentType',
+                    'pbdf.pbdf.idcard.documentNumber',
+                    'pbdf.pbdf.idcard.dateOfExpiry',
+                ],
+            ],
+            [
+                [
+                    'pbdf.gemeente.address.street',
+                    'pbdf.gemeente.address.houseNumber',
+                    'pbdf.gemeente.address.zipcode',
+                    'pbdf.gemeente.address.city',
+                ], [
+                    'pbdf.nijmegen.address.street',
+                    'pbdf.nijmegen.address.houseNumber',
+                    'pbdf.nijmegen.address.zipcode',
+                    'pbdf.nijmegen.address.city',
+                ], [
+                    'pbdf.pbdf.idin.address',
+                    'pbdf.pbdf.idin.zipcode',
+                    'pbdf.pbdf.idin.city',
+                ],
+            ],
+            [
+                [
+                    'pbdf.pbdf.iban.fullname',
+                    'pbdf.pbdf.iban.iban',
+                ],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Identity document', 'nl' => 'Identiteitsbewijs'],
+            '1' => ['en' => 'Home address', 'nl' => 'Woonadres'],
+            '2' => ['en' => 'Salary account', 'nl' => 'Salarisrekening'],
+        ],
+    ],
+    'campus' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf.pbdf.surfnet-2.type',
+                    'pbdf.pbdf.surfnet-2.institute',
+                ],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Campus role', 'nl' => 'Rol op de campus'],
+        ],
+    ],
+    'admission' => [
+        '@context' => 'https://irma.app/ld/request/disclosure/v2',
+        'disclose' => [
+            [
+                [
+                    'pbdf-staging.pbdf.diploma.documentType',
+                    'pbdf-staging.pbdf.diploma.qualification',
+                    'pbdf-staging.pbdf.diploma.nlqfLevel',
+                    'pbdf-staging.pbdf.diploma.institution',
+                    'pbdf-staging.pbdf.diploma.dateAwarded',
+                    'pbdf-staging.pbdf.diploma.fullName',
+                ],
+            ],
+        ],
+        'labels' => (object) [
+            '0' => ['en' => 'Prior education', 'nl' => 'Vooropleiding'],
+        ],
+    ],
 ];
 
 function start_session($type, $lang) {

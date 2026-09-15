@@ -142,3 +142,90 @@ p.price {
     background-image: radial-gradient(ellipse at left, oklch(from var(--secondary) l c h / calc(alpha - .5)), transparent);
     margin: 1em auto;
 }
+
+/* Checklist shown in the result of onboarding-style demos (VOG, university demos). */
+.checks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em;
+
+    li {
+        display: flex;
+        gap: .75em;
+        margin-block: .5em;
+        font-size: 1.1em;
+    }
+
+    li::before {
+        content: '•';
+        flex-shrink: 0;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        text-align: center;
+        border-radius: 50%;
+        background: oklch(from white l c h / calc(alpha - .8));
+        font-weight: bold;
+    }
+
+    li.ok::before {
+        content: '✓';
+        background: #2fbf5f;
+        color: white;
+    }
+
+    li.fail::before {
+        content: '✕';
+        background: #d23c3c;
+        color: white;
+    }
+
+    li.note::before {
+        content: 'i';
+        background: #3b82f6;
+        color: white;
+    }
+}
+
+.checks-title {
+    font-size: 1em !important;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-block: 0 .5em;
+}
+
+/* Pre-filled form shown when a demo fills in a registration with wallet data. */
+.prefilled {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+    gap: .75em 1.5em;
+    margin: 0 0 1em;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: .25em;
+    }
+
+    dt {
+        font-size: .8em;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        opacity: .8;
+    }
+
+    dd {
+        margin: 0;
+        padding: .5em .75em;
+        border-radius: 6px;
+        background: oklch(from white l c h / calc(alpha - .9));
+        border: 1px solid oklch(from white l c h / calc(alpha - .7));
+        font-size: 1.1em;
+        min-height: 1.4em;
+    }
+
+    dd:empty::before {
+        content: '—';
+        opacity: .5;
+    }
+}
