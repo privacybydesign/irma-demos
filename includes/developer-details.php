@@ -13,6 +13,10 @@ $developer_details_strings = [
         'nl' => 'Copy'
     ]
 ];
+include($_SERVER['DOCUMENT_ROOT'].'/start_session.php');
+// Demos that link out to a separately hosted app (no session runs on this
+// server) have no entry here, so there is no request to show.
+if (array_key_exists($slug, $sprequests)):
 ?>
 
 <details>
@@ -26,7 +30,6 @@ $developer_details_strings = [
         </button>
     </p>
     <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/start_session.php');
     $request = json_encode(
         $sprequests[$slug],
         JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
@@ -50,3 +53,4 @@ $developer_details_strings = [
 		})();
     </script>
 </details>
+<?php endif; ?>
