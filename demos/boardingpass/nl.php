@@ -6,6 +6,11 @@ $content = [
 		"De naam op de instapkaart komt direct van het paspoort, dus die kan niet verkeerd getypt worden en komt altijd overeen met je reisdocument",
 		"Je houdt er een nieuw kaartje in je wallet aan over, niet alleen een gedeeld gegeven",
 	],
+	"external" => [
+		"url" => "https://boarding-pass.yivi.app",
+		"description" => "Deze demo staat op een eigen site, niet hier. Je hebt het paspoortkaartje in je wallet nodig voor je begint; dat laad je in door je paspoort te scannen met NFC.",
+		"action" => "Open de instapkaart-demo",
+	],
 	"data" => [
 		"description" => "Het paspoortkaartje",
 		"sources" => [

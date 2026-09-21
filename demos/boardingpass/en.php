@@ -6,6 +6,11 @@ $content = [
 		"The name on the boarding pass comes straight from the passport, so it can’t be mistyped and always matches your travel document",
 		"You walk away with a new card in your wallet, not just a disclosure",
 	],
+	"external" => [
+		"url" => "https://boarding-pass.yivi.app",
+		"description" => "This demo is hosted on its own site, not here. You need the passport card in your wallet before you start; you load it by scanning your passport with NFC.",
+		"action" => "Open the boarding pass demo",
+	],
 	"data" => [
 		"description" => "The passport card",
 		"sources" => [

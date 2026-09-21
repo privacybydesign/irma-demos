@@ -87,6 +87,21 @@ $demo_page_strings = [
 	</div>
 </aside>
 
+<?php if (!empty($content['external'])): ?>
+
+	<?php // Demos hosted on their own site get a plain link out, not the browser frame:
+	      // that frame means "the flow runs right here", which isn't true for these. ?>
+	<div class="external-demo">
+		<p><?php echo $content['external']['description']; ?></p>
+		<p>
+			<a class="custom-button" href="<?php echo $content['external']['url']; ?>" target="_blank">
+				<?php echo $content['external']['action']; ?>
+			</a>
+		</p>
+	</div>
+
+<?php else: ?>
+
 <div class="demo-container">
 
 	<p class="info">
@@ -119,6 +134,8 @@ $demo_page_strings = [
 		})();
 	</script>
 </div>
+
+<?php endif; ?>
 
 <?php if (!empty($content['more'])): ?>
 <section class="more-demos">
