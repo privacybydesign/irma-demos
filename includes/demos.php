@@ -71,5 +71,9 @@ $demos = [
     "admission" => [
         "en" => "Master’s admission with a diploma",
         "nl" => "Toelating master met een diploma"
+    ],
+    "boardingpass" => [
+        "en" => "Boarding pass in your wallet",
+        "nl" => "Instapkaart in je wallet"
     ]
 ];
