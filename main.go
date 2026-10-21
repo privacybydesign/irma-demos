@@ -14,6 +14,8 @@ import (
 const (
 	listenAddr        = ":8080"
 	readHeaderTimeout = 10 * time.Second
+	readTimeout       = 30 * time.Second
+	idleTimeout       = 120 * time.Second
 	shutdownTimeout   = 10 * time.Second
 )
 
@@ -28,6 +30,8 @@ func main() {
 		Addr:              listenAddr,
 		Handler:           newHandler(cfg),
 		ReadHeaderTimeout: readHeaderTimeout,
+		ReadTimeout:       readTimeout,
+		IdleTimeout:       idleTimeout,
 	}
 
 	stop, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
