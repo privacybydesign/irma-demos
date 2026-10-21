@@ -9,7 +9,10 @@ import (
 	"time"
 )
 
-const shutdownGrace = 200 * time.Millisecond
+const (
+	shutdownGrace = 200 * time.Millisecond
+	drainedBody   = "done"
+)
 
 func TestServeDrainsRequests(t *testing.T) {
 	started := make(chan struct{})
@@ -19,7 +22,7 @@ func TestServeDrainsRequests(t *testing.T) {
 		close(started)
 		<-release
 
-		_, _ = io.WriteString(w, "done")
+		_, _ = io.WriteString(w, drainedBody)
 	})
 
 	listener, err := net.Listen("tcp", "127.0.0.1:0")
@@ -62,8 +65,8 @@ func TestServeDrainsRequests(t *testing.T) {
 
 	close(release)
 
-	if got := <-body; got != "done" {
-		t.Errorf("response = %q, want %q", got, "done")
+	if got := <-body; got != drainedBody {
+		t.Errorf("response = %q, want %q", got, drainedBody)
 	}
 
 	if err := <-served; err != nil {
