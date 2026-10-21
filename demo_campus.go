@@ -31,7 +31,7 @@ var campusDemo = demo{
 			Data: cardData{
 				Description: "The education and research card",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "A campus card does two things: it proves that its holder is a student or employee, and it carries a number that other systems look up. The first part is exactly what a wallet credential does. In this demo the university library gate asks for the type (student or employee) and the institution from the education and research card, nothing else, and opens for both roles. The same disclosure gives the student rate at the sports centre, campus rates for printing and discounts in the campus shop, at whichever desk or till asks for it. Where a card number is needed, for example to borrow books or to reserve a sports hall, the student number on the same card can be requested in that specific session. In a real deployment the gate also checks that the institution is its own; this demo accepts any institution so that students and staff from anywhere can try it.",
@@ -46,7 +46,7 @@ var campusDemo = demo{
 			Data: cardData{
 				Description: "De ‘onderwijs en onderzoek’-kaart",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/nl/surfconext/"},
+					{Label: "SURFconext", URL: surfconextNLURL},
 				},
 			},
 			Sidenotes: "Een campuskaart doet twee dingen: ze bewijst dat de houder student of medewerker is, en ze draagt een nummer dat andere systemen opzoeken. Het eerste is precies wat een walletkaartje doet. In deze demo vraagt de toegangspoort van de universiteitsbibliotheek alleen het type (student of medewerker) en de instelling van de ‘onderwijs en onderzoek’-kaart, en opent voor beide rollen. Dezelfde disclosure geeft het studententarief bij het sportcentrum, campustarieven voor printen en korting in de campuswinkel, bij welke balie of kassa er ook om vraagt. Waar een nummer nodig is, bijvoorbeeld om boeken te lenen of een sportzaal te reserveren, kan in die specifieke sessie het studentnummer van hetzelfde kaartje worden gevraagd. In een echte uitrol controleert de poort ook of de instelling de eigen instelling is; deze demo accepteert elke instelling zodat studenten en medewerkers van overal het kunnen proberen.",

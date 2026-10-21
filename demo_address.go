@@ -17,7 +17,7 @@ var addressDemo = demo{
 			Data: cardData{
 				Description: "The personal data card",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Addresses shared this way are reliable. You can’t make a mistake, and the receiver can be sure you are registered there. This could replace the need for some organisations to send a postal card with a verification code, for example. It also works for other information, like name, email address, phone number etc.",
@@ -31,7 +31,7 @@ var addressDemo = demo{
 			Data: cardData{
 				Description: "Het persoonsgegevenskaartje",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Adressen die zo gedeeld worden zijn betrouwbaar. Je kan geen fouten maken en de ontvanger kan zeker zijn dat jij daar staat ingeschreven. Dit zou ook kunnen werken voor organisaties die nu een postkaart sturen met een verificatiecode, bijvoorbeeld. Dit werkt ook voor andere informatie, zoals namen, emailadressen, telefoonummers, etc.",

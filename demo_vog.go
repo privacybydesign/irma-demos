@@ -25,7 +25,7 @@ var vogDemo = demo{
 			Data: cardData{
 				Description: "The personal data card and the VOG card",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 					{Label: "passport"},
 					{Label: "driver’s license"},
 					{Label: "identity card"},
@@ -44,7 +44,7 @@ var vogDemo = demo{
 			Data: cardData{
 				Description: "Het persoonsgegevenskaartje en het VOG-kaartje",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 					{Label: "paspoort"},
 					{Label: "rijbewijs"},
 					{Label: "ID-kaart"},

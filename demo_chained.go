@@ -19,7 +19,7 @@ var chainedDemo = demo{
 			Data: cardData{
 				Description: "Works with any card, but this demo uses a name for the member card;",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 					{Label: "passport"},
 					{Label: "driver’s license"},
 					{Label: "identity card"},
@@ -43,7 +43,7 @@ var chainedDemo = demo{
 			Data: cardData{
 				Description: "Works with any card, but this demo uses a name for the member card;",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 					{Label: "paspoort"},
 					{Label: "rijbewijs"},
 					{Label: "ID-kaart"},

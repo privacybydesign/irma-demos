@@ -2,6 +2,13 @@ package main
 
 import "html/template"
 
+// Issuer pages that several demos name as the source of a card.
+const (
+	brpLoginURL     = "https://yivi.nijmegen.nl/login"
+	surfconextENURL = "https://saml-issuer.yivi.app/en/surfconext/"
+	surfconextNLURL = "https://saml-issuer.yivi.app/nl/surfconext/"
+)
+
 // A demo is one entry of the list of demos: its description page and, unless
 // it runs on its own site, the demo that is embedded in that page and served
 // stand-alone.

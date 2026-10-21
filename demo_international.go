@@ -31,7 +31,7 @@ var internationalDemo = demo{
 				Sources: []source{
 					{Label: "passport"},
 					{Label: "identity card"},
-					{Label: "the municipality of Nijmegen", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the municipality of Nijmegen", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "When international students arrive, they have to register with both the university and the municipality, and both need to see the same passport. The municipality of Nijmegen already issues the personal data and address cards to residents through Yivi. In this demo the university builds on that: the student shares the passport or identity card from the wallet together with the municipal address card. The university sees that the travel document is still valid, that the student is registered at an address in the city and whether the student is an EU citizen. That last answer decides the next step: EU citizens are done, for others the university starts the residence permit application with the IND. The student never hands over a passport copy.",
@@ -48,7 +48,7 @@ var internationalDemo = demo{
 				Sources: []source{
 					{Label: "paspoort"},
 					{Label: "ID-kaart"},
-					{Label: "de gemeente Nijmegen", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de gemeente Nijmegen", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Als internationale studenten aankomen, moeten ze zich zowel bij de universiteit als bij de gemeente inschrijven, en beide willen hetzelfde paspoort zien. De gemeente Nijmegen geeft persoonsgegevens en adreskaartjes al via Yivi uit aan inwoners. In deze demo bouwt de universiteit daarop voort: de student deelt het paspoort of de ID-kaart uit de wallet samen met het adreskaartje van de gemeente. De universiteit ziet dat het reisdocument nog geldig is, dat de student op een adres in de stad staat ingeschreven en of de student EU-burger is. Dat laatste bepaalt de volgende stap: EU-burgers zijn klaar, voor anderen start de universiteit de aanvraag van een verblijfsvergunning bij de IND. De student geeft nooit een paspoortkopie af.",

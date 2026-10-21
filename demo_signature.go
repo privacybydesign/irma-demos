@@ -19,7 +19,7 @@ var signatureDemo = demo{
 			Data: cardData{
 				Description: "The education and research card",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "Attribute-based digital signatures offer many new possibilities: a police officer, for instance, can sign a report with his/her name and police-registration number; in this way the integrity and authenticity of this report is guaranteed in the whole criminal justice chain. Also, a medical doctor can sign a medical statement with his/her own medical credentials, so that everyone can verify that this statement is actually signed by a medical doctor (and also by whom). Within organisations all kinds of decisions can be registered reliably and verifiably with digital signatures. Yivi is the only identity platform that seamlessly combines both authentication and signing.",
@@ -33,7 +33,7 @@ var signatureDemo = demo{
 			Data: cardData{
 				Description: "De ‘onderwijs en onderzoek’-kaart",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "Digitale handtekeningen op basis van attributen bieden veel nieuwe mogelijkheden: een politiebeambte kan bijvoorbeeld een proces verbaal ondertekenen met hun naam en politie-registratienummer, als persoonlijke gegevens uit Yivi; daarmee wordt de integriteit en authenticiteit van dit proces verbaal in de hele verdere justitiële keten gegarandeerd. Ook kan een arts een medische verklaring met de eigen AGB-registratie gegevens als Yivi gegevens ondertekenen, zodat iedereen kan controleren dat deze verklaring daadwerkelijk door een arts (en ook welke) getekend is. Binnen organisaties kunnen allerlei beslissingen met digitale handtekeningen betrouwbaar en controleerbaar vastgelegd worden. Yivi is het enige platform dat dergelijke geïntegreerde authenticatie en ondertekening biedt.",

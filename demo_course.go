@@ -32,7 +32,7 @@ var courseDemo = demo{
 				Sources: []source{
 					{Label: "passport"},
 					{Label: "identity card"},
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 					{Label: "your email address", URL: "https://email-issuer.yivi.app/en"},
 				},
 			},
@@ -50,7 +50,7 @@ var courseDemo = demo{
 				Sources: []source{
 					{Label: "paspoort"},
 					{Label: "ID-kaart"},
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 					{Label: "je e-mailadres", URL: "https://email-issuer.yivi.app/nl"},
 				},
 			},

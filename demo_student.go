@@ -23,7 +23,7 @@ var studentDemo = demo{
 			Data: cardData{
 				Description: "The education and research card",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "Some webshops or online services offer a student discount. Often, this requires uploading a picture of a student card (with photo and name) or verifying an email address from an educational institution. With Yivi, instead, no personal info is shared and no manual check is required. This could also work for other kinds of discounts, of course.",
@@ -38,7 +38,7 @@ var studentDemo = demo{
 			Data: cardData{
 				Description: "De ‘onderwijs en onderzoek’-kaart",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "Sommige webshops of online diensten bieden studentenkorting aan. Vaak vereist dit het uploaden van een foto van de studenten pas (met pasfoto en naam) of het verifiëren van een emailadres van een onderwijsinstelling. Met Yivi, daarentegen, hoeven er geen persoonlijke gegevens gedeeld te worden en is er geen handmatige controle nodig. Dit zou natuurlijk ook voor andere kortingen kunnen werken.",

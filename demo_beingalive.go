@@ -21,7 +21,7 @@ var beingaliveDemo = demo{
 			Data: cardData{
 				Description: "The personal data card",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Pension funds or governments giving out annuities sometimes require a certificate of life. Traditionally, this requires getting a signed form at a counter. By sharing identifying details which were recently loaded into Yivi, the receiving party can be sure the person is alive. After all, the resident registration will not allow the card to be issued if the person has passed.",
@@ -35,7 +35,7 @@ var beingaliveDemo = demo{
 			Data: cardData{
 				Description: "Het persoonsgegevenskaartje",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Pensioenfondsen of overheden die ouderdomspensioen betalen vereisen soms een bewijs van leven (attestatie de vita). In het verleden betekende dit dat je een getekend formulier bij een balie moest halen. Door het delen van identificerende gegevens die recent in Yivi zijn geladen, kan een ontvangende partij er zeker van zijn dat de persoon leeft. De BRP geeft namelijk geen persoonsgegevens-kaart meer uit wanneer de persoon is overleden.",

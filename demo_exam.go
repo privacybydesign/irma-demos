@@ -29,7 +29,7 @@ var examDemo = demo{
 			Data: cardData{
 				Description: "The education and research card",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/en/surfconext/"},
+					{Label: "SURFconext", URL: surfconextENURL},
 				},
 			},
 			Sidenotes: "At the entrance of an exam room, invigilators check that everyone who walks in is a student, is who they say they are and is actually enrolled for this exam. Today that is a student card and a printed registration list. In this demo a student shares the education and research card from the wallet: the name, the institution, the student/employee type and the student number. The university checks the student type and looks the student number up in its exam registration, then shows the room and seat. The check works the same for a digital exam: the same disclosure can unlock the exam environment on the student’s laptop. The enrolment lookup is simulated in this demo: every student with a student number is admitted.",
@@ -44,7 +44,7 @@ var examDemo = demo{
 			Data: cardData{
 				Description: "De ‘onderwijs en onderzoek’-kaart",
 				Sources: []source{
-					{Label: "SURFconext", URL: "https://saml-issuer.yivi.app/nl/surfconext/"},
+					{Label: "SURFconext", URL: surfconextNLURL},
 				},
 			},
 			Sidenotes: "Bij de ingang van een tentamenzaal controleren surveillanten of iedereen die binnenkomt student is, is wie hij of zij zegt te zijn en ook echt is ingeschreven voor dit tentamen. Nu gaat dat met een collegekaart en een geprinte inschrijflijst. In deze demo deelt een student de ‘onderwijs en onderzoek’-kaart uit de wallet: de naam, de instelling, het type (student of medewerker) en het studentnummer. De universiteit controleert het type en zoekt het studentnummer op in de tentameninschrijving, en toont daarna zaal en plaats. Bij een digitaal tentamen werkt het hetzelfde: dezelfde disclosure kan de toetsomgeving op de laptop van de student ontsluiten. De inschrijfcontrole is in deze demo gesimuleerd: elke student met een studentnummer wordt toegelaten.",

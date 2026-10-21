@@ -20,7 +20,7 @@ var over18Demo = demo{
 			Data: cardData{
 				Description: "The personal data card",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 					{Label: "passport"},
 					{Label: "driver’s license"},
 					{Label: "identity card"},
@@ -45,7 +45,7 @@ var over18Demo = demo{
 			Data: cardData{
 				Description: "Het persoonsgegevenskaartje",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 					{Label: "paspoort"},
 					{Label: "rijbewijs"},
 					{Label: "ID-kaart"},

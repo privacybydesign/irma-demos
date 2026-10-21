@@ -20,7 +20,7 @@ var petitionDemo = demo{
 			Data: cardData{
 				Description: "The personal data card",
 				Sources: []source{
-					{Label: "the Dutch resident registration (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "the Dutch resident registration (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "This demo combines <a href='../chained'>chained sessions</a> and <a href='../signature'>signatures</a>. The demo doesn’t perform any checks, but shows what it would look like if first a user proves they live in the area where petition may be signed before signing. This way, signatures can be validated before storing, instead of after collecting all signatures.",
@@ -35,7 +35,7 @@ var petitionDemo = demo{
 			Data: cardData{
 				Description: "Het persoonsgegevenskaartje",
 				Sources: []source{
-					{Label: "de basisregistratie (BRP)", URL: "https://yivi.nijmegen.nl/login"},
+					{Label: "de basisregistratie (BRP)", URL: brpLoginURL},
 				},
 			},
 			Sidenotes: "Deze demo combineert <a href='../chained'>chained sessions</a> en <a href='../signature'>handtekeningen</a>. De demo checkt niks, maar toont hoe het eruit zou zien als een gebruiker eerst bewijst dat ze in de gemeente wonen waar de petitie ondertekend mag worden, voor het ondertekenen. Op deze manier kan een handtekening worden gevalideerd voor het opslaan, in plaats van wanneer alle handtekeningen zijn verzameld.",
