@@ -1,4 +1,4 @@
-# irma-demos — repo notes
+# irma-demos: repo notes
 
 Go server for the Yivi demo pages and two endpoints for the IRMA server. It
 replaced a PHP site; the `.php` URLs stay on purpose.
@@ -14,7 +14,7 @@ replaced a PHP site; the `.php` URLs stay on purpose.
 ## Gotchas
 
 - Only what `server.go` and `render.go` embed can be served. Add an embed
-  pattern only for files that are meant to be public; `TestOnlyPublicRepoFilesAreServed`
+  pattern only for files that are meant to be public; `TestOnlyPublicFilesServed`
   walks the repository and fails on anything else that answers 200.
 - Callback JWTs are always verified (`callback.go`): RS256 only, key from
   `IRMA_SERVER_PUBLICKEY`, `exp` required. There is no switch to turn it off.
