@@ -39,8 +39,8 @@ func fakeIrma(t *testing.T, status int, body string) (*httptest.Server, *recorde
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		recorded.method = r.Method
 		recorded.path = r.URL.Path
-		recorded.authorization = r.Header.Get("Authorization")
-		recorded.contentType = r.Header.Get("Content-Type")
+		recorded.authorization = r.Header.Get(headerAuthorization)
+		recorded.contentType = r.Header.Get(headerContentType)
 		recorded.body, _ = io.ReadAll(r.Body)
 
 		w.WriteHeader(status)

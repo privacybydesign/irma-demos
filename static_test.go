@@ -35,7 +35,7 @@ func TestPublicFilesAreServed(t *testing.T) {
 		if rec.Code != http.StatusOK {
 			t.Errorf("GET %s = %d, want 200", target, rec.Code)
 		}
-		if got := rec.Header().Get("Content-Type"); !strings.HasPrefix(got, contentType) {
+		if got := rec.Header().Get(headerContentType); !strings.HasPrefix(got, contentType) {
 			t.Errorf("GET %s Content-Type = %q, want %q", target, got, contentType)
 		}
 	}

@@ -13,6 +13,8 @@ import (
 	"testing"
 )
 
+const headerLocation = "Location"
+
 var languages = []lang{langEN, langNL}
 
 var jsEscape = regexp.MustCompile(`\\u([0-9a-fA-F]{4})|\\(["'/\\])`)
@@ -410,8 +412,8 @@ func TestRedirects(t *testing.T) {
 	for _, test := range tests {
 		rec := get(t, handler, test.target)
 
-		if rec.Code != test.status || rec.Header().Get("Location") != test.location {
-			t.Errorf("GET %s = %d %q, want %d %q", test.target, rec.Code, rec.Header().Get("Location"), test.status, test.location)
+		if rec.Code != test.status || rec.Header().Get(headerLocation) != test.location {
+			t.Errorf("GET %s = %d %q, want %d %q", test.target, rec.Code, rec.Header().Get(headerLocation), test.status, test.location)
 		}
 	}
 }
