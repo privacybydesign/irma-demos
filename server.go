@@ -30,9 +30,9 @@ func newHandler(cfg config) http.Handler {
 	mux.HandleFunc("GET /demos/{slug}/", pages.demoPage)
 	mux.HandleFunc("GET /demos/{slug}/demo.php", pages.standalone)
 
-	mux.HandleFunc("GET /start_session.php", startSessionHandler(cfg, sessions))
-	mux.HandleFunc("POST /start_session.php", startSessionHandler(cfg, sessions))
-	mux.HandleFunc("POST /get_session_request.php", nextSessionHandler(cfg))
+	mux.HandleFunc("GET "+startSessionPath, startSessionHandler(cfg, sessions))
+	mux.HandleFunc("POST "+startSessionPath, startSessionHandler(cfg, sessions))
+	mux.HandleFunc("POST "+nextSessionPath, nextSessionHandler(cfg))
 
 	mux.HandleFunc("GET /resources/{file...}", func(w http.ResponseWriter, r *http.Request) {
 		servePublic(w, r, pages, "resources/"+r.PathValue("file"))

@@ -11,6 +11,7 @@ import (
 )
 
 const (
+	startSessionPath  = "/start_session.php"
 	headerAllowOrigin = "Access-Control-Allow-Origin"
 	headerContentType = "Content-Type"
 	contentTypeJSON   = "application/json"

@@ -229,7 +229,7 @@ func newRequests(cfg config, now time.Time) map[string]any {
 			},
 		}},
 		"petition": petitionRequest{chainedRequest{
-			NextSession: nextSession{URL: cfg.baseURL + "/get_session_request.php?type=petition-signature&lang="},
+			NextSession: nextSession{URL: cfg.baseURL + nextSessionPath + "?" + queryType + "=" + petitionSignatureType + "&" + queryLang + "="},
 			Request: disclosureRequest{
 				Context: contextDisclosure,
 				Disclose: [][][]string{
