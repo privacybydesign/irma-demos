@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN go mod download
+RUN go mod download && mkdir /coverage
 
 # Run tests with coverage; write to /coverage inside the container.
 # In CI we'll mount a host dir to /coverage so we can upload the file.
