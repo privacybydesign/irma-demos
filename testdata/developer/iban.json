@@ -1,0 +1,12 @@
+{
+    "@context": "https://irma.app/ld/request/disclosure/v2",
+    "disclose": [
+        [
+            [
+                "pbdf.pbdf.iban.fullname",
+                "pbdf.pbdf.iban.iban",
+                "pbdf.pbdf.iban.bic"
+            ]
+        ]
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "@context": "https://irma.app/ld/request/disclosure/v2",
+    "disclose": [
+        [
+            [
+                "pbdf.pbdf.passport.firstName",
+                "pbdf.pbdf.passport.lastName",
+                "pbdf.pbdf.passport.dateOfBirth",
+                "pbdf.pbdf.passport.nationality",
+                "pbdf.pbdf.passport.documentType",
+                "pbdf.pbdf.passport.documentNumber",
+                "pbdf.pbdf.passport.dateOfExpiry"
+            ],
+            [
+                "pbdf.pbdf.idcard.firstName",
+                "pbdf.pbdf.idcard.lastName",
+                "pbdf.pbdf.idcard.dateOfBirth",
+                "pbdf.pbdf.idcard.nationality",
+                "pbdf.pbdf.idcard.documentType",
+                "pbdf.pbdf.idcard.documentNumber",
+                "pbdf.pbdf.idcard.dateOfExpiry"
+            ]
+        ],
+        [
+            [
+                "pbdf.gemeente.address.street",
+                "pbdf.gemeente.address.houseNumber",
+                "pbdf.gemeente.address.zipcode",
+                "pbdf.gemeente.address.city"
+            ],
+            [
+                "pbdf.nijmegen.address.street",
+                "pbdf.nijmegen.address.houseNumber",
+                "pbdf.nijmegen.address.zipcode",
+                "pbdf.nijmegen.address.city"
+            ],
+            [
+                "pbdf.pbdf.idin.address",
+                "pbdf.pbdf.idin.zipcode",
+                "pbdf.pbdf.idin.city"
+            ]
+        ],
+        [
+            [
+                "pbdf.pbdf.iban.fullname",
+                "pbdf.pbdf.iban.iban"
+            ]
+        ]
+    ],
+    "labels": {
+        "0": {
+            "en": "Identity document",
+            "nl": "Identiteitsbewijs"
+        },
+        "1": {
+            "en": "Home address",
+            "nl": "Woonadres"
+        },
+        "2": {
+            "en": "Salary account",
+            "nl": "Salarisrekening"
+        }
+    }
+}
