@@ -1,23 +1,54 @@
 services:
-  php:
+  # Generates the key pair with which the IRMA server signs its callbacks, and
+  # which the demos verify them with. Only for local use.
+  keys:
+    image: alpine/openssl
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        test -f /keys/private.pem || {
+          openssl genrsa -out /keys/private.pem 2048 &&
+          openssl rsa -in /keys/private.pem -pubout -out /keys/public.pem &&
+          chmod 644 /keys/private.pem /keys/public.pem
+        }
+    volumes:
+      - keys:/keys
+
+  demos:
     build: .
     ports:
       - "127.0.0.1:8080:8080"
     networks:
       - app-network
     depends_on:
-      - irma
+      keys:
+        condition: service_completed_successfully
+      irma:
+        condition: service_started
     environment:
-      - IRMA_SERVER_URL=http://irma:8088  
-      
+      - IRMA_SERVER_URL=http://irma:8088
+      - IRMA_SERVER_PUBLICKEY=/keys/public.pem
+      - BASE_URL=http://localhost:8080
+      - IRMATUBE_NEXT_SESSION_URL=http://demos:8080/get_session_request.php
+    volumes:
+      - keys:/keys:ro
+
   irma:
     build: https://github.com/privacybydesign/irmago.git
     ports:
       - "8088:8088"
-    command: irma server --no-auth --no-tls --allow-unsigned-callbacks #--url http://your-network-ip:8088
+    command: irma server --no-auth --no-tls --jwt-privkey-file /keys/private.pem #--url http://your-network-ip:8088
     networks:
       - app-network
+    depends_on:
+      keys:
+        condition: service_completed_successfully
+    volumes:
+      - keys:/keys:ro
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  keys:

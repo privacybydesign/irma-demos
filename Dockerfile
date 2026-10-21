@@ -1,39 +1,33 @@
-FROM node:20 AS builder
-
-RUN apt-get update && apt-get install -y \
-    php \
-    php-cli \
-    php-zip \
-    unzip
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+FROM node:20 AS assets
 WORKDIR /app
 
-COPY . .
-
-RUN composer install
-RUN yarn install
-
-RUN chmod +x build_artifacts.sh
+COPY package.json yarn.lock build_artifacts.sh ./
+RUN yarn install --frozen-lockfile
 RUN ./build_artifacts.sh
 
-FROM php:8.4-apache
+# -----------------------------------------------------
 
-# Pull Debian's security updates into the image. The php:8.4-apache base lags
-# behind the security repository (previously apr-util, now perl and glibc), and
-# the image scan in CI fails on any critical vulnerability with a fix available.
-RUN apt-get update \
-    && apt-get upgrade -y --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+FROM golang:1.26.10 AS build
+WORKDIR /app
 
-COPY --from=builder /app/ /var/www/html/
+COPY go.mod go.sum ./
+RUN go mod download
 
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+COPY . .
+COPY --from=assets /app/assets/yivi.js assets/yivi.js
 
-RUN echo "Listen 8080" >> /etc/apache2/ports.conf
+# compile with static linking
+RUN CGO_ENABLED=0 go build -o /server .
 
-RUN printf 'ErrorDocument 404 /404.php\n' > /etc/apache2/conf-enabled/error-documents.conf
+# -----------------------------------------------------
+
+FROM gcr.io/distroless/static-debian12:nonroot AS runtime
+
+COPY --from=build /server /server
+
+# Declared explicitly to satisfy static scanners; the :nonroot tag already
+# defaults to this same user (UID 65532).
+USER nonroot:nonroot
 
 EXPOSE 8080
+ENTRYPOINT [ "/server" ]
