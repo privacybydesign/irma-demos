@@ -16,7 +16,7 @@ RUN go mod download
 COPY . .
 COPY --from=assets /app/assets/yivi.js assets/yivi.js
 
-# compile with static linking
+# No cgo: the distroless/static runtime has no libc.
 RUN CGO_ENABLED=0 go build -o /server .
 
 # -----------------------------------------------------
