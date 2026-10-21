@@ -62,7 +62,6 @@ func TestPrivateFilesAreNotServed(t *testing.T) {
 		"/resources/",
 		"/resources/images/",
 		"/demos/",
-		"/demos/18plus/",
 		"/demos/18plus/en.php",
 		"/demos/18plus/demo.html",
 	}

@@ -1,0 +1,48 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #3b3f8c;
+            --secondary: #ffffff;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.ChecksTitle}}</h2>
+        <dl class="prefilled">
+            <div>
+                <dt>{{.Content.Strings.Qualification}}</dt>
+                <dd id="qualification"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Level}}</dt>
+                <dd id="level"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Institution}}</dt>
+                <dd id="institution"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Awarded}}</dt>
+                <dd id="awarded"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Holder}}</dt>
+                <dd id="holder"></dd>
+            </div>
+        </dl>
+        <ul class="checks" role="list">
+            <li id="check-diploma" class="ok"><span>{{.Content.Strings.CheckDiploma}}</span></li>
+            <li id="check-level"><span>{{.Content.Strings.CheckLevel}}</span></li>
+        </ul>
+        <p class="success" hidden>
+            {{.Content.Strings.Success}}
+        </p>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        let level_text = {"known": {{.Content.Strings.LevelKnown}}, "unknown": {{.Content.Strings.LevelUnknown}}};
+    </script>
+{{end}}

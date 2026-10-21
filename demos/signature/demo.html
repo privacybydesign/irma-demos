@@ -1,0 +1,20 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #00397e;
+            --secondary: #afcaff;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <p>
+            {{.Content.Strings.Success}}
+        </p>
+        <ul>
+            <li id="a"></li>
+            <li id="b"></li>
+            <li id="c"></li>
+            <li id="d"></li>
+        </ul>
+    </div>
+{{end}}

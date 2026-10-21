@@ -1,0 +1,66 @@
+{{define "layout"}}<!DOCTYPE html>
+<html lang="{{.Lang}}">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+
+        <title>{{.Title}} | Yivi Demos</title>
+
+        <link href="/resources/vars.css" rel="stylesheet">
+        <link href="/resources/style.css" rel="stylesheet">
+        <link href="/resources/yivi.css" rel="stylesheet">
+        <link href="/resources/demo.css" rel="stylesheet">
+
+        <script src="/assets/yivi.js" defer></script>
+        <script src="/start_session.js" defer></script>
+        {{template "scripts" .}}
+    </head>
+<body>
+    <header class="site-header">
+        <div>
+            <a href="/" class="logo">
+                <img height="28" src="/resources/images/yivi-logo.svg" alt="Yivi">
+                Demos
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://docs.yivi.app" target="_blank">Docs</a>
+                    </li>
+                    <li>
+                        <a href="https://yivi.app" target="_blank">Main</a>
+                    </li>
+                    <li>
+                        {{template "lang-switcher" .}}
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section>
+        <div id="result_status"></div>
+
+{{template "content" .}}
+
+        </section>
+
+        <nav class="demo-nav">
+            <h2>Demos</h2>
+            <ul class="demo-list">
+            {{range .Nav}}
+                <li{{if .Active}} class="active"{{end}}>
+                    <a href="{{.URL}}"{{if .Active}} aria-current="page"{{end}}>
+                        {{.Label}}
+                    </a>
+                </li>
+            {{end}}
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>
+{{end}}
+
+{{define "lang-switcher"}}<a href="{{.Switch.URL}}">
+    {{.Switch.Label}}</a>{{end}}

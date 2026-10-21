@@ -1,0 +1,31 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #6c006b;
+            --secondary: #bd91ff;
+        }
+    </style>
+
+    <div class="result" hidden>
+
+		<div class="success" hidden>
+            <div class="art"></div>
+            <div>
+                <h2>
+                    {{.Content.Strings.Software}}
+                </h2>
+                <p class="price">
+                    €59
+                </p>
+                <button disabled>
+                    {{.Content.Strings.Cart}}
+                </button>
+            </div>
+		</div>
+
+		<div class="error" hidden>
+			{{.Content.Strings.Error}}
+		</div>
+
+    </div>
+{{end}}

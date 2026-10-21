@@ -1,0 +1,55 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #7a3e10;
+            --secondary: #ffe8c9;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.ChecksTitle}}</h2>
+        <ul class="checks" role="list">
+            <li id="check-document"><span>{{.Content.Strings.CheckDocument}}</span></li>
+            <li id="check-iban"><span>{{.Content.Strings.CheckIban}}</span></li>
+        </ul>
+
+        <h2 class="checks-title">{{.Content.Strings.FormTitle}}</h2>
+        <dl class="prefilled">
+            <div>
+                <dt>{{.Content.Strings.FirstNames}}</dt>
+                <dd id="firstnames"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.FamilyName}}</dt>
+                <dd id="familyname"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.DateOfBirth}}</dt>
+                <dd id="dateofbirth"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Nationality}}</dt>
+                <dd id="nationality"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Address}}</dt>
+                <dd id="address"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Iban}}</dt>
+                <dd id="iban"></dd>
+            </div>
+        </dl>
+
+        <p class="success" hidden>
+            {{.Content.Strings.Success}}
+        </p>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        let document_labels = {"passport": {{.Content.Strings.DocumentPassport}}, "idcard": {{.Content.Strings.DocumentIdcard}}};
+    </script>
+{{end}}

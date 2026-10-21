@@ -1,0 +1,83 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #a8321a;
+            --secondary: #ffffff;
+        }
+
+        .gate {
+            display: flex;
+            align-items: center;
+            gap: 1.25em;
+            margin-block: 0 1em;
+
+            .light {
+                flex-shrink: 0;
+                width: 4em;
+                height: 4em;
+                border-radius: 50%;
+                background: #2fbf5f;
+                box-shadow: 0 0 2em #2fbf5f;
+            }
+
+            .light.red {
+                background: #d23c3c;
+                box-shadow: 0 0 2em #d23c3c;
+            }
+
+            .status {
+                font-size: 1.8em;
+                font-weight: bold;
+                line-height: 1.1;
+            }
+
+            .role {
+                opacity: .85;
+                font-size: 1.1em;
+            }
+        }
+
+        .perks {
+            padding-inline-start: 1.25em;
+            margin: .5em 0 0;
+
+            li {
+                margin-block: .35em;
+            }
+        }
+    </style>
+
+    <div class="result" hidden>
+        <div class="success" hidden>
+            <div class="gate">
+                <div class="light"></div>
+                <div>
+                    <div class="status">{{.Content.Strings.Granted}}</div>
+                    <div class="role">
+                        <strong id="role"></strong>
+                        {{.Content.Strings.At}}
+                        <strong id="institute"></strong>
+                    </div>
+                </div>
+            </div>
+            <h2 class="checks-title">{{.Content.Strings.PerksTitle}}</h2>
+            <ul class="perks">
+                <li>{{.Content.Strings.PerkSports}}</li>
+                <li>{{.Content.Strings.PerkPrint}}</li>
+                <li>{{.Content.Strings.PerkShop}}</li>
+            </ul>
+        </div>
+        <div class="error" hidden>
+            <div class="gate">
+                <div class="light red"></div>
+                <div class="status">{{.Content.Strings.Denied}}</div>
+            </div>
+            <p>{{.Content.Strings.Error}}</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let role_labels = {"student": {{.Content.Strings.RoleStudent}}, "employee": {{.Content.Strings.RoleEmployee}}};
+        let sports_rates = {"student": {{.Content.Strings.SportsStudent}}, "employee": {{.Content.Strings.SportsEmployee}}};
+    </script>
+{{end}}

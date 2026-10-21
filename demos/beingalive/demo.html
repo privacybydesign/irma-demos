@@ -1,0 +1,20 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #359a72;
+            --secondary: #000000;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <p>
+            {{.Content.Strings.DataAge}}
+        </p>
+        <p class="success" hidden>
+            {{.Content.Strings.Success}}
+        </p>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+{{end}}

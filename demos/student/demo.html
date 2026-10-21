@@ -1,0 +1,35 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #8f0000;
+            --secondary: #ffffff;
+        }
+    </style>
+
+    <div class="result" hidden>
+
+		<div class="success" hidden>
+            <div class="art"></div>
+            <div>
+                <h2>
+                    {{.Content.Strings.Software}}
+                </h2>
+                <p>
+                    {{.Content.Strings.Discount}}
+                </p>
+                <p class="price">
+                    <span class="prev">€600</span>
+                    €120
+                </p>
+                <button disabled>
+                    {{.Content.Strings.Cart}}
+                </button>
+            </div>
+		</div>
+
+		<div class="error" hidden>
+			{{.Content.Strings.Error}}
+		</div>
+
+    </div>
+{{end}}

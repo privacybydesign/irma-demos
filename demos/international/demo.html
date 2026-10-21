@@ -1,0 +1,28 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #0b6b6b;
+            --secondary: #ffffff;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.ChecksTitle}}</h2>
+        <ul class="checks" role="list">
+            <li id="check-document"><span>{{.Content.Strings.CheckDocument}}</span></li>
+            <li id="check-municipality"><span>{{.Content.Strings.CheckMunicipality}}</span></li>
+            <li id="check-eu"><span>{{.Content.Strings.CheckEu}}</span></li>
+        </ul>
+        <p class="success" hidden>
+            {{.Content.Strings.Success}}
+        </p>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        let eu_text = {"yes": {{.Content.Strings.EuYes}}, "no": {{.Content.Strings.EuNo}}};
+        let document_labels = {"passport": {{.Content.Strings.DocumentPassport}}, "idcard": {{.Content.Strings.DocumentIdcard}}};
+    </script>
+{{end}}

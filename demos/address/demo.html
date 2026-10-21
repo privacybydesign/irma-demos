@@ -1,0 +1,41 @@
+{{define "body"}}
+<style>
+	body {
+		--accent: #712F87;
+		--secondary: #F7E30F;
+	}
+	.result {
+		> :first-child {
+			font-size: max(3.5vw, 2em);
+		}
+
+		.number {
+			font-size: 1.2em;
+			font-weight: 900;
+		}
+
+		.year-at {
+			text-transform: uppercase;
+			font-size: 1em;
+			letter-spacing: .1em;
+			font-weight: 600;
+		}
+	}
+</style>
+
+<div class="result" hidden>
+	<p>
+		<span class="number">942</span>
+		<span class="unit">kWh</span>
+	</p>
+	<p class="year-at">
+		{{.Content.Strings.Year}}
+	</p>
+	<p class="address">
+		<span id="adres"></span>
+		<br>
+		<span id="postcode"></span>
+		<span id="plaats"></span>
+	</p>
+</div>
+{{end}}
