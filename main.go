@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"log/slog"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -27,17 +28,37 @@ func main() {
 	}
 
 	server := &http.Server{
-		Addr:              listenAddr,
 		Handler:           newHandler(cfg),
 		ReadHeaderTimeout: readHeaderTimeout,
 		ReadTimeout:       readTimeout,
 		IdleTimeout:       idleTimeout,
 	}
 
+	listener, err := net.Listen("tcp", listenAddr)
+	if err != nil {
+		slog.Error("cannot listen", "error", err)
+		os.Exit(1)
+	}
+
 	stop, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer cancel()
 
+	slog.Info("listening", "addr", listenAddr)
+
+	if err := serve(stop, server, listener); err != nil {
+		slog.Error("server stopped", "error", err)
+		os.Exit(1)
+	}
+}
+
+// serve runs server on listener until stop is done, then waits for
+// in-flight requests to finish.
+func serve(stop context.Context, server *http.Server, listener net.Listener) error {
+	shutdownDone := make(chan struct{})
+
 	go func() {
+		defer close(shutdownDone)
+
 		<-stop.Done()
 
 		ctx, cancelShutdown := context.WithTimeout(context.Background(), shutdownTimeout)
@@ -48,10 +69,12 @@ func main() {
 		}
 	}()
 
-	slog.Info("listening", "addr", listenAddr)
-
-	if err := server.ListenAndServe(); !errors.Is(err, http.ErrServerClosed) {
-		slog.Error("server stopped", "error", err)
-		os.Exit(1)
+	if err := server.Serve(listener); !errors.Is(err, http.ErrServerClosed) {
+		return err
 	}
+
+	// Shutdown makes Serve return at once; wait for the drain.
+	<-shutdownDone
+
+	return nil
 }
