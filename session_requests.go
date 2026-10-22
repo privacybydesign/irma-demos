@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -12,6 +13,10 @@ const (
 
 	// Layout of PHP's date('d / m / Y').
 	signatureDateLayout = "02 / 01 / 2006"
+
+	// stagingScheme is the scheme of the staging environment. Its pbdf issuer
+	// mirrors the one in the pbdf scheme, but there is no gemeente issuer.
+	stagingScheme = "pbdf-staging"
 )
 
 // The request types are structs, not maps, so that the JSON in the "For
@@ -86,6 +91,29 @@ func (s signatureDemoRequest) forLang(language lang) any {
 		Context:  s.Context,
 		Message:  s.Message.in(language),
 		Disclose: s.Disclose,
+	}
+}
+
+// chainedNameOptions returns the name attributes the chained demo asks for.
+// The IRMA server discloses them again in the issuance session that follows,
+// and the app refuses an issuance session with credentials of two keyshare
+// servers, so they come from the scheme of the YiviTube credential.
+func chainedNameOptions(irmatubeCredential string) [][]string {
+	if scheme, _, _ := strings.Cut(irmatubeCredential, "."); scheme == stagingScheme {
+		return [][]string{
+			{stagingScheme + ".pbdf.passport.lastName"},
+			{stagingScheme + ".pbdf.drivinglicence.lastName"},
+			{stagingScheme + ".pbdf.idcard.lastName"},
+			{stagingScheme + ".pbdf.linkedin.familyname"},
+		}
+	}
+
+	return [][]string{
+		{"pbdf.gemeente.personalData.fullname"},
+		{"pbdf.pbdf.passport.lastName"},
+		{"pbdf.pbdf.drivinglicence.lastName"},
+		{"pbdf.pbdf.idcard.lastName"},
+		{"pbdf.pbdf.linkedin.familyname"},
 	}
 }
 
@@ -190,16 +218,8 @@ func newRequests(cfg config, now time.Time) map[string]any {
 		"chained": chainedRequest{
 			NextSession: nextSession{URL: cfg.irmatubeNextURL},
 			Request: disclosureRequest{
-				Context: contextDisclosure,
-				Disclose: [][][]string{
-					{
-						{"pbdf.gemeente.personalData.fullname"},
-						{"pbdf.pbdf.passport.lastName"},
-						{"pbdf.pbdf.drivinglicence.lastName"},
-						{"pbdf.pbdf.idcard.lastName"},
-						{"pbdf.pbdf.linkedin.familyname"},
-					},
-				},
+				Context:  contextDisclosure,
+				Disclose: [][][]string{chainedNameOptions(cfg.irmatubeCredential)},
 			},
 		},
 		"beingalive": disclosureRequest{
