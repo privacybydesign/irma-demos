@@ -118,7 +118,9 @@ func TestEveryRequestHasGoldens(t *testing.T) {
 
 func TestStartPostsEveryRequest(t *testing.T) {
 	irma, recorded := fakeIrma(t, http.StatusOK, testResult)
-	handler := newHandler(testConfig(irma.URL))
+	sessions := newSessionStarter(testConfig(irma.URL))
+	sessions.now = func() time.Time { return goldenDay }
+	handler := newHandlerWithSessions(testConfig(irma.URL), sessions)
 
 	for _, id := range goldenIDs(t) {
 		for _, language := range []lang{langEN, langNL} {
@@ -295,5 +297,34 @@ func TestStartOmitsEmptyToken(t *testing.T) {
 
 	if recorded.method == "" || recorded.authorization != "" {
 		t.Errorf("Authorization = %q", recorded.authorization)
+	}
+}
+
+// The IRMA server discloses the attributes of the chained session again in the
+// issuance session that follows, and the app refuses an issuance session with
+// credentials of two keyshare servers. So the chained demo may only ask for
+// attributes of the scheme of the YiviTube credential.
+func TestChainedDisclosesFromIrmatubeScheme(t *testing.T) {
+	for _, credential := range []string{"pbdf.pbdf.yivitube", "pbdf-staging.pbdf.yivitube"} {
+		t.Run(credential, func(t *testing.T) {
+			cfg := testConfig("")
+			cfg.irmatubeCredential = credential
+			scheme, _, _ := strings.Cut(credential, ".")
+
+			chained, ok := newRequests(cfg, goldenDay)["chained"].(chainedRequest)
+			if !ok {
+				t.Fatal("chained is not a chainedRequest")
+			}
+
+			for _, discon := range chained.Request.Disclose {
+				for _, con := range discon {
+					for _, attr := range con {
+						if got, _, _ := strings.Cut(attr, "."); got != scheme {
+							t.Errorf("chained asks for %s, want an attribute of scheme %s", attr, scheme)
+						}
+					}
+				}
+			}
+		})
 	}
 }

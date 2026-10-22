@@ -19,7 +19,12 @@ var publicFiles embed.FS
 var startedAt = time.Now()
 
 func newHandler(cfg config) http.Handler {
-	sessions := newSessionStarter(cfg)
+	return newHandlerWithSessions(cfg, newSessionStarter(cfg))
+}
+
+// newHandlerWithSessions is newHandler with a given session starter, so that
+// tests can fix its clock.
+func newHandlerWithSessions(cfg config, sessions *sessionStarter) http.Handler {
 	pages := newPages(sessions)
 	mux := http.NewServeMux()
 
