@@ -1,0 +1,24 @@
+{
+    "@context": "https://irma.app/ld/request/disclosure/v2",
+    "disclose": [
+        [
+            [
+                "pbdf.nijmegen.address.street",
+                "pbdf.nijmegen.address.houseNumber",
+                "pbdf.nijmegen.address.zipcode",
+                "pbdf.nijmegen.address.city"
+            ],
+            [
+                "pbdf.gemeente.address.street",
+                "pbdf.gemeente.address.houseNumber",
+                "pbdf.gemeente.address.zipcode",
+                "pbdf.gemeente.address.city"
+            ],
+            [
+                "pbdf.pbdf.idin.address",
+                "pbdf.pbdf.idin.zipcode",
+                "pbdf.pbdf.idin.city"
+            ]
+        ]
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "@context": "https://irma.app/ld/request/disclosure/v2",
+    "disclose": [
+        [
+            [
+                "pbdf-staging.pbdf.diploma.documentType",
+                "pbdf-staging.pbdf.diploma.qualification",
+                "pbdf-staging.pbdf.diploma.nlqfLevel",
+                "pbdf-staging.pbdf.diploma.institution",
+                "pbdf-staging.pbdf.diploma.dateAwarded",
+                "pbdf-staging.pbdf.diploma.fullName"
+            ]
+        ]
+    ],
+    "labels": {
+        "0": {
+            "en": "Prior education",
+            "nl": "Vooropleiding"
+        }
+    }
+}

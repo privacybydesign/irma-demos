@@ -1,0 +1,169 @@
+{{define "scripts"}}{{if not .Content.Page.External}}<script src="./script.js" defer></script>{{end}}{{end}}
+
+{{define "content"}}
+{{with .Content}}
+<header>
+    <p class="pre-heading">
+        {{$.UI.Try}}
+    </p>
+    <h1>
+        {{$.Title}}
+        {{$.UI.WithYivi}}
+    </h1>
+    <p class="intro">{{.Page.Intro}}</p>
+</header>
+
+<aside class="summary">
+    <div class="benefits block">
+        <h2>{{$.UI.Benefits}}</h2>
+        <ul role="list">
+            {{range .Page.Benefits}}
+                <li>{{.}}</li>
+            {{end}}
+        </ul>
+    </div>
+
+    <div class="data block">
+        <h2>{{$.UI.Cards}}</h2>
+        <p>
+            {{.Page.Data.Description}}{{$.UI.Source}}{{range .Sources}}{{.Before}}{{if .URL}}<a href="{{.URL}}" target="_blank">{{.Label}}</a>{{else}}{{.Label}}{{end}}{{.After}}{{end}}
+        </p>
+    </div>
+</aside>
+
+{{if .Page.External}}
+
+    <div class="external-demo">
+        <p>{{.Page.External.Description}}</p>
+        <p>
+            <a class="custom-button" href="{{.Page.External.URL}}" target="_blank">
+                {{.Page.External.Action}}
+            </a>
+        </p>
+    </div>
+
+{{else}}
+
+<div class="demo-container">
+
+    <p class="info">
+        {{$.UI.NoInfo}}
+        <button id="reload" class="small">
+            {{$.UI.Reload}}
+        </button>
+    </p>
+
+    {{template "frame" $}}
+
+    <script>
+        (() => {
+            document.getElementById('reload').addEventListener('click', reloadPage);
+
+            async function reloadPage() {
+                window.location.reload();
+            }
+        })();
+    </script>
+</div>
+
+{{end}}
+
+{{if .Page.More}}
+<section class="more-demos">
+    <h2>{{$.UI.More}}</h2>
+    <p>{{.Page.More.Description}}</p>
+    <p>
+        {{range .Page.More.Links}}
+            <a class="button" href="{{.URL}}" target="_blank">{{.Label}}</a>
+        {{end}}
+    </p>
+</section>
+{{end}}
+
+<aside>
+    <details>
+        <summary>
+            {{$.UI.Sidenotes}}
+        </summary>
+        <p>
+            {{.Page.Sidenotes}}
+        </p>
+    </details>
+    {{if .Request}}{{template "developer-details" $}}{{end}}
+    {{template "yivi-details" $}}
+</aside>
+{{end}}
+{{end}}
+
+{{define "developer-details"}}
+<details>
+    <summary>
+        {{.UI.ForDevelopers}}
+    </summary>
+    <p>
+        {{.UI.Request}}
+        <button id="copy-request" class="small">
+            {{.UI.Copy}}
+        </button>
+    </p>
+    <pre><code id="request">{{.Content.Request}}</code></pre>
+    <script>
+        (() => {
+            document.getElementById('copy-request').addEventListener('click', requestToClipboard);
+
+            async function requestToClipboard(event) {
+                event.target.innerText = "Copied!";
+                try {
+                    await navigator.clipboard.writeText(
+                        document.getElementById('request').innerText
+                    );
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+        })();
+    </script>
+</details>
+{{end}}
+
+{{define "yivi-details"}}
+<script>
+    function openGetYivi () {
+        document.getElementById('get-yivi').setAttribute('open', true);
+        document.getElementById('get-yivi').scrollIntoView();
+    }
+</script>
+<details>
+    <summary>{{.UI.WhatIsYivi}}</summary>
+    {{range .UI.Explanation}}<p>{{.}}</p>{{end}}
+    <p>
+        <a href="https://yivi.app" class="button" target="_blank">
+            {{.UI.ReadMore}}</a>
+        <button onclick="openGetYivi()">
+            {{.UI.GetYivi}}</button>
+    </p>
+</details>
+<details id="get-yivi">
+    <summary>{{.UI.GettingYivi}}</summary>
+    <p>
+        {{.UI.AppStores}}
+    </p>
+    <ul class="stores">
+        <li>
+            <a href="https://apps.apple.com/nl/app/yivi/id1294092994" target="_blank">
+                <img src="/resources/images/appstore-{{.Lang}}.svg" alt="{{.UI.AppStore}}">
+            </a>
+        </li>
+        <li>
+            <a href="https://play.google.com/store/apps/details?id=org.irmacard.cardemu" target="_blank">
+                <img src="/resources/images/googleplay-{{.Lang}}.svg" alt="{{.UI.GooglePlay}}">
+            </a>
+        </li>
+        <li>
+            <a href="https://f-droid.org/en/packages/org.irmacard.cardemu/" target="_blank">
+                <img src="/resources/images/fdroid-{{.Lang}}.svg" alt="{{.UI.FDroid}}">
+            </a>
+        </li>
+    </ul>
+</details>
+{{end}}

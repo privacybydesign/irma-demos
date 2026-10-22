@@ -1,0 +1,21 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #097c6f;
+            --secondary: #ffbf72;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <p>
+            {{.Content.Strings.Success}}
+        </p>
+    </div>
+
+	<div class="content" hidden>
+		<h2>
+			{{.Content.Strings.Event}}
+		</h2>
+		<p>...</p>
+	</div>
+{{end}}

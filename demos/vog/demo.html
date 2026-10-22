@@ -1,0 +1,23 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #1f7a3a;
+            --secondary: #ffffff;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.ChecksTitle}}</h2>
+        <ul class="checks" role="list">
+            <li id="check-identity"><span>{{.Content.Strings.CheckIdentity}}</span></li>
+            <li id="check-minors"><span>{{.Content.Strings.CheckMinors}}</span></li>
+            <li id="check-recent"><span>{{.Content.Strings.CheckRecent}}</span></li>
+        </ul>
+        <p class="success" hidden>
+            {{.Content.Strings.Success}}
+        </p>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+{{end}}

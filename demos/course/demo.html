@@ -1,0 +1,40 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #6a2c70;
+            --secondary: #f3d9f7;
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.FormTitle}}</h2>
+        <dl class="prefilled">
+            <div>
+                <dt>{{.Content.Strings.FirstNames}}</dt>
+                <dd id="firstnames"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.FamilyName}}</dt>
+                <dd id="familyname"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.DateOfBirth}}</dt>
+                <dd id="dateofbirth"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Nationality}}</dt>
+                <dd id="nationality"></dd>
+            </div>
+            <div>
+                <dt>{{.Content.Strings.Email}}</dt>
+                <dd id="email"></dd>
+            </div>
+        </dl>
+        <p>{{.Content.Strings.Source}}</p>
+        <button disabled>{{.Content.Strings.Submit}}</button>
+    </div>
+
+    <script type="text/javascript">
+        let source_labels = {"passport": {{.Content.Strings.SourcePassport}}, "idcard": {{.Content.Strings.SourceIdcard}}, "personalData": {{.Content.Strings.SourceBrp}}};
+    </script>
+{{end}}

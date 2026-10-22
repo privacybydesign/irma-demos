@@ -1,0 +1,72 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #1f3f7a;
+            --secondary: #ffffff;
+        }
+
+        .ticket {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em 3em;
+            padding: 1em 1.25em;
+            margin-block: 1em;
+            border-radius: 8px;
+            background: var(--secondary);
+            color: var(--accent);
+
+            h3 {
+                flex-basis: 100%;
+                margin: 0;
+                font-size: 1.3em;
+            }
+
+            dl {
+                margin: 0;
+            }
+
+            dt {
+                font-size: .8em;
+                text-transform: uppercase;
+                letter-spacing: .1em;
+                opacity: .7;
+            }
+
+            dd {
+                margin: 0;
+                font-size: 1.6em;
+                font-weight: bold;
+            }
+        }
+    </style>
+
+    <div class="result" hidden>
+        <h2 class="checks-title">{{.Content.Strings.ChecksTitle}}</h2>
+        <ul class="checks" role="list">
+            <li id="check-student"><span>{{.Content.Strings.CheckStudent}}</span></li>
+            <li id="check-institute"><span>{{.Content.Strings.CheckInstitute}}</span></li>
+            <li id="check-enrolled"><span>{{.Content.Strings.CheckEnrolled}}</span></li>
+        </ul>
+        <div class="success" hidden>
+            <div class="ticket">
+                <h3>{{.Content.Strings.Exam}}</h3>
+                <dl>
+                    <dt>{{.Content.Strings.Room}}</dt>
+                    <dd>CC 2.011</dd>
+                </dl>
+                <dl>
+                    <dt>{{.Content.Strings.Seat}}</dt>
+                    <dd id="seat"></dd>
+                </dl>
+                <dl>
+                    <dt>{{.Content.Strings.Starts}}</dt>
+                    <dd>12:30</dd>
+                </dl>
+            </div>
+            <p>{{.Content.Strings.Success}}</p>
+        </div>
+        <p class="error" hidden>
+            {{.Content.Strings.Error}}
+        </p>
+    </div>
+{{end}}

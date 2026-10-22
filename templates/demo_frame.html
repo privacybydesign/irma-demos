@@ -1,0 +1,58 @@
+{{define "frame"}}
+<script type="text/javascript">
+    let header_text = {{.Content.Frame.Action}};
+    let lang = {{.Lang}};
+    let slug = {{.Slug}};
+</script>
+
+<figure class="demo-figure demo">
+
+    {{if not .Content.Standalone}}
+    <div class="demo-browser-bar" aria-hidden="true">
+        <span class="demo-browser-dots"><i></i><i></i><i></i></span>
+        <span class="demo-browser-url">{{.Content.Frame.URL}}</span>
+    </div>
+    {{end}}
+
+    <header class="demo-header">
+        <div class="demo-logo">
+            {{.Content.Frame.Organisation}}
+        </div>
+        {{if .Content.Standalone}}{{template "lang-switcher" .}}{{end}}
+    </header>
+
+    {{if .Content.Standalone}}<main class="demo-main">
+    <h1>
+        {{.Content.Frame.Title}}
+    </h1>{{else}}<section class="demo-main">
+    <h2>
+        {{.Content.Frame.Title}}
+    </h2>{{end}}
+    <div id="yivi-web-form"></div>
+    {{template "body" .}}
+    {{if .Content.Standalone}}</main>{{else}}</section>{{end}}
+
+</figure>
+{{end}}
+
+{{define "standalone"}}<!DOCTYPE html>
+<html lang="{{.Lang}}">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+
+    <link href="/resources/vars.css" rel="stylesheet">
+    <link href="/resources/yivi.css" rel="stylesheet">
+    <link href="/resources/demo.css" rel="stylesheet">
+
+    <script src="/assets/yivi.js" defer></script>
+    <script src="/start_session.js" defer></script>
+    <script src="./script.js" defer></script>
+
+    <title>{{.Title}} | Yivi Demos</title>
+</head>
+<body class="stand-alone">
+{{template "frame" .}}
+</body>
+</html>
+{{end}}

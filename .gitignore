@@ -1,8 +1,5 @@
-assets/
-build/
-node_modules/
 assets/*
-build/*
-node_modules/*
-vendor/
+!assets/.gitkeep
+node_modules/
 .DS_Store
+/irma-demos

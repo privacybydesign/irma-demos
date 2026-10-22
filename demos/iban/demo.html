@@ -1,0 +1,37 @@
+{{define "body"}}
+    <style>
+        body {
+            --accent: #9e5900;
+            --secondary: #ffffff;
+        }
+        label {
+            display: block;
+            margin: 1em 0;
+        }
+        [type=checkbox] {
+            width: 1.2em;
+        }
+    </style>
+
+    <div class="result" hidden>
+        {{.Content.Strings.Success}}
+        <ul>
+            <li>
+                IBAN: <strong id="iban"></strong>
+            </li>
+            <li>
+                BIC: <strong id="bic"></strong>
+            </li>
+            <li>
+                {{.Content.Strings.Name}} <strong id="fullName"></strong>
+            </li>
+        </ul>
+        <label>
+            <input type="checkbox">
+            {{.Content.Strings.Agree}}
+        </label>
+        <button disabled>
+            {{.Content.Strings.Button}}
+        </button>
+    </div>
+{{end}}
