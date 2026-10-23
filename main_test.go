@@ -48,7 +48,7 @@ func TestServeDrainsRequests(t *testing.T) {
 
 			return
 		}
-		defer resp.Body.Close()
+		defer func() { _ = resp.Body.Close() }()
 
 		b, _ := io.ReadAll(resp.Body)
 		body <- string(b)
