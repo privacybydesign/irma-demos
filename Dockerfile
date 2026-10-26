@@ -1,4 +1,4 @@
-FROM node:20 AS assets
+FROM node:25 AS assets
 WORKDIR /app
 
 COPY package.json yarn.lock build_artifacts.sh ./
@@ -7,7 +7,7 @@ RUN ./build_artifacts.sh
 
 # -----------------------------------------------------
 
-FROM golang:1.26.10 AS build
+FROM golang:1.27.2 AS build
 WORKDIR /app
 
 COPY go.mod go.sum ./
